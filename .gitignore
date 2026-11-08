@@ -1,0 +1,12 @@
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+captures/
+.kotlin/
+# 출시용 서명키는 절대 올리지 않음 (테스트용 app/debug.keystore만 예외)
+*.jks
+release.keystore
+google-services.json
