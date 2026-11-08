@@ -19,7 +19,9 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - uses: android-actions/setup-android@v3
+      # GitHub 빌드 서버에 이미 설치된 Android SDK 사용 (라이선스만 동의)
+      - name: Android SDK 라이선스 동의
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
 
       - uses: gradle/actions/setup-gradle@v4
 
