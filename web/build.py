@@ -20,6 +20,9 @@ ap.add_argument('--site-url', default=os.environ.get('SITE_URL', ''))
 ap.add_argument('--out', default=str(ROOT / 'site'))
 args = ap.parse_args()
 SITE_URL = args.site_url.rstrip('/')
+# 스토어·개인정보처리방침에 공개하는 문의 메일 (정해지면 여기만 바꾸면 됨)
+CONTACT_EMAIL = ''
+POLICY_DATE = '2026-11-09'
 OUT = Path(args.out)
 
 UI_ALL = json.load(open(ROOT / 'app/src/main/assets/ui.json', encoding='utf-8'))
@@ -162,7 +165,7 @@ def page(path, title, desc, body, active='', jsonld=None):
 <footer class="foot"><div class="wrap">
   <p><b>{e(name)}</b> · {e(TAGLINE)}</p>
   <p>{e(T('web.footer'))}</p>
-  <p><a href="{L}about.html">{e(T('web.aboutLink'))}</a> · {e(T('web.contentVer', n=C.get("contentVersion","")))}</p>
+  <p><a href="{L}about.html">{e(T('web.aboutLink'))}</a> · <a href="{L}privacy.html">{e(T('pp.title'))}</a> · {e(T('web.contentVer', n=C.get("contentVersion","")))}</p>
   <p class="footlangs">{langs}</p>
 </div></footer>
 <nav class="tabs" aria-label="{e(T('a11y.bottommenu'))}">{nav}</nav>
@@ -373,6 +376,14 @@ def build_about():
 <p class="note">{e(T('about.effective', d=C.get("updatedAt", ""), n=C.get("contentVersion", "")))}</p></div>"""
     return page('about.html', T('about.metaTitle'), T('about.desc'), body, 'info')
 
+def build_privacy():
+    email = CONTACT_EMAIL or T('pp.emailPending')
+    secs = ''.join(f"<h2>{e(T(f'pp.h{i}'))}</h2><p>{e(T(f'pp.b{i}', email=email))}</p>" for i in range(1, 8))
+    body = f"""<div class="wrap prose"><section class="pagehead"><h1>{e(T('pp.title'))}</h1></section>
+<p>{e(T('pp.intro'))}</p>{secs}
+<p class="note">{e(T('pp.effective', d=POLICY_DATE))}</p></div>"""
+    return page('privacy.html', T('pp.title'), T('pp.desc'), body, '')
+
 def build_404():
     body = f"""<div class="wrap"><div class="empty"><b>{e(T('web.notFound'))}</b><p>{e(T('web.notFoundBody'))}</p><p><a class="btn copy" href="./index.html">{e(T('web.toHome'))}</a></p></div></div>"""
     return page('404.html', T('web.notFound'), T('web.notFound'), body)
@@ -387,7 +398,7 @@ for code in LANGS:
     setup(code)
     pre = PREFIX[code]
     w(pre + 'index.html', build_home()); w(pre + 'search.html', build_search()); w(pre + 'prompts.html', build_prompts())
-    w(pre + 'saved.html', build_saved()); w(pre + 'about.html', build_about())
+    w(pre + 'saved.html', build_saved()); w(pre + 'about.html', build_about()); w(pre + 'privacy.html', build_privacy())
     if code == 'ko': w('404.html', build_404())
     for c in CATS: w(f'{pre}c/{c["id"]}.html', build_category(c))
     for it in PUB: w(f'{pre}m/{it["id"]}.html', build_manual(it))
@@ -397,7 +408,7 @@ for code in LANGS:
             'ui': {k: (v.get(code) or v.get('en')) for k, v in UI_ALL['strings'].items() if not k.startswith('about.')},
             'suggest': {c2: UI_ALL['strings']['web.langSuggest'][c2] for c2 in LANGS} if code == 'ko' else {}}
     w(f'static/data.{code}.js', 'window.AIJ=' + json.dumps(DATA, ensure_ascii=False, separators=(',', ':')) + ';\n')
-    all_pages += [pre + x for x in ['index.html', 'search.html', 'prompts.html', 'about.html'] + [f'c/{c["id"]}.html' for c in CATS] + [f'm/{i["id"]}.html' for i in PUB]]
+    all_pages += [pre + x for x in ['index.html', 'search.html', 'prompts.html', 'about.html', 'privacy.html'] + [f'c/{c["id"]}.html' for c in CATS] + [f'm/{i["id"]}.html' for i in PUB]]
 for f in ('style.css', 'app.js'): shutil.copy(WEB / 'static' / f, OUT / 'static' / f)
 shutil.copytree(WEB / 'files', OUT / 'files')
 w('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108"><rect width="108" height="108" rx="24" fill="#FFD23F"/><path fill="#1C1B17" d="M37,28 L63,28 L75,40 L75,76 Q75,80 71,80 L37,80 Q33,80 33,76 L33,32 Q33,28 37,28 Z"/><path d="M43,56 L51,64 L66,48" fill="none" stroke="#FFD23F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>')

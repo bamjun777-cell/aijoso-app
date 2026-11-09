@@ -1503,6 +1503,146 @@
    "ja": "施行日 {d}・コンテンツ版 {n}",
    "zh-Hans": "生效日期 {d} · 内容版本 {n}",
    "zh-Hant": "生效日期 {d} · 內容版本 {n}"
+  },
+  "pp.title": {
+   "ko": "개인정보처리방침",
+   "en": "Privacy Policy",
+   "ja": "プライバシーポリシー",
+   "zh-Hans": "隐私政策",
+   "zh-Hant": "隱私政策"
+  },
+  "pp.desc": {
+   "ko": "AI 좋소 앱과 웹사이트의 개인정보처리방침",
+   "en": "Privacy policy for the AI Joso app and website",
+   "ja": "AI Josoアプリとウェブサイトのプライバシーポリシー",
+   "zh-Hans": "AI Joso 应用与网站的隐私政策",
+   "zh-Hant": "AI Joso 應用與網站的隱私政策"
+  },
+  "pp.intro": {
+   "ko": "AI 좋소(운영자: AI Joso, 이하 \"서비스\")는 이용자의 개인정보를 수집하지 않는 것을 원칙으로 합니다. 이 방침은 Android 앱 \"AI 좋소\"와 웹사이트에 적용됩니다.",
+   "en": "AI Joso (operator: AI Joso, the \"Service\") is built not to collect your personal information. This policy covers the \"AI Joso\" Android app and website.",
+   "ja": "AI Joso（運営者：AI Joso、以下「本サービス」）は、利用者の個人情報を収集しないことを原則としています。本ポリシーはAndroidアプリ「AI Joso」とウェブサイトに適用されます。",
+   "zh-Hans": "AI Joso（运营者：AI Joso，以下简称\"本服务\"）以不收集用户个人信息为原则。本政策适用于 Android 应用\"AI Joso\"及其网站。",
+   "zh-Hant": "AI Joso（運營者：AI Joso，以下簡稱\"本服務\"）以不收集使用者個人資訊為原則。本政策適用於 Android 應用\"AI Joso\"及其網站。"
+  },
+  "pp.h1": {
+   "ko": "1. 수집하는 개인정보",
+   "en": "1. Information we collect",
+   "ja": "1. 収集する個人情報",
+   "zh-Hans": "1. 我们收集的信息",
+   "zh-Hant": "1. 我們收集的資訊"
+  },
+  "pp.b1": {
+   "ko": "회원가입·로그인이 없으며, 서비스는 이용자의 개인정보를 수집하거나 서버로 전송하지 않습니다. 앱에는 인터넷 접속 권한이 없습니다.",
+   "en": "There is no sign-up or login. The Service does not collect personal information or send it to any server. The app does not request internet access permission.",
+   "ja": "会員登録・ログインはなく、本サービスは利用者の個人情報を収集したりサーバーに送信したりしません。アプリはインターネット接続の権限を持ちません。",
+   "zh-Hans": "本服务无需注册或登录，不收集用户个人信息，也不会发送到任何服务器。应用不申请联网权限。",
+   "zh-Hant": "本服務無需註冊或登入，不收集使用者個人資訊，也不會傳送到任何伺服器。應用不申請聯網許可權。"
+  },
+  "pp.h2": {
+   "ko": "2. 기기에만 저장되는 정보",
+   "en": "2. Information stored only on your device",
+   "ja": "2. 端末にだけ保存される情報",
+   "zh-Hans": "2. 仅保存在你设备上的信息",
+   "zh-Hant": "2. 僅儲存在你裝置上的資訊"
+  },
+  "pp.b2": {
+   "ko": "즐겨찾기, 최근 본 매뉴얼, 프롬프트 빈칸에 입력한 값, 작성한 의견, 글자 크기·언어 설정은 이용자의 기기(앱 저장공간 또는 브라우저)에만 저장됩니다. 서비스 운영자는 이 정보에 접근할 수 없으며, 앱 삭제 또는 브라우저의 사이트 데이터 삭제로 언제든 지울 수 있습니다.",
+   "en": "Favorites, recently viewed manuals, the values you type into prompt blanks, feedback you write, and text-size and language settings are stored only on your device (app storage or your browser). We cannot access them. You can delete them at any time by uninstalling the app or clearing the site data in your browser.",
+   "ja": "お気に入り、最近見たマニュアル、プロンプトの空欄に入力した値、作成した意見、文字サイズ・言語の設定は、利用者の端末（アプリの保存領域またはブラウザ）にだけ保存されます。運営者はこの情報にアクセスできず、アプリの削除やブラウザのサイトデータ削除でいつでも消去できます。",
+   "zh-Hans": "收藏、最近浏览的手册、在提示词空格中输入的内容、填写的意见以及字体大小和语言设置，只保存在你的设备（应用存储或浏览器）中。运营者无法访问这些信息，你可以随时通过卸载应用或清除浏览器网站数据来删除。",
+   "zh-Hant": "收藏、最近瀏覽的手冊、在提示詞空格中輸入的內容、填寫的意見以及字型大小和語言設定，只儲存在你的裝置（應用儲存或瀏覽器）中。運營者無法訪問這些資訊，你可以隨時透過解除安裝應用或清除瀏覽器網站資料來刪除。"
+  },
+  "pp.h3": {
+   "ko": "3. 광고·분석·제3자 제공",
+   "en": "3. Ads, analytics and sharing",
+   "ja": "3. 広告・分析・第三者提供",
+   "zh-Hans": "3. 广告、分析与第三方共享",
+   "zh-Hant": "3. 廣告、分析與第三方共享"
+  },
+  "pp.b3": {
+   "ko": "현재 광고와 이용 분석 도구를 사용하지 않으며, 개인정보를 제3자에게 제공하거나 처리를 위탁하지 않습니다. 광고(Google AdMob 등)나 의견 전송 기능을 도입할 경우, 시행 전에 이 방침을 먼저 고치고 수집 항목·목적·보유 기간을 안내합니다.",
+   "en": "We currently use no ads or analytics, and we do not share personal information with third parties or outsource its processing. If we add ads (such as Google AdMob) or a way to send feedback, we will update this policy first and explain what is collected, why, and for how long.",
+   "ja": "現在、広告と利用分析ツールは使っておらず、個人情報を第三者に提供したり処理を委託したりしません。広告（Google AdMobなど）や意見の送信機能を導入する場合は、実施前にこのポリシーを改定し、収集項目・目的・保存期間をお知らせします。",
+   "zh-Hans": "目前不使用广告和数据分析工具，也不向第三方提供个人信息或委托处理。如果将来加入广告（如 Google AdMob）或意见发送功能，会在实施前先更新本政策，并说明收集的项目、目的和保存期限。",
+   "zh-Hant": "目前不使用廣告和資料分析工具，也不向第三方提供個人資訊或委託處理。如果將來加入廣告（如 Google AdMob）或意見傳送功能，會在實施前先更新本政策，並說明收集的專案、目的和儲存期限。"
+  },
+  "pp.h4": {
+   "ko": "4. 웹사이트 이용 시",
+   "en": "4. When you use the website",
+   "ja": "4. ウェブサイトの利用時",
+   "zh-Hans": "4. 使用网站时",
+   "zh-Hant": "4. 使用網站時"
+  },
+  "pp.b4": {
+   "ko": "웹사이트는 GitHub Pages로 제공되고 글꼴은 Google Fonts에서 불러옵니다. 이 과정에서 GitHub와 Google이 접속 기록(IP 주소 등)을 각 회사의 개인정보처리방침에 따라 처리할 수 있습니다. 매뉴얼 속 외부 링크(Claude, Microsoft, Google 등)는 해당 회사의 방침이 적용됩니다.",
+   "en": "The website is hosted on GitHub Pages and loads fonts from Google Fonts, so GitHub and Google may process access logs (such as IP addresses) under their own privacy policies. External links in the manuals (Claude, Microsoft, Google and others) are governed by those companies' policies.",
+   "ja": "ウェブサイトはGitHub Pagesで提供し、フォントはGoogle Fontsから読み込みます。その際、GitHubとGoogleがアクセス記録（IPアドレスなど）を各社のプライバシーポリシーに従って処理することがあります。マニュアル内の外部リンク（Claude、Microsoft、Googleなど）には各社のポリシーが適用されます。",
+   "zh-Hans": "网站由 GitHub Pages 提供，字体从 Google Fonts 加载。在此过程中，GitHub 和 Google 可能按各自的隐私政策处理访问记录（如 IP 地址）。手册中的外部链接（Claude、Microsoft、Google 等）适用相应公司的政策。",
+   "zh-Hant": "網站由 GitHub Pages 提供，字型從 Google Fonts 載入。在此過程中，GitHub 和 Google 可能按各自的隱私政策處理訪問記錄（如 IP 地址）。手冊中的外部連結（Claude、Microsoft、Google 等）適用相應公司的政策。"
+  },
+  "pp.h5": {
+   "ko": "5. 아동",
+   "en": "5. Children",
+   "ja": "5. 子ども",
+   "zh-Hans": "5. 儿童",
+   "zh-Hant": "5. 兒童"
+  },
+  "pp.b5": {
+   "ko": "서비스는 직장인을 위한 업무 매뉴얼이며 아동을 대상으로 하지 않습니다.",
+   "en": "The Service provides work manuals for working adults and is not directed at children.",
+   "ja": "本サービスは社会人向けの業務マニュアルであり、子どもを対象としていません。",
+   "zh-Hans": "本服务是面向职场人士的工作手册，不以儿童为对象。",
+   "zh-Hant": "本服務是面向職場人士的工作手冊，不以兒童為物件。"
+  },
+  "pp.h6": {
+   "ko": "6. 문의·개인정보 보호책임자",
+   "en": "6. Contact",
+   "ja": "6. お問い合わせ",
+   "zh-Hans": "6. 联系我们",
+   "zh-Hant": "6. 聯絡我們"
+  },
+  "pp.b6": {
+   "ko": "개인정보 보호책임자: AI Joso 운영자 · 이메일: {email}",
+   "en": "Privacy contact: AI Joso operator · Email: {email}",
+   "ja": "個人情報の担当：AI Joso 運営者・メール：{email}",
+   "zh-Hans": "隐私负责人：AI Joso 运营者 · 邮箱：{email}",
+   "zh-Hant": "隱私負責人：AI Joso 運營者 · 郵箱：{email}"
+  },
+  "pp.emailPending": {
+   "ko": "(출시 전 게시 예정)",
+   "en": "(to be posted before launch)",
+   "ja": "（公開前に掲載予定）",
+   "zh-Hans": "（上线前公布）",
+   "zh-Hant": "（上線前公佈）"
+  },
+  "pp.h7": {
+   "ko": "7. 방침의 변경",
+   "en": "7. Changes to this policy",
+   "ja": "7. ポリシーの変更",
+   "zh-Hans": "7. 政策变更",
+   "zh-Hant": "7. 政策變更"
+  },
+  "pp.b7": {
+   "ko": "이 방침을 바꾸면 이 페이지에 먼저 게시하고 시행일을 표시합니다.",
+   "en": "If we change this policy, we will post it on this page first with the effective date.",
+   "ja": "このポリシーを変更する場合は、このページに先に掲載し施行日を表示します。",
+   "zh-Hans": "本政策如有变更，会先在本页面公布并注明生效日期。",
+   "zh-Hant": "本政策如有變更，會先在本頁面公佈並註明生效日期。"
+  },
+  "pp.effective": {
+   "ko": "시행일 {d}",
+   "en": "Effective {d}",
+   "ja": "施行日 {d}",
+   "zh-Hans": "生效日期 {d}",
+   "zh-Hant": "生效日期 {d}"
+  },
+  "pp.link": {
+   "ko": "개인정보처리방침 보기",
+   "en": "View privacy policy",
+   "ja": "プライバシーポリシーを見る",
+   "zh-Hans": "查看隐私政策",
+   "zh-Hant": "檢視隱私政策"
   }
  }
 }

@@ -35,7 +35,7 @@ jobs:
       - name: 검사(콘텐츠·검색·비속어 필터) + APK 빌드
         run: |
           chmod +x gradlew
-          ./gradlew testDebugUnitTest assembleDebug --stacktrace
+          ./gradlew testDebugUnitTest assembleDebug assembleRelease --stacktrace
 
       - name: 빌드 결과 보관
         uses: actions/upload-artifact@v4

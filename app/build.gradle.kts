@@ -15,8 +15,9 @@ android {
         applicationId = "com.aijoso.app"
         minSdk = 26          // Android 8.0 이상
         targetSdk = 36       // Google Play 요건: Android 16 (2026-08-31부터)
-        versionCode = 1
-        versionName = "0.1.0"
+        // 출시할 때마다 1씩 올린다 (GitHub 출시 빌드가 실행 번호로 자동 지정)
+        versionCode = (System.getenv("VERSION_CODE") ?: "1").toInt()
+        versionName = System.getenv("VERSION_NAME") ?: "1.0.0"
     }
 
     signingConfigs {
@@ -26,6 +27,14 @@ android {
             storePassword = "android"
             keyAlias = "androiddebugkey"
             keyPassword = "android"
+        }
+        // 출시용(업로드) 서명키: GitHub 비밀값으로만 전달. 저장소에는 절대 올리지 않음
+        val uploadStore = System.getenv("UPLOAD_KEYSTORE_PATH")
+        if (uploadStore != null) create("upload") {
+            storeFile = file(uploadStore)
+            storePassword = System.getenv("UPLOAD_KEYSTORE_PASSWORD")
+            keyAlias = System.getenv("UPLOAD_KEY_ALIAS") ?: "upload"
+            keyPassword = System.getenv("UPLOAD_KEYSTORE_PASSWORD")
         }
     }
 
@@ -38,6 +47,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfigs.findByName("upload")?.let { signingConfig = it }
         }
     }
 

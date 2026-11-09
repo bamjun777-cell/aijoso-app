@@ -2,6 +2,9 @@
 
 package com.aijoso.app.ui
 
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.platform.LocalContext
 import com.aijoso.app.data.LocalUi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -145,8 +148,11 @@ fun SettingsSheet(c: ContentFile, store: AppStore, onDismiss: () -> Unit) {
             Spacer(Modifier.height(12.dp))
             HorizontalDivider(color = cs.outline)
             SettingRow(ui.t("set.contentVer"), c.contentVersion)
-            SettingRow(ui.t("set.appVer"), "0.2.0 (" + ui.t("set.test") + ")")
-            SettingRow(ui.t("set.privacy"), ui.t("set.privacyLater"))
+            val ctx = LocalContext.current
+            val ver = remember { runCatching { ctx.packageManager.getPackageInfo(ctx.packageName, 0).versionName }.getOrNull() ?: "" }
+            SettingRow(ui.t("set.appVer"), ver)
+            val uri = LocalUriHandler.current
+            SettingRow(ui.t("set.privacy"), ui.t("pp.link")) { uri.openUri(privacyUrl(ui.lang)) }
             HorizontalDivider(color = cs.outline)
             Spacer(Modifier.height(10.dp))
             KText(ui.t("disclaimer"),
@@ -157,9 +163,15 @@ fun SettingsSheet(c: ContentFile, store: AppStore, onDismiss: () -> Unit) {
     }
 }
 
+/** 웹에 게시한 언어별 개인정보처리방침 주소 */
+fun privacyUrl(lang: String): String {
+    val pre = mapOf("ko" to "", "en" to "en/", "ja" to "ja/", "zh-Hans" to "zh-hans/", "zh-Hant" to "zh-hant/")[lang] ?: "en/"
+    return "https://bamjun777-cell.github.io/aijoso-app/${pre}privacy.html"
+}
+
 @Composable
-private fun SettingRow(label: String, value: String) {
-    Row(Modifier.fillMaxWidth().padding(vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
+private fun SettingRow(label: String, value: String, onClick: (() -> Unit)? = null) {
+    Row(Modifier.fillMaxWidth().then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier).padding(vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
         Text(label, Modifier.weight(1f))
         Text(value, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
