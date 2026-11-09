@@ -60,11 +60,13 @@ def build(code):
     for t in C['feedback']['types']: t['label'] = L.FEEDBACK[t['id']]
     C['moderation']['banned'] = list(dict.fromkeys(MASTER['moderation']['banned'] + L.MODERATION['banned']))
     C['moderation']['allow'] = list(dict.fromkeys(MASTER['moderation']['allow'] + L.MODERATION['allow']))
-    for ch, text in zip(C['changelog'], L.CHANGELOG): ch['text'] = text
-    out = []
+    # 업데이트 소식: 번역된 것만 (오래된 것부터 맞춤, 새 소식은 번역되면 추가)
+    n = len(L.CHANGELOG)
+    C['changelog'] = [dict(ch, text=t) for ch, t in zip(MASTER['changelog'][len(MASTER['changelog']) - n:], L.CHANGELOG)]
+    out, missing = [], []
     for m in MASTER['items']:
         o = L.ITEMS.get(m['id'])
-        if o is None: errors.append(f'{code}: {m["id"]} 번역 없음'); continue
+        if o is None: missing.append(m['id']); continue   # 아직 번역 안 된 매뉴얼은 그 언어에서 빼고 공개
         it = {k: m[k] for k in ('id', 'status', 'category', 'difficulty', 'frequency', 'timeBeforeMin', 'timeAfterMin', 'freePlanOk', 'verifiedAt', 'updatedAt')}
         it.update({'lang': code, 'title': o['t'], 'subtitle': o['s'], 'tags': o['tags'],
                    'tools': [{'name': n, 'free': mt['free'], 'note': note} for (n, note), mt in zip(o['tools'], m['tools'])],
@@ -91,6 +93,7 @@ def build(code):
         if code == 'zh-Hant' and re.search(r'新加坡|新元|S\$|人力部|MOM', flat): errors.append(f'zh-Hant/{m["id"]}: 싱가포르 표현 남음')
         out.append(it)
     C['items'] = out
+    if missing: print(f'  {code}: 번역 대기 {len(missing)}개 (한국어판에만 공개)')
     (ASSETS / f'content.{code}.json').write_text(json.dumps(C, ensure_ascii=False, indent=1), encoding='utf-8')
     return C
 

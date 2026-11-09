@@ -27,8 +27,9 @@ class LogicTest {
         val ids = content.items.map { it.id }
         for (l in langs) {
             val c = load(l)
-            assertEquals(l, ids, c.items.map { it.id })
-            assertEquals(l, 30, c.published.size)
+            // 한국어판은 전체, 외국어판은 번역된 매뉴얼만 (한국어판 순서와 같게)
+            if (l == "ko") assertEquals(ids, c.items.map { it.id }) else assertEquals(l, ids.filter { it in c.items.map { i -> i.id } }, c.items.map { it.id })
+            assertTrue(l, c.published.size >= 30)
             assertEquals(l, 8, c.categories.size)
             // 빈칸과 입력칸이 맞는지 (언어마다)
             val re = Regex("""\{\{(.+?)\}\}""")
@@ -81,8 +82,10 @@ class LogicTest {
     }
 
     @Test fun contentLoads() {
-        assertEquals(30, content.items.size)
-        assertEquals(30, content.published.size)
+        assertEquals(72, content.items.size)
+        assertEquals(72, content.published.size)
+        // 분야마다 9개
+        content.categories.forEach { cat -> assertEquals(cat.id, 9, content.published.count { it.category == cat.id }) }
         assertEquals(6, content.featuredItems.size)
         // 홈은 분야별로 묶어 모두 보여 주므로, 모든 공개 매뉴얼이 실제 분야에 속해야 함
         assertTrue(content.published.all { p -> content.categories.any { it.id == p.category } })
@@ -111,6 +114,9 @@ class LogicTest {
         assertEquals("payroll-variance-check", s.search("매달 급여 비교하는 게 오래 걸려요").first().id)
         assertEquals("excel-merge-files", s.search("지점 엑셀 합치기").first().id)
         assertEquals("one-page-exec-report", s.search("보고서 1장 요약").first().id)
+        assertEquals("hr-severance", s.search("퇴직금 계산").first().id)
+        assertEquals("account-vat-prep", s.search("부가세 신고 준비").first().id)
+        assertEquals("logistics-freight-audit", s.search("택배비 청구서 검증").first().id)
         assertTrue(s.search("급여", category = "excel").none { it.category != "excel" })
     }
 

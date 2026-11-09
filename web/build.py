@@ -104,6 +104,8 @@ def svg(k, cls=''): return f'<svg class="i {cls}" viewBox="0 0 24 24" fill="none
 NAV = [('home', 'tab.home', 'index.html'), ('search', 'tab.search', 'search.html'), ('prompt', 'tab.prompts', 'prompts.html'), ('saved', 'tab.saved', 'saved.html')]
 ICON['globe'] = '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>'
 
+AVAIL = {c: {i['id'] for i in json.load(open(ROOT / 'app/src/main/assets' / ('content.json' if c == 'ko' else f'content.{c}.json'), encoding='utf-8'))['items'] if i.get('status') == 'published'} for c in LANGS}
+
 def page(path, title, desc, body, active='', jsonld=None):
     """path: 언어 폴더 기준 경로 (예: m/x.html). 상대 경로로 링크해 어느 주소에서든 동작."""
     full = PREFIX[LANG] + path
@@ -115,9 +117,13 @@ def page(path, title, desc, body, active='', jsonld=None):
     full_title = f'{title} | {name}' if title != name else f'{name} — {TAGLINE}'
     nav = ''.join(f'<a href="{L}{href}" class="nav-{k}"{" aria-current=\"page\"" if active == k else ""}>{svg(k)}<span>{e(T(key))}</span></a>' for k, key, href in NAV)
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ''
-    alts = ''.join(f'<link rel="alternate" hreflang="{c}" href="{e(url(c))}">' for c in LANGS) + f'<link rel="alternate" hreflang="x-default" href="{e(url("en"))}">' if SITE_URL else ''
     same = path if path != '404.html' else 'index.html'
-    langs = ''.join(f'<a href="{R}{PREFIX[c]}{same}" hreflang="{c}" lang="{c}" data-setlang="{c}"{" aria-current=\"true\"" if c == LANG else ""}>{e(UI_ALL["names"][c])}</a>' for c in LANGS)
+    # 다른 언어에 아직 없는 매뉴얼이면 그 언어의 홈으로
+    def target(c):
+        mid = path[2:-5] if path.startswith('m/') else None
+        return 'index.html' if (path == '404.html' or (mid and mid not in AVAIL[c])) else path
+    alts = ''.join(f'<link rel="alternate" hreflang="{c}" href="{e(url(c))}">' for c in LANGS if target(c) == path) + f'<link rel="alternate" hreflang="x-default" href="{e(url("en" if target("en") == path else LANG))}">' if SITE_URL else ''
+    langs = ''.join(f'<a href="{R}{PREFIX[c]}{target(c)}" hreflang="{c}" lang="{c}" data-setlang="{c}"{" aria-current=\"true\"" if c == LANG else ""}>{e(UI_ALL["names"][c])}</a>' for c in LANGS)
     cjk = ' class="cjk"' if LANG in ('ja', 'zh-Hans', 'zh-Hant') else ''
     sug = '<div id="langsuggest" class="langsug" hidden></div>' if LANG == 'ko' else ''
     return f"""<!doctype html>

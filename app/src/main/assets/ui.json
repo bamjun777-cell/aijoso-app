@@ -321,6 +321,20 @@
    "zh-Hans": "每周",
    "zh-Hant": "每週"
   },
+  "freq.분기": {
+   "ko": "분기마다",
+   "en": "Quarterly",
+   "ja": "四半期ごと",
+   "zh-Hans": "每季度",
+   "zh-Hant": "每季度"
+  },
+  "freq.연": {
+   "ko": "매년",
+   "en": "Yearly",
+   "ja": "毎年",
+   "zh-Hans": "每年",
+   "zh-Hant": "每年"
+  },
   "filter.all": {
    "ko": "전체",
    "en": "All",
