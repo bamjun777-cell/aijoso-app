@@ -1,0 +1,5107 @@
+{
+ "schemaVersion": 1,
+ "contentVersion": "2026.11.09-02",
+ "updatedAt": "2026-11-09",
+ "lang": "zh-Hans",
+ "categories": [
+  {
+   "id": "excel",
+   "name": "Excel · 数据",
+   "order": 1
+  },
+  {
+   "id": "hr",
+   "name": "人事 · 劳务",
+   "order": 2
+  },
+  {
+   "id": "admin",
+   "name": "行政 · 总务",
+   "order": 3
+  },
+  {
+   "id": "account",
+   "name": "财务 · 会计",
+   "order": 4
+  },
+  {
+   "id": "report",
+   "name": "报告 · 邮件",
+   "order": 5
+  },
+  {
+   "id": "gsheet",
+   "name": "Google 表格",
+   "order": 6
+  },
+  {
+   "id": "sales",
+   "name": "销售 · 客户",
+   "order": 7
+  },
+  {
+   "id": "logistics",
+   "name": "物流 · 库存",
+   "order": 8
+  }
+ ],
+ "synonyms": {
+  "excel": [
+   "表格",
+   "xlsx",
+   "电子表格",
+   "工作表"
+  ],
+  "合并": [
+   "汇总",
+   "整合",
+   "合到一起",
+   "归集"
+  ],
+  "工资": [
+   "薪资",
+   "薪水",
+   "工资表",
+   "人工成本",
+   "薪酬"
+  ],
+  "报告": [
+   "汇报",
+   "简报",
+   "总结",
+   "一页"
+  ],
+  "考勤": [
+   "加班",
+   "工时",
+   "打卡",
+   "超时"
+  ],
+  "年假": [
+   "假期",
+   "带薪年假",
+   "休假",
+   "剩余年假"
+  ],
+  "招聘": [
+   "招人",
+   "职位",
+   "招聘广告",
+   "面试"
+  ],
+  "通知": [
+   "公告",
+   "人事任命",
+   "调动",
+   "内部通知"
+  ],
+  "会议纪要": [
+   "会议",
+   "开会",
+   "会议记录"
+  ],
+  "报价": [
+   "报价单",
+   "比价",
+   "采购",
+   "供应商"
+  ],
+  "对账": [
+   "核对",
+   "收款",
+   "入账",
+   "结算"
+  ],
+  "公司卡": [
+   "信用卡",
+   "刷卡",
+   "费用",
+   "会计科目"
+  ],
+  "应收账款": [
+   "应收",
+   "催款",
+   "欠款",
+   "回款"
+  ],
+  "收据": [
+   "发票",
+   "报销",
+   "费用报销",
+   "小票"
+  ],
+  "邮件": [
+   "回信",
+   "拒绝",
+   "道歉",
+   "请求",
+   "回复"
+  ],
+  "合同": [
+   "协议",
+   "条款",
+   "契约"
+  ],
+  "表单": [
+   "google 表单",
+   "问卷",
+   "调查",
+   "回复"
+  ],
+  "库存": [
+   "出入库",
+   "盘点",
+   "安全库存",
+   "补货"
+  ],
+  "配送": [
+   "快递",
+   "司机",
+   "送货",
+   "派送",
+   "运量"
+  ],
+  "宏": [
+   "vba",
+   "自动化",
+   "重复操作"
+  ],
+  "函数": [
+   "公式",
+   "vlookup",
+   "xlookup",
+   "sumifs",
+   "报错"
+  ],
+  "比较": [
+   "对比",
+   "差异",
+   "变化"
+  ],
+  "整理": [
+   "清洗",
+   "格式",
+   "重复",
+   "规范"
+  ],
+  "透视表": [
+   "数据透视表",
+   "图表",
+   "汇总表"
+  ],
+  "faq": [
+   "客户咨询",
+   "常见问题",
+   "回复模板",
+   "客服"
+  ],
+  "销售额": [
+   "客户",
+   "排名",
+   "营收"
+  ]
+ },
+ "items": [
+  {
+   "id": "excel-merge-files",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-08",
+   "updatedAt": "2026-11-08",
+   "lang": "zh-Hans",
+   "title": "一次合并各分店的 Excel 文件",
+   "subtitle": "上传多个文件\n就能拿到合并版和核对表",
+   "tags": [
+    "excel",
+    "合并",
+    "汇总",
+    "月底",
+    "分店",
+    "部门",
+    "业绩"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "光复制粘贴分店文件就耗掉半天",
+   "before": "打开、复制、粘贴，一遍又一遍",
+   "after": "上传文件，发一次提示词就搞定",
+   "prepare": [
+    "要合并的文件（最多 20 个）",
+    "确认列名、列顺序一致",
+    "只留一行标题，取消合并单元格",
+    "删除身份证号、银行账号、联系方式",
+    "先确认公司的数据安全规定"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：合并文件",
+     "howTo": "粘贴到已附上文件的对话里",
+     "body": "附上的 {{파일개수}} 个 Excel 文件是{{자료명}}，格式都一样，标题在第 {{머리글행}} 行。\n\n请按以下顺序做一个 Excel 文件：\n1.「合并」表：把所有文件的数据上下拼接，最前面加一列「来源文件名」，标题只保留一次。\n2.「核对」表：用表格列出每个来源文件的数据行数、「{{합계열}}」合计，以及总计。\n3.「待确认」表：把空格、重复行、数字列里出现文字的行、列名不同的文件集中起来，并写明原因。\n\n不要擅自修改数据，看起来需要修改的只在「待确认」表里标出。\n文件名请用 {{결과파일명}}.xlsx。\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "파일개수",
+       "label": "文件个数",
+       "example": "12"
+      },
+      {
+       "key": "자료명",
+       "label": "是什么资料",
+       "example": "10 月各分店销售业绩"
+      },
+      {
+       "key": "머리글행",
+       "label": "标题所在行号",
+       "example": "1"
+      },
+      {
+       "key": "합계열",
+       "label": "要合计的列名",
+       "example": "销售额"
+      },
+      {
+       "key": "결과파일명",
+       "label": "结果文件名",
+       "example": "10月_分店业绩_合并"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "mismatch",
+     "title": "格式不一样时",
+     "howTo": "列名不同就先做这个",
+     "body": "附上的文件列顺序或列名略有不同。请先用表格对比每个文件的列名，并建议如何对应含义相同的列。以「{{기준파일}}」为标准格式。等我确认后再合并。",
+     "variables": [
+      {
+       "key": "기준파일",
+       "label": "作为标准的文件名",
+       "example": "东区分店.xlsx"
+      }
+     ]
+    },
+    {
+     "id": "powerquery",
+     "title": "每月自动：Power Query",
+     "howTo": "不方便上传给 AI 时",
+     "body": "请按菜单点击顺序告诉我，怎样用 Excel 的 Power Query 自动合并放在同一个文件夹里的 Excel 文件。我的 Excel 版本是 {{엑셀버전}}，每个文件的工作表名是「{{시트이름}}」。也请告诉我下个月只换文件、点「刷新」就能更新的方法。",
+     "variables": [
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      },
+      {
+       "key": "시트이름",
+       "label": "工作表名",
+       "example": "Sheet1"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "删除个人信息",
+     "body": "在副本里删掉敏感列",
+     "check": "原件另外保存"
+    },
+    {
+     "title": "打开文件创建",
+     "body": "设置 > 功能里打开",
+     "check": "菜单名：代码执行与文件创建"
+    },
+    {
+     "title": "附上文件",
+     "body": "用回形针（+）一次上传",
+     "check": "超过 20 个就分批"
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "拿到结果",
+     "body": "下载 Excel 并打开",
+     "check": "确认有 4 个工作表"
+    },
+    {
+     "title": "复核",
+     "body": "发送复核提示词",
+     "check": "亲手对照 2～3 个原文件"
+    },
+    {
+     "title": "打印",
+     "body": "确认 A4 横向 1 页后打印",
+     "check": ""
+    },
+    {
+     "title": "下个月起",
+     "body": "保存为项目",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "一个含 4 个工作表的 Excel\n合并 · 核对 · 待确认 · 复核",
+    "example": "5 家分店 · 716 行 · 560,380 新元\n与原文件差额 0（复核一致）"
+   },
+   "cautions": [
+    "合计一定要和原文件对照",
+    "先确认公司的数据安全规定",
+    "上传前取消合并单元格",
+    "免费方案有使用上限"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上传文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月度 Excel 汇总",
+    "instructions": "你是我们公司月度资料汇总的助手。结果做成 Excel（.xlsx）。计算单元格用 Excel 公式填入，并在批注里用中文写明算法。「核对」表放每个来源文件的行数和合计，「复核」表放用另一种方法算出的合计。不要擅自改数值，可疑数据集中放到「待确认」表。打印为 A4 横向，缩放到一页宽。",
+    "knowledge": [
+     "空白标准模板 1 个",
+     "分店/部门代码表"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "payroll-variance-check",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 240,
+   "timeAfterMin": 40,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-08",
+   "updatedAt": "2026-11-08",
+   "lang": "zh-Hans",
+   "title": "工资表环比核对",
+   "subtitle": "上传两个月的工资表\n整理入职、离职、增减和异常变动",
+   "tags": [
+    "工资",
+    "工资表",
+    "核对",
+    "增减",
+    "环比",
+    "加班",
+    "人工成本"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel",
+     "free": false,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "一个个对比还是会漏掉发错的工资",
+   "before": "用眼睛对比两个月的工资表",
+   "after": "从增减原因到加班资格检查",
+   "prepare": [
+    "上月、本月工资表",
+    "两个文件都要有「员工编号」列",
+    "删除身份证号、银行账号、地址",
+    "本月人事变动备注",
+    "确认公司规定允许上传"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：增减核对",
+     "howTo": "粘贴到已附上两个文件的对话里",
+     "body": "附件 1 是 {{전월}} 工资表，附件 2 是 {{당월}} 工资表。员工编号在「{{사번열}}」列，工种（workman / 非 workman）在「{{직종열}}」列。\n\n请把以下结果做成一个 Excel 文件：\n1.「人员变动」表：只在本月出现的编号（推定入职）和只在上月出现的编号（推定离职）\n2.「增减表」表：两个月都在的人，各工资项目的上月、本月、增减额、增减率\n3.「主要变动」表：应发总额变动 {{기준금액}} 新元以上或 {{기준비율}}% 以上的人，以及新增或消失工资项目的人\n4.「加班资格」表：月基本工资 workman 不超过 4,500 新元、非 workman 不超过 2,600 新元的人（适用《雇佣法》第四部分，加班费至少为基本时薪的 1.5 倍），并检查加班费是否按此计算（仅供参考筛选）\n5.「摘要」表：用 3～5 行说明应发总额的环比增减，以及影响最大的项目和人员变动\n\n不要改数据，难以判断的部分标为「待确认」。\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "전월",
+       "label": "上月",
+       "example": "2026 年 9 月"
+      },
+      {
+       "key": "당월",
+       "label": "本月",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "사번열",
+       "label": "员工编号列名",
+       "example": "员工编号"
+      },
+      {
+       "key": "직종열",
+       "label": "工种列名",
+       "example": "工种"
+      },
+      {
+       "key": "기준금액",
+       "label": "主要变动门槛（新元）",
+       "example": "300"
+      },
+      {
+       "key": "기준비율",
+       "label": "主要变动门槛（%）",
+       "example": "10"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "memo-match",
+     "title": "对照变动原因备注",
+     "howTo": "基本提示词之后",
+     "body": "下面是本月的人事变动备注。请把「主要变动」表里的人分成备注能解释的和不能解释的，列成表。不能解释的就是要优先核实的对象。\n\n{{변동메모}}",
+     "variables": [
+      {
+       "key": "변동메모",
+       "label": "人事变动备注",
+       "example": "E1023 10/1 升任经理，E1107 10/15 入职，E0981 9/30 离职，全员 10 月起餐补加 20 新元"
+      }
+     ]
+    },
+    {
+     "id": "approval-text",
+     "title": "审批单里的增减原因",
+     "howTo": "复核结束之后",
+     "body": "根据「摘要」表，写 3 条要点，作为 {{당월}} 工资审批单里的环比增减原因。数字只用表里的数值。",
+     "variables": [
+      {
+       "key": "당월",
+       "label": "本月",
+       "example": "2026 年 10 月"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "删除个人信息",
+     "body": "在副本里删掉敏感列",
+     "check": "连姓名一起删更安全"
+    },
+    {
+     "title": "统一编号格式",
+     "body": "两个文件的员工编号列保持一致",
+     "check": "不一致会被误判为入离职"
+    },
+    {
+     "title": "附上文件",
+     "body": "按上月 → 本月的顺序附上",
+     "check": "保持文件创建打开"
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": "门槛以人力部最新公布为准"
+    },
+    {
+     "title": "确认人员变动",
+     "body": "和实际入离职名单对照",
+     "check": ""
+    },
+    {
+     "title": "对照变动原因",
+     "body": "发送备注对照提示词",
+     "check": "先查解释不了的人"
+    },
+    {
+     "title": "复核与总额对账",
+     "body": "复核提示词 + 和薪资系统总额对比",
+     "check": "不一致就先别定稿"
+    },
+    {
+     "title": "打印与审批",
+     "body": "A4 横向 1 页打印",
+     "check": "审批文字也用提示词"
+    }
+   ],
+   "result": {
+    "summary": "6 个工作表的 Excel + 审批文字\n含增减、原因、异常变动和复核",
+    "example": "总额 412,800 → 428,550 新元\n+15,750 新元（+3.8%）· 原因合计一致"
+   },
+   "cautions": [
+    "工资属于敏感信息，须经公司批准",
+    "不要只凭 AI 结果定稿",
+    "加班资格检查仅供参考",
+    "新加坡没有统一的法定最低工资"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "WorkRight 雇佣法指南（英文）",
+     "publisher": "新加坡人力部 MOM",
+     "url": "https://www.MOM.gov.sg/-/media/mom/documents/employment-practices/workright/workright-guide-employment-laws.pdf",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月度工资核对",
+    "instructions": "你是工资核对助手。不要擅自修改数据。按员工编号比较。结果做成 Excel（.xlsx），计算单元格用 Excel 公式填入，并在批注里用中文写明算法。把总额增减按原因拆分，并在「复核」表证明合计对得上。是否适用《雇佣法》第四部分、加班费基数等法律判断不要下定论，标为「待确认」。打印为 A4 横向，缩放到一页宽。",
+    "knowledge": [
+     "工资项目说明表（项目名、固定/浮动、应税/免税）",
+     "公司津贴发放标准表"
+    ]
+   },
+   "legal": {
+    "note": "《雇佣法》第四部分适用于月基本工资不超过 4,500 新元的 workman 和不超过 2,600 新元的非 workman（经理和执行人员除外）。加班费至少为基本时薪的 1.5 倍；月薪制时薪 = 12 × 月基本工资 ÷（52 × 44）。（人力部指南，2026 年 1 月版）",
+    "checkedAt": "2026-11-09",
+    "disclaimer": "是否适用、渐进式薪金模式（PWM）等行业规定，请向人力部或专业人士确认。"
+   }
+  },
+  {
+   "id": "one-page-exec-report",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-08",
+   "updatedAt": "2026-11-08",
+   "lang": "zh-Hans",
+   "title": "把长资料变成一页报告",
+   "subtitle": "上传资料、写明目的\n就能拿到结论先行的一页报告",
+   "tags": [
+    "报告",
+    "摘要",
+    "高管汇报",
+    "一页",
+    "审批",
+    "签呈",
+    "word"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Word 或 Google 文档",
+     "free": false,
+     "note": "最终排版、打印"
+    }
+   ],
+   "problem": "资料 30 页，老板只看 1 页",
+   "before": "读、摘、删，再删",
+   "after": "连公式脚注和预想问题一起做好",
+   "prepare": [
+    "依据资料（Excel、PDF、邮件）",
+    "一句话写明汇报对象和目的",
+    "公司报告模板",
+    "机密资料先确认规定"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：一页草稿",
+     "howTo": "粘贴到已附上资料的对话里",
+     "body": "请根据附件资料，为{{보고대상}}写一份一页报告。\n- 汇报目的：{{보고목적}}\n- 对方最关心的问题：{{핵심질문}}\n- 结论方向（如有）：{{결론방향}}\n\n结构：标题 / 汇报要点（3 行以内，结论先行）/ 现状 / 问题与原因 / 方案比较（表格）/ 建议 / 后续安排\n\n写作规则：\n- 用简短要点式，不超过 A4 一页\n- 数字只用附件里有的值，资料里没有的写 [待确认]\n- 右上角写「{{작성일}}，{{작성자}}」\n- 自己算出的数字要加脚注写明算法（在 Word 里鼠标移上去能看到）\n- Word（.docx），A4 纵向一页，页边距 2 厘米，常用商务字体",
+     "variables": [
+      {
+       "key": "보고대상",
+       "label": "汇报对象",
+       "example": "总经理"
+      },
+      {
+       "key": "보고목적",
+       "label": "汇报目的",
+       "example": "决定是否更换办公复印机租赁公司"
+      },
+      {
+       "key": "핵심질문",
+       "label": "对方会关心的问题",
+       "example": "换了以后一年能省多少，会有哪些不便"
+      },
+      {
+       "key": "결론방향",
+       "label": "结论方向（没有就写「按资料提出建议」）",
+       "example": "建议更换供应商"
+      },
+      {
+       "key": "작성일",
+       "label": "日期",
+       "example": "2026-11-08"
+      },
+      {
+       "key": "작성자",
+       "label": "撰写人",
+       "example": "行政部 陈明"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：数字依据",
+     "howTo": "拿到草稿后直接在同一对话里发",
+     "body": "请把报告里出现的所有数字列成表。\n数字 / 依据资料位置（文件、页、单元格）/ 算法 / 重新算出的值 / 是否一致\n找不到依据的数字标为「无依据」。",
+     "variables": []
+    },
+    {
+     "id": "qna",
+     "title": "高管可能问的问题与回答",
+     "howTo": "拿到草稿后接着发",
+     "body": "请站在{{보고대상}}的角度读这份报告，列出 5 个可能被问的问题和回答草稿。回答只用附件里的依据，没有依据就写「需要进一步核实」。",
+     "variables": [
+      {
+       "key": "보고대상",
+       "label": "汇报对象",
+       "example": "总经理"
+      }
+     ]
+    },
+    {
+     "id": "shorten",
+     "title": "超过一页时压缩",
+     "howTo": "篇幅太长时",
+     "body": "把汇报要点压成 1 句，整体篇幅减少 {{감축비율}}%。数字和结论保持不变，删掉的部分另外整理成可以放进「附件」的内容。",
+     "variables": [
+      {
+       "key": "감축비율",
+       "label": "压缩比例（%）",
+       "example": "20"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "收集资料",
+     "body": "文件、邮件放在一起",
+     "check": "机密资料先看规定"
+    },
+    {
+     "title": "建立项目",
+     "body": "指令和模板只需登记一次",
+     "check": "免费方案最多 5 个"
+    },
+    {
+     "title": "资料 + 提示词",
+     "body": "在新对话里附上后发送",
+     "check": ""
+    },
+    {
+     "title": "检查篇幅",
+     "body": "超过一页就用压缩提示词",
+     "check": ""
+    },
+    {
+     "title": "核对数字",
+     "body": "用复核提示词对照依据",
+     "check": "AI 可能会编数字"
+    },
+    {
+     "title": "预想问题",
+     "body": "提前准备 5 个问答",
+     "check": ""
+    },
+    {
+     "title": "打印",
+     "body": "打印成 A4 纵向一页",
+     "check": "结论由你最终判断"
+    }
+   ],
+   "result": {
+    "summary": "A4 纵向一页的 Word 报告\n每个数字都有算法脚注 · 5 个预想问题",
+    "example": "示例：每年节省 2,160 新元（16.7%）\n12 处数字带算法脚注"
+   },
+   "cautions": [
+    "数字要一个不漏地核对",
+    "结论和建议由撰写人判断",
+    "关掉文件创建就只会给正文",
+    "机密资料先看规定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Intro to Projects（视频课程）",
+     "publisher": "Claude Academy",
+     "url": "https://academy.claude.com/tutorials/intro-to-projects",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "一页报告",
+    "instructions": "所有报告都写成 A4 纵向一页的高管报告，结论放最前面。结构：标题 / 汇报要点（3 行以内）/ 现状 / 问题与原因 / 方案比较 / 建议 / 后续安排。用简短要点式。数字只用附件里的值，自己算出的数字要用脚注写明算法。资料里没有的写 [待确认]。右上角写日期和撰写人。Word（.docx），常用商务字体，页边距 2 厘米。",
+    "knowledge": [
+     "公司报告模板 1 个",
+     "写得好的报告范例 1～2 个"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "excel-compare-files",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "월",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "比较两个文件找出差异",
+   "subtitle": "上传两个文件\n只挑出新增、删除和变更的部分",
+   "tags": [
+    "比较",
+    "对比",
+    "差异",
+    "变化",
+    "excel",
+    "价目表",
+    "名单"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "核对两份名单总会漏掉一个",
+   "before": "用 VLOOKUP 一行行核对",
+   "after": "按关键列对齐，只挑出差异",
+   "prepare": [
+    "要比较的两个文件（旧、新）",
+    "定好关键列（员工编号、品号）",
+    "统一两个文件的列名",
+    "删除身份证号、联系方式等"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：比较两个文件",
+     "howTo": "粘贴到已附上两个文件的对话里",
+     "body": "附件 1 是{{이전파일}}，附件 2 是{{최신파일}}。请按「{{기준열}}」列比较两个文件，做成一个 Excel 文件。\n1.「摘要」表：新增、删除、变更的件数\n2.「新增」表：只在新文件里的行\n3.「删除」表：只在旧文件里的行\n4.「变更」表：两边都有但{{비교열}}的值变了的行（旧值 / 新值 / 差额并排，变化的单元格标黄）\n5.「待确认」表：关键列为空或重复的行\n不要修改数据。\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "이전파일",
+       "label": "旧文件说明",
+       "example": "9 月供应商价目表"
+      },
+      {
+       "key": "최신파일",
+       "label": "新文件说明",
+       "example": "10 月供应商价目表"
+      },
+      {
+       "key": "기준열",
+       "label": "关键列名",
+       "example": "品号"
+      },
+      {
+       "key": "비교열",
+       "label": "要比较的列（多个用逗号分隔）",
+       "example": "单价, 供应商名称"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "formula",
+     "title": "自己做：比较公式",
+     "howTo": "不方便上传给 AI 时",
+     "body": "请告诉我在 Excel 里按「{{기준열}}」比较工作表 1（旧）和工作表 2（新）的公式。我想在新表旁边一列显示「新增/变更/相同」。我的 Excel 是 {{엑셀버전}}。如果这个版本不能用 XLOOKUP，请用其他函数。",
+     "variables": [
+      {
+       "key": "기준열",
+       "label": "关键列名",
+       "example": "品号"
+      },
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "删除个人信息",
+     "body": "在副本里删掉敏感列",
+     "check": "原件另外保存"
+    },
+    {
+     "title": "检查关键列",
+     "body": "两个文件的格式统一",
+     "check": "注意开头的 0 和空格"
+    },
+    {
+     "title": "附上文件",
+     "body": "按旧 → 新的顺序附上",
+     "check": "保持文件创建打开"
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "查看结果",
+     "body": "先看摘要的件数",
+     "check": "太多就怀疑关键列"
+    },
+    {
+     "title": "复核",
+     "body": "拿 3～4 条变更和原文件对照",
+     "check": "也一起发复核提示词"
+    }
+   ],
+   "result": {
+    "summary": "5 个工作表的比较结果 Excel\n摘要 · 新增 · 删除 · 变更 · 待确认",
+    "example": "示例：价目表 1,240 行\n变更 37 条 · 新增 5 条 · 删除 2 条"
+   },
+   "cautions": [
+    "关键列格式不同会全部被当成变更",
+    "挑几条变更和原文件对照",
+    "上传前删除个人信息列",
+    "超过 20 列就只指定要比的列"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "XLOOKUP 函数",
+     "publisher": "Microsoft 支持",
+     "url": "https://support.microsoft.com/office/b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "向 Claude 上传文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-formula",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 30,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "写 Excel 函数、解决报错",
+   "subtitle": "用文字写出想算什么\n就能拿到公式和通俗说明",
+   "tags": [
+    "函数",
+    "公式",
+    "报错",
+    "excel",
+    "vlookup",
+    "sumifs"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "知道怎么算，就是想不起函数",
+   "before": "搜一搜再一个个试",
+   "after": "说清情况，公式马上出来",
+   "prepare": [
+    "表格的列名和位置（A 列、B 列…）",
+    "2～3 行示例数据",
+    "一句话写出想要的结果",
+    "Excel 版本（文件 > 账户）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：写公式",
+     "howTo": "不需要文件，直接用",
+     "body": "请帮我写一个 Excel 公式。\n- 表格结构：{{표구조}}\n- 想要的结果：{{원하는결과}}\n- 结果放在：{{결과칸}}\n- Excel 版本：{{엑셀버전}}\n\n1. 可以直接粘贴的公式\n2. 用通俗的话逐行解释公式在做什么\n3. 往下复制时需要锁定（$）的部分\n4. 结果容易出错的情况和检查方法\n5. 如果我的版本不支持某个函数，给出替代公式",
+     "variables": [
+      {
+       "key": "표구조",
+       "label": "列名和位置",
+       "example": "A 列日期、B 列分店、C 列品项、D 列销售额"
+      },
+      {
+       "key": "원하는결과",
+       "label": "想要的结果",
+       "example": "10 月东区分店的销售额合计"
+      },
+      {
+       "key": "결과칸",
+       "label": "结果单元格",
+       "example": "G2"
+      },
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      }
+     ]
+    },
+    {
+     "id": "error",
+     "title": "解决报错",
+     "howTo": "出现 #N/A、#VALUE! 等时",
+     "body": "下面的公式出现 {{오류}} 错误。请按可能性从高到低告诉我原因，并给出改好的公式。\n公式：{{수식}}\n情况：{{상황}}",
+     "variables": [
+      {
+       "key": "오류",
+       "label": "错误显示",
+       "example": "#N/A"
+      },
+      {
+       "key": "수식",
+       "label": "出问题的公式",
+       "example": "=VLOOKUP(A2,Sheet2!A:C,3,0)"
+      },
+      {
+       "key": "상황",
+       "label": "情况说明",
+       "example": "员工编号明明存在却找不到"
+      }
+     ]
+    },
+    {
+     "id": "explain",
+     "title": "看懂别人写的公式",
+     "howTo": "接手别人的文件时",
+     "body": "请用通俗的话一步步解释下面这个公式在算什么。如果能写得更简单，也一起告诉我。\n{{수식}}",
+     "variables": [
+      {
+       "key": "수식",
+       "label": "要解释的公式",
+       "example": "=IFERROR(INDEX(C:C,MATCH(1,(A:A=F2)*(B:B=G2),0)),\"\")"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "写下表格结构",
+     "body": "记下列名和位置",
+     "check": "用示例代替真实数据"
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "粘贴公式",
+     "body": "贴到结果单元格后回车",
+     "check": ""
+    },
+    {
+     "title": "手算核对",
+     "body": "亲手算 3～4 个结果",
+     "check": "这一步一定要做"
+    },
+    {
+     "title": "往下复制",
+     "body": "确认锁定（$）位置后复制",
+     "check": ""
+    },
+    {
+     "title": "报错时",
+     "body": "用解决报错提示词",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "可以直接粘贴的公式 + 通俗说明\n连容易出错的情况也写上",
+    "example": "例：=SUMIFS(D:D,B:B,\"东区分店\",\nA:A,\">=\"&DATE(2026,10,1))"
+   },
+   "cautions": [
+    "几个结果一定要亲手核对",
+    "XLOOKUP 只在 2021、365 以上可用",
+    "用示例说明，不要贴真实数据",
+    "日期存成文字就会报错"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "XLOOKUP 函数",
+     "publisher": "Microsoft 支持",
+     "url": "https://support.microsoft.com/office/b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-clean-data",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "整理杂乱数据",
+   "subtitle": "上传杂乱的文件\n就能拿到整理版和修改记录",
+   "tags": [
+    "整理",
+    "清洗",
+    "格式",
+    "重复",
+    "excel",
+    "数据"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "日期、电话格式五花八门",
+   "before": "查找替换做几十遍",
+   "after": "定好规则一次整理完",
+   "prepare": [
+    "要整理的 Excel 文件",
+    "整理规则备注（日期格式等）",
+    "删除身份证号、账号等",
+    "原件另外保存"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：整理数据",
+     "howTo": "粘贴到已附上文件的对话里",
+     "body": "附上的文件是{{자료명}}。请按下面的规则做一个整理好的 Excel 文件。\n{{정리규칙}}\n\n1.「整理版」表：应用规则后的数据\n2.「修改记录」表：行号 / 列 / 原值 / 新值\n3.「重复」表：按{{중복기준}}判断重复的行（不要删除，只标出）\n4.「待确认」表：规则判断不了的值\n原文件里没有的值不要编。\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "자료명",
+       "label": "是什么资料",
+       "example": "供应商名单"
+      },
+      {
+       "key": "정리규칙",
+       "label": "整理规则",
+       "example": "日期统一为 2026-10-01 格式，电话统一为 8123 4567，删除前后空格，公司名里的 Pte. Ltd. 写法统一"
+      },
+      {
+       "key": "중복기준",
+       "label": "判断重复的列",
+       "example": "公司注册号"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "repeat",
+     "title": "每月都做：Power Query",
+     "howTo": "每月做同样的整理时",
+     "body": "每月收到的{{자료명}}文件我想按同样的规则整理。请按菜单点击顺序告诉我用 Excel Power Query 套用下面规则的方法，让下个月只要换文件、点刷新就行。\n{{정리규칙}}",
+     "variables": [
+      {
+       "key": "자료명",
+       "label": "是什么资料",
+       "example": "供应商名单"
+      },
+      {
+       "key": "정리규칙",
+       "label": "整理规则",
+       "example": "日期统一为 2026-10-01 格式，删除前后空格"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "保存原件",
+     "body": "在副本上操作",
+     "check": "文件名加 _原件"
+    },
+    {
+     "title": "定规则",
+     "body": "每条要改的格式写一行",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "打开文件创建后附上",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "浏览修改记录",
+     "body": "找出改得奇怪的值",
+     "check": "注意数字被变成日期"
+    },
+    {
+     "title": "复核",
+     "body": "行数是否和原件一样",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "整理版 · 修改记录 · 重复 · 待确认\n4 个工作表的 Excel",
+    "example": "示例：供应商 820 行\n修改 312 格 · 标出重复 9 条"
+   },
+   "cautions": [
+    "重复只标出，不要删",
+    "看修改记录里有没有怪的转换",
+    "确认行数和原件一致",
+    "上传前删除个人信息列"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "从文件夹导入数据（Power Query）",
+     "publisher": "Microsoft 支持",
+     "url": "https://support.microsoft.com/en-us/Excel/import-data-from-a-folder-with-multiple-files-power-query",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-pivot-chart",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "做汇总表（透视表）和图表",
+   "subtitle": "写出想看什么\n汇总表和图表一次做好",
+   "tags": [
+    "透视表",
+    "数据透视表",
+    "图表",
+    "汇总表",
+    "excel"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "每次做透视表都不知道点哪里",
+   "before": "找菜单、拖字段、调格式",
+   "after": "说出想看的维度就完成",
+   "prepare": [
+    "要汇总的 Excel 文件",
+    "一行标题，去掉空行",
+    "想看的维度（按分店、按月）",
+    "删除个人信息列"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：汇总表与图表",
+     "howTo": "粘贴到已附上文件的对话里",
+     "body": "请用附上的{{자료명}}做汇总表和图表，给我 Excel 文件。\n- 行：{{행기준}}\n- 列：{{열기준}}\n- 值：{{값}}（合计）\n- 图表：{{차트}}\n\n1.「汇总」表：汇总表（含行列合计，千位分隔符）\n2.「图表」表：用上面汇总表做的图表，标出标题和单位\n3.「说明」表：3 行值得注意的点（附数字依据）\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "자료명",
+       "label": "是什么资料",
+       "example": "2026 年各分店月度销售"
+      },
+      {
+       "key": "행기준",
+       "label": "行",
+       "example": "分店"
+      },
+      {
+       "key": "열기준",
+       "label": "列",
+       "example": "月份"
+      },
+      {
+       "key": "값",
+       "label": "要合计的值",
+       "example": "销售额"
+      },
+      {
+       "key": "차트",
+       "label": "图表类型",
+       "example": "月度趋势折线 + 分店柱状"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "howto",
+     "title": "自己做：透视表点击顺序",
+     "howTo": "在自己的 Excel 里做时",
+     "body": "请按菜单点击顺序告诉我，在 Excel {{엑셀버전}} 里用数据透视表做按{{행기준}}、按{{열기준}}的{{값}}合计。也请告诉我原始数据增加后，怎样点刷新就能反映。",
+     "variables": [
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      },
+      {
+       "key": "행기준",
+       "label": "行",
+       "example": "分店"
+      },
+      {
+       "key": "열기준",
+       "label": "列",
+       "example": "月份"
+      },
+      {
+       "key": "값",
+       "label": "要合计的值",
+       "example": "销售额"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "整理数据",
+     "body": "一行标题，删除空行",
+     "check": "取消合并单元格"
+    },
+    {
+     "title": "定维度",
+     "body": "先记下行、列、值",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "打开文件创建后附上",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "对照合计",
+     "body": "总计是否等于原始合计",
+     "check": "用复核提示词"
+    },
+    {
+     "title": "打印",
+     "body": "确认 A4 横向一页",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "汇总 · 图表 · 说明 3 个工作表\n附 3 行值得注意的点",
+    "example": "示例：8 家分店 × 12 个月\n2 张图表 · 3 行说明"
+   },
+   "cautions": [
+    "总计要和原始合计对照",
+    "说明里的数字也要核对",
+    "空行和合并单元格先整理",
+    "确认图表单位（新元、千新元）"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "创建数据透视表",
+     "publisher": "Microsoft 支持",
+     "url": "https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-monthly-analysis",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "月度业绩增减分析",
+   "subtitle": "上传两个期间的业绩\n连增减表和原因说明都有",
+   "tags": [
+    "增减",
+    "环比",
+    "分析",
+    "销售",
+    "业绩",
+    "excel"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "数字有了，还得写清楚为什么变",
+   "before": "算增减、找原因就是一整天",
+   "after": "增减表、主要变动、说明一次搞定",
+   "prepare": [
+    "两个期间的业绩文件",
+    "关键列（分店、品项、客户）",
+    "已知变动原因的备注",
+    "删除个人信息列"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：增减分析",
+     "howTo": "粘贴到已附上两个文件的对话里",
+     "body": "附件 1 是{{이전기간}}，附件 2 是{{비교기간}}的{{자료명}}。请按「{{기준열}}」分析并做成 Excel 文件。\n1.「增减表」表：每个关键项的上期、本期、增减额、增减率，加合计行\n2.「主要变动」表：增减额 {{기준금액}} 新元以上或增减率 {{기준비율}}% 以上\n3.「说明」表：用 3～5 行写整体增减和主要原因，把下面备注能解释和不能解释的分开。\n备注：{{변동메모}}\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "이전기간",
+       "label": "上一期间",
+       "example": "2026 年 9 月"
+      },
+      {
+       "key": "비교기간",
+       "label": "比较期间",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "자료명",
+       "label": "是什么资料",
+       "example": "各分店销售业绩"
+      },
+      {
+       "key": "기준열",
+       "label": "关键列",
+       "example": "分店"
+      },
+      {
+       "key": "기준금액",
+       "label": "主要变动门槛（新元）",
+       "example": "5000"
+      },
+      {
+       "key": "기준비율",
+       "label": "主要变动门槛（%）",
+       "example": "10"
+      },
+      {
+       "key": "변동메모",
+       "label": "已知变动原因",
+       "example": "北区分店新增大客户，西区分店装修停业 10 天"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "comment",
+     "title": "报告用 3 行说明",
+     "howTo": "分析后放进报告时",
+     "body": "把「说明」表的内容改写成向{{보고대상}}汇报用的 3 条要点。数字照表里的值，推测要标「估计」。",
+     "variables": [
+      {
+       "key": "보고대상",
+       "label": "汇报对象",
+       "example": "总经理"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "准备文件",
+     "body": "两个期间格式统一",
+     "check": "关键列名称相同"
+    },
+    {
+     "title": "变动备注",
+     "body": "把已知原因写下来",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "按上期 → 本期顺序附上",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "对照总计",
+     "body": "合计是否和原文件一样",
+     "check": "用复核提示词"
+    },
+    {
+     "title": "检查说明",
+     "body": "先看解释不了的变动",
+     "check": ""
+    },
+    {
+     "title": "汇报",
+     "body": "把 3 行说明放进报告",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "增减表 · 主要变动 · 说明的 Excel\n报告用 3 行摘要",
+    "example": "示例：8 家分店 9 月→10 月\n+4.2% · 主要变动 3 家 · 未解释 1 家"
+   },
+   "cautions": [
+    "原因只信有数据依据的",
+    "标「估计」的句子核实后再用",
+    "总计要和原文件对照",
+    "格式不同先统一"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月度业绩分析",
+    "instructions": "你是月度业绩分析助手。结果做成 Excel（.xlsx）。计算单元格用 Excel 公式填入，并在批注里写明算法。原因说明只写有数据和我的备注依据的内容，推测要标「估计」。在「复核」表放总计复核。",
+    "knowledge": [
+     "上个月的分析结果 1 份",
+     "分店/品项代码表"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "excel-vba",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "hard",
+   "frequency": "월",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "为重复操作做宏",
+   "subtitle": "按顺序写下重复的点击\n就能拿到一键完成的宏",
+   "tags": [
+    "宏",
+    "宏命令",
+    "vba",
+    "自动化",
+    "重复操作",
+    "excel",
+    "按钮"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    },
+    {
+     "name": "Excel",
+     "free": false,
+     "note": "需要桌面版"
+    }
+   ],
+   "problem": "每个月同样的点击几十次",
+   "before": "手动复制工作表、排序、调格式",
+   "after": "按一下宏按钮就完成",
+   "prepare": [
+    "按顺序写下重复操作",
+    "确认工作表名、列位置",
+    "一定要准备副本文件",
+    "确认公司是否禁用宏"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：做一个宏",
+     "howTo": "不需要文件，直接用",
+     "body": "请帮我写一个 Excel VBA 宏。\n- 要做的事（按顺序）：{{작업순서}}\n- 工作表名：{{시트이름}}\n- Excel 版本：{{엑셀버전}}\n\n1. 可以粘贴的 VBA 代码（每一行都加中文注释）\n2. 放入并运行代码的点击顺序（从打开「开发工具」选项卡开始）\n3. 运行前自动建立备份工作表\n4. 没有数据或工作表时停止并提示\n5. 说明保存格式（.xlsm）",
+     "variables": [
+      {
+       "key": "작업순서",
+       "label": "重复操作的顺序",
+       "example": "1) 复制「原始」工作表 2) 按 C 列降序排序 3) 金额列加千位分隔符 4) 加合计行 5) 另存为 PDF"
+      },
+      {
+       "key": "시트이름",
+       "label": "工作表名",
+       "example": "原始"
+      },
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      }
+     ]
+    },
+    {
+     "id": "error",
+     "title": "解决报错",
+     "howTo": "运行中停下来时",
+     "body": "运行下面的宏时，在 {{오류줄}} 出现「{{오류메시지}}」错误。请告诉我原因，并给出改好的完整代码。\n{{코드}}",
+     "variables": [
+      {
+       "key": "오류메시지",
+       "label": "错误信息",
+       "example": "运行时错误 9：下标越界"
+      },
+      {
+       "key": "오류줄",
+       "label": "标黄的那行",
+       "example": "Sheets(\"原始\").Copy"
+      },
+      {
+       "key": "코드",
+       "label": "完整代码",
+       "example": "（粘贴代码）"
+      }
+     ]
+    },
+    {
+     "id": "explain",
+     "title": "检查收到的宏",
+     "howTo": "要用别人做的宏时",
+     "body": "请用通俗的话说明下面这段 VBA 代码做了什么，并检查有没有删除文件、向外发送数据等危险操作。\n{{코드}}",
+     "variables": [
+      {
+       "key": "코드",
+       "label": "要检查的代码",
+       "example": "（粘贴代码）"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "写下操作",
+     "body": "给每次点击编号",
+     "check": ""
+    },
+    {
+     "title": "准备副本",
+     "body": "一定用副本文件",
+     "check": "宏的结果无法撤销"
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "放入代码",
+     "body": "按说明的点击顺序",
+     "check": ""
+    },
+    {
+     "title": "试运行",
+     "body": "先在副本上运行",
+     "check": "和手动结果对比"
+    },
+    {
+     "title": "存成 .xlsm",
+     "body": "用启用宏的格式保存",
+     "check": ""
+    },
+    {
+     "title": "报错时",
+     "body": "用解决报错提示词",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "带中文注释的 VBA 代码\n连放入、运行、备份方法都有",
+    "example": "示例：复制、排序、格式、合计\n5 步操作一键完成"
+   },
+   "cautions": [
+    "一定先在副本上运行",
+    "宏的结果无法撤销",
+    "来路不明的宏不要运行",
+    "网页版 Excel 和手机上不能运行"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "快速入门：创建宏",
+     "publisher": "Microsoft 支持",
+     "url": "https://support.microsoft.com/en-us/office/quick-start-create-a-macro-741130ca-080d-49f5-9471-1e5fb3d581a8",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "hr-attendance-overtime",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 240,
+   "timeAfterMin": 40,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "考勤统计与加班计算",
+   "subtitle": "上传打卡记录\n加班时数和上限检查自动统计",
+   "tags": [
+    "考勤",
+    "加班",
+    "工时",
+    "打卡",
+    "休息日",
+    "公共假期"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "用打卡记录算加班时数很容易乱",
+   "before": "一个个人加加减减",
+   "after": "每日、每月工时和上限检查都有",
+   "prepare": [
+    "打卡记录（员工编号、日期、上班、下班）",
+    "休息时间标准",
+    "本月休息日和公共假期",
+    "删除姓名、联系方式（只留编号）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：统计工时",
+     "howTo": "粘贴到已附上文件的对话里",
+     "body": "附上的文件是 {{기간}} 的打卡记录。上班在「{{출근열}}」列，下班在「{{퇴근열}}」列。\n- 合同正常工时：每天 {{소정근로}} 小时，休息 {{휴게시간}}\n- 休息日与公共假期：{{휴일목록}}\n\n1.「每日」表：每个员工编号每天的总工时、正常工时、加班工时，休息日或公共假期工作单独标出\n2.「每月合计」表：每个员工编号的合计\n3.「上限检查」表：月加班超过 72 小时的人，以及含加班单日超过 12 小时的日期\n4.「待确认」表：漏打下班卡、超过 24 小时的班次、休息时间难以判断的日子、休息日和公共假期工作\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期间",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "출근열",
+       "label": "上班时间列",
+       "example": "上班"
+      },
+      {
+       "key": "퇴근열",
+       "label": "下班时间列",
+       "example": "下班"
+      },
+      {
+       "key": "소정근로",
+       "label": "每天合同工时",
+       "example": "8"
+      },
+      {
+       "key": "휴게시간",
+       "label": "休息时间标准",
+       "example": "12:00～13:00（1 小时）"
+      },
+      {
+       "key": "휴일목록",
+       "label": "休息日与公共假期",
+       "example": "每周日为休息日，10/20 屠妖节"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "pay",
+     "title": "计算加班费",
+     "howTo": "确认工时统计后",
+     "body": "在「每月合计」表里加上每个员工编号的月基本工资（附件或「{{시급열}}」列），计算加班费。\n基本时薪 = 12 × 月基本工资 ÷（52 × 44），加班费 = 加班时数 × 基本时薪 × 1.5，请把算法写在表里。只计算这些人：{{인원}}，其他人标「待确认」。",
+     "variables": [
+      {
+       "key": "시급열",
+       "label": "月基本工资列名",
+       "example": "月基本工资"
+      },
+      {
+       "key": "인원",
+       "label": "适用第四部分的人（编号或「全部」）",
+       "example": "全部"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "删除个人信息",
+     "body": "删掉姓名、联系方式，只留编号",
+     "check": ""
+    },
+    {
+     "title": "整理假日",
+     "body": "记下本月休息日和公共假期",
+     "check": "公共假期要另外处理"
+    },
+    {
+     "title": "附上文件",
+     "body": "打开文件创建后附上",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "处理待确认",
+     "body": "先补漏打卡",
+     "check": ""
+    },
+    {
+     "title": "抽样核对",
+     "body": "2～3 人亲手计算",
+     "check": "也一起发复核提示词"
+    },
+    {
+     "title": "计算加班费",
+     "body": "工时确定后再发加班费提示词",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "每日 · 每月合计 · 上限检查的 Excel\n还可以算加班费",
+    "example": "示例：48 人 · 10 月\n加班 612 小时 · 超过 72 小时 2 人"
+   },
+   "cautions": [
+    "经理和执行人员不适用第四部分",
+    "休息日、公共假期报酬另行判断",
+    "2～3 人一定要亲手核对",
+    "考勤属于敏感信息，只用编号"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "WorkRight 雇佣法指南（英文）",
+     "publisher": "新加坡人力部 MOM",
+     "url": "https://www.MOM.gov.sg/-/media/mom/documents/employment-practices/workright/workright-guide-employment-laws.pdf",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月度考勤统计",
+    "instructions": "你是考勤统计助手。依据新加坡《雇佣法》第四部分：正常工时每天不超过 8 小时、每周不超过 44 小时，超过合同正常工时的为加班；每月加班不超过 72 小时，含加班每天不超过 12 小时。计算单元格用 Excel 公式和批注写入。是否适用第四部分、休息日和公共假期工作的报酬需要判断的，不计算，标「待确认」。",
+    "knowledge": [
+     "公司工时与休息规定",
+     "适用第四部分的员工名单"
+    ]
+   },
+   "legal": {
+    "note": "《雇佣法》第四部分：合同工时每天不超过 8 小时、每周不超过 44 小时；加班费至少为基本时薪的 1.5 倍；含加班每天不超过 12 小时；每月加班不超过 72 小时。（人力部指南，2026 年 1 月版）",
+    "checkedAt": "2026-11-09",
+    "disclaimer": "休息日、公共假期工作的报酬与适用范围，请向人力部或专业人士确认。"
+   }
+  },
+  {
+   "id": "hr-annual-leave",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "年假发放、使用、剩余管理表",
+   "subtitle": "上传入职日期和请假记录\n发放、使用、剩余一页看清",
+   "tags": [
+    "年假",
+    "带薪年假",
+    "假期",
+    "剩余年假",
+    "休假"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "每个人入职日期不同，年假算起来很复杂",
+   "before": "每个人对着日历手算",
+   "after": "发放、剩余、提醒对象自动算好",
+   "prepare": [
+    "员工名单（编号、入职日期）",
+    "年假使用记录（编号、日期、天数）",
+    "公司年假制度（如比法定多）",
+    "用员工编号代替姓名"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：年假管理表",
+     "howTo": "粘贴到已附上两个文件的对话里",
+     "body": "附件 1 是员工名单（编号、入职日期），附件 2 是年假使用记录。请以 {{기준일}} 为基准，按「{{운영기준}}」做年假管理表 Excel。\n1.「发放」表：每个编号的服务年资、应得天数和计算依据（第 1 年 7 天，每年加 1 天，第 8 年起 14 天；不满一年按完整月数比例）\n2.「使用」表：每个编号已用天数（半天记 0.5）\n3.「剩余」表：应得 − 已用，剩余 {{촉진기준}} 天以上的人标出\n4.「待确认」表：服务未满 3 个月、缺入职日期、用得比应得多的人\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "기준일",
+       "label": "基准日",
+       "example": "2026-12-31"
+      },
+      {
+       "key": "운영기준",
+       "label": "年假制度",
+       "example": "按法定天数，最多结转 5 天"
+      },
+      {
+       "key": "촉진기준",
+       "label": "标出剩余天数（天）",
+       "example": "5"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "notice",
+     "title": "提醒休假的通知",
+     "howTo": "给剩余年假多的人",
+     "body": "给「剩余」表里标出的员工写一份年假使用提醒。写上剩余天数和使用期限（{{사용기한}}），礼貌地请他们在 {{제출기한}} 前提交休假计划。注明结转和折现规则由人事确认。",
+     "variables": [
+      {
+       "key": "사용기한",
+       "label": "使用期限",
+       "example": "2026-12-31"
+      },
+      {
+       "key": "제출기한",
+       "label": "计划提交期限",
+       "example": "2026-11-20"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "准备资料",
+     "body": "编号、入职日期、使用记录",
+     "check": ""
+    },
+    {
+     "title": "写下制度",
+     "body": "发放、结转规则",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "名单 → 使用记录的顺序",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "处理待确认",
+     "body": "未满 3 个月和缺资料的人",
+     "check": ""
+    },
+    {
+     "title": "抽样核对",
+     "body": "新员工和老员工各 1 人",
+     "check": "也一起发复核提示词"
+    },
+    {
+     "title": "提醒",
+     "body": "给剩余多的人发通知",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "发放 · 使用 · 剩余 · 待确认的 Excel\n连提醒通知草稿都有",
+    "example": "示例：48 人 · 基准日 12/31\n剩余 5 天以上 11 人"
+   },
+   "cautions": [
+    "服务满 3 个月才有年假",
+    "第 1 年按完整月数比例计算",
+    "公司制度比法定多就按公司",
+    "结转和折现由人事确认"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "WorkRight 雇佣法指南（英文）",
+     "publisher": "新加坡人力部 MOM",
+     "url": "https://www.MOM.gov.sg/-/media/mom/documents/employment-practices/workright/workright-guide-employment-laws.pdf",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "年假管理",
+    "instructions": "你是年假管理助手。依据新加坡《雇佣法》：服务满 3 个月可享年假；第 1 年 7 天，此后每年加 1 天，第 8 年起 14 天；不满一年按完整服务月数比例计算。公司制度比法定多时按公司制度。资料无法判断的标「待确认」。计算单元格用 Excel 公式和批注写入。",
+    "knowledge": [
+     "公司年假制度",
+     "员工名单"
+    ]
+   },
+   "legal": {
+    "note": "《雇佣法》：服务满 3 个月可享年假；服务第 1 年 7 天，第 2 年 8 天……第 8 年起每年 14 天；不满一年按完整服务月数比例计算（指南示例：6 个月 = 7 × 6/12 = 3.5，取 4 天）。（人力部指南，2026 年 1 月版）",
+    "checkedAt": "2026-11-09",
+    "disclaimer": "缺勤对年假的影响等细节，请向人力部或专业人士确认。"
+   }
+  },
+  {
+   "id": "hr-job-posting",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "按职位写招聘广告",
+   "subtitle": "写下职位和条件\n就能拿到广告正文和 3 个标题",
+   "tags": [
+    "招聘",
+    "职位",
+    "招人",
+    "招聘广告",
+    "面试"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    }
+   ],
+   "problem": "每次写招聘广告都从一片空白开始",
+   "before": "找出以前的广告来改",
+   "after": "填入条件就是一则完整广告",
+   "prepare": [
+    "职位名称、主要工作",
+    "任职要求、加分条件",
+    "工作地点、时间、薪资",
+    "2～3 行公司介绍"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：招聘广告草稿",
+     "howTo": "不需要文件，直接用",
+     "body": "请用下面的信息写一则要发在{{플랫폼}}上的招聘广告。\n- 公司：{{회사소개}}\n- 职位：{{직무}}\n- 主要工作：{{주요업무}}\n- 任职要求：{{자격요건}}\n- 工作条件：{{근무조건}}\n\n结构：3 个标题 / 一句话介绍 / 主要工作 / 任职要求与加分条件 / 工作条件 / 招聘流程\n工作条件只写我给的内容，没有的写 [待确认]。不要用限制性别、年龄、种族等与工作无关的字眼。",
+     "variables": [
+      {
+       "key": "플랫폼",
+       "label": "发布平台",
+       "example": "MyCareersFuture"
+      },
+      {
+       "key": "회사소개",
+       "label": "公司介绍",
+       "example": "一家有 120 名员工的物流公司，1998 年成立"
+      },
+      {
+       "key": "직무",
+       "label": "职位",
+       "example": "人事行政专员"
+      },
+      {
+       "key": "주요업무",
+       "label": "主要工作",
+       "example": "工资与公积金（CPF）手续、考勤管理、行政支援"
+      },
+      {
+       "key": "자격요건",
+       "label": "任职要求",
+       "example": "Excel 中级，有 1 年以上人事经验优先"
+      },
+      {
+       "key": "근무조건",
+       "label": "工作条件",
+       "example": "每周 5 天，9 点到 6 点，月薪 3,800 新元起（面议），全职"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：有没有编出来的内容",
+     "howTo": "拿到草稿后直接在同一对话里发",
+     "body": "请重新检查你刚写的内容。\n把我没提供却出现了的内容（数字、日期、承诺、公司政策）列成表，再给我删掉或改成 [待确认] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "check",
+     "title": "检查歧视用语",
+     "howTo": "发布前最后检查",
+     "body": "请检查下面的招聘广告有没有性别、年龄、种族、宗教、婚姻状况等与工作无关的歧视用语，或者让工作条件看起来与实际不符的写法，并给出改好的句子。\n{{공고}}",
+     "variables": [
+      {
+       "key": "공고",
+       "label": "要检查的广告",
+       "example": "（粘贴广告）"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "确定条件",
+     "body": "薪资、时间、地点",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "检查",
+     "body": "用检查提示词看有没有编的内容",
+     "check": ""
+    },
+    {
+     "title": "检查歧视用语",
+     "body": "用检查提示词",
+     "check": ""
+    },
+    {
+     "title": "发布",
+     "body": "粘贴到平台的表格里",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "可直接发布的招聘广告\n3 个标题 · 招聘流程",
+    "example": "示例：人事行政专员广告\n3 个标题 · 正文 1 页"
+   },
+   "cautions": [
+    "工作条件要和实际一致",
+    "遵守三方公平雇佣准则（TAFEP）",
+    "[待确认] 填好再发布",
+    "薪资再按公司标准确认"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "hr-interview",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "面试问题清单与评分表",
+   "subtitle": "写下职位和能力\n问题清单和评分表一次做好",
+   "tags": [
+    "面试",
+    "问题",
+    "评分表",
+    "招聘",
+    "评估"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Word 或 Google 文档",
+     "free": false,
+     "note": "最终排版、打印"
+    }
+   ],
+   "problem": "每个面试官问的不一样，没法比较",
+   "before": "想到什么问什么",
+   "after": "按能力统一问题和评分标准",
+   "prepare": [
+    "职位和主要工作",
+    "最想考察的 3～4 项能力",
+    "面试时长、面试官人数",
+    "招聘广告（有就附上）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：问题清单与评分表",
+     "howTo": "可以附上招聘广告",
+     "body": "请用 Word 文件做{{직무}}的面试问题清单和评分表。\n- 核心能力：{{역량}}\n- 面试时长：{{시간}} 分钟，面试官 {{면접관}} 人\n\n1. 问题清单：每项能力 2 个问题加追问，每题附「好回答的例子」\n2. 评分表：每项能力 1～5 分的标准（每个分数附行为示例），总分和评语栏\n3. 面试官注意事项 5 行\n与工作无关的问题（婚姻、家庭、籍贯、健康等）不要放进去。\n\n[输出规则]\n- Word（.docx），A4，常用商务字体\n- 我没给的信息（数字、日期、承诺）不要编，写成 [待确认]",
+     "variables": [
+      {
+       "key": "직무",
+       "label": "职位",
+       "example": "物流中心主管"
+      },
+      {
+       "key": "역량",
+       "label": "核心能力",
+       "example": "现场解决问题、带团队、安全意识、Excel 运用"
+      },
+      {
+       "key": "시간",
+       "label": "面试时长（分钟）",
+       "example": "40"
+      },
+      {
+       "key": "면접관",
+       "label": "面试官人数",
+       "example": "3"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：有没有编出来的内容",
+     "howTo": "拿到草稿后直接在同一对话里发",
+     "body": "请重新检查你刚写的内容。\n把我没提供却出现了的内容（数字、日期、承诺、公司政策）列成表，再给我删掉或改成 [待确认] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "check",
+     "title": "检查不该问的问题",
+     "howTo": "检查面试官拟的问题",
+     "body": "请找出下面面试问题里与工作无关或可能被视为歧视的问题，说明原因并给出替代问题。\n{{질문}}",
+     "variables": [
+      {
+       "key": "질문",
+       "label": "要检查的问题",
+       "example": "你结婚了吗？/ 能加班吗？/ 你是哪里人？"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "定能力",
+     "body": "必看的 3～4 项能力",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "附上广告后粘贴",
+     "check": ""
+    },
+    {
+     "title": "调整问题",
+     "body": "按公司情况修改",
+     "check": ""
+    },
+    {
+     "title": "与面试官共享",
+     "body": "面试前统一评分标准",
+     "check": "评分标准统一是关键"
+    },
+    {
+     "title": "面试后",
+     "body": "用评分表比较分数",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "按能力分的问题清单 + 1～5 分评分表\n附面试官注意事项",
+    "example": "示例：主管面试 40 分钟\n8 个问题 · 1 页评分表"
+   },
+   "cautions": [
+    "与工作无关的问题不要问",
+    "评分标准面试前统一",
+    "不要上传应聘者个人信息",
+    "最终由面试官判断"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "hr-notice",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 40,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "人事任命与内部通知",
+   "subtitle": "只写要点\n正式通知和聊天版两种都有",
+   "tags": [
+    "通知",
+    "公告",
+    "人事任命",
+    "调动",
+    "内部通知"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    }
+   ],
+   "problem": "写一则通知也要斟酌半天",
+   "before": "找出以前的通知来改",
+   "after": "正式版、简短版一次搞定",
+   "prepare": [
+    "通知类型（任命、制度、活动）",
+    "要点、生效日期",
+    "对象",
+    "咨询窗口"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：两种版本的通知",
+     "howTo": "不需要文件，直接用",
+     "body": "请写一则内部通知。\n- 类型：{{종류}}\n- 要点：{{내용}}\n- 对象：{{대상}}\n- 生效日期：{{시행일}}\n- 咨询：{{문의처}}\n\n1. 正式通知（标题、正文、附件说明）\n2. 聊天工具用的 5 行以内版本\n我没给的福利、条件不要写，需要的话标 [待确认]。",
+     "variables": [
+      {
+       "key": "종류",
+       "label": "通知类型",
+       "example": "人事任命"
+      },
+      {
+       "key": "내용",
+       "label": "要点",
+       "example": "11/16 起任命李志强为物流二组组长"
+      },
+      {
+       "key": "대상",
+       "label": "对象",
+       "example": "全体员工"
+      },
+      {
+       "key": "시행일",
+       "label": "生效日期",
+       "example": "2026-11-16"
+      },
+      {
+       "key": "문의처",
+       "label": "咨询窗口",
+       "example": "人事部 分机 1234"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：有没有编出来的内容",
+     "howTo": "拿到草稿后直接在同一对话里发",
+     "body": "请重新检查你刚写的内容。\n把我没提供却出现了的内容（数字、日期、承诺、公司政策）列成表，再给我删掉或改成 [待确认] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "table",
+     "title": "做人事任命表",
+     "howTo": "任命多人时",
+     "body": "请把下面的任命内容整理成通知用的表格（姓名、原部门、新部门、职务、生效日期），并写 2 行放在表格上方的文字。\n{{발령내용}}",
+     "variables": [
+      {
+       "key": "발령내용",
+       "label": "任命内容",
+       "example": "李志强 物流一组→物流二组 组长 11/16，王美玲 行政部 升任主任 11/16"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "确定内容",
+     "body": "确认生效日期和对象",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后复制 → 粘贴",
+     "check": ""
+    },
+    {
+     "title": "检查",
+     "body": "用检查提示词",
+     "check": ""
+    },
+    {
+     "title": "审批",
+     "body": "按公司流程审批",
+     "check": ""
+    },
+    {
+     "title": "发布",
+     "body": "正式版贴公告栏，简短版发群里",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "正式通知 + 聊天用 5 行\n也能整理任命表",
+    "example": "示例：人事任命通知\n正式版 1 则 · 聊天版 5 行"
+   },
+   "cautions": [
+    "任命和制度审批后再发布",
+    "再次核对姓名、部门有无错字",
+    "没有的福利不要写",
+    "个人情况不要写进通知"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "admin-minutes",
+   "status": "published",
+   "category": "admin",
+   "difficulty": "easy",
+   "frequency": "주",
+   "timeBeforeMin": 40,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "会议笔记 → 会议纪要",
+   "subtitle": "粘贴笔记\n决定事项和待办整理成表",
+   "tags": [
+    "会议纪要",
+    "会议",
+    "开会",
+    "会议记录",
+    "待办"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    }
+   ],
+   "problem": "开完会还得整理纪要",
+   "before": "对着笔记重新打字",
+   "after": "决定、待办、期限整理成表",
+   "prepare": [
+    "会议笔记（随手写的也行）",
+    "会议名称、时间、参会人",
+    "公司纪要模板（如有）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：整理会议纪要",
+     "howTo": "粘贴笔记后发送",
+     "body": "请用下面的笔记整理会议纪要。\n- 会议名称：{{회의명}}\n- 时间：{{일시}}\n- 参会人：{{참석자}}\n\n结构：概况 / 讨论内容（按议题）/ 决定事项 / 待办表（事项、负责人、期限）/ 暂缓事项\n笔记里没有的不要写，缺负责人或期限就标 [待确认]。\n\n笔记：\n{{메모}}",
+     "variables": [
+      {
+       "key": "회의명",
+       "label": "会议名称",
+       "example": "11 月周例会"
+      },
+      {
+       "key": "일시",
+       "label": "时间",
+       "example": "2026-11-09 10:00"
+      },
+      {
+       "key": "참석자",
+       "label": "参会人",
+       "example": "运营经理、物流一组和二组组长、人事经理"
+      },
+      {
+       "key": "메모",
+       "label": "会议笔记",
+       "example": "- 夜班缺 2 人 → 人事部本周发招聘\n- 年底货量预计增加 20%，考虑临时工\n- 11 月内做安全培训"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：有没有编出来的内容",
+     "howTo": "拿到草稿后直接在同一对话里发",
+     "body": "请重新检查你刚写的内容。\n把我没提供却出现了的内容（数字、日期、承诺、公司政策）列成表，再给我删掉或改成 [待确认] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "mail",
+     "title": "共享邮件正文",
+     "howTo": "整理好纪要后",
+     "body": "请写一封把纪要发给参会人的邮件正文。待办表原样放进去，并再次强调每位负责人的期限。收件人：{{수신}}",
+     "variables": [
+      {
+       "key": "수신",
+       "label": "收件人",
+       "example": "全体参会人"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "复制笔记",
+     "body": "会上的笔记原样复制",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "确认待办",
+     "body": "把 [待确认] 的负责人和期限补上",
+     "check": ""
+    },
+    {
+     "title": "检查",
+     "body": "用检查提示词看有没有编的内容",
+     "check": ""
+    },
+    {
+     "title": "共享",
+     "body": "用邮件提示词写发送文",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "带决定事项和待办表的会议纪要\n连共享邮件正文都有",
+    "example": "示例：周例会笔记 15 行\n决定 3 项 · 待办 5 项"
+   },
+   "cautions": [
+    "确认没混进笔记以外的内容",
+    "负责人和期限请参会人确认",
+    "录音转文字须先征得参会人同意",
+    "机密会议先看公司规定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "会议纪要",
+    "instructions": "你是会议纪要助手。只写笔记里有的内容，不要编。结构：会议概况 / 讨论内容 / 决定事项 / 待办表（负责人、期限）/ 暂缓事项。笔记里没有负责人或期限的写 [待确认]。",
+    "knowledge": [
+     "公司会议纪要模板"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "admin-policy-form",
+   "status": "published",
+   "category": "admin",
+   "difficulty": "normal",
+   "frequency": "수시",
+   "timeBeforeMin": 240,
+   "timeAfterMin": 40,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "公司制度与申请表草稿",
+   "subtitle": "写下目的和内容\n条文式制度和申请表格一次做好",
+   "tags": [
+    "制度",
+    "规章",
+    "申请表",
+    "员工手册",
+    "表格"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Word 或 Google 文档",
+     "free": false,
+     "note": "最终排版、打印"
+    }
+   ],
+   "problem": "写一项制度先得去找别家的范本",
+   "before": "拼凑网上的范例",
+   "after": "按自家标准一次出草稿",
+   "prepare": [
+    "制度名称、目的",
+    "适用对象",
+    "必须写进去的内容",
+    "相关现行制度（有就附上）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：制度与申请表草稿",
+     "howTo": "可以附上现行制度",
+     "body": "请用 Word 文件写一份{{규정명}}草稿。\n- 目的：{{목적}}\n- 适用对象：{{대상}}\n- 必须包含：{{주요내용}}\n\n1. 条文式制度（目的、定义、适用范围、程序、责任、附则）\n2. 配套的申请表（表格形式，带审批栏）\n3. 需要核对法规的条文标 [法规确认]\n\n[输出规则]\n- Word（.docx），A4，常用商务字体\n- 我没给的信息（数字、日期、承诺）不要编，写成 [待确认]",
+     "variables": [
+      {
+       "key": "규정명",
+       "label": "制度名称",
+       "example": "居家办公制度"
+      },
+      {
+       "key": "목적",
+       "label": "目的",
+       "example": "为有育儿或通勤困难的员工制定居家办公标准"
+      },
+      {
+       "key": "대상",
+       "label": "适用对象",
+       "example": "办公室全职员工"
+      },
+      {
+       "key": "주요내용",
+       "label": "必须包含",
+       "example": "每周不超过 2 天、主管批准、9 点到 6 点在线回复、信息安全承诺"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：有没有编出来的内容",
+     "howTo": "拿到草稿后直接在同一对话里发",
+     "body": "请重新检查你刚写的内容。\n把我没提供却出现了的内容（数字、日期、承诺、公司政策）列成表，再给我删掉或改成 [待确认] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "compare",
+     "title": "和现行制度对比",
+     "howTo": "修订时",
+     "body": "请对比附上的现行制度和新草稿，做一份新旧对照表（现行 / 修订案 / 修订理由）。对员工不利的条文请单独标出。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "写下内容",
+     "body": "整理必须包含的内容",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "附上现行制度后发送",
+     "check": ""
+    },
+    {
+     "title": "处理 [法规确认]",
+     "body": "核对标出的条文",
+     "check": "请人事或法务确认"
+    },
+    {
+     "title": "对照表",
+     "body": "修订就做新旧对照表",
+     "check": ""
+    },
+    {
+     "title": "收集意见",
+     "body": "听取相关部门意见",
+     "check": ""
+    },
+    {
+     "title": "审批与公告",
+     "body": "定稿后用通知手册",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "条文式制度 + 申请表格\n修订时附新旧对照表",
+    "example": "示例：居家办公制度\n9 条 · 1 页申请表"
+   },
+   "cautions": [
+    "雇佣法适用员工须获书面雇佣关键条款（KETs）",
+    "对员工不利的修改先沟通取得同意",
+    "[法规确认] 条文一定要核对",
+    "这是草稿，最终由人审核"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "WorkRight 雇佣法指南（英文）",
+     "publisher": "新加坡人力部 MOM",
+     "url": "https://www.MOM.gov.sg/-/media/mom/documents/employment-practices/workright/workright-guide-employment-laws.pdf",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "admin-quote-compare",
+   "status": "published",
+   "category": "admin",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "3 家供应商报价对比表",
+   "subtitle": "上传报价单\n就能拿到同一口径的对比表",
+   "tags": [
+    "报价",
+    "报价单",
+    "比价",
+    "采购",
+    "供应商",
+    "对比"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "每家报价格式都不一样，很难比",
+   "before": "三张摆一起手工做表",
+   "after": "税费、数量对齐的对比表和推荐方案",
+   "prepare": [
+    "供应商报价单（PDF、照片都行）",
+    "比较标准（价格、交期、售后）",
+    "需要的数量、规格",
+    "检查报价单上的个人信息"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：报价对比表",
+     "howTo": "粘贴到已附上报价单的对话里",
+     "body": "请把附上的 {{업체수}} 家报价做成对比 Excel。品项是{{품목}}，需要数量 {{수량}}。\n1.「对比表」表：每家的单价、数量、未税金额、消费税、合计（含税与未税口径统一），{{비교기준}}\n2.「原件核对」表：从报价单读出的数字和所在位置（照片里难读的数字要标出）\n3.「推荐」表：每个标准的第一名和综合推荐 1 家，理由 3 行\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "업체수",
+       "label": "供应商数量",
+       "example": "3"
+      },
+      {
+       "key": "품목",
+       "label": "品项",
+       "example": "办公复印机租赁"
+      },
+      {
+       "key": "수량",
+       "label": "需要数量",
+       "example": "4 台"
+      },
+      {
+       "key": "비교기준",
+       "label": "其他比较标准",
+       "example": "交期、免费保修期、付款条件"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "ask",
+     "title": "向供应商确认的问题",
+     "howTo": "报价有遗漏时",
+     "body": "从对比表里挑出每家漏写或含糊的项目（消费税、安装费、运费、售后等），给每家写一封简短的确认邮件。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "收集报价单",
+     "body": "PDF 或清晰照片",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "打开文件创建后附上",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "核对原件",
+     "body": "检查原件核对表的数字",
+     "check": "照片里的数字可能读错"
+    },
+    {
+     "title": "复核",
+     "body": "用复核提示词",
+     "check": ""
+    },
+    {
+     "title": "汇报",
+     "body": "用一页报告手册",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "税费统一的对比表 · 原件核对 · 推荐\n3 个工作表的 Excel",
+    "example": "示例：3 家复印机报价\n每年最多相差 2,160 新元"
+   },
+   "cautions": [
+    "含税、未税一定要统一",
+    "照片报价的数字要和原件核对",
+    "确认单位（个、箱、月）",
+    "最终选择由经办人决定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上传文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "account-settlement",
+   "status": "published",
+   "category": "account",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "客户账单与收款对账",
+   "subtitle": "上传账单和收款记录\n自动分出一致、差额和未收款",
+   "tags": [
+    "对账",
+    "核对",
+    "收款",
+    "账单",
+    "月底",
+    "结算"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "按客户核对收款，月底总是拖很久",
+   "before": "对着银行流水一行行核对",
+   "after": "一致、差额、未收款马上列成表",
+   "prepare": [
+    "客户账单（应收明细）",
+    "银行收款记录",
+    "删除银行账号等",
+    "统一客户名称写法"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：对账",
+     "howTo": "粘贴到已附上两个文件的对话里",
+     "body": "附件 1 是 {{기간}} 的客户账单，附件 2 是同期的收款记录。客户在「{{거래처열}}」列，金额在「{{금액열}}」列。\n1.「一致」表：客户和金额都对上的\n2.「差额」表：有收款但金额不同的（差额 {{허용오차}} 新元以内的另外标为疑似手续费）\n3.「未收款」表：只在账单里的\n4.「待确认」表：不知道谁付的款、疑似合并付款的\n5.「摘要」表：每个客户的账单、收款、差额合计\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期间",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "거래처열",
+       "label": "客户列名",
+       "example": "客户名称"
+      },
+      {
+       "key": "금액열",
+       "label": "金额列名",
+       "example": "账单金额"
+      },
+      {
+       "key": "허용오차",
+       "label": "手续费容差（新元）",
+       "example": "30"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "mail",
+     "title": "差额确认邮件",
+     "howTo": "发给有差额或未付款的客户",
+     "body": "请给「差额」和「未收款」表里的每个客户写一封礼貌的确认邮件。用表格列出账单金额、收款金额和差额，回复期限是 {{회신기한}}。",
+     "variables": [
+      {
+       "key": "회신기한",
+       "label": "回复期限",
+       "example": "2026-11-14"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "删除个人信息",
+     "body": "删掉银行账号等",
+     "check": ""
+    },
+    {
+     "title": "统一名称",
+     "body": "准备客户名称对照表",
+     "check": "付款人名称常常不一样"
+    },
+    {
+     "title": "附上文件",
+     "body": "账单 → 收款记录的顺序",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "处理待确认",
+     "body": "确认合并付款和不明收款",
+     "check": ""
+    },
+    {
+     "title": "复核",
+     "body": "核对账单总额和收款总额",
+     "check": ""
+    },
+    {
+     "title": "发确认邮件",
+     "body": "发给有差额的客户",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "一致 · 差额 · 未收款 · 待确认 · 摘要\n5 个工作表的 Excel",
+    "example": "示例：客户 64 家 · 10 月\n一致 58 · 差额 3 · 未收款 3"
+   },
+   "cautions": [
+    "上传前删除银行账号",
+    "合并付款由人来判断",
+    "合计要和银行余额对照",
+    "邮件发出前再核对金额"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上传文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月底对账",
+    "instructions": "你是月底对账助手。按客户和金额匹配账单与收款。扣了手续费的收款、多笔合并收款、客户名称写法不同的，分到「待确认」。计算单元格用 Excel 公式和批注写入。",
+    "knowledge": [
+     "客户名称对照表（账单名称 ↔ 付款人名称）"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "account-card-classify",
+   "status": "published",
+   "category": "account",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 150,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "公司卡消费的会计科目分类",
+   "subtitle": "上传刷卡明细\n连会计科目分类和依据都有",
+   "tags": [
+    "公司卡",
+    "信用卡",
+    "费用",
+    "会计科目",
+    "记账"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "几百笔公司卡要分科目，累坏了",
+   "before": "看商户名一行行输入",
+   "after": "按公司标准分类，只查有疑问的",
+   "prepare": [
+    "刷卡明细（下载成 Excel）",
+    "公司会计科目表",
+    "卡号只留后 4 位",
+    "上个月的分类结果（如有）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：会计科目分类",
+     "howTo": "粘贴到已附上文件的对话里",
+     "body": "附上的文件是 {{기간}} 的公司卡消费明细。请只在下面的公司会计科目里分类，做成 Excel 文件。\n会计科目：{{계정목록}}\n\n1.「分类」表：原始明细 + 会计科目 + 依据 + 把握度（高/中/低）\n2.「摘要」表：每个科目的笔数和金额合计\n3.「待确认」表：把握度低、疑似私人消费、需要核对凭证的\n分不了的不要硬分，放进「待确认」。\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期间",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "계정목록",
+       "label": "公司会计科目",
+       "example": "员工福利, 差旅交通, 招待费, 办公用品, 车辆费用, 通讯费, 银行手续费, 书籍培训"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "rules",
+     "title": "下个月用的分类规则表",
+     "howTo": "分类定稿后",
+     "body": "请用定稿的分类结果做一张「商户关键词 → 会计科目」规则表。下个月我会把这张表放进项目里先套用。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "下载明细",
+     "body": "从发卡银行下载 Excel",
+     "check": "卡号只留后 4 位"
+    },
+    {
+     "title": "准备科目表",
+     "body": "复制公司会计科目",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "打开文件创建后附上",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "处理待确认",
+     "body": "核对凭证和使用人",
+     "check": ""
+    },
+    {
+     "title": "复核",
+     "body": "摘要合计 = 账单金额",
+     "check": ""
+    },
+    {
+     "title": "保存规则表",
+     "body": "放进下个月的项目",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "分类 · 摘要 · 待确认的 Excel\n连下个月用的规则表都有",
+    "example": "示例：412 笔 · 10 月\n自动分类 371 笔 · 待确认 41 笔"
+   },
+   "cautions": [
+    "最终分类由财务确认",
+    "税务处理请会计师确认",
+    "不要上传完整卡号",
+    "合计要和信用卡账单对照"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上传文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "公司卡分类",
+    "instructions": "你是公司卡会计科目分类助手。只在公司会计科目表里分类。每笔写上依据（商户、行业），把握低的放进「待确认」。不做税务上能否扣除的判断。",
+    "knowledge": [
+     "公司会计科目表",
+     "上个月的分类结果"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "account-receivable",
+   "status": "published",
+   "category": "account",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "应收账款现况与催款邮件",
+   "subtitle": "上传账单和收款明细\n拿到应收现况和催款邮件",
+   "tags": [
+    "应收账款",
+    "应收",
+    "催款",
+    "欠款",
+    "回款",
+    "账龄"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "谁欠了多少一眼看不出来",
+   "before": "按客户手算账单和收款",
+   "after": "按账龄分的应收和催款邮件都有",
+   "prepare": [
+    "账单（销售）明细",
+    "收款明细",
+    "基准日",
+    "删除银行账号等"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：应收现况",
+     "howTo": "粘贴到已附上两个文件的对话里",
+     "body": "附件 1 是账单明细，附件 2 是收款明细。请以 {{기준일}} 为基准做应收账款现况 Excel。\n1.「应收」表：每个客户的账单、收款、应收余额，最早的未收账单日期和已过天数\n2.「账龄」表：30 天以内 / 31～60 天 / 61～90 天 / 超过 90 天的金额\n3.「待确认」表：分不清是付哪张账单的收款\n收款请从最早的账单开始冲销。\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "기준일",
+       "label": "基准日",
+       "example": "2026-10-31"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "mail",
+     "title": "催款邮件",
+     "howTo": "按未付款客户逐个写",
+     "body": "请以「{{단계}}」的口吻给{{거래처}}写一封付款提醒邮件。未付金额 {{금액}} 新元，账单日期 {{청구일}}，请在 {{기한}} 前付款。语气礼貌，但日期和金额要写清楚，并加一句「如已付款请告知」。",
+     "variables": [
+      {
+       "key": "거래처",
+       "label": "客户",
+       "example": "光华贸易有限公司"
+      },
+      {
+       "key": "단계",
+       "label": "提醒阶段",
+       "example": "第一次友好提醒"
+      },
+      {
+       "key": "금액",
+       "label": "未付金额（新元）",
+       "example": "3,850"
+      },
+      {
+       "key": "청구일",
+       "label": "账单日期",
+       "example": "2026-08-31"
+      },
+      {
+       "key": "기한",
+       "label": "付款期限",
+       "example": "2026-11-20"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "准备资料",
+     "body": "下载账单和收款明细",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "账单 → 收款的顺序",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "处理待确认",
+     "body": "核对不明收款",
+     "check": ""
+    },
+    {
+     "title": "复核",
+     "body": "应收总额 = 账单总额 − 收款总额",
+     "check": ""
+    },
+    {
+     "title": "发邮件",
+     "body": "按客户用催款提示词",
+     "check": "发之前再核对金额"
+    }
+   ],
+   "result": {
+    "summary": "应收 · 账龄 · 待确认的 Excel\n每个客户一封催款邮件",
+    "example": "示例：客户 40 家\n超过 90 天 2 家 · 12,400 新元"
+   },
+   "cautions": [
+    "应收总额要和账本对照",
+    "邮件金额发出前再核对",
+    "默认从最早的账单冲销",
+    "走法律途径前先咨询专业人士"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上传文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "account-receipt",
+   "status": "published",
+   "category": "account",
+   "difficulty": "easy",
+   "frequency": "월",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "收据照片 → 费用报销表",
+   "subtitle": "上传收据照片\n马上拿到费用报销表",
+   "tags": [
+    "收据",
+    "发票",
+    "报销",
+    "费用报销",
+    "小票"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "纸质收据录入其实很花时间",
+   "before": "对着收据一张张打字",
+   "after": "上传照片就整理成表",
+   "prepare": [
+    "收据照片（每次 20 张以内）",
+    "在明亮处拍，字要清楚",
+    "公司费用项目清单",
+    "原始收据要保存"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：费用报销表",
+     "howTo": "粘贴到已附上照片的对话里",
+     "body": "请用附上的收据照片做 {{기간}} {{사용자}} 的费用报销表 Excel。费用项目从 {{항목}} 里选。\n1.「费用」表：照片编号、日期、商户、税号（如有）、未税金额、消费税、合计、费用项目\n2.「摘要」表：各项目合计\n3.「待确认」表：模糊或被截断难以辨认的数字、难以判断项目的\n认不出的数字不要猜，留空。\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期间",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "사용자",
+       "label": "使用人",
+       "example": "销售一组"
+      },
+      {
+       "key": "항목",
+       "label": "费用项目",
+       "example": "餐费, 交通费, 停车费, 消耗品, 其他"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "拍照",
+     "body": "一张一张拍，明亮、字大",
+     "check": "皱的先抚平"
+    },
+    {
+     "title": "附上文件",
+     "body": "每批 20 张以内",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "核对原件",
+     "body": "金额全部和收据对照",
+     "check": "照片里的数字可能读错"
+    },
+    {
+     "title": "处理待确认",
+     "body": "空着的自己填",
+     "check": ""
+    },
+    {
+     "title": "提交",
+     "body": "报销表和原始收据一起交",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "费用 · 摘要 · 待确认的 Excel\n附各项目合计",
+    "example": "示例：收据 18 张\n合计 427.30 新元 · 待确认 2 张"
+   },
+   "cautions": [
+    "金额全部和原件对照",
+    "难认的数字自己输入",
+    "原始收据按规定保存",
+    "拍照时遮住卡号"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上传文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "report-weekly",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "주",
+   "timeBeforeMin": 40,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "周报自动生成模板",
+   "subtitle": "随手写下做了什么\n变成公司格式的周报",
+   "tags": [
+    "周报",
+    "工作汇报",
+    "汇报",
+    "月报",
+    "进度"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    }
+   ],
+   "problem": "每周五都因为写周报晚下班",
+   "before": "翻遍一周的邮件和聊天记录整理",
+   "after": "贴上笔记就按格式写好",
+   "prepare": [
+    "本周做了什么的笔记",
+    "下周计划",
+    "问题与需要协助的事",
+    "公司周报模板"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：周报",
+     "howTo": "在项目里用会自动套模板",
+     "body": "请写 {{기간}} 的周报。用要点式，笔记里没有的不要写。\n\n本周完成：\n{{한일}}\n\n下周计划：\n{{계획}}\n\n问题与请求：\n{{이슈}}",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期间",
+       "example": "11 月第 2 周（11/9～11/13）"
+      },
+      {
+       "key": "한일",
+       "label": "本周完成",
+       "example": "- 发布夜班招聘广告\n- 完成 10 月工资核对\n- 安全培训定在 11/20"
+      },
+      {
+       "key": "계획",
+       "label": "下周计划",
+       "example": "- 面试 3 场\n- 研究年底临时工合同"
+      },
+      {
+       "key": "이슈",
+       "label": "问题与请求",
+       "example": "- 年底临时工预算需要批准"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：有没有编出来的内容",
+     "howTo": "拿到草稿后直接在同一对话里发",
+     "body": "请重新检查你刚写的内容。\n把我没提供却出现了的内容（数字、日期、承诺、公司政策）列成表，再给我删掉或改成 [待确认] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "monthly",
+     "title": "合并成月报",
+     "howTo": "月底时",
+     "body": "请把下面 {{개수}} 份周报合并成 {{월}} 的月报。重复的内容合并成一条，按已完成、进行中、延迟整理成表。\n\n{{주간보고}}",
+     "variables": [
+      {
+       "key": "개수",
+       "label": "周报份数",
+       "example": "4"
+      },
+      {
+       "key": "월",
+       "label": "月份",
+       "example": "2026 年 11 月"
+      },
+      {
+       "key": "주간보고",
+       "label": "粘贴周报",
+       "example": "（粘贴 4 份周报）"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "建立项目",
+     "body": "模板只需登记一次",
+     "check": "免费方案最多 5 个"
+    },
+    {
+     "title": "记笔记",
+     "body": "做完一件就记一行",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "检查",
+     "body": "确认没有编出来的成果",
+     "check": ""
+    },
+    {
+     "title": "月底",
+     "body": "合并成月报",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "公司格式的周报\n月底合并成月报",
+    "example": "示例：笔记 8 行\n周报 1 页"
+   },
+   "cautions": [
+    "确认没混进笔记以外的成果",
+    "数字要和原始资料对照",
+    "机密内容先看公司规定",
+    "需要决策的问题放前面"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "周报",
+    "instructions": "你是写周报的助手。完全照公司模板（项目知识）写。用简短要点式，笔记里没有的成果或数字不要写。结构：本周完成 / 下周计划 / 问题与请求。需要决策的问题放最上面。",
+    "knowledge": [
+     "公司周报模板",
+     "上周周报 1 份"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "report-email",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 20,
+   "timeAfterMin": 3,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "各种情况的商务邮件",
+   "subtitle": "写下情况和目的\n标题和正文各给两个版本",
+   "tags": [
+    "邮件",
+    "请求",
+    "拒绝",
+    "道歉",
+    "回复",
+    "拒绝邮件",
+    "道歉邮件"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    }
+   ],
+   "problem": "拒绝信、道歉信第一句就卡住",
+   "before": "写了删、删了写",
+   "after": "从两种语气里挑一个",
+   "prepare": [
+    "收件人和关系",
+    "邮件目的（请求、拒绝、道歉）",
+    "必须写的内容",
+    "想要的语气"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：两个版本的邮件",
+     "howTo": "不需要文件，直接用",
+     "body": "请写一封商务邮件。\n- 收件人：{{받는사람}}\n- 目的：{{목적}}\n- 必须写的内容：{{내용}}\n- 语气：{{톤}}\n\n标题和正文各给两个版本（稍微柔和 / 稍微明确）。我没给的承诺、日期、金额不要写。",
+     "variables": [
+      {
+       "key": "받는사람",
+       "label": "收件人与关系",
+       "example": "客户采购部经理（合作 3 年）"
+      },
+      {
+       "key": "목적",
+       "label": "目的",
+       "example": "婉拒涨价请求"
+      },
+      {
+       "key": "내용",
+       "label": "必须写的内容",
+       "example": "今年原则上不调价，明年 1 月可再协商，量大可以考虑"
+      },
+      {
+       "key": "톤",
+       "label": "语气",
+       "example": "礼貌但明确"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：有没有编出来的内容",
+     "howTo": "拿到草稿后直接在同一对话里发",
+     "body": "请重新检查你刚写的内容。\n把我没提供却出现了的内容（数字、日期、承诺、公司政策）列成表，再给我删掉或改成 [待确认] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "reply",
+     "title": "回复收到的邮件",
+     "howTo": "粘贴收到的邮件",
+     "body": "请回复下面这封邮件。我的立场是「{{입장}}」。对方问的每一点都要回答。\n\n收到的邮件：\n{{받은메일}}",
+     "variables": [
+      {
+       "key": "입장",
+       "label": "我的立场",
+       "example": "所需资料会在 11/14 前寄出"
+      },
+      {
+       "key": "받은메일",
+       "label": "收到的邮件",
+       "example": "（粘贴邮件）"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "定目的",
+     "body": "一句话写出这封邮件要达成什么",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "选版本",
+     "body": "两个版本挑一个",
+     "check": ""
+    },
+    {
+     "title": "检查",
+     "body": "再核对承诺、日期、金额",
+     "check": ""
+    },
+    {
+     "title": "发送",
+     "body": "改成自己的语气再发",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "标题 + 正文两个版本\n也能回复收到的邮件",
+    "example": "示例：婉拒涨价的邮件\n柔和、明确两个版本"
+   },
+   "cautions": [
+    "承诺、日期、金额自己再核对",
+    "再确认收件人的姓名和职务",
+    "敏感邮件请上司过目",
+    "不要写个人信息"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "report-contract-summary",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "合同重点摘要",
+   "subtitle": "上传合同\n拿到核心条件表和要确认的问题",
+   "tags": [
+    "合同",
+    "协议",
+    "条款",
+    "契约",
+    "摘要"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    }
+   ],
+   "problem": "合同 30 页，不知道哪里重要",
+   "before": "从头到尾逐字读",
+   "after": "先看核心条件和要注意的条款",
+   "prepare": [
+    "合同文件（PDF、Word）",
+    "我方是哪一方",
+    "最想知道的点",
+    "机密合同先看公司规定"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：合同摘要",
+     "howTo": "粘贴到已附上合同的对话里",
+     "body": "请摘要附上的{{계약명}}。我方是{{입장}}。\n1. 核心条件表：合同期限、金额与付款条件、自动续约、解约条件、违约金与赔偿、保密、管辖与争议解决（标出条款编号）\n2. 可能对我方不利的条款及原因\n3. 要向对方确认的 5 个问题\n4. 最想知道的：{{궁금한점}}\n合同里没有的写「无相关条款」，并在最前面注明这不是法律意见。",
+     "variables": [
+      {
+       "key": "계약명",
+       "label": "合同名称",
+       "example": "仓库租赁合同"
+      },
+      {
+       "key": "입장",
+       "label": "我方立场",
+       "example": "承租方"
+      },
+      {
+       "key": "궁금한점",
+       "label": "最想知道的",
+       "example": "提前解约的违约金有多少"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：对照条款原文",
+     "howTo": "拿到摘要后直接在同一对话里发",
+     "body": "请把摘要里的每一点和作为依据的条款编号、原文句子并排列成表。和原文不符或没有依据的内容请标出。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "准备合同",
+     "body": "PDF 或 Word 原件",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "附上合同",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "对照原文",
+     "body": "用检查提示词核对条款",
+     "check": "不要只信摘要"
+    },
+    {
+     "title": "整理问题",
+     "body": "把确认问题发给对方",
+     "check": ""
+    },
+    {
+     "title": "专业审阅",
+     "body": "重要合同请律师看",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "带条款编号的核心条件表\n注意条款 · 5 个确认问题",
+    "example": "示例：租赁合同 28 页\n核心条件 7 项 · 注意 3 项"
+   },
+   "cautions": [
+    "这不是法律意见",
+    "重要合同请律师审阅",
+    "摘要一定要和原文对照",
+    "机密合同先看上传规定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上传文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "gsheet-form",
+   "status": "published",
+   "category": "gsheet",
+   "difficulty": "normal",
+   "frequency": "수시",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "Google 表单回复自动汇总表",
+   "subtitle": "Google 表单回复一多\n汇总表就自动更新",
+   "tags": [
+    "表单",
+    "google 表单",
+    "问卷",
+    "调查",
+    "回复",
+    "google 表格"
+   ],
+   "tools": [
+    {
+     "name": "Google 表格",
+     "free": true,
+     "note": "有 Google 账号就免费"
+    },
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    }
+   ],
+   "problem": "每次都要复制问卷回复再统计",
+   "before": "下载回复手工数",
+   "after": "每来一条回复，汇总就更新",
+   "prepare": [
+    "Google 表单",
+    "把回复连接到表格",
+    "回复表的列名",
+    "收集个人信息就要写同意说明"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：汇总表公式",
+     "howTo": "填入回复表的列名",
+     "body": "Google 表单的回复会存到「{{응답시트}}」工作表。列是 {{열목록}}。\n请告诉我要在「汇总」工作表自动显示下面内容的 Google 表格公式，连单元格位置一起写。\n{{원하는요약}}\n回复增加后也不用改公式，并用一行说明每个公式做什么。",
+     "variables": [
+      {
+       "key": "응답시트",
+       "label": "回复工作表名称",
+       "example": "表单回复 1"
+      },
+      {
+       "key": "열목록",
+       "label": "列名",
+       "example": "A 时间戳、B 部门、C 满意度（1～5）、D 意见"
+      },
+      {
+       "key": "원하는요약",
+       "label": "想要的汇总",
+       "example": "各部门回复数、各部门平均满意度、满意度 2 分以下的意见列表"
+      }
+     ]
+    },
+    {
+     "id": "notify",
+     "title": "新回复邮件提醒（Apps Script）",
+     "howTo": "想马上知道有新回复时",
+     "body": "请写一段 Apps Script：Google 表单有新回复时，把回复内容发邮件给 {{받는사람}}。\n1. 代码（中文注释）\n2. 设置步骤：从表格 > 扩展程序 > Apps Script 到设置触发器（提交表单时）\n3. 授权画面该点哪里\n4. 每天的邮件上限和注意事项",
+     "variables": [
+      {
+       "key": "받는사람",
+       "label": "接收提醒的邮箱",
+       "example": "负责人的邮箱"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：汇总数字",
+     "howTo": "放好公式之后",
+     "body": "请告诉我怎样在我的回复表里挑一个部门，手算回复数和平均分，好和汇总公式的结果对比。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "连接回复表",
+     "body": "表单 > 回复 > 关联到表格",
+     "check": ""
+    },
+    {
+     "title": "确认列名",
+     "body": "复制回复表第一行",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "放入公式",
+     "body": "粘贴到汇总表",
+     "check": ""
+    },
+    {
+     "title": "复核",
+     "body": "亲手核对一个部门",
+     "check": ""
+    },
+    {
+     "title": "提醒（可选）",
+     "body": "用 Apps Script 提示词设置",
+     "check": "需要授权"
+    }
+   ],
+   "result": {
+    "summary": "跟着回复变化的汇总表\n需要的话还有新回复邮件提醒",
+    "example": "示例：员工满意度调查\n各部门回复数与平均分自动更新"
+   },
+   "cautions": [
+    "收集个人信息要写同意说明",
+    "公式结果手工核对一次",
+    "脚本权限看清内容再授权",
+    "个人账号每天最多 100 人"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "选择表单回复的保存位置",
+     "publisher": "Google 帮助",
+     "url": "https://support.google.com/docs/answer/2917686?hl=zh-Hans",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "可安装触发器",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Apps Script 配额",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/services/quotas",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "gsheet-auto-mail",
+   "status": "published",
+   "category": "gsheet",
+   "difficulty": "hard",
+   "frequency": "주",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "用 Google 表格自动发邮件",
+   "subtitle": "在表格里写好收件人\n到点自动发出邮件",
+   "tags": [
+    "邮件",
+    "自动化",
+    "google 表格",
+    "apps script",
+    "定时发送"
+   ],
+   "tools": [
+    {
+     "name": "Google 表格",
+     "free": true,
+     "note": "有 Google 账号就免费"
+    },
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    }
+   ],
+   "problem": "每周都手动发同样的通知邮件",
+   "before": "一个个复制粘贴再发",
+   "after": "改表格就会按时发出",
+   "prepare": [
+    "Google 表格（收件人、内容列）",
+    "加一列「已发送」",
+    "先只用自己的邮箱测试",
+    "确认收件人同意接收"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：自动发送脚本",
+     "howTo": "写清表格结构",
+     "body": "请写一段用 Google 表格自动发邮件的 Apps Script。\n- 工作表名称：{{시트이름}}\n- 列：{{열목록}}\n- 邮件标题：{{제목}}\n- 发送时间：{{발송시점}}\n\n1. 代码（中文注释）：只发「已发送」为空的行，发完记录发送时间\n2. 最上面放「测试模式」开关：打开时所有邮件只发到 {{시험메일}}\n3. 设置步骤：从扩展程序 > Apps Script 到设置时间驱动触发器\n4. 授权画面说明、每天发送上限和出错时怎么查",
+     "variables": [
+      {
+       "key": "시트이름",
+       "label": "工作表名称",
+       "example": "通知邮件"
+      },
+      {
+       "key": "열목록",
+       "label": "列结构",
+       "example": "A 姓名、B 邮箱、C 通知内容、D 已发送"
+      },
+      {
+       "key": "제목",
+       "label": "邮件标题",
+       "example": "【通知】本周安全培训安排"
+      },
+      {
+       "key": "발송시점",
+       "label": "发送时间",
+       "example": "每周一上午 9 点"
+      },
+      {
+       "key": "시험메일",
+       "label": "测试用的我的邮箱",
+       "example": "我的邮箱地址"
+      }
+     ]
+    },
+    {
+     "id": "error",
+     "title": "解决报错",
+     "howTo": "执行记录里有错误时",
+     "body": "Apps Script 执行记录里有「{{오류}}」错误。请告诉我原因并给出改好的代码。\n{{코드}}",
+     "variables": [
+      {
+       "key": "오류",
+       "label": "错误信息",
+       "example": "Exception: Service invoked too many times for one day: email."
+      },
+      {
+       "key": "코드",
+       "label": "现在的代码",
+       "example": "（粘贴代码）"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：发送前点检",
+     "howTo": "正式发送前",
+     "body": "请检查我的代码有没有可能重复发给同一个人、在测试模式关掉的情况下误发、或者超过上限的地方。\n（粘贴代码）",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "建表格",
+     "body": "收件人、内容、已发送三列",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "放入代码",
+     "body": "扩展程序 > Apps Script",
+     "check": ""
+    },
+    {
+     "title": "授权",
+     "body": "用自己的账号授权",
+     "check": "看清警告画面内容"
+    },
+    {
+     "title": "测试发送",
+     "body": "测试模式只发给自己",
+     "check": "一定先做"
+    },
+    {
+     "title": "设置触发器",
+     "body": "添加时间驱动触发器",
+     "check": ""
+    },
+    {
+     "title": "正式发送",
+     "body": "关闭测试模式",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "带测试模式的发送脚本\n设置与触发器步骤",
+    "example": "示例：每周一 9 点\n自动给 32 人发安全培训通知"
+   },
+   "cautions": [
+    "一定先用测试模式",
+    "个人账号每天最多 100 人",
+    "营销邮件须先取得收件人同意",
+    "一定要用防重复发送的列"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Apps Script 配额",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/services/quotas",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "可安装触发器",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "sales-faq",
+   "status": "published",
+   "category": "sales",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "客户咨询回复模板（FAQ）",
+   "subtitle": "收集常见咨询\n做好 FAQ 和回复模板",
+   "tags": [
+    "faq",
+    "客户咨询",
+    "常见问题",
+    "回复模板",
+    "客服"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用对话就行"
+    }
+   ],
+   "problem": "同样的问题每次都重新回复",
+   "before": "找以前的回复来复制",
+   "after": "FAQ 表和简短回复模板",
+   "prepare": [
+    "收集到的常见咨询",
+    "退货、配送等公司政策",
+    "想要的回复语气",
+    "删除客户个人信息"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：做 FAQ",
+     "howTo": "粘贴咨询后发送",
+     "body": "请为{{업종}}的客户做一份 FAQ。公司政策如下：\n{{정책}}\n\n1. 把相似的咨询归类，整理成 10～15 个问题\n2. 每个问题写简短回答（聊天 2～3 行）和正式回答（邮件）\n3. 政策回答不了的问题另外列出，标「需要人工确认」\n回复语气：{{톤}}\n\n咨询内容：\n{{문의}}",
+     "variables": [
+      {
+       "key": "업종",
+       "label": "行业",
+       "example": "企业快递服务"
+      },
+      {
+       "key": "정책",
+       "label": "公司政策",
+       "example": "揽件截止下午 5 点，破损在受理后 7 天内审核赔偿，退货限 3 天内"
+      },
+      {
+       "key": "톤",
+       "label": "回复语气",
+       "example": "亲切简洁"
+      },
+      {
+       "key": "문의",
+       "label": "常见咨询",
+       "example": "- 今天寄什么时候到？\n- 箱子压坏了\n- 能改揽件时间吗？"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "检查：有没有编出来的内容",
+     "howTo": "拿到草稿后直接在同一对话里发",
+     "body": "请重新检查你刚写的内容。\n把我没提供却出现了的内容（数字、日期、承诺、公司政策）列成表，再给我删掉或改成 [待确认] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "answer",
+     "title": "新咨询的回复草稿",
+     "howTo": "FAQ 放进项目后",
+     "body": "请在 FAQ 和政策范围内，给下面这条客户咨询写简短版和正式版回复。政策没写的就写「负责人确认后再通知您」。\n{{새문의}}",
+     "variables": [
+      {
+       "key": "새문의",
+       "label": "新咨询",
+       "example": "昨天寄的件还显示没有揽收"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "收集咨询",
+     "body": "复制最近一两个月的咨询",
+     "check": "删掉姓名和联系方式"
+    },
+    {
+     "title": "整理政策",
+     "body": "写下退货、配送标准",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "检查",
+     "body": "有没有和政策不符的回答",
+     "check": ""
+    },
+    {
+     "title": "放进项目",
+     "body": "把 FAQ 加到知识里",
+     "check": ""
+    },
+    {
+     "title": "每天用",
+     "body": "用新咨询提示词",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "10～15 个问题的 FAQ 表\n简短、正式两种回答",
+    "example": "示例：整理 40 条咨询\nFAQ 12 个 · 需要人工 3 个"
+   },
+   "cautions": [
+    "不做政策以外的承诺",
+    "上传前删除客户个人信息",
+    "赔偿、退款由负责人确认",
+    "政策变了 FAQ 也要更新"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "客户回复",
+    "instructions": "你是客户回复助手。只在项目知识里的 FAQ 和公司政策范围内回答。政策没写的承诺（赔偿、日期、折扣）不要做，写成「负责人确认后再通知您」。回复分简短版（聊天）和正式版（邮件）两种。",
+    "knowledge": [
+     "FAQ 表",
+     "退货与配送政策"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "sales-by-customer",
+   "status": "published",
+   "category": "sales",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "按客户统计销售额与排名",
+   "subtitle": "上传销售明细\n客户排名和占比一目了然",
+   "tags": [
+    "销售额",
+    "客户",
+    "排名",
+    "营收",
+    "分析",
+    "abc 分析"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "不知道哪些客户撑起了销售额",
+   "before": "做透视表再另外排序",
+   "after": "排名、占比、增减、前 20% 都有",
+   "prepare": [
+    "销售明细（客户、金额、日期）",
+    "用来比较的上一期资料",
+    "统一客户名称写法",
+    "删除个人信息列"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：客户分析",
+     "howTo": "粘贴到已附上文件的对话里",
+     "body": "请用附上的 {{기간}} 销售明细做客户分析 Excel。客户在「{{거래처열}}」列，金额在「{{금액열}}」列。比较期间是 {{비교기간}}。\n1.「排名」表：每个客户的销售额、排名、占比、累计占比，标出累计到 80% 的客户\n2.「增减」表：与比较期间相比的增减额、增减率，新增和流失的客户\n3.「摘要」表：对前几大客户的依赖程度和 3 个明显变化（附数字依据）\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期间",
+       "example": "2026 年 1～10 月"
+      },
+      {
+       "key": "거래처열",
+       "label": "客户列名",
+       "example": "客户"
+      },
+      {
+       "key": "금액열",
+       "label": "金额列名",
+       "example": "销售额"
+      },
+      {
+       "key": "비교기간",
+       "label": "比较期间",
+       "example": "2025 年 1～10 月"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "comment",
+     "title": "销售会议用的说明",
+     "howTo": "分析之后",
+     "body": "请根据「摘要」表，写销售会议上要讲的 3 个要点，以及需要重点管理的 3 个客户和原因。数字照表里的值。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "统一名称",
+     "body": "对齐客户名称的写法和空格",
+     "check": "不统一会被当成不同客户"
+    },
+    {
+     "title": "附上文件",
+     "body": "打开文件创建后附上",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "复核",
+     "body": "销售总额 = 原始合计",
+     "check": ""
+    },
+    {
+     "title": "说明",
+     "body": "销售会议用的 3 行",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "排名 · 增减 · 摘要 3 个工作表\n标出累计 80% 的客户",
+    "example": "示例：客户 214 家\n前 38 家占销售额 80%"
+   },
+   "cautions": [
+    "先统一客户名称写法",
+    "销售总额要和原始资料对照",
+    "确认是否含退货和折扣",
+    "说明里的数字要和表对照"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "创建数据透视表",
+     "publisher": "Microsoft 支持",
+     "url": "https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "logistics-stock",
+   "status": "published",
+   "category": "logistics",
+   "difficulty": "normal",
+   "frequency": "주",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "库存与出入库核对",
+   "subtitle": "上传出入库和盘点库存\n差异和缺货品项马上看到",
+   "tags": [
+    "库存",
+    "出入库",
+    "盘点",
+    "安全库存",
+    "补货",
+    "仓库"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "账面库存和实际库存对不上",
+   "before": "每个品项加加减减出入库",
+   "after": "自动列出差异和低于安全库存的品项",
+   "prepare": [
+    "期初库存",
+    "入库、出库明细",
+    "盘点库存",
+    "统一品号格式"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：库存核对",
+     "howTo": "粘贴到已附上文件的对话里",
+     "body": "请用附上的 {{기간}} 期初库存、入库、出库、盘点库存文件做库存核对 Excel。品项按「{{품목열}}」列对齐。\n1.「核对」表：每个品项的期初、入库、出库、账面库存（期初+入库−出库）、盘点、差异\n2.「差异」表：差异超过 {{허용차이}} 的品项，有单价就算差异金额\n3.「安全库存」表：盘点库存低于安全库存 {{안전재고}} 的品项\n4.「待确认」表：没有品号、单位不同、出库比库存多的\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期间",
+       "example": "2026 年 11 月第 1 周"
+      },
+      {
+       "key": "품목열",
+       "label": "品号列",
+       "example": "品号"
+      },
+      {
+       "key": "허용차이",
+       "label": "允许差异",
+       "example": "0 个"
+      },
+      {
+       "key": "안전재고",
+       "label": "安全库存标准",
+       "example": "（品项主档里的安全库存列）"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "order",
+     "title": "需要补货的清单",
+     "howTo": "有低于安全库存的品项时",
+     "body": "请计算「安全库存」表里品项的补货数量：最近 {{주수}} 周平均出库量 × {{리드타임}} 周 + 安全库存 − 现有库存，并把算法留在表里。",
+     "variables": [
+      {
+       "key": "주수",
+       "label": "取平均的周数",
+       "example": "4"
+      },
+      {
+       "key": "리드타임",
+       "label": "到货需要的周数",
+       "example": "2"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "统一品号",
+     "body": "四个文件的品号格式对齐",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "期初、入库、出库、盘点的顺序",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "处理待确认",
+     "body": "解决品号和单位问题",
+     "check": ""
+    },
+    {
+     "title": "查看差异",
+     "body": "差异大的品项重新盘点",
+     "check": "先查有没有漏单"
+    },
+    {
+     "title": "复核",
+     "body": "用总数量复核提示词",
+     "check": ""
+    },
+    {
+     "title": "补货",
+     "body": "用补货清单提示词",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "核对 · 差异 · 安全库存 · 待确认的 Excel\n连补货数量都有",
+    "example": "示例：品项 1,180 个\n差异 23 个 · 低于安全库存 9 个"
+   },
+   "cautions": [
+    "先统一品号格式",
+    "单位（个、箱）混用会出错",
+    "差异先查有没有漏单",
+    "补货数量由经办人最终决定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什么是项目？",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "每周库存核对",
+    "instructions": "你是库存核对助手。账面库存 = 期初库存 + 入库 − 出库，再和盘点库存比较。按品号对齐，没有品号或品号不同的放进「待确认」。计算单元格用 Excel 公式和批注写入。",
+    "knowledge": [
+     "品项主档（品号、品名、单位、安全库存）"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "logistics-delivery",
+   "status": "published",
+   "category": "logistics",
+   "difficulty": "normal",
+   "frequency": "주",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hans",
+   "title": "按区域、司机统计配送业绩",
+   "subtitle": "上传配送业绩\n按区域、司机统计并算出完成率",
+   "tags": [
+    "配送",
+    "快递",
+    "司机",
+    "送货",
+    "运量",
+    "业绩"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "打开「文件创建」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "查看结果、打印"
+    }
+   ],
+   "problem": "配送业绩很难按区域、司机来看",
+   "before": "加筛选一个个数",
+   "after": "件数、完成率、星期分布一次出来",
+   "prepare": [
+    "配送业绩文件",
+    "确认区域、司机、状态列",
+    "删除司机联系方式等",
+    "整理状态值（已送达、未送达）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：配送业绩统计",
+     "howTo": "粘贴到已附上文件的对话里",
+     "body": "请用附上的 {{기간}} 配送业绩做统计 Excel。区域在「{{지역열}}」列，司机在「{{기사열}}」列，状态在「{{상태열}}」列，已完成的状态值是「{{완료값}}」。\n1.「按区域」表：每个区域的总件数、已完成、未完成、完成率、日均\n2.「按司机」表：每位司机同样的项目和出勤天数\n3.「按星期」表：每个星期几的件数（标出最集中的一天）\n4.「待确认」表：状态为空或奇怪的\n这可能会被用来评价个人，所以不要写区域差异等解读，只整理数字。\n\n[计算与输出规则]\n- 计算出的单元格请用 Excel 公式填入，不要直接填数字，并在该单元格批注里用中文写明算法（鼠标移上去就能看到）\n- 新建「复核」工作表，用另一种方法重新计算主要合计，并标明是否一致\n- 打印设置：A4 横向，所有列缩放到一页宽，重复标题行，页脚加页码",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期间",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "지역열",
+       "label": "区域列",
+       "example": "配送区域"
+      },
+      {
+       "key": "기사열",
+       "label": "司机列",
+       "example": "司机编号"
+      },
+      {
+       "key": "상태열",
+       "label": "状态列",
+       "example": "配送状态"
+      },
+      {
+       "key": "완료값",
+       "label": "已完成的状态值",
+       "example": "已送达"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "复核：检查所有计算",
+     "howTo": "拿到结果后直接在同一对话里发",
+     "body": "请重新检查你刚做的 Excel 里所有计算单元格。\n用表格整理：工作表与单元格位置 / 算法（中文）/ 重新算出的值 / 文件里的值 / 是否一致\n如有不一致，请写出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "compare",
+     "title": "和上个月比较",
+     "howTo": "有两个月业绩时",
+     "body": "我也附上了上个月的业绩文件。请在「按区域」「按星期」表加上环比增减，并把货量大增或大减的 3 个区域连同数字整理出来。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "删除个人信息",
+     "body": "用编号代替司机姓名和联系方式",
+     "check": ""
+    },
+    {
+     "title": "整理状态值",
+     "body": "统一「已完成」的写法",
+     "check": ""
+    },
+    {
+     "title": "附上文件",
+     "body": "打开文件创建后附上",
+     "check": ""
+    },
+    {
+     "title": "发送提示词",
+     "body": "填空后粘贴",
+     "check": ""
+    },
+    {
+     "title": "复核",
+     "body": "总件数 = 原始行数",
+     "check": ""
+    },
+    {
+     "title": "运用",
+     "body": "按星期的货量安排人手",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "按区域 · 按司机 · 按星期的 Excel\n附完成率和日均",
+    "example": "示例：10 月 82,400 件\n完成率 98.6% · 星期一最多"
+   },
+   "cautions": [
+    "司机个人信息用编号代替",
+    "不要只凭业绩评价个人",
+    "总件数要和原始资料对照",
+    "先统一状态值写法"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "创建数据透视表",
+     "publisher": "Microsoft 支持",
+     "url": "https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 创建和编辑文件",
+     "publisher": "Anthropic 帮助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  }
+ ],
+ "feedback": {
+  "types": [
+   {
+    "id": "error",
+    "label": "报告错误"
+   },
+   {
+    "id": "add",
+    "label": "希望补充这些内容"
+   },
+   {
+    "id": "etc",
+    "label": "其他意见"
+   }
+  ],
+  "minLength": 5,
+  "maxLength": 300,
+  "storage": "firestore:feedback"
+ },
+ "moderation": {
+  "minLength": 5,
+  "maxLength": 300,
+  "banned": [
+   "시발",
+   "씨발",
+   "씨빨",
+   "씨팔",
+   "시팔",
+   "ㅅㅂ",
+   "ㅆㅂ",
+   "병신",
+   "븅신",
+   "ㅂㅅ",
+   "ㅄ",
+   "좆",
+   "존나",
+   "졸라",
+   "ㅈㄴ",
+   "개새",
+   "니새끼",
+   "이새끼",
+   "저새끼",
+   "미친놈",
+   "미친년",
+   "미친새",
+   "지랄",
+   "ㅈㄹ",
+   "엿먹",
+   "염병",
+   "썅",
+   "쌍놈",
+   "니미",
+   "느금",
+   "니애미",
+   "엠창",
+   "등신",
+   "닥쳐",
+   "fuck",
+   "shit",
+   "bitch",
+   "한남충",
+   "김치녀",
+   "틀딱",
+   "급식충",
+   "맘충",
+   "他妈的",
+   "他媽的",
+   "操你",
+   "肏你",
+   "傻逼",
+   "傻屄",
+   "煞笔",
+   "妈逼",
+   "媽的",
+   "贱人",
+   "賤人",
+   "王八蛋",
+   "去死",
+   "滚蛋",
+   "狗娘养",
+   "狗娘養",
+   "婊子",
+   "干你娘",
+   "幹你娘",
+   "机掰",
+   "雞掰",
+   "白痴",
+   "智障"
+  ],
+  "allow": [
+   "시발점",
+   "시발역",
+   "새끼손가락",
+   "새끼발가락",
+   "새끼줄",
+   "애비뉴"
+  ],
+  "checkedAt": "2026-11-09"
+ },
+ "changelog": [
+  {
+   "date": "2026-11-09",
+   "contentId": null,
+   "text": "30 份手册已全部上线",
+   "source": "feedback"
+  },
+  {
+   "date": "2026-11-09",
+   "contentId": null,
+   "text": "把句子精简成一行",
+   "source": "feedback"
+  },
+  {
+   "date": "2026-11-08",
+   "contentId": "payroll-variance-check",
+   "text": "修正了工资示例里的数字错误",
+   "source": "review"
+  },
+  {
+   "date": "2026-11-08",
+   "contentId": null,
+   "text": "新增结果的 A4 打印预览",
+   "source": "feedback"
+  }
+ ],
+ "resolvedFeedback": [],
+ "featured": [
+  "excel-merge-files",
+  "payroll-variance-check",
+  "one-page-exec-report",
+  "hr-annual-leave",
+  "excel-compare-files",
+  "report-email"
+ ]
+}

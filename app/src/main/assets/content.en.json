@@ -1,0 +1,5106 @@
+{
+ "schemaVersion": 1,
+ "contentVersion": "2026.11.09-02",
+ "updatedAt": "2026-11-09",
+ "lang": "en",
+ "categories": [
+  {
+   "id": "excel",
+   "name": "Excel & Data",
+   "order": 1
+  },
+  {
+   "id": "hr",
+   "name": "HR & Payroll",
+   "order": 2
+  },
+  {
+   "id": "admin",
+   "name": "Admin & Operations",
+   "order": 3
+  },
+  {
+   "id": "account",
+   "name": "Accounting",
+   "order": 4
+  },
+  {
+   "id": "report",
+   "name": "Reports & Email",
+   "order": 5
+  },
+  {
+   "id": "gsheet",
+   "name": "Google Sheets",
+   "order": 6
+  },
+  {
+   "id": "sales",
+   "name": "Sales & Customers",
+   "order": 7
+  },
+  {
+   "id": "logistics",
+   "name": "Logistics & Inventory",
+   "order": 8
+  }
+ ],
+ "synonyms": {
+  "excel": [
+   "spreadsheet",
+   "xlsx",
+   "workbook",
+   "sheet"
+  ],
+  "merge": [
+   "combine",
+   "consolidate",
+   "append",
+   "join"
+  ],
+  "payroll": [
+   "salary",
+   "wages",
+   "pay",
+   "paycheck",
+   "compensation"
+  ],
+  "report": [
+   "summary",
+   "memo",
+   "briefing",
+   "one-page"
+  ],
+  "overtime": [
+   "ot",
+   "extra hours",
+   "timesheet",
+   "attendance",
+   "hours"
+  ],
+  "pto": [
+   "vacation",
+   "leave",
+   "time off",
+   "holiday"
+  ],
+  "hiring": [
+   "job post",
+   "recruit",
+   "job ad",
+   "interview"
+  ],
+  "notice": [
+   "announcement",
+   "memo",
+   "promotion"
+  ],
+  "minutes": [
+   "meeting",
+   "meeting notes"
+  ],
+  "quote": [
+   "quotation",
+   "vendor",
+   "bid",
+   "estimate"
+  ],
+  "reconcile": [
+   "reconciliation",
+   "match",
+   "deposit",
+   "bank"
+  ],
+  "card": [
+   "credit card",
+   "expense",
+   "gl code",
+   "account code"
+  ],
+  "receivable": [
+   "ar",
+   "overdue",
+   "unpaid",
+   "collection",
+   "dunning"
+  ],
+  "receipt": [
+   "expense",
+   "expense report",
+   "reimbursement"
+  ],
+  "email": [
+   "mail",
+   "reply",
+   "decline",
+   "apology"
+  ],
+  "contract": [
+   "agreement",
+   "terms",
+   "clause"
+  ],
+  "form": [
+   "google forms",
+   "survey",
+   "responses"
+  ],
+  "inventory": [
+   "stock",
+   "stocktake",
+   "reorder",
+   "warehouse"
+  ],
+  "delivery": [
+   "shipping",
+   "driver",
+   "courier",
+   "route"
+  ],
+  "macro": [
+   "vba",
+   "automate",
+   "button"
+  ],
+  "formula": [
+   "function",
+   "vlookup",
+   "xlookup",
+   "sumifs",
+   "error",
+   "n/a"
+  ],
+  "compare": [
+   "diff",
+   "difference",
+   "changes"
+  ],
+  "clean": [
+   "cleanup",
+   "tidy",
+   "format",
+   "duplicates"
+  ],
+  "pivot": [
+   "pivot table",
+   "chart",
+   "graph"
+  ],
+  "faq": [
+   "customer questions",
+   "support",
+   "reply template"
+  ],
+  "sales": [
+   "revenue",
+   "customers",
+   "ranking"
+  ]
+ },
+ "items": [
+  {
+   "id": "excel-merge-files",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-08",
+   "updatedAt": "2026-11-08",
+   "lang": "en",
+   "title": "Merge branch Excel files in one go",
+   "subtitle": "Upload several files and get\na merged file plus a check sheet",
+   "tags": [
+    "excel",
+    "merge",
+    "consolidate",
+    "month-end",
+    "branch",
+    "department",
+    "results"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Half a day gone copy-pasting branch files",
+   "before": "Open, copy, paste, repeat",
+   "after": "Upload files, send one prompt, done",
+   "prepare": [
+    "Files to merge (up to 20)",
+    "Same column names and order?",
+    "One header row, no merged cells",
+    "Remove SSNs, bank and contact details",
+    "Check your company's data rules"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: merge files",
+     "howTo": "Paste in the chat with the files attached",
+     "body": "The {{파일개수}} attached Excel files are {{자료명}}. They all use the same layout, with headers in row {{머리글행}}.\n\nMake one Excel file in this order:\n1. 'Merged' sheet: stack the data from every file, add a 'Source file' column at the front, and keep the header only once.\n2. 'Check' sheet: a table of data rows and the total of '{{합계열}}' for each source file, plus the grand total.\n3. 'Needs review' sheet: blank cells, duplicate rows, text in number columns, and files whose column names differ, each with the reason.\n\nDon't change any values; only flag things that look wrong on the 'Needs review' sheet.\nName the file {{결과파일명}}.xlsx.\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "파일개수",
+       "label": "Number of files",
+       "example": "12"
+      },
+      {
+       "key": "자료명",
+       "label": "What data is it?",
+       "example": "October sales by branch"
+      },
+      {
+       "key": "머리글행",
+       "label": "Header row number",
+       "example": "1"
+      },
+      {
+       "key": "합계열",
+       "label": "Column to total",
+       "example": "Sales"
+      },
+      {
+       "key": "결과파일명",
+       "label": "Output file name",
+       "example": "Oct_Branch_Sales_Merged"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "mismatch",
+     "title": "When layouts differ",
+     "howTo": "Do this first if column names differ",
+     "body": "The attached files have slightly different column orders or names. First show me a table comparing column names by file and suggest how to match columns that mean the same thing. Use '{{기준파일}}' as the standard layout. Merge only after I confirm.",
+     "variables": [
+      {
+       "key": "기준파일",
+       "label": "Standard file name",
+       "example": "Seattle.xlsx"
+      }
+     ]
+    },
+    {
+     "id": "powerquery",
+     "title": "Monthly autopilot: Power Query",
+     "howTo": "When you can't upload to AI",
+     "body": "Walk me through, click by click, how to use Excel Power Query to automatically combine all the Excel files in one folder. My Excel version is {{엑셀버전}} and each file's sheet is named '{{시트이름}}'. Also show me how to swap in next month's files and update with Refresh.",
+     "variables": [
+      {
+       "key": "엑셀버전",
+       "label": "Excel version",
+       "example": "Microsoft 365"
+      },
+      {
+       "key": "시트이름",
+       "label": "Sheet name",
+       "example": "Sheet1"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Remove personal data",
+     "body": "Delete sensitive columns in a copy",
+     "check": "Keep the original separately"
+    },
+    {
+     "title": "Turn on file creation",
+     "body": "Settings > Capabilities",
+     "check": "Menu name: Code execution and file creation"
+    },
+    {
+     "title": "Attach files",
+     "body": "Upload them all with the clip (+)",
+     "check": "Split into batches over 20"
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Get the result",
+     "body": "Download and open the Excel file",
+     "check": "Check there are 4 sheets"
+    },
+    {
+     "title": "Recheck",
+     "body": "Send the check prompt",
+     "check": "Compare 2–3 sources by hand"
+    },
+    {
+     "title": "Print",
+     "body": "Confirm one landscape page, then print",
+     "check": ""
+    },
+    {
+     "title": "Next month",
+     "body": "Save it as a Project",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "One Excel file with 4 sheets\nMerged · Check · Needs review · Recheck",
+    "example": "5 branches · 716 rows · $560,380\nDifference vs sources: 0 (check matches)"
+   },
+   "cautions": [
+    "Always compare totals with the sources",
+    "Check your company's data rules first",
+    "Unmerge cells before uploading",
+    "The free plan has usage limits"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Uploading files to Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Monthly Excel merge",
+    "instructions": "You help merge our monthly files. Output an Excel (.xlsx) file. Put calculated cells in as Excel formulas and add a cell note explaining each calculation. Put row counts and totals per source file on a 'Check' sheet, and recalculate the totals a different way on a 'Recheck' sheet. Never change values; collect suspicious rows on a 'Needs review' sheet. Print: landscape, fit to one page wide.",
+    "knowledge": [
+     "One blank standard template",
+     "Branch/department code list"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "payroll-variance-check",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 240,
+   "timeAfterMin": 40,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-08",
+   "updatedAt": "2026-11-08",
+   "lang": "en",
+   "title": "Payroll check vs last month",
+   "subtitle": "Upload two payroll registers\nfor hires, exits, changes and outliers",
+   "tags": [
+    "payroll",
+    "payroll register",
+    "check",
+    "variance",
+    "month over month",
+    "minimum wage",
+    "labor cost"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel",
+     "free": false,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Checking one by one still misses errors",
+   "before": "Eyeballing two payroll registers",
+   "after": "From causes of change to a minimum wage screen",
+   "prepare": [
+    "Last and this period's payroll registers",
+    "An 'Employee ID' column in both files",
+    "Remove SSNs, bank and home addresses",
+    "Notes on this period's staff changes",
+    "Confirm company rules allow uploading"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: variance check",
+     "howTo": "Paste in the chat with both files attached",
+     "body": "Attachment 1 is the {{전월}} payroll register and attachment 2 is the {{당월}} register. Employee ID is in the '{{사번열}}' column.\n\nPut the following in one Excel file:\n1. 'Headcount' sheet: IDs only in this period (likely hires) and IDs only in the last period (likely exits)\n2. 'Variance' sheet: for people in both, each pay item's last period, this period, change and % change\n3. 'Key changes' sheet: people whose gross pay changed by ${{기준금액}} or more or {{기준비율}}% or more, plus anyone with a pay item that appeared or disappeared\n4. 'Minimum wage' sheet: hourly-paid or non-exempt people whose base pay divided by {{소정근로시간}} hours comes out below ${{최저시급}} (a screening list only)\n5. 'Summary' sheet: 3–5 lines on the change in total gross pay and the items and headcount changes that drove it most\n\nDon't change any data; mark anything you can't judge as 'Check needed'.\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "전월",
+       "label": "Last period",
+       "example": "September 2026"
+      },
+      {
+       "key": "당월",
+       "label": "This period",
+       "example": "October 2026"
+      },
+      {
+       "key": "사번열",
+       "label": "Employee ID column",
+       "example": "Employee ID"
+      },
+      {
+       "key": "기준금액",
+       "label": "Key change threshold ($)",
+       "example": "300"
+      },
+      {
+       "key": "기준비율",
+       "label": "Key change threshold (%)",
+       "example": "10"
+      },
+      {
+       "key": "소정근로시간",
+       "label": "Scheduled hours per period",
+       "example": "173.33"
+      },
+      {
+       "key": "최저시급",
+       "label": "Minimum hourly wage ($, federal or your state)",
+       "example": "7.25"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "memo-match",
+     "title": "Match against change notes",
+     "howTo": "After the main prompt",
+     "body": "Below are this period's staff change notes. Split the people on the 'Key changes' sheet into those explained by the notes and those that aren't, in a table. The unexplained ones are what to check first.\n\n{{변동메모}}",
+     "variables": [
+      {
+       "key": "변동메모",
+       "label": "Staff change notes",
+       "example": "E1023 promoted to manager 10/1, E1107 hired 10/15, E0981 left 9/30, meal allowance up $20 for everyone in October"
+      }
+     ]
+    },
+    {
+     "id": "approval-text",
+     "title": "Approval memo wording",
+     "howTo": "After the check is done",
+     "body": "Using the 'Summary' sheet, write 3 bullet points explaining the change from last period for the {{당월}} payroll approval memo. Use only the numbers on the sheet.",
+     "variables": [
+      {
+       "key": "당월",
+       "label": "This period",
+       "example": "October 2026"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Remove personal data",
+     "body": "Delete sensitive columns in a copy",
+     "check": "Removing names too is safer"
+    },
+    {
+     "title": "Match ID formats",
+     "body": "Make both ID columns identical",
+     "check": "Otherwise hires/exits are wrong"
+    },
+    {
+     "title": "Attach files",
+     "body": "Last period first, then this period",
+     "check": "Keep file creation on"
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": "Use the higher of federal or state minimum"
+    },
+    {
+     "title": "Check headcount",
+     "body": "Compare with actual hires and exits",
+     "check": ""
+    },
+    {
+     "title": "Match change notes",
+     "body": "Send the note-matching prompt",
+     "check": "Start with the unexplained"
+    },
+    {
+     "title": "Recheck & reconcile totals",
+     "body": "Check prompt + compare with payroll system",
+     "check": "Don't finalize if they differ"
+    },
+    {
+     "title": "Print & approve",
+     "body": "Print on one landscape page",
+     "check": "Memo wording via prompt too"
+    }
+   ],
+   "result": {
+    "summary": "Excel with 6 sheets + memo wording\nVariance, causes, outliers and check",
+    "example": "Total $412,800 → $428,550\n+$15,750 (+3.8%) · causes add up"
+   },
+   "cautions": [
+    "Payroll is sensitive: get company approval",
+    "Don't finalize from AI output alone",
+    "The minimum wage screen is a guide only",
+    "Many states set a higher minimum wage"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Minimum Wage",
+     "publisher": "U.S. Department of Labor",
+     "url": "https://www.dol.gov/agencies/whd/minimum-wage",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "FLSA overtime FAQ",
+     "publisher": "U.S. Department of Labor",
+     "url": "https://webapps.dol.gov/elaws/faq/esa/flsa/011.htm",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Payroll check",
+    "instructions": "You are a payroll review assistant. Never change data. Compare people by employee ID. Output an Excel (.xlsx) file; put calculated cells in as Excel formulas with a cell note explaining each calculation. Break the change in total pay down by cause and show on a 'Check' sheet that the causes add up. Don't make legal calls (FLSA exemption status, regular rate, state wage rules); mark them 'Check needed'. Print landscape, fit to one page wide.",
+    "knowledge": [
+     "Pay item list (item, fixed/variable, taxable/non-taxable)",
+     "Company allowance and bonus rules"
+    ]
+   },
+   "legal": {
+    "note": "Federal minimum wage is $7.25 per hour (effective July 24, 2009). Many states set higher rates; where both apply, follow the higher standard. FLSA overtime: non-exempt employees get at least 1.5× their regular rate for hours over 40 in a workweek.",
+    "checkedAt": "2026-11-09",
+    "disclaimer": "Exempt status, regular-rate and state rules need an HR or employment law professional to confirm."
+   }
+  },
+  {
+   "id": "one-page-exec-report",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-08",
+   "updatedAt": "2026-11-08",
+   "lang": "en",
+   "title": "Turn long material into a one-page report",
+   "subtitle": "Upload material and state the goal\nfor a one-pager that leads with the conclusion",
+   "tags": [
+    "report",
+    "summary",
+    "executive report",
+    "one-page",
+    "approval",
+    "memo",
+    "word"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Word or Google Docs",
+     "free": false,
+     "note": "Final formatting & print"
+    }
+   ],
+   "problem": "30 pages of material, the boss reads one",
+   "before": "Read, extract, cut, cut again",
+   "after": "Formula footnotes and likely questions too",
+   "prepare": [
+    "Source material (Excel, PDF, email)",
+    "Audience and purpose in one line",
+    "Your company's report template",
+    "Check rules for confidential material"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: one-page draft",
+     "howTo": "Paste in the chat with the material attached",
+     "body": "Using the attached material, write a one-page report for {{보고대상}}.\n- Purpose: {{보고목적}}\n- The question they'll care most about: {{핵심질문}}\n- Direction of the conclusion (if any): {{결론방향}}\n\nStructure: Title / Bottom line (3 lines max, conclusion first) / Current situation / Problem & cause / Options compared (table) / Recommendation / Next steps\n\nRules:\n- Short bullet style; never go over one page\n- Use only numbers in the attachments; mark anything not in them as [CHECK]\n- Put '{{작성일}}, {{작성자}}' at top right\n- Footnote the calculation for every number you computed (visible on hover in Word)\n- Word (.docx), one portrait page, 2 cm / 0.8 in margins, standard business font",
+     "variables": [
+      {
+       "key": "보고대상",
+       "label": "Audience",
+       "example": "the CEO"
+      },
+      {
+       "key": "보고목적",
+       "label": "Purpose",
+       "example": "Decide whether to switch our office copier leasing vendor"
+      },
+      {
+       "key": "핵심질문",
+       "label": "Their likely question",
+       "example": "How much would we save a year, and what would get harder?"
+      },
+      {
+       "key": "결론방향",
+       "label": "Conclusion direction (or 'propose from the data')",
+       "example": "Recommend switching vendors"
+      },
+      {
+       "key": "작성일",
+       "label": "Date",
+       "example": "2026-11-08"
+      },
+      {
+       "key": "작성자",
+       "label": "Author",
+       "example": "Jane Lee, Operations"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: source for every number",
+     "howTo": "Right after you get the draft",
+     "body": "List every number in the report in a table.\nNumber / where it comes from (file, page, cell) / calculation / recalculated value / match?\nMark any number you can't trace as 'No source'.",
+     "variables": []
+    },
+    {
+     "id": "qna",
+     "title": "Likely executive questions",
+     "howTo": "Right after the draft",
+     "body": "Read the report as {{보고대상}} would and give me 5 likely questions with draft answers. Use only evidence from the attachments; if there's none, write 'Needs more checking'.",
+     "variables": [
+      {
+       "key": "보고대상",
+       "label": "Audience",
+       "example": "the CEO"
+      }
+     ]
+    },
+    {
+     "id": "shorten",
+     "title": "Trim when it runs over",
+     "howTo": "When it's longer than a page",
+     "body": "Cut the bottom line to one sentence and the whole report by {{감축비율}}%. Keep the numbers and conclusion as they are, and list what you cut separately as appendix material.",
+     "variables": [
+      {
+       "key": "감축비율",
+       "label": "Cut by (%)",
+       "example": "20"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Gather material",
+     "body": "Files and emails in one place",
+     "check": "Check rules for confidential items"
+    },
+    {
+     "title": "Create a Project",
+     "body": "Add the instructions and template once",
+     "check": "Free plan: up to 5 projects"
+    },
+    {
+     "title": "Material + prompt",
+     "body": "Attach in a new chat and send",
+     "check": ""
+    },
+    {
+     "title": "Check length",
+     "body": "Use the trim prompt if over a page",
+     "check": ""
+    },
+    {
+     "title": "Check the numbers",
+     "body": "Use the check prompt against sources",
+     "check": "AI can make numbers up"
+    },
+    {
+     "title": "Likely questions",
+     "body": "Prepare 5 questions and answers",
+     "check": ""
+    },
+    {
+     "title": "Print",
+     "body": "Print on one portrait page",
+     "check": "You make the final call"
+    }
+   ],
+   "result": {
+    "summary": "One-page Word report\nFormula footnotes · 5 likely questions",
+    "example": "Example: saves $2,160 a year (16.7%)\nFootnotes on 12 numbers"
+   },
+   "cautions": [
+    "Check every single number",
+    "You decide the conclusion and ask",
+    "Turned off file creation? You'll get text only",
+    "Check rules before using confidential material"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Intro to Projects (video course)",
+     "publisher": "Claude Academy",
+     "url": "https://academy.claude.com/tutorials/intro-to-projects",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "One-page report",
+    "instructions": "Write every report as a one-page executive brief. Lead with the conclusion. Structure: Title / Bottom line (3 lines max) / Current situation / Problem & cause / Options compared / Recommendation / Next steps. Short bullet style. Use only numbers from the attachments and footnote the calculation for any number you computed. Mark anything not in the material as [CHECK]. Date and author at top right. Word (.docx), standard business font, 2 cm / 0.8 in margins.",
+    "knowledge": [
+     "One company report template",
+     "1–2 good example reports"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "excel-compare-files",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "월",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Compare two files and find the differences",
+   "subtitle": "Upload two files and get just\nthe added, removed and changed rows",
+   "tags": [
+    "compare",
+    "difference",
+    "changes",
+    "excel",
+    "price list",
+    "roster"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Comparing two lists, I always miss one",
+   "before": "VLOOKUP and checking row by row",
+   "after": "Matched on a key column, only the differences",
+   "prepare": [
+    "The two files (old and new)",
+    "Pick a key column (employee ID, item code)",
+    "Match column names across files",
+    "Remove SSNs and contact details"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: compare two files",
+     "howTo": "Paste in the chat with both files attached",
+     "body": "Attachment 1 is {{이전파일}} and attachment 2 is {{최신파일}}. Compare them on the '{{기준열}}' column and make one Excel file.\n1. 'Summary' sheet: counts of added, removed and changed rows\n2. 'Added' sheet: rows only in the new file\n3. 'Removed' sheet: rows only in the old file\n4. 'Changed' sheet: rows in both where {{비교열}} changed (old value / new value / difference side by side; changed cells in yellow)\n5. 'Needs review' sheet: rows where the key column is blank or duplicated\nDon't change any data.\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "이전파일",
+       "label": "Old file",
+       "example": "September vendor price list"
+      },
+      {
+       "key": "최신파일",
+       "label": "New file",
+       "example": "October vendor price list"
+      },
+      {
+       "key": "기준열",
+       "label": "Key column",
+       "example": "Item code"
+      },
+      {
+       "key": "비교열",
+       "label": "Columns to compare (comma-separated)",
+       "example": "Unit price, Vendor"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "formula",
+     "title": "DIY: comparison formula",
+     "howTo": "When you can't upload to AI",
+     "body": "Give me Excel formulas to compare Sheet1 (old) and Sheet2 (new) on '{{기준열}}'. I want a column next to the new sheet showing 'New/Changed/Same'. My Excel is {{엑셀버전}}. If XLOOKUP isn't available in that version, use another function.",
+     "variables": [
+      {
+       "key": "기준열",
+       "label": "Key column",
+       "example": "Item code"
+      },
+      {
+       "key": "엑셀버전",
+       "label": "Excel version",
+       "example": "Microsoft 365"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Remove personal data",
+     "body": "Delete sensitive columns in a copy",
+     "check": "Keep the original separately"
+    },
+    {
+     "title": "Check the key column",
+     "body": "Same format in both files",
+     "check": "Watch leading zeros and spaces"
+    },
+    {
+     "title": "Attach files",
+     "body": "Old file first, then new",
+     "check": "Keep file creation on"
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Review results",
+     "body": "Start with the summary counts",
+     "check": "Too many changes? Suspect the key"
+    },
+    {
+     "title": "Recheck",
+     "body": "Compare 3–4 changes with the source",
+     "check": "Use the check prompt too"
+    }
+   ],
+   "result": {
+    "summary": "Excel with 5 sheets\nSummary, Added, Removed, Changed, Needs review",
+    "example": "Example: 1,240-row price list\n37 changed · 5 added · 2 removed"
+   },
+   "cautions": [
+    "Different key formats flag everything as changed",
+    "Check a few changes against the source",
+    "Delete personal data before uploading",
+    "Over 20 columns? Name only the ones to compare"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "XLOOKUP function",
+     "publisher": "Microsoft Support",
+     "url": "https://support.microsoft.com/office/b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Uploading files to Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-formula",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 30,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Write Excel formulas and fix errors",
+   "subtitle": "Describe the calculation in words\nand get the formula plus a plain explanation",
+   "tags": [
+    "formula",
+    "function",
+    "error",
+    "excel",
+    "vlookup",
+    "sumifs"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "I know the math but can't recall the function",
+   "before": "Search, then trial and error",
+   "after": "Describe it and get the formula right away",
+   "prepare": [
+    "Column names and positions (A, B…)",
+    "2–3 rows of sample data",
+    "The result you want in one line",
+    "Excel version (File > Account)"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: write a formula",
+     "howTo": "No file needed",
+     "body": "Write me an Excel formula.\n- Table layout: {{표구조}}\n- Result I want: {{원하는결과}}\n- Result cell: {{결과칸}}\n- Excel version: {{엑셀버전}}\n\n1. A formula I can paste in\n2. What it does, one line per part in plain words\n3. Which parts need $ locking when I fill it down\n4. When the result tends to go wrong and how to check it\n5. A fallback formula if my version lacks a function",
+     "variables": [
+      {
+       "key": "표구조",
+       "label": "Columns and positions",
+       "example": "A Date, B Branch, C Item, D Sales"
+      },
+      {
+       "key": "원하는결과",
+       "label": "Result you want",
+       "example": "Total October sales for the Seattle branch"
+      },
+      {
+       "key": "결과칸",
+       "label": "Result cell",
+       "example": "G2"
+      },
+      {
+       "key": "엑셀버전",
+       "label": "Excel version",
+       "example": "Microsoft 365"
+      }
+     ]
+    },
+    {
+     "id": "error",
+     "title": "Fix an error",
+     "howTo": "When you see #N/A, #VALUE! etc.",
+     "body": "This formula returns a {{오류}} error. Give me the likely causes, most likely first, and a fixed formula.\nFormula: {{수식}}\nSituation: {{상황}}",
+     "variables": [
+      {
+       "key": "오류",
+       "label": "Error shown",
+       "example": "#N/A"
+      },
+      {
+       "key": "수식",
+       "label": "Problem formula",
+       "example": "=VLOOKUP(A2,Sheet2!A:C,3,0)"
+      },
+      {
+       "key": "상황",
+       "label": "What happened",
+       "example": "The ID is definitely there but it isn't found"
+      }
+     ]
+    },
+    {
+     "id": "explain",
+     "title": "Explain someone else's formula",
+     "howTo": "For handed-over files",
+     "body": "Explain step by step, in plain words, what this formula calculates. If there's a simpler way, show me.\n{{수식}}",
+     "variables": [
+      {
+       "key": "수식",
+       "label": "Formula to explain",
+       "example": "=IFERROR(INDEX(C:C,MATCH(1,(A:A=F2)*(B:B=G2),0)),\"\")"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Note the layout",
+     "body": "Jot column names and positions",
+     "check": "Use sample values, not real data"
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Paste the formula",
+     "body": "Paste in the result cell and press Enter",
+     "check": ""
+    },
+    {
+     "title": "Check by hand",
+     "body": "Work out 3–4 results yourself",
+     "check": "Don't skip this"
+    },
+    {
+     "title": "Fill down",
+     "body": "Check $ locks, then copy down",
+     "check": ""
+    },
+    {
+     "title": "If it errors",
+     "body": "Use the error prompt",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "A paste-ready formula + plain explanation\nIncluding when it goes wrong",
+    "example": "e.g. =SUMIFS(D:D,B:B,\"Seattle\",\nA:A,\">=\"&DATE(2026,10,1))"
+   },
+   "cautions": [
+    "Always check a few results by hand",
+    "XLOOKUP needs Excel 2021 or 365",
+    "Describe with samples, not real data",
+    "Dates stored as text cause errors"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "XLOOKUP function",
+     "publisher": "Microsoft Support",
+     "url": "https://support.microsoft.com/office/b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-clean-data",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Clean up messy data",
+   "subtitle": "Upload a messy file and get\na clean version plus a change log",
+   "tags": [
+    "clean",
+    "cleanup",
+    "format",
+    "duplicates",
+    "excel",
+    "data"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Dates and phone numbers in every format",
+   "before": "Dozens of find-and-replace runs",
+   "after": "Set the rules once, cleaned in one go",
+   "prepare": [
+    "The Excel file to clean",
+    "Cleanup rules (date format, etc.)",
+    "Delete SSNs and bank details",
+    "Keep the original separately"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: clean the data",
+     "howTo": "Paste in the chat with the file attached",
+     "body": "The attached file is {{자료명}}. Make a cleaned Excel file using these rules:\n{{정리규칙}}\n\n1. 'Clean' sheet: the data with the rules applied\n2. 'Change log' sheet: row / column / original value / new value\n3. 'Duplicates' sheet: rows duplicated on {{중복기준}} (flag them, don't delete)\n4. 'Needs review' sheet: values the rules can't decide\nDon't create values that aren't in the original.\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "자료명",
+       "label": "What data is it?",
+       "example": "Vendor list"
+      },
+      {
+       "key": "정리규칙",
+       "label": "Cleanup rules",
+       "example": "Dates as 2026-10-01, phone numbers as (555) 123-4567, trim spaces, standardize Inc./Incorporated"
+      },
+      {
+       "key": "중복기준",
+       "label": "Column that defines a duplicate",
+       "example": "Tax ID"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "repeat",
+     "title": "Every month: Power Query",
+     "howTo": "When the same cleanup repeats monthly",
+     "body": "I get {{자료명}} every month and want to clean it the same way. Show me, click by click, how to apply these rules with Excel Power Query so next month I just swap the file and hit Refresh.\n{{정리규칙}}",
+     "variables": [
+      {
+       "key": "자료명",
+       "label": "What data is it?",
+       "example": "Vendor list"
+      },
+      {
+       "key": "정리규칙",
+       "label": "Cleanup rules",
+       "example": "Dates as 2026-10-01, trim spaces"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Keep the original",
+     "body": "Work on a copy",
+     "check": "Add '_original' to the file name"
+    },
+    {
+     "title": "Set rules",
+     "body": "Write each format change on a line",
+     "check": ""
+    },
+    {
+     "title": "Attach the file",
+     "body": "Turn on file creation and attach",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Skim the change log",
+     "body": "Look for odd conversions",
+     "check": "Watch numbers turning into dates"
+    },
+    {
+     "title": "Recheck",
+     "body": "Same row count as the original?",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel with 4 sheets\nClean, Change log, Duplicates, Needs review",
+    "example": "Example: 820 vendors cleaned\n312 cells changed · 9 duplicates flagged"
+   },
+   "cautions": [
+    "Flag duplicates, never delete them",
+    "Check the change log for odd conversions",
+    "Row count should match the original",
+    "Delete personal data before uploading"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Import data from a folder (Power Query)",
+     "publisher": "Microsoft Support",
+     "url": "https://support.microsoft.com/en-us/Excel/import-data-from-a-folder-with-multiple-files-power-query",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-pivot-chart",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Summary tables (pivot) and charts",
+   "subtitle": "Say what you want to see and get\nthe summary table and chart at once",
+   "tags": [
+    "pivot",
+    "pivot table",
+    "chart",
+    "graph",
+    "summary",
+    "excel"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Never sure where to click for a pivot",
+   "before": "Find menus, drag fields, format",
+   "after": "Name the breakdown, done",
+   "prepare": [
+    "The Excel file to summarize",
+    "One header row, no blank rows",
+    "How to break it down (by branch, by month)",
+    "Delete personal data columns"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: summary table & chart",
+     "howTo": "Paste in the chat with the file attached",
+     "body": "Using the attached {{자료명}}, make an Excel file with a summary table and chart.\n- Rows: {{행기준}}\n- Columns: {{열기준}}\n- Values: {{값}} (sum)\n- Chart: {{차트}}\n\n1. 'Summary' sheet: the summary table (with row and column totals, thousands separators)\n2. 'Chart' sheet: a chart built from that table, with title and units\n3. 'Notes' sheet: 3 lines on what stands out, with the numbers behind them\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "자료명",
+       "label": "What data is it?",
+       "example": "2026 monthly sales by branch"
+      },
+      {
+       "key": "행기준",
+       "label": "Rows",
+       "example": "Branch"
+      },
+      {
+       "key": "열기준",
+       "label": "Columns",
+       "example": "Month"
+      },
+      {
+       "key": "값",
+       "label": "Value to total",
+       "example": "Sales"
+      },
+      {
+       "key": "차트",
+       "label": "Chart type",
+       "example": "Monthly trend line + bar by branch"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "howto",
+     "title": "DIY: pivot click by click",
+     "howTo": "To build it yourself in Excel",
+     "body": "Show me, click by click, how to make a PivotTable in Excel {{엑셀버전}} totaling {{값}} by {{행기준}} and {{열기준}}. Also show me how to make new source rows show up with Refresh.",
+     "variables": [
+      {
+       "key": "엑셀버전",
+       "label": "Excel version",
+       "example": "Microsoft 365"
+      },
+      {
+       "key": "행기준",
+       "label": "Rows",
+       "example": "Branch"
+      },
+      {
+       "key": "열기준",
+       "label": "Columns",
+       "example": "Month"
+      },
+      {
+       "key": "값",
+       "label": "Value to total",
+       "example": "Sales"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Tidy the data",
+     "body": "One header row, no blank rows",
+     "check": "Unmerge cells"
+    },
+    {
+     "title": "Decide the breakdown",
+     "body": "Note rows, columns and values",
+     "check": ""
+    },
+    {
+     "title": "Attach the file",
+     "body": "Turn on file creation and attach",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Match totals",
+     "body": "Grand total = source total?",
+     "check": "Use the check prompt"
+    },
+    {
+     "title": "Print",
+     "body": "Confirm one landscape page",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel with 3 sheets\nSummary, Chart, Notes (3 lines)",
+    "example": "Example: 8 branches × 12 months\n2 charts · 3 lines of notes"
+   },
+   "cautions": [
+    "Compare the grand total with the source",
+    "Check the numbers in the notes too",
+    "Fix blank rows and merged cells first",
+    "Check the chart units ($ or $K)"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Create a PivotTable",
+     "publisher": "Microsoft Support",
+     "url": "https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-monthly-analysis",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Month-over-month results analysis",
+   "subtitle": "Upload two periods of results and get\na variance table plus comments on causes",
+   "tags": [
+    "variance",
+    "month over month",
+    "analysis",
+    "sales",
+    "results",
+    "excel"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "I have the numbers, now I have to explain why",
+   "before": "A day of calculating changes and hunting causes",
+   "after": "Variance table, key changes and comments in one go",
+   "prepare": [
+    "Results files for both periods",
+    "Key column (branch, item, customer)",
+    "Notes on known reasons for changes",
+    "Delete personal data columns"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: variance analysis",
+     "howTo": "Paste in the chat with both files attached",
+     "body": "Attachment 1 is {{이전기간}} and attachment 2 is {{비교기간}} {{자료명}}. Analyze by '{{기준열}}' and make an Excel file.\n1. 'Variance' sheet: previous, current, change and % change for each key, with a total row\n2. 'Key changes' sheet: changes of ${{기준금액}} or more or {{기준비율}}% or more\n3. 'Comments' sheet: 3–5 lines on the overall change and main causes. Separate what my notes explain from what they don't.\nNotes: {{변동메모}}\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "이전기간",
+       "label": "Previous period",
+       "example": "September 2026"
+      },
+      {
+       "key": "비교기간",
+       "label": "Comparison period",
+       "example": "October 2026"
+      },
+      {
+       "key": "자료명",
+       "label": "What data is it?",
+       "example": "sales by branch"
+      },
+      {
+       "key": "기준열",
+       "label": "Key column",
+       "example": "Branch"
+      },
+      {
+       "key": "기준금액",
+       "label": "Key change threshold ($)",
+       "example": "5000"
+      },
+      {
+       "key": "기준비율",
+       "label": "Key change threshold (%)",
+       "example": "10"
+      },
+      {
+       "key": "변동메모",
+       "label": "Known reasons for changes",
+       "example": "Dallas branch won a large new customer; Denver branch closed 10 days for remodeling"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "comment",
+     "title": "3 lines for the report",
+     "howTo": "After the analysis",
+     "body": "Rewrite the 'Comments' sheet as 3 bullet points for a report to {{보고대상}}. Use the sheet's numbers exactly and mark guesses as 'Estimate'.",
+     "variables": [
+      {
+       "key": "보고대상",
+       "label": "Audience",
+       "example": "the CEO"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Prepare files",
+     "body": "Same layout for both periods",
+     "check": "Same key column name"
+    },
+    {
+     "title": "Change notes",
+     "body": "Write down reasons you know",
+     "check": ""
+    },
+    {
+     "title": "Attach files",
+     "body": "Previous first, then current",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Match totals",
+     "body": "Totals equal the sources?",
+     "check": "Use the check prompt"
+    },
+    {
+     "title": "Check comments",
+     "body": "Start with unexplained changes",
+     "check": ""
+    },
+    {
+     "title": "Report",
+     "body": "Use the 3 lines in your report",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel: Variance, Key changes, Comments\nPlus a 3-line summary for the report",
+    "example": "Example: 8 branches, Sep → Oct\n+4.2% · 3 key changes · 1 unexplained"
+   },
+   "cautions": [
+    "Trust only causes backed by data",
+    "Check lines marked 'Estimate' before use",
+    "Compare totals with the sources",
+    "Different layouts? Align them first"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Monthly results analysis",
+    "instructions": "You help analyze monthly results. Output an Excel (.xlsx) file. Put calculated cells in as Excel formulas with a cell note explaining each calculation. Comments on causes must rest on the data and my notes; mark guesses as 'Estimate'. Put a recheck of totals on a 'Check' sheet.",
+    "knowledge": [
+     "Last month's analysis",
+     "Branch/item code list"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "excel-vba",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "hard",
+   "frequency": "월",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Macros for repetitive tasks",
+   "subtitle": "Write down your repeated clicks\nand get a one-button macro",
+   "tags": [
+    "macro",
+    "vba",
+    "automate",
+    "repetitive",
+    "excel",
+    "button"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    },
+    {
+     "name": "Excel",
+     "free": false,
+     "note": "Desktop Excel needed"
+    }
+   ],
+   "problem": "The same dozens of clicks every month",
+   "before": "Copy sheets, sort and format by hand",
+   "after": "One macro button and done",
+   "prepare": [
+    "Write the repeated steps in order",
+    "Check sheet names and column positions",
+    "Always use a copy of the file",
+    "Check whether your company blocks macros"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: write a macro",
+     "howTo": "No file needed",
+     "body": "Write me an Excel VBA macro.\n- What it does (in order): {{작업순서}}\n- Sheet name: {{시트이름}}\n- Excel version: {{엑셀버전}}\n\n1. VBA code to paste (a plain-English comment on every line)\n2. Click-by-click steps to add and run it (starting from turning on the Developer tab)\n3. Have it automatically create a backup sheet before running\n4. If the data or sheet is missing, stop and show a message\n5. Tell me how to save it (.xlsm)",
+     "variables": [
+      {
+       "key": "작업순서",
+       "label": "Steps in order",
+       "example": "1) Copy the Source sheet 2) Sort by column C descending 3) Thousands separators on the amount column 4) Add a total row 5) Save as PDF"
+      },
+      {
+       "key": "시트이름",
+       "label": "Sheet name",
+       "example": "Source"
+      },
+      {
+       "key": "엑셀버전",
+       "label": "Excel version",
+       "example": "Microsoft 365"
+      }
+     ]
+    },
+    {
+     "id": "error",
+     "title": "Fix an error",
+     "howTo": "When it stops while running",
+     "body": "Running this macro gives the error '{{오류메시지}}' on {{오류줄}}. Tell me the cause and give me the full fixed code.\n{{코드}}",
+     "variables": [
+      {
+       "key": "오류메시지",
+       "label": "Error message",
+       "example": "Run-time error 9: Subscript out of range"
+      },
+      {
+       "key": "오류줄",
+       "label": "Highlighted line",
+       "example": "Sheets(\"Source\").Copy"
+      },
+      {
+       "key": "코드",
+       "label": "Full code",
+       "example": "(paste the code)"
+      }
+     ]
+    },
+    {
+     "id": "explain",
+     "title": "Review a macro you received",
+     "howTo": "Before using someone else's macro",
+     "body": "Explain in plain words what this VBA code does, and check for risky actions like deleting files or sending data outside.\n{{코드}}",
+     "variables": [
+      {
+       "key": "코드",
+       "label": "Code to review",
+       "example": "(paste the code)"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Write the steps",
+     "body": "Number each click",
+     "check": ""
+    },
+    {
+     "title": "Make a copy",
+     "body": "Always use a copy",
+     "check": "Macros can't be undone"
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Add the code",
+     "body": "Follow the click steps",
+     "check": ""
+    },
+    {
+     "title": "Test run",
+     "body": "Run on the copy first",
+     "check": "Compare with doing it by hand"
+    },
+    {
+     "title": "Save as .xlsm",
+     "body": "Macro-enabled format",
+     "check": ""
+    },
+    {
+     "title": "If it errors",
+     "body": "Use the error prompt",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Commented VBA code\nHow to add, run and back up",
+    "example": "Example: copy, sort, format, total\n5 steps in one button"
+   },
+   "cautions": [
+    "Always test on a copy first",
+    "Macro results can't be undone",
+    "Never run macros from unknown sources",
+    "Won't run in Excel for the web or phones"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Quick start: Create a macro",
+     "publisher": "Microsoft Support",
+     "url": "https://support.microsoft.com/en-us/office/quick-start-create-a-macro-741130ca-080d-49f5-9471-1e5fb3d581a8",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "hr-attendance-overtime",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 240,
+   "timeAfterMin": 40,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Timesheet totals and overtime",
+   "subtitle": "Upload clock-in records and get\nweekly hours and FLSA overtime totals",
+   "tags": [
+    "timesheet",
+    "overtime",
+    "hours",
+    "attendance",
+    "flsa",
+    "payroll"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Working out overtime from punch records is confusing",
+   "before": "Adding and subtracting hours per person",
+   "after": "Daily and weekly hours plus overtime screen",
+   "prepare": [
+    "Time records (ID, date, in, out)",
+    "Unpaid meal break rules",
+    "Workweek start day",
+    "Remove names (keep IDs only)"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: total hours",
+     "howTo": "Paste in the chat with the file attached",
+     "body": "The attached file is the {{기간}} time record. Clock-in is in '{{출근열}}' and clock-out in '{{퇴근열}}'.\n- Scheduled hours: {{소정근로}} per day; unpaid break {{휴게시간}}\n- Workweek starts on: {{휴일목록}}\n\n1. 'Daily' sheet: hours worked per ID and date\n2. 'Weekly' sheet: hours per ID per workweek, with hours over 40 as overtime\n3. 'Monthly' sheet: totals of regular and overtime hours per ID\n4. 'Needs review' sheet: missing punches, shifts over 24 hours, and days where the break is unclear\nCount overtime only by the workweek (over 40 hours), not by day.\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "Period",
+       "example": "October 2026"
+      },
+      {
+       "key": "출근열",
+       "label": "Clock-in column",
+       "example": "In"
+      },
+      {
+       "key": "퇴근열",
+       "label": "Clock-out column",
+       "example": "Out"
+      },
+      {
+       "key": "소정근로",
+       "label": "Scheduled hours per day",
+       "example": "8"
+      },
+      {
+       "key": "휴게시간",
+       "label": "Unpaid break",
+       "example": "12:00–12:30 (30 min)"
+      },
+      {
+       "key": "휴일목록",
+       "label": "Workweek start day",
+       "example": "Sunday 12:00 a.m."
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "pay",
+     "title": "Overtime pay",
+     "howTo": "After the hours are confirmed",
+     "body": "Add each ID's regular hourly rate (attached or the '{{시급열}}' column) to the 'Weekly' sheet and calculate overtime pay.\nShow straight-time pay (all hours × rate) and the overtime premium (overtime hours × rate × 0.5) separately. Only these people are non-exempt: {{인원}}. Mark anyone else 'Check needed'. If there are bonuses or commissions, flag that the regular rate may need adjusting.",
+     "variables": [
+      {
+       "key": "시급열",
+       "label": "Hourly rate column",
+       "example": "Hourly rate"
+      },
+      {
+       "key": "인원",
+       "label": "Non-exempt employees (IDs or \"all\")",
+       "example": "all"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Remove personal data",
+     "body": "Delete names, keep IDs",
+     "check": ""
+    },
+    {
+     "title": "Confirm workweek",
+     "body": "Note the fixed workweek start",
+     "check": "It must not change week to week"
+    },
+    {
+     "title": "Attach the file",
+     "body": "Turn on file creation and attach",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Fix review items",
+     "body": "Fill missing punches first",
+     "check": ""
+    },
+    {
+     "title": "Sample check",
+     "body": "Hand-check 2–3 people",
+     "check": "Use the check prompt too"
+    },
+    {
+     "title": "Overtime pay",
+     "body": "Pay prompt once hours are final",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel: Daily, Weekly, Monthly\nOvertime premium can be added",
+    "example": "Example: 48 people · October\n612 overtime hours · 2 to review"
+   },
+   "cautions": [
+    "Exempt employees follow different rules",
+    "Some states have daily overtime",
+    "Always hand-check 2–3 people",
+    "Time data is sensitive; use IDs only"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "FLSA overtime FAQ",
+     "publisher": "U.S. Department of Labor",
+     "url": "https://webapps.dol.gov/elaws/faq/esa/flsa/011.htm",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Monthly timesheet totals",
+    "instructions": "You help total timesheets. Under the FLSA, overtime for non-exempt employees is hours over 40 in a workweek. Put calculated cells in as Excel formulas with a cell note. Don't decide exempt status or state daily-overtime rules; mark them 'Check needed'.",
+    "knowledge": [
+     "Company work-hour and break rules",
+     "List of exempt / non-exempt employees"
+    ]
+   },
+   "legal": {
+    "note": "FLSA: non-exempt employees must get at least 1.5× their regular rate for hours over 40 in a workweek. Where state overtime law gives more, the higher standard applies.",
+    "checkedAt": "2026-11-09",
+    "disclaimer": "Exempt status, regular-rate rules and state law need an HR or employment law professional to confirm."
+   }
+  },
+  {
+   "id": "hr-annual-leave",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "PTO accrual, usage and balance tracker",
+   "subtitle": "Upload hire dates and time off taken\nfor accrued, used and remaining on one sheet",
+   "tags": [
+    "pto",
+    "vacation",
+    "leave",
+    "time off",
+    "balance",
+    "accrual"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Everyone accrues differently by hire date",
+   "before": "Hand counting on a calendar for each person",
+   "after": "Accrued, balance and reminders, automatically",
+   "prepare": [
+    "Employee list (ID, hire date)",
+    "Time off taken (ID, date, days)",
+    "Your PTO policy (accrual, cap, carryover)",
+    "Use IDs instead of names"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: PTO tracker",
+     "howTo": "Paste in the chat with both files attached",
+     "body": "Attachment 1 is the employee list (ID, hire date) and attachment 2 is time off taken. Build a PTO tracker in Excel as of {{기준일}} using this policy: {{운영기준}}\n1. 'Accrued' sheet: tenure, PTO accrued and how it was calculated, per ID\n2. 'Used' sheet: days used per ID (half days as 0.5)\n3. 'Balance' sheet: accrued − used; flag anyone with {{촉진기준}} or more days left\n4. 'Needs review' sheet: missing hire dates, people who used more than they accrued, cases the policy doesn't cover\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "기준일",
+       "label": "As-of date",
+       "example": "2026-12-31"
+      },
+      {
+       "key": "운영기준",
+       "label": "PTO policy",
+       "example": "1.25 days accrued per month, max 20 days, up to 5 days carry over"
+      },
+      {
+       "key": "촉진기준",
+       "label": "Flag balances of (days)",
+       "example": "5"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "notice",
+     "title": "Reminder to use PTO",
+     "howTo": "For people with large balances",
+     "body": "Write a friendly reminder for the people flagged on the 'Balance' sheet. Include their remaining days and the deadline ({{사용기한}}), and ask them to send their plans by {{제출기한}}. Note that HR will confirm any carryover or payout rules.",
+     "variables": [
+      {
+       "key": "사용기한",
+       "label": "Use-by date",
+       "example": "2026-12-31"
+      },
+      {
+       "key": "제출기한",
+       "label": "Plan due date",
+       "example": "2026-11-20"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Prepare data",
+     "body": "IDs, hire dates, time off taken",
+     "check": ""
+    },
+    {
+     "title": "Write down the policy",
+     "body": "Accrual, cap and carryover rules",
+     "check": ""
+    },
+    {
+     "title": "Attach files",
+     "body": "List first, then time off",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Fix review items",
+     "body": "Leaves of absence, policy gaps",
+     "check": ""
+    },
+    {
+     "title": "Sample check",
+     "body": "One new hire and one long-tenured person",
+     "check": "Use the check prompt too"
+    },
+    {
+     "title": "Remind",
+     "body": "Send the reminder to big balances",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel: Accrued, Used, Balance, Needs review\nPlus a reminder draft",
+    "example": "Example: 48 people as of 12/31\n11 with 5+ days left"
+   },
+   "cautions": [
+    "Follow your written PTO policy",
+    "Some states regulate PTO payout at exit",
+    "Check state and city sick leave laws",
+    "HR confirms carryover and payout"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Vacation Leave",
+     "publisher": "U.S. Department of Labor",
+     "url": "https://www.dol.gov/general/topic/benefits-leave/vacation_leave",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "PTO tracking",
+    "instructions": "You help track paid time off. Federal law doesn't require paid vacation, so follow only the company policy I give you. Mark anything the data can't settle (leave of absence, policy exceptions) as 'Check needed'. Put calculated cells in as Excel formulas with a cell note.",
+    "knowledge": [
+     "Company PTO policy",
+     "Employee list"
+    ]
+   },
+   "legal": {
+    "note": "The FLSA does not require payment for time not worked, such as vacations; paid vacation is a matter of agreement between employer and employee. Some states and cities have their own paid leave or payout rules.",
+    "checkedAt": "2026-11-09",
+    "disclaimer": "State and local leave laws differ. Have an HR or employment law professional confirm."
+   }
+  },
+  {
+   "id": "hr-job-posting",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Write job postings by role",
+   "subtitle": "Enter the role and terms and get\nthe posting plus 3 title options",
+   "tags": [
+    "hiring",
+    "job post",
+    "recruit",
+    "job ad",
+    "indeed"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    }
+   ],
+   "problem": "Every posting starts from a blank page",
+   "before": "Find an old posting and edit it",
+   "after": "Enter the terms, get a ready posting",
+   "prepare": [
+    "Job title and main duties",
+    "Requirements and nice-to-haves",
+    "Location, hours, pay",
+    "Company intro in 2–3 lines"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: job posting draft",
+     "howTo": "No file needed",
+     "body": "Write a job posting for {{플랫폼}} using the information below.\n- Company: {{회사소개}}\n- Role: {{직무}}\n- Main duties: {{주요업무}}\n- Requirements: {{자격요건}}\n- Terms: {{근무조건}}\n\nStructure: 3 title options / one-line pitch / main duties / requirements & nice-to-haves / terms / hiring process\nUse only the terms I gave you; mark anything missing as [CHECK]. Don't use wording that limits by gender, age or other protected traits.",
+     "variables": [
+      {
+       "key": "플랫폼",
+       "label": "Where it will be posted",
+       "example": "Indeed"
+      },
+      {
+       "key": "회사소개",
+       "label": "Company intro",
+       "example": "A 120-person logistics company in New Jersey, founded 1998"
+      },
+      {
+       "key": "직무",
+       "label": "Role",
+       "example": "HR & Office Coordinator"
+      },
+      {
+       "key": "주요업무",
+       "label": "Main duties",
+       "example": "Payroll and benefits admin, timekeeping, office support"
+      },
+      {
+       "key": "자격요건",
+       "label": "Requirements",
+       "example": "Intermediate Excel; 1+ year HR experience preferred"
+      },
+      {
+       "key": "근무조건",
+       "label": "Terms",
+       "example": "Mon–Fri 9–5, $52,000+/year (negotiable), full-time"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: anything made up?",
+     "howTo": "Right after you get the draft",
+     "body": "Recheck the text you just wrote.\nList anything that wasn't in the information I gave you (numbers, dates, promises, company policy) in a table, then give me a revised version with those removed or marked [CHECK].",
+     "variables": []
+    },
+    {
+     "id": "check",
+     "title": "Bias and wording check",
+     "howTo": "Last check before posting",
+     "body": "Check this job posting for wording about gender, age, origin, appearance, family status or other things unrelated to the job, and for terms that could look different from reality. Give me fixed sentences.\n{{공고}}",
+     "variables": [
+      {
+       "key": "공고",
+       "label": "Posting to check",
+       "example": "(paste the posting)"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Settle the terms",
+     "body": "Pay, hours and location",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Review",
+     "body": "Use the check prompt for made-up terms",
+     "check": ""
+    },
+    {
+     "title": "Bias check",
+     "body": "Use the wording check prompt",
+     "check": ""
+    },
+    {
+     "title": "Post",
+     "body": "Paste into the job board form",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Posting ready for the job board\n3 titles and the hiring process",
+    "example": "Example: HR coordinator posting\n3 titles · one page"
+   },
+   "cautions": [
+    "Terms must match reality",
+    "No wording that limits by protected traits",
+    "Fill every [CHECK] before posting",
+    "Some states require a pay range"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "hr-interview",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Interview questions and scorecard",
+   "subtitle": "Enter the role and skills and get\na question set and scorecard",
+   "tags": [
+    "interview",
+    "questions",
+    "scorecard",
+    "hiring",
+    "evaluation"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Word or Google Docs",
+     "free": false,
+     "note": "Final formatting & print"
+    }
+   ],
+   "problem": "Every interviewer asks different questions, so we can't compare",
+   "before": "Whatever comes to mind",
+   "after": "Same questions and scoring for everyone",
+   "prepare": [
+    "Role and main duties",
+    "3–4 skills you most want to see",
+    "Interview length and number of interviewers",
+    "Job posting (attach if you have it)"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: questions & scorecard",
+     "howTo": "You can attach the posting",
+     "body": "Make an interview question set and scorecard for {{직무}} as a Word file.\n- Key skills: {{역량}}\n- Length: {{시간}} minutes, {{면접관}} interviewers\n\n1. Questions: 2 per skill plus follow-ups, each with an example of a strong answer\n2. Scorecard: 1–5 scale per skill (with behavior examples for each score), total and comments boxes\n3. 5 lines of guidance for interviewers\nDon't include questions unrelated to the job (marriage, family, origin, health, etc.).\n\n[Output rules]\n- Word (.docx), one clean page layout, standard business font\n- Don't invent anything I didn't give you (numbers, dates, promises). Mark gaps as [CHECK].",
+     "variables": [
+      {
+       "key": "직무",
+       "label": "Role",
+       "example": "Warehouse Supervisor"
+      },
+      {
+       "key": "역량",
+       "label": "Key skills",
+       "example": "Solving floor problems, managing people, safety mindset, Excel"
+      },
+      {
+       "key": "시간",
+       "label": "Length (min)",
+       "example": "40"
+      },
+      {
+       "key": "면접관",
+       "label": "Interviewers",
+       "example": "3"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: anything made up?",
+     "howTo": "Right after you get the draft",
+     "body": "Recheck the text you just wrote.\nList anything that wasn't in the information I gave you (numbers, dates, promises, company policy) in a table, then give me a revised version with those removed or marked [CHECK].",
+     "variables": []
+    },
+    {
+     "id": "check",
+     "title": "Check for off-limits questions",
+     "howTo": "Review interviewers' questions",
+     "body": "Find any questions below that are unrelated to the job or could be seen as discriminatory, explain why, and suggest replacements.\n{{질문}}",
+     "variables": [
+      {
+       "key": "질문",
+       "label": "Questions to check",
+       "example": "Are you married? / Can you work late? / Where are you originally from?"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Pick the skills",
+     "body": "3–4 skills that matter",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Attach the posting and paste",
+     "check": ""
+    },
+    {
+     "title": "Tailor questions",
+     "body": "Adjust to your company",
+     "check": ""
+    },
+    {
+     "title": "Brief interviewers",
+     "body": "Agree on scoring beforehand",
+     "check": "Shared scoring is the key"
+    },
+    {
+     "title": "After interviews",
+     "body": "Compare scores on the scorecard",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Questions by skill + 1–5 scorecard\nWith interviewer guidance",
+    "example": "Example: 40-min supervisor interview\n8 questions · 1-page scorecard"
+   },
+   "cautions": [
+    "No questions unrelated to the job",
+    "Agree on scoring before interviews",
+    "Don't upload candidates' personal data",
+    "Interviewers make the final call"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "hr-notice",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 40,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Staff announcements and notices",
+   "subtitle": "Enter the key points and get\na formal notice and a chat version",
+   "tags": [
+    "notice",
+    "announcement",
+    "promotion",
+    "memo",
+    "staff"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    }
+   ],
+   "problem": "Even a short notice takes ages to word",
+   "before": "Find an old one and edit it",
+   "after": "Formal and short versions at once",
+   "prepare": [
+    "Type (appointment, policy, event)",
+    "Key points and effective date",
+    "Who it is for",
+    "Contact for questions"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: two versions",
+     "howTo": "No file needed",
+     "body": "Write an internal announcement.\n- Type: {{종류}}\n- Key points: {{내용}}\n- For: {{대상}}\n- Effective: {{시행일}}\n- Questions: {{문의처}}\n\n1. Formal notice (title, body, attachments line)\n2. A chat/Slack version in 5 lines or less\nDon't add benefits or conditions I didn't give; mark gaps as [CHECK].",
+     "variables": [
+      {
+       "key": "종류",
+       "label": "Type",
+       "example": "Promotion"
+      },
+      {
+       "key": "내용",
+       "label": "Key points",
+       "example": "John Smith promoted to Warehouse 2 Team Lead, effective 11/16"
+      },
+      {
+       "key": "대상",
+       "label": "For",
+       "example": "All staff"
+      },
+      {
+       "key": "시행일",
+       "label": "Effective date",
+       "example": "2026-11-16"
+      },
+      {
+       "key": "문의처",
+       "label": "Questions",
+       "example": "HR, ext. 1234"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: anything made up?",
+     "howTo": "Right after you get the draft",
+     "body": "Recheck the text you just wrote.\nList anything that wasn't in the information I gave you (numbers, dates, promises, company policy) in a table, then give me a revised version with those removed or marked [CHECK].",
+     "variables": []
+    },
+    {
+     "id": "table",
+     "title": "Table of appointments",
+     "howTo": "When several people move",
+     "body": "Turn the changes below into a table for the notice (Name / Current team / New team / Title / Effective date) and write 2 lines to go above the table.\n{{발령내용}}",
+     "variables": [
+      {
+       "key": "발령내용",
+       "label": "Changes",
+       "example": "John Smith Warehouse 1 → Warehouse 2 Team Lead 11/16; Emily Chen promoted to Senior Admin 11/16"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Confirm content",
+     "body": "Check date and audience",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks, copy, paste",
+     "check": ""
+    },
+    {
+     "title": "Review",
+     "body": "Use the check prompt",
+     "check": ""
+    },
+    {
+     "title": "Approval",
+     "body": "Follow your sign-off process",
+     "check": ""
+    },
+    {
+     "title": "Post",
+     "body": "Formal on the board, short in chat",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Formal notice + 5-line chat version\nAppointment table on request",
+    "example": "Example: promotion notice\n1 formal · 5-line chat version"
+   },
+   "cautions": [
+    "Post appointments and policies after sign-off",
+    "Double-check names and teams",
+    "Don't add benefits that don't exist",
+    "Keep personal matters out of notices"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "admin-minutes",
+   "status": "published",
+   "category": "admin",
+   "difficulty": "easy",
+   "frequency": "주",
+   "timeBeforeMin": 40,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Meeting notes → minutes",
+   "subtitle": "Paste your notes and get\ndecisions and action items in a table",
+   "tags": [
+    "minutes",
+    "meeting",
+    "meeting notes",
+    "action items",
+    "decisions"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    }
+   ],
+   "problem": "After the meeting, writing minutes is another job",
+   "before": "Retyping from notes",
+   "after": "Decisions, actions and deadlines in a table",
+   "prepare": [
+    "Meeting notes (rough is fine)",
+    "Meeting name, date, attendees",
+    "Minutes template (if any)"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: write the minutes",
+     "howTo": "Paste your notes and send",
+     "body": "Turn the notes below into meeting minutes.\n- Meeting: {{회의명}}\n- Date/time: {{일시}}\n- Attendees: {{참석자}}\n\nStructure: Overview / Discussion (by topic) / Decisions / Action items table (task, owner, due) / Parked items\nDon't add anything not in the notes; if an owner or due date is missing, mark [CHECK].\n\nNotes:\n{{메모}}",
+     "variables": [
+      {
+       "key": "회의명",
+       "label": "Meeting",
+       "example": "November weekly operations meeting"
+      },
+      {
+       "key": "일시",
+       "label": "Date/time",
+       "example": "2026-11-09 10:00"
+      },
+      {
+       "key": "참석자",
+       "label": "Attendees",
+       "example": "Ops manager, Warehouse 1 & 2 leads, HR manager"
+      },
+      {
+       "key": "메모",
+       "label": "Notes",
+       "example": "- Night shift short 2 people → HR posts job this week\n- Year-end volume expected +20%, look at temp staff\n- Safety training in November"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: anything made up?",
+     "howTo": "Right after you get the draft",
+     "body": "Recheck the text you just wrote.\nList anything that wasn't in the information I gave you (numbers, dates, promises, company policy) in a table, then give me a revised version with those removed or marked [CHECK].",
+     "variables": []
+    },
+    {
+     "id": "mail",
+     "title": "Email to share it",
+     "howTo": "After the minutes are done",
+     "body": "Write an email sharing these minutes with attendees. Include the action items table as is and repeat each owner's deadline. To: {{수신}}",
+     "variables": [
+      {
+       "key": "수신",
+       "label": "To",
+       "example": "All attendees"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Copy your notes",
+     "body": "As written in the meeting",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Check actions",
+     "body": "Fill owners and dates marked [CHECK]",
+     "check": ""
+    },
+    {
+     "title": "Review",
+     "body": "Use the check prompt for made-up content",
+     "check": ""
+    },
+    {
+     "title": "Share",
+     "body": "Email prompt to send it",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Minutes with decisions and action table\nPlus an email to share them",
+    "example": "Example: 15 lines of notes\n3 decisions · 5 action items"
+   },
+   "cautions": [
+    "Check nothing that wasn't said crept in",
+    "Attendees confirm owners and dates",
+    "Get consent before using recordings",
+    "Follow rules for confidential meetings"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Meeting minutes",
+    "instructions": "You write meeting minutes. Use only what's in the notes; never invent. Structure: Overview / Discussion / Decisions / Action items table (owner, due) / Parked items. If the notes lack an owner or due date, write [CHECK].",
+    "knowledge": [
+     "Company minutes template"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "admin-policy-form",
+   "status": "published",
+   "category": "admin",
+   "difficulty": "normal",
+   "frequency": "수시",
+   "timeBeforeMin": 240,
+   "timeAfterMin": 40,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Draft company policies and request forms",
+   "subtitle": "Enter the purpose and content and get\na sectioned policy and request form",
+   "tags": [
+    "policy",
+    "handbook",
+    "form",
+    "rules",
+    "request form"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Word or Google Docs",
+     "free": false,
+     "note": "Final formatting & print"
+    }
+   ],
+   "problem": "Writing one policy starts with hunting for examples",
+   "before": "Patching together samples from the web",
+   "after": "A draft built on your company rules, in one go",
+   "prepare": [
+    "Policy name and purpose",
+    "Who it applies to",
+    "Must-have points",
+    "Related existing policy (attach)"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: policy & form draft",
+     "howTo": "You can attach the existing policy",
+     "body": "Draft a {{규정명}} as a Word file.\n- Purpose: {{목적}}\n- Applies to: {{대상}}\n- Must include: {{주요내용}}\n\n1. Policy in numbered sections (purpose, definitions, scope, procedure, responsibilities, effective date)\n2. A matching request form (table layout, with approval boxes)\n3. Mark sections that need a legal check as [LEGAL CHECK]\n\n[Output rules]\n- Word (.docx), one clean page layout, standard business font\n- Don't invent anything I didn't give you (numbers, dates, promises). Mark gaps as [CHECK].",
+     "variables": [
+      {
+       "key": "규정명",
+       "label": "Policy name",
+       "example": "Remote Work Policy"
+      },
+      {
+       "key": "목적",
+       "label": "Purpose",
+       "example": "Set rules for remote work for staff with childcare or long commutes"
+      },
+      {
+       "key": "대상",
+       "label": "Applies to",
+       "example": "Full-time office staff"
+      },
+      {
+       "key": "주요내용",
+       "label": "Must include",
+       "example": "Up to 2 days a week, manager approval, reachable on chat 9–5, data security pledge"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: anything made up?",
+     "howTo": "Right after you get the draft",
+     "body": "Recheck the text you just wrote.\nList anything that wasn't in the information I gave you (numbers, dates, promises, company policy) in a table, then give me a revised version with those removed or marked [CHECK].",
+     "variables": []
+    },
+    {
+     "id": "compare",
+     "title": "Compare with the current policy",
+     "howTo": "When revising",
+     "body": "Compare the attached current policy with the new draft and make a side-by-side table (current / proposed / reason for change). Flag any change that is less favorable to employees.",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "List the content",
+     "body": "Write the must-have points",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Attach the current policy and send",
+     "check": ""
+    },
+    {
+     "title": "Handle [LEGAL CHECK]",
+     "body": "Review the flagged sections",
+     "check": "Ask HR or counsel"
+    },
+    {
+     "title": "Comparison table",
+     "body": "For revisions, compare old and new",
+     "check": ""
+    },
+    {
+     "title": "Gather input",
+     "body": "Ask affected teams",
+     "check": ""
+    },
+    {
+     "title": "Approve & announce",
+     "body": "Use the notices manual",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Sectioned policy + request form\nSide-by-side table for revisions",
+    "example": "Example: remote work policy\n9 sections · 1-page form"
+   },
+   "cautions": [
+    "Have counsel review before adopting",
+    "Check state rules on required notices",
+    "Always review [LEGAL CHECK] sections",
+    "It is a draft; people make the final review"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "admin-quote-compare",
+   "status": "published",
+   "category": "admin",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Compare quotes from 3 vendors",
+   "subtitle": "Upload the quotes and get\na side-by-side table on the same basis",
+   "tags": [
+    "quote",
+    "quotation",
+    "vendor",
+    "bid",
+    "compare",
+    "purchasing"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Every vendor uses a different quote format",
+   "before": "Three quotes on the desk, a table by hand",
+   "after": "Tax and units aligned, plus a recommendation",
+   "prepare": [
+    "Vendor quotes (PDF or photo OK)",
+    "Criteria (price, lead time, service)",
+    "Quantity and specs needed",
+    "Check quotes for personal data"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: quote comparison",
+     "howTo": "Paste in the chat with the quotes attached",
+     "body": "Compare the {{업체수}} attached quotes in an Excel file. The item is {{품목}} and we need {{수량}}.\n1. 'Comparison' sheet: unit price, quantity, subtotal, tax/fees and total per vendor (on the same tax/fee basis), plus {{비교기준}}\n2. 'Source check' sheet: each number read from the quotes and where it came from (flag hard-to-read numbers in photos)\n3. 'Recommendation' sheet: the best vendor per criterion and one overall pick, with 3 reasons\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "업체수",
+       "label": "Number of vendors",
+       "example": "3"
+      },
+      {
+       "key": "품목",
+       "label": "Item",
+       "example": "Office copier lease"
+      },
+      {
+       "key": "수량",
+       "label": "Quantity",
+       "example": "4 units"
+      },
+      {
+       "key": "비교기준",
+       "label": "Other criteria",
+       "example": "Lead time, free service period, payment terms"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "ask",
+     "title": "Questions for vendors",
+     "howTo": "When a quote is missing details",
+     "body": "From the comparison, pick out items each vendor left out or left vague (tax, installation, delivery, service, etc.) and write a short request email per vendor.",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "Collect quotes",
+     "body": "PDFs or clear photos",
+     "check": ""
+    },
+    {
+     "title": "Attach files",
+     "body": "Turn on file creation and attach",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Source check",
+     "body": "Verify numbers on the source sheet",
+     "check": "Photos can be misread"
+    },
+    {
+     "title": "Recheck",
+     "body": "Use the check prompt",
+     "check": ""
+    },
+    {
+     "title": "Report",
+     "body": "Use the one-page report manual",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel: Comparison, Source check, Recommendation\nSame tax/fee basis",
+    "example": "Example: 3 copier vendors\nUp to $2,160 a year apart"
+   },
+   "cautions": [
+    "Put tax and fees on the same basis",
+    "Check photo numbers against the original",
+    "Check units (each, box, month)",
+    "The buyer makes the final choice"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Uploading files to Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "account-settlement",
+   "status": "published",
+   "category": "account",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Match customer statements to deposits",
+   "subtitle": "Upload statements and bank deposits\nto sort matched, different and unpaid",
+   "tags": [
+    "reconcile",
+    "reconciliation",
+    "deposit",
+    "statement",
+    "bank",
+    "month-end"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Matching deposits by customer drags out month-end",
+   "before": "Line by line against the bank statement",
+   "after": "Matched, different and unpaid in a table",
+   "prepare": [
+    "Customer statements (billed)",
+    "Bank deposit records",
+    "Delete account numbers",
+    "Standardize customer names"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: reconcile",
+     "howTo": "Paste in the chat with both files attached",
+     "body": "Attachment 1 is the {{기간}} customer statements and attachment 2 is deposits for the same period. Customer is in '{{거래처열}}' and amount in '{{금액열}}'.\n1. 'Matched' sheet: customer and amount agree\n2. 'Different' sheet: paid but a different amount (differences of ${{허용오차}} or less flagged as likely bank fees)\n3. 'Unpaid' sheet: on statements only\n4. 'Needs review' sheet: deposits from unknown payers, likely combined payments\n5. 'Summary' sheet: billed, received and difference per customer\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "Period",
+       "example": "October 2026"
+      },
+      {
+       "key": "거래처열",
+       "label": "Customer column",
+       "example": "Customer"
+      },
+      {
+       "key": "금액열",
+       "label": "Amount column",
+       "example": "Amount billed"
+      },
+      {
+       "key": "허용오차",
+       "label": "Fee tolerance ($)",
+       "example": "30"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "mail",
+     "title": "Request for clarification",
+     "howTo": "For different or unpaid customers",
+     "body": "Write a polite email to each customer on the 'Different' and 'Unpaid' sheets. Include billed, received and difference in a table; reply by {{회신기한}}.",
+     "variables": [
+      {
+       "key": "회신기한",
+       "label": "Reply by",
+       "example": "2026-11-14"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Remove personal data",
+     "body": "Delete account numbers",
+     "check": ""
+    },
+    {
+     "title": "Standardize names",
+     "body": "Prepare a name map",
+     "check": "Payer names often differ"
+    },
+    {
+     "title": "Attach files",
+     "body": "Statements first, then deposits",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Fix review items",
+     "body": "Combined and unknown deposits",
+     "check": ""
+    },
+    {
+     "title": "Recheck",
+     "body": "Total billed vs total received",
+     "check": ""
+    },
+    {
+     "title": "Send requests",
+     "body": "Email the customers with differences",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel with 5 sheets\nMatched, Different, Unpaid, Needs review, Summary",
+    "example": "Example: 64 customers · October\n58 matched · 3 different · 3 unpaid"
+   },
+   "cautions": [
+    "Delete account numbers before uploading",
+    "People decide combined payments",
+    "Compare totals with the bank balance",
+    "Recheck amounts before emailing"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Uploading files to Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Month-end reconciliation",
+    "instructions": "You help with month-end reconciliation. Match statements and deposits by customer and amount. Put deposits net of fees, combined payments and name mismatches on a 'Needs review' sheet. Put calculated cells in as Excel formulas with a cell note.",
+    "knowledge": [
+     "Customer name map (statement name ↔ payer name)"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "account-card-classify",
+   "status": "published",
+   "category": "account",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 150,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Code company card spending to accounts",
+   "subtitle": "Upload card transactions and get\naccount codes with reasons",
+   "tags": [
+    "card",
+    "credit card",
+    "expense",
+    "gl code",
+    "account code",
+    "coding"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Coding hundreds of card charges wears me out",
+   "before": "Typing a code for each merchant",
+   "after": "Coded to your chart, only edge cases to check",
+   "prepare": [
+    "Card transactions (Excel export)",
+    "Your company's chart of accounts",
+    "Card numbers: last 4 digits only",
+    "Last month's coding (if any)"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: code to accounts",
+     "howTo": "Paste in the chat with the file attached",
+     "body": "The attached file is {{기간}} company card transactions. Code them using only these company accounts and make an Excel file.\nAccounts: {{계정목록}}\n\n1. 'Coded' sheet: original rows + account + reason + confidence (high/medium/low)\n2. 'Summary' sheet: count and total per account\n3. 'Needs review' sheet: low confidence, possible personal use, receipts needed\nIf it doesn't fit, don't force it; send it to 'Needs review'.\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "Period",
+       "example": "October 2026"
+      },
+      {
+       "key": "계정목록",
+       "label": "Company accounts",
+       "example": "Meals, Travel, Client Entertainment, Office Supplies, Vehicle, Phone & Internet, Bank Fees, Books & Training"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "rules",
+     "title": "Rules for next month",
+     "howTo": "After coding is final",
+     "body": "Using the final coding, make a 'merchant keyword → account' rule table. Next month I'll add it to the Project to apply first.",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "Export transactions",
+     "body": "Download as Excel",
+     "check": "Last 4 digits only"
+    },
+    {
+     "title": "Prepare accounts",
+     "body": "Copy your chart of accounts",
+     "check": ""
+    },
+    {
+     "title": "Attach the file",
+     "body": "Turn on file creation and attach",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Fix review items",
+     "body": "Check receipts and cardholders",
+     "check": ""
+    },
+    {
+     "title": "Recheck",
+     "body": "Summary total = card statement",
+     "check": ""
+    },
+    {
+     "title": "Save rules",
+     "body": "Add to next month's Project",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel: Coded, Summary, Needs review\nPlus a rule table for next month",
+    "example": "Example: 412 charges · October\n371 coded · 41 to review"
+   },
+   "cautions": [
+    "Accounting confirms the final coding",
+    "Tax treatment is for your accountant",
+    "Don't upload full card numbers",
+    "Total must match the card statement"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Uploading files to Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Card expense coding",
+    "instructions": "You help code company card charges. Use only accounts from the company chart of accounts. Give a reason (merchant, category) for each, and send low-confidence items to 'Needs review'. Don't make tax deductibility calls.",
+    "knowledge": [
+     "Company chart of accounts",
+     "Last month's coding"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "account-receivable",
+   "status": "published",
+   "category": "account",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Receivables aging and payment reminders",
+   "subtitle": "Upload invoices and payments and get\nAR aging plus reminder emails",
+   "tags": [
+    "receivable",
+    "ar",
+    "aging",
+    "overdue",
+    "collection",
+    "reminder"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "I can't see at a glance who owes what",
+   "before": "Working out invoices and payments per customer",
+   "after": "Aging buckets and reminder emails too",
+   "prepare": [
+    "Invoice (sales) records",
+    "Payment records",
+    "As-of date",
+    "Delete account numbers"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: AR aging",
+     "howTo": "Paste in the chat with both files attached",
+     "body": "Attachment 1 is invoices and attachment 2 is payments. Make an AR aging Excel file as of {{기준일}}.\n1. 'AR' sheet: invoiced, paid and open balance per customer, oldest open invoice date and days outstanding\n2. 'Aging' sheet: amounts at 0–30 / 31–60 / 61–90 / over 90 days\n3. 'Needs review' sheet: payments that can't be tied to an invoice\nApply payments to the oldest invoices first.\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "기준일",
+       "label": "As-of date",
+       "example": "2026-10-31"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "mail",
+     "title": "Payment reminder email",
+     "howTo": "One per customer",
+     "body": "Write a {{단계}} payment reminder to {{거래처}}. Open balance ${{금액}}, invoice date {{청구일}}, please pay by {{기한}}. Polite but clear on dates and amounts, and ask them to tell us if they've already paid.",
+     "variables": [
+      {
+       "key": "거래처",
+       "label": "Customer",
+       "example": "Brightline Supply Co."
+      },
+      {
+       "key": "단계",
+       "label": "Reminder stage",
+       "example": "first friendly"
+      },
+      {
+       "key": "금액",
+       "label": "Open balance ($)",
+       "example": "3,850"
+      },
+      {
+       "key": "청구일",
+       "label": "Invoice date",
+       "example": "2026-08-31"
+      },
+      {
+       "key": "기한",
+       "label": "Pay by",
+       "example": "2026-11-20"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Prepare data",
+     "body": "Export invoices and payments",
+     "check": ""
+    },
+    {
+     "title": "Attach files",
+     "body": "Invoices first, then payments",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Fix review items",
+     "body": "Untied payments",
+     "check": ""
+    },
+    {
+     "title": "Recheck",
+     "body": "Total AR = invoiced − paid",
+     "check": ""
+    },
+    {
+     "title": "Send emails",
+     "body": "Reminder prompt per customer",
+     "check": "Recheck amounts first"
+    }
+   ],
+   "result": {
+    "summary": "Excel: AR, Aging, Needs review\nReminder email per customer",
+    "example": "Example: 40 customers\n2 over 90 days · $12,400"
+   },
+   "cautions": [
+    "Compare total AR with the ledger",
+    "Recheck amounts before sending",
+    "Oldest invoices first is the default",
+    "Get advice before legal collection"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Uploading files to Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "account-receipt",
+   "status": "published",
+   "category": "account",
+   "difficulty": "easy",
+   "frequency": "월",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Receipt photos → expense sheet",
+   "subtitle": "Upload receipt photos and get\nan expense sheet right away",
+   "tags": [
+    "receipt",
+    "expense",
+    "expense report",
+    "reimbursement"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Typing in paper receipts takes longer than it should",
+   "before": "Typing each receipt by hand",
+   "after": "Upload photos, get a table",
+   "prepare": [
+    "Receipt photos (up to 20 at a time)",
+    "Shoot in good light, text readable",
+    "Your company's expense categories",
+    "Keep the paper receipts"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: expense sheet",
+     "howTo": "Paste in the chat with the photos attached",
+     "body": "Make a {{기간}} expense sheet in Excel for {{사용자}} from the attached receipt photos. Pick categories from: {{항목}}.\n1. 'Expenses' sheet: photo number, date, merchant, subtotal, tax, total, category\n2. 'Summary' sheet: total per category\n3. 'Needs review' sheet: numbers that are blurry or cut off, unclear categories\nDon't guess numbers you can't read; leave them blank.\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "Period",
+       "example": "October 2026"
+      },
+      {
+       "key": "사용자",
+       "label": "Who",
+       "example": "Sales Team 1"
+      },
+      {
+       "key": "항목",
+       "label": "Expense categories",
+       "example": "Meals, Transportation, Parking, Supplies, Other"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "Take photos",
+     "body": "One at a time, bright and large",
+     "check": "Flatten crumpled ones"
+    },
+    {
+     "title": "Attach files",
+     "body": "Up to 20 per batch",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Check the originals",
+     "body": "Compare every amount with the receipt",
+     "check": "Photo numbers can be misread"
+    },
+    {
+     "title": "Fix review items",
+     "body": "Fill blanks yourself",
+     "check": ""
+    },
+    {
+     "title": "Submit",
+     "body": "Sheet plus original receipts",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel: Expenses, Summary, Needs review\nTotals by category",
+    "example": "Example: 18 receipts\nTotal $427.30 · 2 to review"
+   },
+   "cautions": [
+    "Check every amount against the receipt",
+    "Type unreadable numbers yourself",
+    "Keep originals per company policy",
+    "Cover card numbers when shooting"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Uploading files to Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "report-weekly",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "주",
+   "timeBeforeMin": 40,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Weekly status report template",
+   "subtitle": "Jot down what you did and get\na weekly report in your company's format",
+   "tags": [
+    "weekly report",
+    "status report",
+    "report",
+    "update",
+    "monthly report"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    }
+   ],
+   "problem": "Weekly reports keep me late every Friday",
+   "before": "Digging through a week of email and chat",
+   "after": "Paste your notes, get the format",
+   "prepare": [
+    "Notes on what you did this week",
+    "Next week's plan",
+    "Issues and requests",
+    "Company's weekly report template"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: weekly report",
+     "howTo": "Inside the Project the template applies automatically",
+     "body": "Write the weekly report for {{기간}}. Short bullets, nothing that isn't in my notes.\n\nThis week:\n{{한일}}\n\nNext week:\n{{계획}}\n\nIssues & asks:\n{{이슈}}",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "Period",
+       "example": "Week 2 of November (11/9–11/13)"
+      },
+      {
+       "key": "한일",
+       "label": "Done this week",
+       "example": "- Posted night-shift job on Indeed\n- October payroll check completed\n- Safety training set for 11/20"
+      },
+      {
+       "key": "계획",
+       "label": "Next week",
+       "example": "- 3 interviews\n- Review year-end temp staffing contract"
+      },
+      {
+       "key": "이슈",
+       "label": "Issues & asks",
+       "example": "- Need budget approval for year-end temp staff"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: anything made up?",
+     "howTo": "Right after you get the draft",
+     "body": "Recheck the text you just wrote.\nList anything that wasn't in the information I gave you (numbers, dates, promises, company policy) in a table, then give me a revised version with those removed or marked [CHECK].",
+     "variables": []
+    },
+    {
+     "id": "monthly",
+     "title": "Combine into a monthly report",
+     "howTo": "At month-end",
+     "body": "Combine these {{개수}} weekly reports into a monthly report for {{월}}. Merge repeated items and sort into done / in progress / delayed in a table.\n\n{{주간보고}}",
+     "variables": [
+      {
+       "key": "개수",
+       "label": "Number of weekly reports",
+       "example": "4"
+      },
+      {
+       "key": "월",
+       "label": "Month",
+       "example": "November 2026"
+      },
+      {
+       "key": "주간보고",
+       "label": "Paste weekly reports",
+       "example": "(paste the 4 weekly reports)"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Create a Project",
+     "body": "Add the template once",
+     "check": "Free plan: up to 5 projects"
+    },
+    {
+     "title": "Take notes",
+     "body": "A line each as you go",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Review",
+     "body": "Check nothing was made up",
+     "check": ""
+    },
+    {
+     "title": "Month-end",
+     "body": "Combine into a monthly report",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Weekly report in your company's format\nCombine into a monthly report later",
+    "example": "Example: 8 lines of notes\nOne-page weekly report"
+   },
+   "cautions": [
+    "Check no made-up results slipped in",
+    "Compare numbers with sources",
+    "Check rules for confidential content",
+    "Put decisions needed at the top"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Weekly report",
+    "instructions": "You help write weekly reports. Follow the company template in Project knowledge exactly. Use short bullet points and never add results or numbers that aren't in my notes. Structure: This week / Next week / Issues & asks. Put issues needing a decision at the top.",
+    "knowledge": [
+     "Company weekly report template",
+     "Last week's report"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "report-email",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 20,
+   "timeAfterMin": 3,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Business emails for any situation",
+   "subtitle": "Enter the situation and goal and get\nsubject and body in two versions",
+   "tags": [
+    "email",
+    "mail",
+    "request",
+    "decline",
+    "apology",
+    "reply",
+    "decline email",
+    "apology email"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    }
+   ],
+   "problem": "Decline and apology emails stall at the first line",
+   "before": "Write, delete, repeat",
+   "after": "Pick from two tones",
+   "prepare": [
+    "Recipient and relationship",
+    "Purpose (request, decline, apology)",
+    "Must-include points",
+    "Tone you want"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: two versions",
+     "howTo": "No file needed",
+     "body": "Write a business email.\n- To: {{받는사람}}\n- Purpose: {{목적}}\n- Must include: {{내용}}\n- Tone: {{톤}}\n\nGive subject and body in two versions (a bit softer / a bit firmer). Don't add promises, dates or amounts I didn't give.",
+     "variables": [
+      {
+       "key": "받는사람",
+       "label": "Recipient & relationship",
+       "example": "Purchasing manager at a customer (3 years working together)"
+      },
+      {
+       "key": "목적",
+       "label": "Purpose",
+       "example": "Decline a price increase request"
+      },
+      {
+       "key": "내용",
+       "label": "Must include",
+       "example": "Prices frozen this year; can revisit in January; would consider with higher volume"
+      },
+      {
+       "key": "톤",
+       "label": "Tone",
+       "example": "Polite but clear"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: anything made up?",
+     "howTo": "Right after you get the draft",
+     "body": "Recheck the text you just wrote.\nList anything that wasn't in the information I gave you (numbers, dates, promises, company policy) in a table, then give me a revised version with those removed or marked [CHECK].",
+     "variables": []
+    },
+    {
+     "id": "reply",
+     "title": "Reply to an email",
+     "howTo": "Paste the email you received",
+     "body": "Write a reply to the email below. My position: '{{입장}}'. Answer everything they asked.\n\nTheir email:\n{{받은메일}}",
+     "variables": [
+      {
+       "key": "입장",
+       "label": "My position",
+       "example": "We'll send the requested files by 11/14"
+      },
+      {
+       "key": "받은메일",
+       "label": "Email received",
+       "example": "(paste the email)"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Set the goal",
+     "body": "What this email should get, in a line",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Pick a version",
+     "body": "Choose one of the two",
+     "check": ""
+    },
+    {
+     "title": "Review",
+     "body": "Recheck promises, dates, amounts",
+     "check": ""
+    },
+    {
+     "title": "Send",
+     "body": "Tweak into your own voice",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Subject + body in two versions\nReplies to received emails too",
+    "example": "Example: declining a price increase\nSofter and firmer versions"
+   },
+   "cautions": [
+    "Check promises, dates and amounts yourself",
+    "Recheck the recipient's name and title",
+    "Have sensitive emails reviewed",
+    "Leave personal data out"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "report-contract-summary",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Contract key points summary",
+   "subtitle": "Upload a contract and get\nkey terms and questions to ask",
+   "tags": [
+    "contract",
+    "agreement",
+    "terms",
+    "clause",
+    "summary",
+    "lease"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    }
+   ],
+   "problem": "A 30-page contract and I can't tell what matters",
+   "before": "Reading every page start to finish",
+   "after": "Key terms and risky clauses first",
+   "prepare": [
+    "Contract file (PDF or Word)",
+    "Which party you are",
+    "What you most want to know",
+    "Check rules for confidential contracts"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: contract summary",
+     "howTo": "Paste in the chat with the contract attached",
+     "body": "Summarize the attached {{계약명}}. We are the {{입장}}.\n1. Key terms table: term, price & payment, auto-renewal, termination, penalties & damages, confidentiality, governing law & venue (with clause numbers)\n2. Clauses that may work against us, and why\n3. 5 questions to ask the other side\n4. What I most want to know: {{궁금한점}}\nMark anything not in the contract as 'No such clause', and state at the top that this is not legal advice.",
+     "variables": [
+      {
+       "key": "계약명",
+       "label": "Contract",
+       "example": "Warehouse lease agreement"
+      },
+      {
+       "key": "입장",
+       "label": "Our side",
+       "example": "tenant"
+      },
+      {
+       "key": "궁금한점",
+       "label": "Main question",
+       "example": "Cost of early termination"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: compare with the clauses",
+     "howTo": "Right after the summary",
+     "body": "For each point in your summary, show the clause number and the original sentence side by side in a table. Flag anything summarized differently from the original or without a source.",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "Prepare the contract",
+     "body": "Original PDF or Word",
+     "check": ""
+    },
+    {
+     "title": "Attach the file",
+     "body": "Attach the contract",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Compare with clauses",
+     "body": "Use the check prompt",
+     "check": "Don't trust the summary alone"
+    },
+    {
+     "title": "List questions",
+     "body": "Send them to the other side",
+     "check": ""
+    },
+    {
+     "title": "Expert review",
+     "body": "Lawyer for important contracts",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Key terms table with clause numbers\nRisky clauses · 5 questions",
+    "example": "Example: 28-page lease\n7 key terms · 3 to watch"
+   },
+   "cautions": [
+    "This is not legal advice",
+    "Have a lawyer review important contracts",
+    "Always compare with the original",
+    "Check rules before uploading confidential contracts"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Uploading files to Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "gsheet-form",
+   "status": "published",
+   "category": "gsheet",
+   "difficulty": "normal",
+   "frequency": "수시",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Auto-summary sheet for Google Forms",
+   "subtitle": "As Google Form responses come in\nthe summary sheet updates itself",
+   "tags": [
+    "google forms",
+    "form",
+    "survey",
+    "responses",
+    "google sheets"
+   ],
+   "tools": [
+    {
+     "name": "Google Sheets",
+     "free": true,
+     "note": "Free with a Google account"
+    },
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    }
+   ],
+   "problem": "Copying survey responses to count them every time",
+   "before": "Download responses and count by hand",
+   "after": "The summary updates with every response",
+   "prepare": [
+    "A Google Form",
+    "Link responses to a sheet",
+    "Column names on the responses sheet",
+    "Consent wording if collecting personal data"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: summary formulas",
+     "howTo": "Enter your response column names",
+     "body": "Google Form responses collect on the '{{응답시트}}' sheet. Columns: {{열목록}}.\nGive me Google Sheets formulas, with cell positions, for a 'Summary' sheet that shows:\n{{원하는요약}}\nThey must keep working as responses grow, and explain what each formula does in one line.",
+     "variables": [
+      {
+       "key": "응답시트",
+       "label": "Responses sheet name",
+       "example": "Form Responses 1"
+      },
+      {
+       "key": "열목록",
+       "label": "Column names",
+       "example": "A Timestamp, B Department, C Satisfaction (1–5), D Comments"
+      },
+      {
+       "key": "원하는요약",
+       "label": "Summary you want",
+       "example": "Responses by department, average satisfaction by department, comments with satisfaction 2 or lower"
+      }
+     ]
+    },
+    {
+     "id": "notify",
+     "title": "New-response email alert (Apps Script)",
+     "howTo": "To hear about responses right away",
+     "body": "Write an Apps Script that emails {{받는사람}} the contents of each new Google Form response.\n1. The code (with plain-English comments)\n2. Setup: from Sheets > Extensions > Apps Script through to the 'On form submit' trigger\n3. What to click on the permission screens\n4. Daily email limits and cautions",
+     "variables": [
+      {
+       "key": "받는사람",
+       "label": "Alert email address",
+       "example": "your email address"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: summary numbers",
+     "howTo": "After adding the formulas",
+     "body": "Show me how to pick one department on my responses sheet and count responses and average satisfaction by hand, so I can compare with the summary formulas.",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "Link responses",
+     "body": "Form > Responses > Link to Sheets",
+     "check": ""
+    },
+    {
+     "title": "Check column names",
+     "body": "Copy the first row of the responses sheet",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Add formulas",
+     "body": "Paste into the Summary sheet",
+     "check": ""
+    },
+    {
+     "title": "Recheck",
+     "body": "Hand-check one department",
+     "check": ""
+    },
+    {
+     "title": "Alerts (optional)",
+     "body": "Use the Apps Script prompt",
+     "check": "Needs permission approval"
+    }
+   ],
+   "result": {
+    "summary": "A summary sheet that follows responses\nOptional email alert on new responses",
+    "example": "Example: staff satisfaction survey\nCount and average by department, auto"
+   },
+   "cautions": [
+    "Add consent wording when collecting personal data",
+    "Hand-check formula results once",
+    "Read scripts before granting permission",
+    "Consumer accounts: 100 recipients/day"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Choose where to save form responses",
+     "publisher": "Google Help",
+     "url": "https://support.google.com/docs/answer/2917686?hl=en",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Installable triggers",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Quotas for Google services (Apps Script)",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/services/quotas",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "gsheet-auto-mail",
+   "status": "published",
+   "category": "gsheet",
+   "difficulty": "hard",
+   "frequency": "주",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Automatic emails from Google Sheets",
+   "subtitle": "List recipients in a sheet and\nemails go out at a set time",
+   "tags": [
+    "email",
+    "automation",
+    "google sheets",
+    "apps script",
+    "scheduled"
+   ],
+   "tools": [
+    {
+     "name": "Google Sheets",
+     "free": true,
+     "note": "Free with a Google account"
+    },
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    }
+   ],
+   "problem": "Sending the same notice by hand every week",
+   "before": "Copy-paste and send one at a time",
+   "after": "Edit the sheet; mail goes out on schedule",
+   "prepare": [
+    "A Google Sheet (recipient and content columns)",
+    "Add a 'Sent' column",
+    "Test with your own email first",
+    "Confirm recipients agreed"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: auto-send script",
+     "howTo": "Describe your sheet",
+     "body": "Write an Apps Script that sends emails automatically from a Google Sheet.\n- Sheet name: {{시트이름}}\n- Columns: {{열목록}}\n- Subject: {{제목}}\n- When to send: {{발송시점}}\n\n1. Code (plain-English comments): send only rows where 'Sent' is blank, then record the send time\n2. A 'test mode' setting at the top: when on, every email goes only to {{시험메일}}\n3. Setup: from Extensions > Apps Script through to a time-driven trigger\n4. Permission screens, daily send limits and how to check errors",
+     "variables": [
+      {
+       "key": "시트이름",
+       "label": "Sheet name",
+       "example": "Notices"
+      },
+      {
+       "key": "열목록",
+       "label": "Columns",
+       "example": "A Name, B Email, C Message, D Sent"
+      },
+      {
+       "key": "제목",
+       "label": "Subject",
+       "example": "[Notice] This week's safety training"
+      },
+      {
+       "key": "발송시점",
+       "label": "When",
+       "example": "Every Monday at 9 a.m."
+      },
+      {
+       "key": "시험메일",
+       "label": "Your test email",
+       "example": "your email address"
+      }
+     ]
+    },
+    {
+     "id": "error",
+     "title": "Fix an error",
+     "howTo": "When the execution log shows an error",
+     "body": "The Apps Script execution log shows '{{오류}}'. Tell me the cause and give me fixed code.\n{{코드}}",
+     "variables": [
+      {
+       "key": "오류",
+       "label": "Error message",
+       "example": "Exception: Service invoked too many times for one day: email."
+      },
+      {
+       "key": "코드",
+       "label": "Current code",
+       "example": "(paste the code)"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: before going live",
+     "howTo": "Before real sends",
+     "body": "Check my code for anything that could send twice to the same person, send for real with test mode off by mistake, or exceed limits.\n(paste the code)",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "Build the sheet",
+     "body": "Recipient, message and Sent columns",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Add the code",
+     "body": "Extensions > Apps Script",
+     "check": ""
+    },
+    {
+     "title": "Grant permission",
+     "body": "Approve with your account",
+     "check": "Read the warning screen"
+    },
+    {
+     "title": "Test send",
+     "body": "Test mode, your email only",
+     "check": "Always do this first"
+    },
+    {
+     "title": "Set the trigger",
+     "body": "Add a time-driven trigger",
+     "check": ""
+    },
+    {
+     "title": "Go live",
+     "body": "Turn test mode off",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Send script with a test mode\nSetup and trigger steps",
+    "example": "Example: Mondays 9 a.m.\nSafety notice to 32 people, automatically"
+   },
+   "cautions": [
+    "Always run in test mode first",
+    "Consumer accounts: 100 recipients/day",
+    "Marketing email needs consent",
+    "Always use the 'Sent' column to avoid repeats"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Quotas for Google services (Apps Script)",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/services/quotas",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Installable triggers",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "sales-faq",
+   "status": "published",
+   "category": "sales",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Customer FAQ and reply templates",
+   "subtitle": "Collect frequent questions and get\nan FAQ with reply templates",
+   "tags": [
+    "faq",
+    "customer questions",
+    "support",
+    "reply template",
+    "customer service"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Chat is enough"
+    }
+   ],
+   "problem": "Writing a fresh reply to the same question every time",
+   "before": "Searching old replies to copy",
+   "after": "FAQ table and short reply templates",
+   "prepare": [
+    "Collected frequent questions",
+    "Policies (refunds, shipping)",
+    "Tone you want",
+    "Remove customer personal data"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: build the FAQ",
+     "howTo": "Paste the questions and send",
+     "body": "Build a customer FAQ for a {{업종}}. Our policies:\n{{정책}}\n\n1. Group similar questions into 10–15 questions\n2. For each, a short answer (2–3 lines for chat) and a formal answer (email)\n3. Put questions policy can't answer in a separate 'Needs a person' list\nTone: {{톤}}\n\nQuestions:\n{{문의}}",
+     "variables": [
+      {
+       "key": "업종",
+       "label": "Business",
+       "example": "B2B parcel delivery service"
+      },
+      {
+       "key": "정책",
+       "label": "Policies",
+       "example": "Pickup cutoff 5 p.m.; damage claims reviewed within 7 days; returns within 3 days"
+      },
+      {
+       "key": "톤",
+       "label": "Tone",
+       "example": "Friendly and brief"
+      },
+      {
+       "key": "문의",
+       "label": "Frequent questions",
+       "example": "- If I ship today, when will it arrive?\n- The box arrived crushed\n- Can I change my pickup time?"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: anything made up?",
+     "howTo": "Right after you get the draft",
+     "body": "Recheck the text you just wrote.\nList anything that wasn't in the information I gave you (numbers, dates, promises, company policy) in a table, then give me a revised version with those removed or marked [CHECK].",
+     "variables": []
+    },
+    {
+     "id": "answer",
+     "title": "Draft a reply to a new question",
+     "howTo": "After the FAQ is in the Project",
+     "body": "Draft short and formal replies to this customer question within the FAQ and policy. If policy doesn't cover it, write 'We'll confirm and get back to you'.\n{{새문의}}",
+     "variables": [
+      {
+       "key": "새문의",
+       "label": "New question",
+       "example": "What I shipped yesterday still shows as not picked up"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Collect questions",
+     "body": "Copy 1–2 months of questions",
+     "check": "Delete names and contacts"
+    },
+    {
+     "title": "Write down policies",
+     "body": "Refund and shipping rules",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Review",
+     "body": "No answers that contradict policy",
+     "check": ""
+    },
+    {
+     "title": "Add to Project",
+     "body": "Put the FAQ in knowledge",
+     "check": ""
+    },
+    {
+     "title": "Use daily",
+     "body": "New-question prompt",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "FAQ table of 10–15 questions\nShort and formal answers",
+    "example": "Example: 40 questions sorted\n12 FAQs · 3 need a person"
+   },
+   "cautions": [
+    "No promises outside policy",
+    "Remove customer data before uploading",
+    "Refunds and compensation: a person confirms",
+    "Update the FAQ when policy changes"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Customer replies",
+    "instructions": "You help answer customer questions. Answer only within the FAQ and company policy in Project knowledge. Never promise anything outside policy (compensation, dates, discounts); write 'We'll confirm and get back to you'. Give a short version (chat) and a formal version (email).",
+    "knowledge": [
+     "FAQ table",
+     "Refund and shipping policy"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "sales-by-customer",
+   "status": "published",
+   "category": "sales",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Sales by customer and ranking",
+   "subtitle": "Upload sales records and see\ncustomer ranking and share at a glance",
+   "tags": [
+    "sales",
+    "revenue",
+    "customers",
+    "ranking",
+    "top customers",
+    "analysis"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "I don't know which customers drive sales",
+   "before": "Pivot, then sort the ranking separately",
+   "after": "Ranking, share, change and top 20%",
+   "prepare": [
+    "Sales records (customer, amount, date)",
+    "Previous period for comparison",
+    "Standardize customer names",
+    "Delete personal data columns"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: customer analysis",
+     "howTo": "Paste in the chat with the file attached",
+     "body": "Using the attached {{기간}} sales records, make a customer analysis Excel file. Customer is in '{{거래처열}}' and amount in '{{금액열}}'. Comparison period: {{비교기간}}.\n1. 'Ranking' sheet: sales, rank, share and cumulative share per customer; mark customers up to 80% cumulative\n2. 'Change' sheet: change and % change vs the comparison period; new and lost customers\n3. 'Summary' sheet: dependence on top customers and 3 notable changes (with numbers)\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "Period",
+       "example": "Jan–Oct 2026"
+      },
+      {
+       "key": "거래처열",
+       "label": "Customer column",
+       "example": "Customer"
+      },
+      {
+       "key": "금액열",
+       "label": "Amount column",
+       "example": "Sales"
+      },
+      {
+       "key": "비교기간",
+       "label": "Comparison period",
+       "example": "Jan–Oct 2025"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "comment",
+     "title": "Notes for the sales meeting",
+     "howTo": "After the analysis",
+     "body": "Using the 'Summary' sheet, write 3 key points for the sales meeting and 3 customers that need attention, with reasons. Use the sheet's numbers exactly.",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "Standardize names",
+     "body": "Match Inc./spacing in customer names",
+     "check": "Otherwise counted as separate"
+    },
+    {
+     "title": "Attach the file",
+     "body": "Turn on file creation and attach",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Recheck",
+     "body": "Total sales = source total",
+     "check": ""
+    },
+    {
+     "title": "Notes",
+     "body": "3 lines for the sales meeting",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel: Ranking, Change, Summary\nTop customers to 80% marked",
+    "example": "Example: 214 customers\nTop 38 make 80% of sales"
+   },
+   "cautions": [
+    "Standardize customer names first",
+    "Compare total sales with the source",
+    "Check whether returns and discounts are included",
+    "Match notes to sheet numbers"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Create a PivotTable",
+     "publisher": "Microsoft Support",
+     "url": "https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "logistics-stock",
+   "status": "published",
+   "category": "logistics",
+   "difficulty": "normal",
+   "frequency": "주",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Inventory and in/out reconciliation",
+   "subtitle": "Upload movements and counts and see\ndifferences and low stock right away",
+   "tags": [
+    "inventory",
+    "stock",
+    "stocktake",
+    "cycle count",
+    "reorder",
+    "warehouse"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Book stock and actual stock don't match",
+   "before": "Adding and subtracting movements per item",
+   "after": "Differences and below-safety-stock, automatically",
+   "prepare": [
+    "Opening stock",
+    "Receipts and shipments",
+    "Physical count",
+    "Same item code format everywhere"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: reconcile stock",
+     "howTo": "Paste in the chat with the files attached",
+     "body": "Using the attached {{기간}} opening stock, receipts, shipments and physical count files, make an inventory reconciliation Excel file. Match on the '{{품목열}}' column.\n1. 'Reconcile' sheet: opening, received, shipped, book (opening + received − shipped), counted and difference per item\n2. 'Differences' sheet: items off by more than {{허용차이}}, with value if unit cost is given\n3. 'Safety stock' sheet: items counted below safety stock {{안전재고}}\n4. 'Needs review' sheet: missing codes, mixed units, shipments greater than stock\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "Period",
+       "example": "Week 1 of November 2026"
+      },
+      {
+       "key": "품목열",
+       "label": "Item code column",
+       "example": "Item code"
+      },
+      {
+       "key": "허용차이",
+       "label": "Allowed difference",
+       "example": "0 units"
+      },
+      {
+       "key": "안전재고",
+       "label": "Safety stock basis",
+       "example": "(the Safety stock column in the item master)"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "order",
+     "title": "Reorder list",
+     "howTo": "When items are below safety stock",
+     "body": "Calculate reorder quantities for items on the 'Safety stock' sheet: average weekly shipments over the last {{주수}} weeks × {{리드타임}} weeks + safety stock − on hand. Show the calculation in the table.",
+     "variables": [
+      {
+       "key": "주수",
+       "label": "Weeks to average",
+       "example": "4"
+      },
+      {
+       "key": "리드타임",
+       "label": "Lead time (weeks)",
+       "example": "2"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Match codes",
+     "body": "Same code format in all 4 files",
+     "check": ""
+    },
+    {
+     "title": "Attach files",
+     "body": "Opening, received, shipped, count",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Fix review items",
+     "body": "Code and unit issues",
+     "check": ""
+    },
+    {
+     "title": "Check differences",
+     "body": "Recount big differences",
+     "check": "Look for missing paperwork first"
+    },
+    {
+     "title": "Recheck",
+     "body": "Check prompt for total quantities",
+     "check": ""
+    },
+    {
+     "title": "Reorder",
+     "body": "Reorder list prompt",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel: Reconcile, Differences, Safety stock, Needs review\nReorder quantities too",
+    "example": "Example: 1,180 items\n23 differences · 9 below safety stock"
+   },
+   "cautions": [
+    "Match item code formats first",
+    "Mixed units (EA, BOX) cause errors",
+    "Check for missing paperwork first",
+    "The buyer decides order quantities"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "What are projects?",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "Weekly stock reconciliation",
+    "instructions": "You help reconcile inventory. Book stock = opening + received − shipped; compare with the physical count. Match on item code; put missing or mismatched codes on 'Needs review'. Put calculated cells in as Excel formulas with a cell note.",
+    "knowledge": [
+     "Item master (code, name, unit, safety stock)"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "logistics-delivery",
+   "status": "published",
+   "category": "logistics",
+   "difficulty": "normal",
+   "frequency": "주",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "en",
+   "title": "Delivery results by region and driver",
+   "subtitle": "Upload delivery records and get\ntotals and completion by region and driver",
+   "tags": [
+    "delivery",
+    "shipping",
+    "driver",
+    "courier",
+    "route",
+    "volume"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "Turn on 'file creation'"
+    },
+    {
+     "name": "Excel or Google Sheets",
+     "free": true,
+     "note": "Check and print results"
+    }
+   ],
+   "problem": "Hard to see delivery results by region and driver",
+   "before": "Filter and count one by one",
+   "after": "Counts, completion and weekday pattern in one go",
+   "prepare": [
+    "Delivery records file",
+    "Check region, driver and status columns",
+    "Delete driver contact details",
+    "Standardize status values (delivered, failed)"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "Main: delivery totals",
+     "howTo": "Paste in the chat with the file attached",
+     "body": "Make a summary Excel file from the attached {{기간}} delivery records. Region is '{{지역열}}', driver '{{기사열}}', status '{{상태열}}', and the delivered status value is '{{완료값}}'.\n1. 'By region' sheet: total, delivered, not delivered, completion rate and daily average per region\n2. 'By driver' sheet: the same per driver, plus days worked\n3. 'By weekday' sheet: count per weekday (mark the busiest)\n4. 'Needs review' sheet: blank or odd status values\nThis may be used to evaluate people, so give numbers only; don't interpret route differences.\n\n[Calculation & print rules]\n- Put every calculated cell in as an Excel formula, not a typed number, and add a cell note explaining the calculation in plain words (visible on hover).\n- Add a 'Check' sheet that recalculates the key totals a different way and shows whether they match.\n- Print setup: Letter or A4 landscape, fit all columns on one page width, repeat the title row, page numbers in the footer.",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "Period",
+       "example": "October 2026"
+      },
+      {
+       "key": "지역열",
+       "label": "Region column",
+       "example": "Zone"
+      },
+      {
+       "key": "기사열",
+       "label": "Driver column",
+       "example": "Driver ID"
+      },
+      {
+       "key": "상태열",
+       "label": "Status column",
+       "example": "Status"
+      },
+      {
+       "key": "완료값",
+       "label": "Delivered value",
+       "example": "Delivered"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "Check: verify every calculation",
+     "howTo": "Right after you get the file",
+     "body": "Recheck every calculated cell in the Excel file you just made.\nTable: sheet & cell / calculation in words / your recalculated value / value in the file / match?\nIf anything doesn't match, explain why and how to fix it.",
+     "variables": []
+    },
+    {
+     "id": "compare",
+     "title": "Change vs last month",
+     "howTo": "When you have two months",
+     "body": "I've also attached last month's file. Add month-over-month change to the 'By region' and 'By weekday' sheets, and list the 3 regions with the biggest rise or fall, with numbers.",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "Remove personal data",
+     "body": "Driver IDs instead of names",
+     "check": ""
+    },
+    {
+     "title": "Standardize status",
+     "body": "One word for delivered",
+     "check": ""
+    },
+    {
+     "title": "Attach the file",
+     "body": "Turn on file creation and attach",
+     "check": ""
+    },
+    {
+     "title": "Send the prompt",
+     "body": "Fill blanks and paste",
+     "check": ""
+    },
+    {
+     "title": "Recheck",
+     "body": "Total = rows in the source",
+     "check": ""
+    },
+    {
+     "title": "Use it",
+     "body": "Plan staffing by weekday volume",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "Excel: by region, driver and weekday\nCompletion rate and daily average",
+    "example": "Example: 82,400 deliveries in October\n98.6% delivered · Monday busiest"
+   },
+   "cautions": [
+    "Use driver IDs, not personal data",
+    "Don't judge people on volume alone",
+    "Compare totals with the source",
+    "Standardize status values first"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Create a PivotTable",
+     "publisher": "Microsoft Support",
+     "url": "https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Create and edit files with Claude",
+     "publisher": "Anthropic Help Center",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  }
+ ],
+ "feedback": {
+  "types": [
+   {
+    "id": "error",
+    "label": "Report an error"
+   },
+   {
+    "id": "add",
+    "label": "Please add this"
+   },
+   {
+    "id": "etc",
+    "label": "Other"
+   }
+  ],
+  "minLength": 5,
+  "maxLength": 300,
+  "storage": "firestore:feedback"
+ },
+ "moderation": {
+  "minLength": 5,
+  "maxLength": 300,
+  "banned": [
+   "시발",
+   "씨발",
+   "씨빨",
+   "씨팔",
+   "시팔",
+   "ㅅㅂ",
+   "ㅆㅂ",
+   "병신",
+   "븅신",
+   "ㅂㅅ",
+   "ㅄ",
+   "좆",
+   "존나",
+   "졸라",
+   "ㅈㄴ",
+   "개새",
+   "니새끼",
+   "이새끼",
+   "저새끼",
+   "미친놈",
+   "미친년",
+   "미친새",
+   "지랄",
+   "ㅈㄹ",
+   "엿먹",
+   "염병",
+   "썅",
+   "쌍놈",
+   "니미",
+   "느금",
+   "니애미",
+   "엠창",
+   "등신",
+   "닥쳐",
+   "fuck",
+   "shit",
+   "bitch",
+   "한남충",
+   "김치녀",
+   "틀딱",
+   "급식충",
+   "맘충",
+   "fucking",
+   "motherfucker",
+   "bullshit",
+   "asshole",
+   "bastard",
+   "cunt",
+   "dickhead",
+   "retard",
+   "whore",
+   "slut",
+   "nigger",
+   "faggot",
+   "wanker",
+   "twat"
+  ],
+  "allow": [
+   "시발점",
+   "시발역",
+   "새끼손가락",
+   "새끼발가락",
+   "새끼줄",
+   "애비뉴",
+   "scunthorpe",
+   "cockpit",
+   "shitake",
+   "shiitake",
+   "assessment",
+   "bassist"
+  ],
+  "checkedAt": "2026-11-09"
+ },
+ "changelog": [
+  {
+   "date": "2026-11-09",
+   "contentId": null,
+   "text": "All 30 manuals are now live",
+   "source": "feedback"
+  },
+  {
+   "date": "2026-11-09",
+   "contentId": null,
+   "text": "Sentences trimmed to one line",
+   "source": "feedback"
+  },
+  {
+   "date": "2026-11-08",
+   "contentId": "payroll-variance-check",
+   "text": "Fixed numbers in the payroll example",
+   "source": "review"
+  },
+  {
+   "date": "2026-11-08",
+   "contentId": null,
+   "text": "A4 print preview added",
+   "source": "feedback"
+  }
+ ],
+ "resolvedFeedback": [],
+ "featured": [
+  "excel-merge-files",
+  "payroll-variance-check",
+  "one-page-exec-report",
+  "hr-annual-leave",
+  "excel-compare-files",
+  "report-email"
+ ]
+}

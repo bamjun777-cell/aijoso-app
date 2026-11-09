@@ -14,6 +14,7 @@ data class ContentFile(
     val synonyms: Map<String, List<String>> = emptyMap(),
     val items: List<Item> = emptyList(),
     val featured: List<String> = emptyList(),
+    val lang: String = "ko",
     val feedback: FeedbackConfig = FeedbackConfig(),
     val moderation: Moderation = Moderation(),
     val changelog: List<Change> = emptyList(),
@@ -84,15 +85,6 @@ val ContentJson = Json {
 }
 
 fun parseContent(text: String): ContentFile = ContentJson.decodeFromString(ContentFile.serializer(), text)
-
-fun difficultyLabel(d: String): String = when (d) {
-    "easy" -> "난이도 하"
-    "normal" -> "난이도 중"
-    "hard" -> "난이도 상"
-    else -> d
-}
-
-fun frequencyLabel(f: String): String = if (f == "수시" || f.isBlank()) "수시" else "매$f"
 
 private val VAR = Regex("""\{\{(.+?)\}\}""")
 

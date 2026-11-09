@@ -1,0 +1,5117 @@
+{
+ "schemaVersion": 1,
+ "contentVersion": "2026.11.09-02",
+ "updatedAt": "2026-11-09",
+ "lang": "zh-Hant",
+ "categories": [
+  {
+   "id": "excel",
+   "name": "Excel · 資料",
+   "order": 1
+  },
+  {
+   "id": "hr",
+   "name": "人事 · 勞務",
+   "order": 2
+  },
+  {
+   "id": "admin",
+   "name": "行政 · 總務",
+   "order": 3
+  },
+  {
+   "id": "account",
+   "name": "財務 · 會計",
+   "order": 4
+  },
+  {
+   "id": "report",
+   "name": "報告 · 郵件",
+   "order": 5
+  },
+  {
+   "id": "gsheet",
+   "name": "Google 表格",
+   "order": 6
+  },
+  {
+   "id": "sales",
+   "name": "銷售 · 客戶",
+   "order": 7
+  },
+  {
+   "id": "logistics",
+   "name": "物流 · 庫存",
+   "order": 8
+  }
+ ],
+ "synonyms": {
+  "excel": [
+   "表格",
+   "xlsx",
+   "電子表格",
+   "工作表"
+  ],
+  "合併": [
+   "彙總",
+   "整合",
+   "合到一起",
+   "歸集"
+  ],
+  "工資": [
+   "薪資",
+   "薪水",
+   "薪資表",
+   "人工成本",
+   "薪酬"
+  ],
+  "報告": [
+   "彙報",
+   "簡報",
+   "總結",
+   "一頁"
+  ],
+  "考勤": [
+   "加班",
+   "工時",
+   "打卡",
+   "超時"
+  ],
+  "年假": [
+   "假期",
+   "帶薪年假",
+   "休假",
+   "剩餘年假"
+  ],
+  "招聘": [
+   "招人",
+   "職位",
+   "招聘廣告",
+   "面試"
+  ],
+  "通知": [
+   "公告",
+   "人事任命",
+   "調動",
+   "內部通知"
+  ],
+  "會議紀要": [
+   "會議",
+   "開會",
+   "會議記錄"
+  ],
+  "報價": [
+   "報價單",
+   "比價",
+   "採購",
+   "供應商"
+  ],
+  "對帳": [
+   "核對",
+   "收款",
+   "入帳",
+   "結算"
+  ],
+  "公司卡": [
+   "信用卡",
+   "刷卡",
+   "費用",
+   "會計科目"
+  ],
+  "應收帳款": [
+   "應收",
+   "催款",
+   "欠款",
+   "回款"
+  ],
+  "收據": [
+   "發票",
+   "報銷",
+   "費用報銷",
+   "小票"
+  ],
+  "郵件": [
+   "回信",
+   "拒絕",
+   "道歉",
+   "請求",
+   "回覆"
+  ],
+  "合同": [
+   "協議",
+   "條款",
+   "契約"
+  ],
+  "表單": [
+   "google 表單",
+   "問卷",
+   "調查",
+   "回覆"
+  ],
+  "庫存": [
+   "出入庫",
+   "盤點",
+   "安全庫存",
+   "補貨"
+  ],
+  "配送": [
+   "快遞",
+   "司機",
+   "送貨",
+   "派送",
+   "運量"
+  ],
+  "宏": [
+   "vba",
+   "自動化",
+   "重複操作"
+  ],
+  "函式": [
+   "公式",
+   "vlookup",
+   "xlookup",
+   "sumifs",
+   "報錯"
+  ],
+  "比較": [
+   "對比",
+   "差異",
+   "變化"
+  ],
+  "整理": [
+   "清洗",
+   "格式",
+   "重複",
+   "規範"
+  ],
+  "透視表": [
+   "資料透視表",
+   "圖表",
+   "彙總表"
+  ],
+  "faq": [
+   "客戶諮詢",
+   "常見問題",
+   "回覆模板",
+   "客服"
+  ],
+  "銷售額": [
+   "客戶",
+   "排名",
+   "營收"
+  ]
+ },
+ "items": [
+  {
+   "id": "excel-merge-files",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-08",
+   "updatedAt": "2026-11-08",
+   "lang": "zh-Hant",
+   "title": "一次合併各分店的 Excel 檔案",
+   "subtitle": "上傳多個檔案\n就能拿到合併版和核對表",
+   "tags": [
+    "excel",
+    "合併",
+    "彙總",
+    "月底",
+    "分店",
+    "部門",
+    "業績"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "光復制貼上分店檔案就耗掉半天",
+   "before": "開啟、複製、貼上，一遍又一遍",
+   "after": "上傳檔案，發一次提示詞就搞定",
+   "prepare": [
+    "要合併的檔案（最多 20 個）",
+    "確認欄名、欄順序一致",
+    "只留一列標題，取消合併儲存格",
+    "刪除身份證號、銀行帳號、聯絡方式",
+    "先確認公司的資料安全規定"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：合併檔案",
+     "howTo": "貼上到已附上檔案的對話裡",
+     "body": "附上的 {{파일개수}} 個 Excel 檔案是{{자료명}}，格式都一樣，標題在第 {{머리글행}} 列。\n\n請按以下順序做一個 Excel 檔案：\n1.「合併」表：把所有檔案的資料上下拼接，最前面加一欄「來源檔案名」，標題只保留一次。\n2.「核對」表：用表格列出每個來源檔案的資料列數、「{{합계열}}」合計，以及總計。\n3.「待確認」表：把空格、重複列、數字欄裡出現文字的列、欄名不同的檔案集中起來，並寫明原因。\n\n不要擅自修改資料，看起來需要修改的只在「待確認」表裡標出。\n檔名請用 {{결과파일명}}.xlsx。\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "파일개수",
+       "label": "檔案個數",
+       "example": "12"
+      },
+      {
+       "key": "자료명",
+       "label": "是什麼資料",
+       "example": "10 月各分店銷售業績"
+      },
+      {
+       "key": "머리글행",
+       "label": "標題所在列號",
+       "example": "1"
+      },
+      {
+       "key": "합계열",
+       "label": "要合計的欄名",
+       "example": "銷售額"
+      },
+      {
+       "key": "결과파일명",
+       "label": "結果檔名",
+       "example": "10月_分店業績_合併"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "mismatch",
+     "title": "格式不一樣時",
+     "howTo": "欄名不同就先做這個",
+     "body": "附上的檔案欄順序或欄名略有不同。請先用表格對比每個檔案的欄名，並建議如何對應含義相同的欄位。以「{{기준파일}}」為標準格式。等我確認後再合併。",
+     "variables": [
+      {
+       "key": "기준파일",
+       "label": "作為標準的檔名",
+       "example": "東區分店.xlsx"
+      }
+     ]
+    },
+    {
+     "id": "powerquery",
+     "title": "每月自動：Power Query",
+     "howTo": "不方便上傳給 AI 時",
+     "body": "請按選單點選順序告訴我，怎樣用 Excel 的 Power Query 自動合併放在同一個資料夾裡的 Excel 檔案。我的 Excel 版本是 {{엑셀버전}}，每個檔案的工作表名是「{{시트이름}}」。也請告訴我下個月只換檔案、點「重新整理」就能更新的方法。",
+     "variables": [
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      },
+      {
+       "key": "시트이름",
+       "label": "工作表名",
+       "example": "Sheet1"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "刪除個人資訊",
+     "body": "在副本里刪掉敏感欄",
+     "check": "原件另外儲存"
+    },
+    {
+     "title": "開啟檔案建立",
+     "body": "設定 > 功能裡開啟",
+     "check": "選單名：程式碼執行與檔案建立"
+    },
+    {
+     "title": "附上檔案",
+     "body": "用回形針（+）一次上傳",
+     "check": "超過 20 個就分批"
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "拿到結果",
+     "body": "下載 Excel 並開啟",
+     "check": "確認有 4 個工作表"
+    },
+    {
+     "title": "複核",
+     "body": "傳送複核提示詞",
+     "check": "親手對照 2～3 個原檔案"
+    },
+    {
+     "title": "列印",
+     "body": "確認 A4 橫向 1 頁後列印",
+     "check": ""
+    },
+    {
+     "title": "下個月起",
+     "body": "儲存為專案",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "一個含 4 個工作表的 Excel\n合併 · 核對 · 待確認 · 複核",
+    "example": "5 家分店 · 716 列 · 560,380 元\n與原檔案差額 0（複核一致）"
+   },
+   "cautions": [
+    "合計一定要和原檔案對照",
+    "先確認公司的資料安全規定",
+    "上傳前取消合併儲存格",
+    "免費方案有使用上限"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上傳檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月度 Excel 彙總",
+    "instructions": "你是我們公司月度資料彙總的助手。結果做成 Excel（.xlsx）。計算儲存格用 Excel 公式填入，並在註解裡用中文寫明演算法。「核對」表放每個來源檔案的列數和合計，「複核」表放用另一種方法算出的合計。不要擅自改數值，可疑資料集中放到「待確認」表。列印為 A4 橫向，縮放到一頁寬。",
+    "knowledge": [
+     "空白標準模板 1 個",
+     "分店/部門程式碼表"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "payroll-variance-check",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 240,
+   "timeAfterMin": 40,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-08",
+   "updatedAt": "2026-11-08",
+   "lang": "zh-Hant",
+   "title": "薪資表環比核對",
+   "subtitle": "上傳兩個月的薪資表\n整理入職、離職、增減和異常變動",
+   "tags": [
+    "薪資",
+    "薪資表",
+    "核對",
+    "增減",
+    "環比",
+    "最低工資",
+    "人事成本"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel",
+     "free": false,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "一個個比對還是會漏掉發錯的薪水",
+   "before": "用眼睛對比兩個月的薪資表",
+   "after": "從增減原因到最低工資檢查",
+   "prepare": [
+    "上月、本月薪資表",
+    "兩個檔案都要有「員工編號」欄",
+    "刪除身分證字號、銀行帳號、地址",
+    "本月人事異動備註",
+    "確認公司規定允許上傳"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：增減核對",
+     "howTo": "貼到已附上兩個檔案的對話裡",
+     "body": "附件 1 是 {{전월}} 薪資表，附件 2 是 {{당월}} 薪資表。員工編號在「{{사번열}}」欄。\n\n請把以下結果做成一個 Excel 檔案：\n1.「人員異動」表：只在本月出現的編號（推定到職）和只在上月出現的編號（推定離職）\n2.「增減表」表：兩個月都在的人，各薪資項目的上月、本月、增減額、增減率\n3.「主要變動」表：應發總額變動 {{기준금액}} 元以上或 {{기준비율}}% 以上的人，以及新增或消失薪資項目的人\n4.「最低工資檢查」表：月薪制者每月工資低於 {{최저월급}} 元、時薪制者時薪低於 {{최저시급}} 元的人（僅供參考篩選）\n5.「摘要」表：用 3～5 行說明應發總額的環比增減，以及影響最大的項目和人員異動\n\n不要改資料，難以判斷的部分標為「待確認」。\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格的註解裡用中文寫明算法（滑鼠移上去就看得到）\n- 新增「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "전월",
+       "label": "上月",
+       "example": "2026 年 9 月"
+      },
+      {
+       "key": "당월",
+       "label": "本月",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "사번열",
+       "label": "員工編號欄名",
+       "example": "員工編號"
+      },
+      {
+       "key": "기준금액",
+       "label": "主要變動門檻（元）",
+       "example": "3000"
+      },
+      {
+       "key": "기준비율",
+       "label": "主要變動門檻（%）",
+       "example": "10"
+      },
+      {
+       "key": "최저월급",
+       "label": "每月最低工資（元）",
+       "example": "29500"
+      },
+      {
+       "key": "최저시급",
+       "label": "每小時最低工資（元）",
+       "example": "196"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一個對話裡傳送",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "memo-match",
+     "title": "對照異動原因備註",
+     "howTo": "基本提示詞之後",
+     "body": "下面是本月的人事異動備註。請把「主要變動」表裡的人分成備註能解釋的和不能解釋的，列成表。不能解釋的就是要優先查核的對象。\n\n{{변동메모}}",
+     "variables": [
+      {
+       "key": "변동메모",
+       "label": "人事異動備註",
+       "example": "A1023 10/1 升任課長，A1107 10/15 到職，A0981 9/30 離職，全體 10 月起伙食津貼加 500 元"
+      }
+     ]
+    },
+    {
+     "id": "approval-text",
+     "title": "簽呈裡的增減原因",
+     "howTo": "複核結束之後",
+     "body": "根據「摘要」表，寫 3 條要點，作為 {{당월}} 薪資簽呈裡的環比增減原因。數字只用表裡的數值。",
+     "variables": [
+      {
+       "key": "당월",
+       "label": "本月",
+       "example": "2026 年 10 月"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "刪除個人資料",
+     "body": "在副本裡刪掉敏感欄位",
+     "check": "連姓名一起刪更安全"
+    },
+    {
+     "title": "統一編號格式",
+     "body": "兩個檔案的員工編號欄保持一致",
+     "check": "不一致會被誤判為到離職"
+    },
+    {
+     "title": "附上檔案",
+     "body": "按上月 → 本月的順序附上",
+     "check": "保持檔案建立開啟"
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": "最低工資以當年度公告為準"
+    },
+    {
+     "title": "確認人員異動",
+     "body": "和實際到離職名單對照",
+     "check": ""
+    },
+    {
+     "title": "對照異動原因",
+     "body": "傳送備註對照提示詞",
+     "check": "先查解釋不了的人"
+    },
+    {
+     "title": "複核與總額對帳",
+     "body": "複核提示詞 + 和薪資系統總額比對",
+     "check": "不一致就先別定稿"
+    },
+    {
+     "title": "列印與簽核",
+     "body": "A4 橫向 1 頁列印",
+     "check": "簽呈文字也用提示詞"
+    }
+   ],
+   "result": {
+    "summary": "6 個工作表的 Excel + 簽呈文字\n含增減、原因、異常變動和複核",
+    "example": "總額 12,480,000 → 12,961,000 元\n+481,000 元（+3.9%）· 原因合計一致"
+   },
+   "cautions": [
+    "薪資屬於敏感資料，須經公司核准",
+    "不要只憑 AI 結果定稿",
+    "最低工資檢查僅供參考",
+    "116 年起每月 30,900 元、每小時 205 元"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 說明中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "最低工資連 11 漲：116 年 1 月 1 日起調整",
+     "publisher": "勞動部",
+     "url": "https://www.mol.gov.tw/1607/1632/1633/99195/post",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月度薪資核對",
+    "instructions": "你是薪資核對助手。不要擅自修改資料。按員工編號比較。結果做成 Excel（.xlsx），計算儲存格用 Excel 公式填入，並在註解裡用中文寫明算法。把總額增減按原因拆分，並在「複核」表證明合計對得上。最低工資的計入範圍、延長工時工資的計算基礎等法律判斷不要下定論，標為「待確認」。列印為 A4 橫向，縮放到一頁寬。",
+    "knowledge": [
+     "薪資項目說明表（項目名、固定/變動、應稅/免稅）",
+     "公司津貼發放標準表"
+    ]
+   },
+   "legal": {
+    "note": "最低工資：115 年每月 29,500 元、每小時 196 元；最低工資審議會決定自 116 年（2027 年）1 月 1 日起調升為每月 30,900 元、每小時 205 元（勞動部 2026-09-24 公布）。",
+    "checkedAt": "2026-11-09",
+    "disclaimer": "工資計入範圍、部分工時等判斷，請向勞動部、地方勞工局或勞資專業人士確認。"
+   }
+  },
+  {
+   "id": "one-page-exec-report",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-08",
+   "updatedAt": "2026-11-08",
+   "lang": "zh-Hant",
+   "title": "把長資料變成一頁報告",
+   "subtitle": "上傳資料、寫明目的\n就能拿到結論先行的一頁報告",
+   "tags": [
+    "報告",
+    "摘要",
+    "高管彙報",
+    "一頁",
+    "審批",
+    "簽呈",
+    "word"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Word 或 Google 文件",
+     "free": false,
+     "note": "最終排版、列印"
+    }
+   ],
+   "problem": "資料 30 頁，老闆只看 1 頁",
+   "before": "讀、摘、刪，再刪",
+   "after": "連公式腳註和預想問題一起做好",
+   "prepare": [
+    "依據資料（Excel、PDF、郵件）",
+    "一句話寫明彙報物件和目的",
+    "公司報告模板",
+    "機密資料先確認規定"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：一頁草稿",
+     "howTo": "貼上到已附上資料的對話裡",
+     "body": "請根據附件資料，為{{보고대상}}寫一份一頁報告。\n- 彙報目的：{{보고목적}}\n- 對方最關心的問題：{{핵심질문}}\n- 結論方向（如有）：{{결론방향}}\n\n結構：標題 / 彙報要點（3 行以內，結論先行）/ 現狀 / 問題與原因 / 方案比較（表格）/ 建議 / 後續安排\n\n寫作規則：\n- 用簡短要點式，不超過 A4 一頁\n- 數字只用附件裡有的值，資料裡沒有的寫 [待確認]\n- 右上角寫「{{작성일}}，{{작성자}}」\n- 自己算出的數字要加腳註寫明演算法（在 Word 裡滑鼠移上去能看到）\n- Word（.docx），A4 縱向一頁，頁邊距 2 釐米，常用商務字型",
+     "variables": [
+      {
+       "key": "보고대상",
+       "label": "彙報物件",
+       "example": "總經理"
+      },
+      {
+       "key": "보고목적",
+       "label": "彙報目的",
+       "example": "決定是否更換辦公影印機租賃公司"
+      },
+      {
+       "key": "핵심질문",
+       "label": "對方會關心的問題",
+       "example": "換了以後一年能省多少，會有哪些不便"
+      },
+      {
+       "key": "결론방향",
+       "label": "結論方向（沒有就寫「按資料提出建議」）",
+       "example": "建議更換供應商"
+      },
+      {
+       "key": "작성일",
+       "label": "日期",
+       "example": "2026-11-08"
+      },
+      {
+       "key": "작성자",
+       "label": "撰寫人",
+       "example": "行政部 陳明"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：數字依據",
+     "howTo": "拿到草稿後直接在同一對話裡發",
+     "body": "請把報告裡出現的所有數字欄成表。\n數字 / 依據資料位置（檔案、頁、儲存格）/ 演算法 / 重新算出的值 / 是否一致\n找不到依據的數字標為「無依據」。",
+     "variables": []
+    },
+    {
+     "id": "qna",
+     "title": "高管可能問的問題與回答",
+     "howTo": "拿到草稿後接著發",
+     "body": "請站在{{보고대상}}的角度讀這份報告，列出 5 個可能被問的問題和回答草稿。回答只用附件裡的依據，沒有依據就寫「需要進一步核實」。",
+     "variables": [
+      {
+       "key": "보고대상",
+       "label": "彙報物件",
+       "example": "總經理"
+      }
+     ]
+    },
+    {
+     "id": "shorten",
+     "title": "超過一頁時壓縮",
+     "howTo": "篇幅太長時",
+     "body": "把彙報要點壓成 1 句，整體篇幅減少 {{감축비율}}%。數字和結論保持不變，刪掉的部分另外整理成可以放進「附件」的內容。",
+     "variables": [
+      {
+       "key": "감축비율",
+       "label": "壓縮比例（%）",
+       "example": "20"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "收集資料",
+     "body": "檔案、郵件放在一起",
+     "check": "機密資料先看規定"
+    },
+    {
+     "title": "建立專案",
+     "body": "指令和模板只需登記一次",
+     "check": "免費方案最多 5 個"
+    },
+    {
+     "title": "資料 + 提示詞",
+     "body": "在新對話裡附上後傳送",
+     "check": ""
+    },
+    {
+     "title": "檢查篇幅",
+     "body": "超過一頁就用壓縮提示詞",
+     "check": ""
+    },
+    {
+     "title": "核對數字",
+     "body": "用複核提示詞對照依據",
+     "check": "AI 可能會編數字"
+    },
+    {
+     "title": "預想問題",
+     "body": "提前準備 5 個問答",
+     "check": ""
+    },
+    {
+     "title": "列印",
+     "body": "列印成 A4 縱向一頁",
+     "check": "結論由你最終判斷"
+    }
+   ],
+   "result": {
+    "summary": "A4 縱向一頁的 Word 報告\n每個數字都有演算法腳註 · 5 個預想問題",
+    "example": "示例：每年節省 2,160 元（16.7%）\n12 處數字帶演算法腳註"
+   },
+   "cautions": [
+    "數字要一個不漏地核對",
+    "結論和建議由撰寫人判斷",
+    "關掉檔案建立就只會給正文",
+    "機密資料先看規定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Intro to Projects（影片課程）",
+     "publisher": "Claude Academy",
+     "url": "https://academy.claude.com/tutorials/intro-to-projects",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "一頁報告",
+    "instructions": "所有報告都寫成 A4 縱向一頁的高管報告，結論放最前面。結構：標題 / 彙報要點（3 行以內）/ 現狀 / 問題與原因 / 方案比較 / 建議 / 後續安排。用簡短要點式。數字只用附件裡的值，自己算出的數字要用腳註寫明演算法。資料裡沒有的寫 [待確認]。右上角寫日期和撰寫人。Word（.docx），常用商務字型，頁邊距 2 釐米。",
+    "knowledge": [
+     "公司報告模板 1 個",
+     "寫得好的報告範例 1～2 個"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "excel-compare-files",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "월",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "比較兩個檔案找出差異",
+   "subtitle": "上傳兩個檔案\n只挑出新增、刪除和變更的部分",
+   "tags": [
+    "比較",
+    "對比",
+    "差異",
+    "變化",
+    "excel",
+    "價目表",
+    "名單"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "核對兩份名單總會漏掉一個",
+   "before": "用 VLOOKUP 一列列核對",
+   "after": "按關鍵欄對齊，只挑出差異",
+   "prepare": [
+    "要比較的兩個檔案（舊、新）",
+    "定好關鍵欄（員工編號、品號）",
+    "統一兩個檔案的欄名",
+    "刪除身份證號、聯絡方式等"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：比較兩個檔案",
+     "howTo": "貼上到已附上兩個檔案的對話裡",
+     "body": "附件 1 是{{이전파일}}，附件 2 是{{최신파일}}。請按「{{기준열}}」欄比較兩個檔案，做成一個 Excel 檔案。\n1.「摘要」表：新增、刪除、變更的件數\n2.「新增」表：只在新檔案裡的列\n3.「刪除」表：只在舊檔案裡的列\n4.「變更」表：兩邊都有但{{비교열}}的值變了的列（舊值 / 新值 / 差額並排，變化的儲存格標黃）\n5.「待確認」表：關鍵欄為空或重複的列\n不要修改資料。\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "이전파일",
+       "label": "舊檔案說明",
+       "example": "9 月供應商價目表"
+      },
+      {
+       "key": "최신파일",
+       "label": "新檔案說明",
+       "example": "10 月供應商價目表"
+      },
+      {
+       "key": "기준열",
+       "label": "關鍵欄名",
+       "example": "品號"
+      },
+      {
+       "key": "비교열",
+       "label": "要比較的欄位（多個用逗號分隔）",
+       "example": "單價, 供應商名稱"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "formula",
+     "title": "自己做：比較公式",
+     "howTo": "不方便上傳給 AI 時",
+     "body": "請告訴我在 Excel 裡按「{{기준열}}」比較工作表 1（舊）和工作表 2（新）的公式。我想在新表旁邊一欄顯示「新增/變更/相同」。我的 Excel 是 {{엑셀버전}}。如果這個版本不能用 XLOOKUP，請用其他函式。",
+     "variables": [
+      {
+       "key": "기준열",
+       "label": "關鍵欄名",
+       "example": "品號"
+      },
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "刪除個人資訊",
+     "body": "在副本里刪掉敏感欄",
+     "check": "原件另外儲存"
+    },
+    {
+     "title": "檢查關鍵欄",
+     "body": "兩個檔案的格式統一",
+     "check": "注意開頭的 0 和空格"
+    },
+    {
+     "title": "附上檔案",
+     "body": "按舊 → 新的順序附上",
+     "check": "保持檔案建立開啟"
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "檢視結果",
+     "body": "先看摘要的件數",
+     "check": "太多就懷疑關鍵欄"
+    },
+    {
+     "title": "複核",
+     "body": "拿 3～4 條變更和原檔案對照",
+     "check": "也一起發覆核提示詞"
+    }
+   ],
+   "result": {
+    "summary": "5 個工作表的比較結果 Excel\n摘要 · 新增 · 刪除 · 變更 · 待確認",
+    "example": "示例：價目表 1,240 列\n變更 37 條 · 新增 5 條 · 刪除 2 條"
+   },
+   "cautions": [
+    "關鍵欄格式不同會全部被當成變更",
+    "挑幾條變更和原檔案對照",
+    "上傳前刪除個人資訊欄",
+    "超過 20 欄就只指定要比的欄位"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "XLOOKUP 函式",
+     "publisher": "Microsoft 支援",
+     "url": "https://support.microsoft.com/office/b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "向 Claude 上傳檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-formula",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 30,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "寫 Excel 函式、解決報錯",
+   "subtitle": "用文字寫出想算什麼\n就能拿到公式和通俗說明",
+   "tags": [
+    "函式",
+    "公式",
+    "報錯",
+    "excel",
+    "vlookup",
+    "sumifs"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "知道怎麼算，就是想不起函式",
+   "before": "搜一搜再一個個試",
+   "after": "說清情況，公式馬上出來",
+   "prepare": [
+    "表格的欄名和位置（A 欄、B 欄…）",
+    "2～3 行示例資料",
+    "一句話寫出想要的結果",
+    "Excel 版本（檔案 > 帳戶）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：寫公式",
+     "howTo": "不需要檔案，直接用",
+     "body": "請幫我寫一個 Excel 公式。\n- 表格結構：{{표구조}}\n- 想要的結果：{{원하는결과}}\n- 結果放在：{{결과칸}}\n- Excel 版本：{{엑셀버전}}\n\n1. 可以直接貼上的公式\n2. 用通俗的話逐行解釋公式在做什麼\n3. 往下複製時需要鎖定（$）的部分\n4. 結果容易出錯的情況和檢查方法\n5. 如果我的版本不支援某個函式，給出替代公式",
+     "variables": [
+      {
+       "key": "표구조",
+       "label": "欄名和位置",
+       "example": "A 欄日期、B 欄分店、C 欄品項、D 欄銷售額"
+      },
+      {
+       "key": "원하는결과",
+       "label": "想要的結果",
+       "example": "10 月東區分店的銷售額合計"
+      },
+      {
+       "key": "결과칸",
+       "label": "結果儲存格",
+       "example": "G2"
+      },
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      }
+     ]
+    },
+    {
+     "id": "error",
+     "title": "解決報錯",
+     "howTo": "出現 #N/A、#VALUE! 等時",
+     "body": "下面的公式出現 {{오류}} 錯誤。請按可能性從高到低告訴我原因，並給出改好的公式。\n公式：{{수식}}\n情況：{{상황}}",
+     "variables": [
+      {
+       "key": "오류",
+       "label": "錯誤顯示",
+       "example": "#N/A"
+      },
+      {
+       "key": "수식",
+       "label": "出問題的公式",
+       "example": "=VLOOKUP(A2,Sheet2!A:C,3,0)"
+      },
+      {
+       "key": "상황",
+       "label": "情況說明",
+       "example": "員工編號明明存在卻找不到"
+      }
+     ]
+    },
+    {
+     "id": "explain",
+     "title": "看懂別人寫的公式",
+     "howTo": "接手別人的檔案時",
+     "body": "請用通俗的話一步步解釋下面這個公式在算什麼。如果能寫得更簡單，也一起告訴我。\n{{수식}}",
+     "variables": [
+      {
+       "key": "수식",
+       "label": "要解釋的公式",
+       "example": "=IFERROR(INDEX(C:C,MATCH(1,(A:A=F2)*(B:B=G2),0)),\"\")"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "寫下表格結構",
+     "body": "記下欄名和位置",
+     "check": "用示例代替真實資料"
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "貼上公式",
+     "body": "貼到結果儲存格後回車",
+     "check": ""
+    },
+    {
+     "title": "手算核對",
+     "body": "親手算 3～4 個結果",
+     "check": "這一步一定要做"
+    },
+    {
+     "title": "往下複製",
+     "body": "確認鎖定（$）位置後複製",
+     "check": ""
+    },
+    {
+     "title": "報錯時",
+     "body": "用解決報錯提示詞",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "可以直接貼上的公式 + 通俗說明\n連容易出錯的情況也寫上",
+    "example": "例：=SUMIFS(D:D,B:B,\"東區分店\",\nA:A,\">=\"&DATE(2026,10,1))"
+   },
+   "cautions": [
+    "幾個結果一定要親手核對",
+    "XLOOKUP 只在 2021、365 以上可用",
+    "用示例說明，不要貼真實資料",
+    "日期存成文字就會報錯"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "XLOOKUP 函式",
+     "publisher": "Microsoft 支援",
+     "url": "https://support.microsoft.com/office/b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-clean-data",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "整理雜亂資料",
+   "subtitle": "上傳雜亂的檔案\n就能拿到整理版和修改記錄",
+   "tags": [
+    "整理",
+    "清洗",
+    "格式",
+    "重複",
+    "excel",
+    "資料"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "日期、電話格式五花八門",
+   "before": "查詢替換做幾十遍",
+   "after": "定好規則一次整理完",
+   "prepare": [
+    "要整理的 Excel 檔案",
+    "整理規則備註（日期格式等）",
+    "刪除身份證號、帳號等",
+    "原件另外儲存"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：整理資料",
+     "howTo": "貼到已附上檔案的對話裡",
+     "body": "附上的檔案是{{자료명}}。請按下面的規則做一個整理好的 Excel 檔案。\n{{정리규칙}}\n\n1.「整理版」表：套用規則後的資料\n2.「修改紀錄」表：列號 / 欄 / 原值 / 新值\n3.「重複」表：按{{중복기준}}判斷重複的列（不要刪除，只標出）\n4.「待確認」表：規則判斷不了的值\n原檔案裡沒有的值不要編。\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格的註解裡用中文寫明算法（滑鼠移上去就看得到）\n- 新增「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "자료명",
+       "label": "是什麼資料",
+       "example": "廠商名單"
+      },
+      {
+       "key": "정리규칙",
+       "label": "整理規則",
+       "example": "日期統一為 2026-10-01 格式，電話統一為 02-1234-5678，刪除前後空格，公司名稱裡的股份有限公司寫法統一"
+      },
+      {
+       "key": "중복기준",
+       "label": "判斷重複的欄位",
+       "example": "統一編號"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一個對話裡傳送",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "repeat",
+     "title": "每月都做：Power Query",
+     "howTo": "每月做同樣的整理時",
+     "body": "每月收到的{{자료명}}檔案我想按同樣的規則整理。請按功能表點選順序告訴我用 Excel Power Query 套用下面規則的方法，讓下個月只要換檔案、按重新整理就好。\n{{정리규칙}}",
+     "variables": [
+      {
+       "key": "자료명",
+       "label": "是什麼資料",
+       "example": "廠商名單"
+      },
+      {
+       "key": "정리규칙",
+       "label": "整理規則",
+       "example": "日期統一為 2026-10-01 格式，刪除前後空格"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "儲存原件",
+     "body": "在副本上操作",
+     "check": "檔名加 _原件"
+    },
+    {
+     "title": "定規則",
+     "body": "每條要改的格式寫一行",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "開啟檔案建立後附上",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "瀏覽修改記錄",
+     "body": "找出改得奇怪的值",
+     "check": "注意數字被變成日期"
+    },
+    {
+     "title": "複核",
+     "body": "列數是否和原件一樣",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "整理版 · 修改記錄 · 重複 · 待確認\n4 個工作表的 Excel",
+    "example": "示例：供應商 820 列\n修改 312 格 · 標出重複 9 條"
+   },
+   "cautions": [
+    "重複只標出，不要刪",
+    "看修改記錄裡有沒有怪的轉換",
+    "確認列數和原件一致",
+    "上傳前刪除個人資訊欄"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "從資料夾匯入資料（Power Query）",
+     "publisher": "Microsoft 支援",
+     "url": "https://support.microsoft.com/en-us/Excel/import-data-from-a-folder-with-multiple-files-power-query",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-pivot-chart",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "做彙總表（透視表）和圖表",
+   "subtitle": "寫出想看什麼\n彙總表和圖表一次做好",
+   "tags": [
+    "透視表",
+    "資料透視表",
+    "圖表",
+    "彙總表",
+    "excel"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "每次做透視表都不知道點哪裡",
+   "before": "找選單、拖欄位、調格式",
+   "after": "說出想看的維度就完成",
+   "prepare": [
+    "要彙總的 Excel 檔案",
+    "一列標題，去掉空列",
+    "想看的維度（按分店、按月）",
+    "刪除個人資訊欄"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：彙總表與圖表",
+     "howTo": "貼上到已附上檔案的對話裡",
+     "body": "請用附上的{{자료명}}做彙總表和圖表，給我 Excel 檔案。\n- 列：{{행기준}}\n- 欄：{{열기준}}\n- 值：{{값}}（合計）\n- 圖表：{{차트}}\n\n1.「彙總」表：彙總表（含各列與各欄合計，千位分隔符）\n2.「圖表」表：用上面彙總表做的圖表，標出標題和單位\n3.「說明」表：3 行值得注意的點（附數字依據）\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "자료명",
+       "label": "是什麼資料",
+       "example": "2026 年各分店月度銷售"
+      },
+      {
+       "key": "행기준",
+       "label": "列",
+       "example": "分店"
+      },
+      {
+       "key": "열기준",
+       "label": "欄",
+       "example": "月份"
+      },
+      {
+       "key": "값",
+       "label": "要合計的值",
+       "example": "銷售額"
+      },
+      {
+       "key": "차트",
+       "label": "圖表型別",
+       "example": "月度趨勢折線 + 分店柱狀"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "howto",
+     "title": "自己做：透視表點選順序",
+     "howTo": "在自己的 Excel 裡做時",
+     "body": "請按選單點選順序告訴我，在 Excel {{엑셀버전}} 裡用資料透視表做按{{행기준}}、按{{열기준}}的{{값}}合計。也請告訴我原始資料增加後，怎樣點重新整理就能反映。",
+     "variables": [
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      },
+      {
+       "key": "행기준",
+       "label": "列",
+       "example": "分店"
+      },
+      {
+       "key": "열기준",
+       "label": "欄",
+       "example": "月份"
+      },
+      {
+       "key": "값",
+       "label": "要合計的值",
+       "example": "銷售額"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "整理資料",
+     "body": "一列標題，刪除空列",
+     "check": "取消合併儲存格"
+    },
+    {
+     "title": "定維度",
+     "body": "先記下列、欄、值",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "開啟檔案建立後附上",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "對照合計",
+     "body": "總計是否等於原始合計",
+     "check": "用複核提示詞"
+    },
+    {
+     "title": "列印",
+     "body": "確認 A4 橫向一頁",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "彙總 · 圖表 · 說明 3 個工作表\n附 3 行值得注意的點",
+    "example": "示例：8 家分店 × 12 個月\n2 張圖表 · 3 行說明"
+   },
+   "cautions": [
+    "總計要和原始合計對照",
+    "說明裡的數字也要核對",
+    "空列和合併儲存格先整理",
+    "確認圖表單位（元、千元）"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "建立資料透視表",
+     "publisher": "Microsoft 支援",
+     "url": "https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "excel-monthly-analysis",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "月度業績增減分析",
+   "subtitle": "上傳兩個期間的業績\n連增減表和原因說明都有",
+   "tags": [
+    "增減",
+    "環比",
+    "分析",
+    "銷售",
+    "業績",
+    "excel"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "數字有了，還得寫清楚為什麼變",
+   "before": "算增減、找原因就是一整天",
+   "after": "增減表、主要變動、說明一次搞定",
+   "prepare": [
+    "兩個期間的業績檔案",
+    "關鍵欄（分店、品項、客戶）",
+    "已知變動原因的備註",
+    "刪除個人資訊欄"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：增減分析",
+     "howTo": "貼上到已附上兩個檔案的對話裡",
+     "body": "附件 1 是{{이전기간}}，附件 2 是{{비교기간}}的{{자료명}}。請按「{{기준열}}」分析並做成 Excel 檔案。\n1.「增減表」表：每個關鍵項的上期、本期、增減額、增減率，加合計列\n2.「主要變動」表：增減額 {{기준금액}} 元以上或增減率 {{기준비율}}% 以上\n3.「說明」表：用 3～5 行寫整體增減和主要原因，把下面備註能解釋和不能解釋的分開。\n備註：{{변동메모}}\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "이전기간",
+       "label": "上一期間",
+       "example": "2026 年 9 月"
+      },
+      {
+       "key": "비교기간",
+       "label": "比較期間",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "자료명",
+       "label": "是什麼資料",
+       "example": "各分店銷售業績"
+      },
+      {
+       "key": "기준열",
+       "label": "關鍵欄",
+       "example": "分店"
+      },
+      {
+       "key": "기준금액",
+       "label": "主要變動門檻（元）",
+       "example": "5000"
+      },
+      {
+       "key": "기준비율",
+       "label": "主要變動門檻（%）",
+       "example": "10"
+      },
+      {
+       "key": "변동메모",
+       "label": "已知變動原因",
+       "example": "北區分店新增大客戶，西區分店裝修停業 10 天"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "comment",
+     "title": "報告用 3 行說明",
+     "howTo": "分析後放進報告時",
+     "body": "把「說明」表的內容改寫成向{{보고대상}}彙報用的 3 條要點。數字照表裡的值，推測要標「估計」。",
+     "variables": [
+      {
+       "key": "보고대상",
+       "label": "彙報物件",
+       "example": "總經理"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "準備檔案",
+     "body": "兩個期間格式統一",
+     "check": "關鍵欄名稱相同"
+    },
+    {
+     "title": "變動備註",
+     "body": "把已知原因寫下來",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "按上期 → 本期順序附上",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "對照總計",
+     "body": "合計是否和原檔案一樣",
+     "check": "用複核提示詞"
+    },
+    {
+     "title": "檢查說明",
+     "body": "先看解釋不了的變動",
+     "check": ""
+    },
+    {
+     "title": "彙報",
+     "body": "把 3 行說明放進報告",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "增減表 · 主要變動 · 說明的 Excel\n報告用 3 行摘要",
+    "example": "示例：8 家分店 9 月→10 月\n+4.2% · 主要變動 3 家 · 未解釋 1 家"
+   },
+   "cautions": [
+    "原因只信有資料依據的",
+    "標「估計」的句子核實後再用",
+    "總計要和原檔案對照",
+    "格式不同先統一"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月度業績分析",
+    "instructions": "你是月度業績分析助手。結果做成 Excel（.xlsx）。計算儲存格用 Excel 公式填入，並在註解裡寫明演算法。原因說明只寫有資料和我的備註依據的內容，推測要標「估計」。在「複核」表放總計複核。",
+    "knowledge": [
+     "上個月的分析結果 1 份",
+     "分店/品項程式碼表"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "excel-vba",
+   "status": "published",
+   "category": "excel",
+   "difficulty": "hard",
+   "frequency": "월",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "為重複操作做宏",
+   "subtitle": "按順序寫下重複的點選\n就能拿到一鍵完成的宏",
+   "tags": [
+    "宏",
+    "宏命令",
+    "vba",
+    "自動化",
+    "重複操作",
+    "excel",
+    "按鈕"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    },
+    {
+     "name": "Excel",
+     "free": false,
+     "note": "需要桌面版"
+    }
+   ],
+   "problem": "每個月同樣的點選幾十次",
+   "before": "手動複製工作表、排序、調格式",
+   "after": "按一下宏按鈕就完成",
+   "prepare": [
+    "按順序寫下重複操作",
+    "確認工作表名、欄位置",
+    "一定要準備副本檔案",
+    "確認公司是否禁用宏"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：做一個宏",
+     "howTo": "不需要檔案，直接用",
+     "body": "請幫我寫一個 Excel VBA 宏。\n- 要做的事（按順序）：{{작업순서}}\n- 工作表名：{{시트이름}}\n- Excel 版本：{{엑셀버전}}\n\n1. 可以貼上的 VBA 程式碼（每一行都加中文註釋）\n2. 放入並執行程式碼的點選順序（從開啟「開發工具」選項卡開始）\n3. 執行前自動建立備份工作表\n4. 沒有資料或工作表時停止並提示\n5. 說明儲存格式（.xlsm）",
+     "variables": [
+      {
+       "key": "작업순서",
+       "label": "重複操作的順序",
+       "example": "1) 複製「原始」工作表 2) 按 C 欄降序排序 3) 金額欄加千位分隔符 4) 加合計列 5) 另存為 PDF"
+      },
+      {
+       "key": "시트이름",
+       "label": "工作表名",
+       "example": "原始"
+      },
+      {
+       "key": "엑셀버전",
+       "label": "Excel 版本",
+       "example": "Microsoft 365"
+      }
+     ]
+    },
+    {
+     "id": "error",
+     "title": "解決報錯",
+     "howTo": "執行中停下來時",
+     "body": "執行下面的宏時，在 {{오류줄}} 出現「{{오류메시지}}」錯誤。請告訴我原因，並給出改好的完整程式碼。\n{{코드}}",
+     "variables": [
+      {
+       "key": "오류메시지",
+       "label": "錯誤資訊",
+       "example": "執行時錯誤 9：下標越界"
+      },
+      {
+       "key": "오류줄",
+       "label": "標黃的那行",
+       "example": "Sheets(\"原始\").Copy"
+      },
+      {
+       "key": "코드",
+       "label": "完整程式碼",
+       "example": "（貼上程式碼）"
+      }
+     ]
+    },
+    {
+     "id": "explain",
+     "title": "檢查收到的宏",
+     "howTo": "要用別人做的宏時",
+     "body": "請用通俗的話說明下面這段 VBA 程式碼做了什麼，並檢查有沒有刪除檔案、向外傳送資料等危險操作。\n{{코드}}",
+     "variables": [
+      {
+       "key": "코드",
+       "label": "要檢查的程式碼",
+       "example": "（貼上程式碼）"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "寫下操作",
+     "body": "給每次點選編號",
+     "check": ""
+    },
+    {
+     "title": "準備副本",
+     "body": "一定用副本檔案",
+     "check": "宏的結果無法撤銷"
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "放入程式碼",
+     "body": "按說明的點選順序",
+     "check": ""
+    },
+    {
+     "title": "試執行",
+     "body": "先在副本上執行",
+     "check": "和手動結果對比"
+    },
+    {
+     "title": "存成 .xlsm",
+     "body": "用啟用宏的格式儲存",
+     "check": ""
+    },
+    {
+     "title": "報錯時",
+     "body": "用解決報錯提示詞",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "帶中文註釋的 VBA 程式碼\n連放入、執行、備份方法都有",
+    "example": "示例：複製、排序、格式、合計\n5 步操作一鍵完成"
+   },
+   "cautions": [
+    "一定先在副本上執行",
+    "宏的結果無法撤銷",
+    "來路不明的宏不要執行",
+    "網頁版 Excel 和手機上不能執行"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "快速入門：建立宏",
+     "publisher": "Microsoft 支援",
+     "url": "https://support.microsoft.com/en-us/office/quick-start-create-a-macro-741130ca-080d-49f5-9471-1e5fb3d581a8",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "hr-attendance-overtime",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 240,
+   "timeAfterMin": 40,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "出勤統計與延長工時計算",
+   "subtitle": "上傳打卡紀錄\n延長工時、休息日、假日工時自動統計",
+   "tags": [
+    "考勤",
+    "出勤",
+    "加班",
+    "延長工時",
+    "休息日",
+    "國定假日"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "用打卡紀錄算加班費很容易亂",
+   "before": "一個個人加加減減",
+   "after": "每日、每月工時和上限檢查都有",
+   "prepare": [
+    "打卡紀錄（員工編號、日期、上班、下班）",
+    "休息時間標準",
+    "本月例假、休息日、國定假日",
+    "刪除姓名、聯絡方式（只留編號）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：統計工時",
+     "howTo": "貼到已附上檔案的對話裡",
+     "body": "附上的檔案是 {{기간}} 的打卡紀錄。上班在「{{출근열}}」欄，下班在「{{퇴근열}}」欄。\n- 正常工時：每日 {{소정근로}} 小時，休息 {{휴게시간}}\n- 例假、休息日、國定假日：{{휴일목록}}\n\n1.「每日」表：每個員工編號每天的總工時，平日延長（前 2 小時 / 第 3～4 小時）、休息日工作（前 2 小時 / 第 3 小時起）、例假與國定假日工作分開列\n2.「每月合計」表：每個員工編號的合計\n3.「上限檢查」表：月延長工時超過 46 小時的人，以及含延長單日超過 12 小時的日期\n4.「待確認」表：漏打下班卡、超過 24 小時的班次、休息時間難以判斷的日子\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格的註解裡用中文寫明算法（滑鼠移上去就看得到）\n- 新增「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期間",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "출근열",
+       "label": "上班時間欄",
+       "example": "上班"
+      },
+      {
+       "key": "퇴근열",
+       "label": "下班時間欄",
+       "example": "下班"
+      },
+      {
+       "key": "소정근로",
+       "label": "每日正常工時",
+       "example": "8"
+      },
+      {
+       "key": "휴게시간",
+       "label": "休息時間標準",
+       "example": "12:00～13:00（1 小時）"
+      },
+      {
+       "key": "휴일목록",
+       "label": "例假、休息日、國定假日",
+       "example": "每週日例假、週六休息日、10/10 國慶日"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一個對話裡傳送",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "pay",
+     "title": "計算加班費",
+     "howTo": "確認工時統計後",
+     "body": "在「每月合計」表加上每個員工編號的平日每小時工資（附件或「{{시급열}}」欄），計算加班費。\n平日延長前 2 小時 × 1/3、第 3～4 小時 × 2/3；休息日前 2 小時 × 1 又 1/3、第 3 小時起 × 1 又 2/3；例假與國定假日工作 × 1（加倍），這些是加給部分，請和原本工資分開列出並寫明算法。計算對象：{{인원}}，其他人標「待確認」。",
+     "variables": [
+      {
+       "key": "시급열",
+       "label": "平日每小時工資欄名",
+       "example": "每小時工資"
+      },
+      {
+       "key": "인원",
+       "label": "計算對象（編號或「全部」）",
+       "example": "全部"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "刪除個人資料",
+     "body": "刪掉姓名、聯絡方式，只留編號",
+     "check": ""
+    },
+    {
+     "title": "整理假日",
+     "body": "分清例假、休息日、國定假日",
+     "check": "三者的工資算法不同"
+    },
+    {
+     "title": "附上檔案",
+     "body": "開啟檔案建立後附上",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "處理待確認",
+     "body": "先補漏打卡",
+     "check": ""
+    },
+    {
+     "title": "抽樣核對",
+     "body": "2～3 人親手計算",
+     "check": "也一起傳複核提示詞"
+    },
+    {
+     "title": "計算加班費",
+     "body": "工時確定後再傳加班費提示詞",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "每日 · 每月合計 · 上限檢查的 Excel\n還可以算加班費",
+    "example": "範例：48 人 · 10 月\n延長工時 612 小時 · 超過 46 小時 2 人"
+   },
+   "cautions": [
+    "變形工時、責任制另行判斷",
+    "例假原則上不得出勤",
+    "2～3 人一定要親手核對",
+    "出勤屬於敏感資料，只用編號"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "勞動基準法（全國法規資料庫）",
+     "publisher": "法務部",
+     "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001",
+     "verifiedAt": "待驗證"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 說明中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月度出勤統計",
+    "instructions": "你是出勤統計助手。依據勞動基準法：正常工時每日 8 小時、每週 40 小時，超過即為延長工時；平日延長工時前 2 小時加給 1/3 以上、再延長 2 小時以內加給 2/3 以上；休息日工作前 2 小時另加給 1 又 1/3 以上、第 3 小時起另加給 1 又 2/3 以上；例假與國定假日工作工資加倍發給。每日工時含延長不超過 12 小時，每月延長工時原則不超過 46 小時。計算儲存格用 Excel 公式和註解寫入。變形工時、責任制等需要判斷的不計算，標「待確認」。",
+    "knowledge": [
+     "公司工時與休息規定",
+     "行事曆（例假、休息日、國定假日）"
+    ]
+   },
+   "legal": {
+    "note": "勞動基準法第 24 條：平日延長工時前 2 小時加給 1/3 以上、再延長 2 小時以內加給 2/3 以上；休息日工作前 2 小時另加給 1 又 1/3 以上、第 3 小時起另加給 1 又 2/3 以上。第 39、40 條：例假、國定假日工作工資加倍發給。第 32 條：每日含延長不超過 12 小時，每月延長原則不超過 46 小時。",
+    "checkedAt": "2026-11-09",
+    "disclaimer": "變形工時、經勞資會議同意的延長上限等，請向地方勞工局或勞資專業人士確認。"
+   }
+  },
+  {
+   "id": "hr-annual-leave",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "特別休假發放、使用、剩餘管理表",
+   "subtitle": "上傳到職日和請假紀錄\n發放、使用、剩餘一頁看清",
+   "tags": [
+    "特休",
+    "特別休假",
+    "年假",
+    "休假",
+    "剩餘特休"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "每個人到職日不同，特休算起來很複雜",
+   "before": "每個人對著日曆手算",
+   "after": "發放、剩餘、提醒對象自動算好",
+   "prepare": [
+    "員工名冊（編號、到職日）",
+    "特休使用紀錄（編號、日期、天數）",
+    "基準：週年制或曆年制",
+    "用員工編號代替姓名"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：特休管理表",
+     "howTo": "貼到已附上兩個檔案的對話裡",
+     "body": "附件 1 是員工名冊（編號、到職日），附件 2 是特休使用紀錄。請以 {{기준일}} 為基準，按「{{운영기준}}」做特休管理表 Excel。\n1.「發放」表：每個編號的年資、應給天數和計算依據（6 個月 3 日 / 1 年 7 日 / 2 年 10 日 / 3 年 14 日 / 5 年 15 日 / 10 年以上每年加 1 日、最多 30 日）\n2.「使用」表：每個編號已休天數（半天記 0.5）\n3.「剩餘」表：應給 − 已休，剩餘 {{촉진기준}} 天以上的人標出\n4.「待確認」表：年資未滿 6 個月、缺到職日、休得比應給多的人\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格的註解裡用中文寫明算法（滑鼠移上去就看得到）\n- 新增「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "기준일",
+       "label": "基準日",
+       "example": "2026-12-31"
+      },
+      {
+       "key": "운영기준",
+       "label": "制度",
+       "example": "週年制"
+      },
+      {
+       "key": "촉진기준",
+       "label": "標出剩餘天數（天）",
+       "example": "5"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一個對話裡傳送",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "notice",
+     "title": "提醒排休的通知",
+     "howTo": "給剩餘特休多的人",
+     "body": "給「剩餘」表裡標出的員工寫一份特休排休提醒。寫上剩餘天數和年度終結日（{{사용기한}}），禮貌地請他們在 {{제출기한}} 前提出排休計畫。注明未休日數依法應發給工資或經協商遞延，由人事確認。",
+     "variables": [
+      {
+       "key": "사용기한",
+       "label": "年度終結日",
+       "example": "2026-12-31"
+      },
+      {
+       "key": "제출기한",
+       "label": "計畫提出期限",
+       "example": "2026-11-20"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "準備資料",
+     "body": "編號、到職日、使用紀錄",
+     "check": ""
+    },
+    {
+     "title": "確認制度",
+     "body": "週年制或曆年制",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "名冊 → 使用紀錄的順序",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "處理待確認",
+     "body": "年資未滿 6 個月和缺資料的人",
+     "check": ""
+    },
+    {
+     "title": "抽樣核對",
+     "body": "新進和資深員工各 1 人",
+     "check": "也一起傳複核提示詞"
+    },
+    {
+     "title": "提醒",
+     "body": "給剩餘多的人發通知",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "發放 · 使用 · 剩餘 · 待確認的 Excel\n連提醒通知草稿都有",
+    "example": "範例：48 人 · 基準日 12/31\n剩餘 5 天以上 11 人"
+   },
+   "cautions": [
+    "曆年制要依比例換算",
+    "未休日數應發給工資或協商遞延",
+    "特休日期原則上由勞工排定",
+    "遞延與結算由人事確認"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "勞動基準法（全國法規資料庫）",
+     "publisher": "法務部",
+     "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001",
+     "verifiedAt": "待驗證"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 說明中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "特休管理",
+    "instructions": "你是特別休假管理助手。依據勞動基準法第 38 條：滿 6 個月未滿 1 年 3 日；滿 1 年未滿 2 年 7 日；滿 2 年未滿 3 年 10 日；滿 3 年未滿 5 年每年 14 日；滿 5 年未滿 10 年每年 15 日；滿 10 年以上每年加 1 日，最多 30 日。資料無法判斷的標「待確認」。計算儲存格用 Excel 公式和註解寫入。",
+    "knowledge": [
+     "公司特休制度（週年制/曆年制）",
+     "員工名冊"
+    ]
+   },
+   "legal": {
+    "note": "勞動基準法第 38 條：在同一雇主連續工作滿 6 個月未滿 1 年 3 日；滿 1 年未滿 2 年 7 日；滿 2 年未滿 3 年 10 日；滿 3 年未滿 5 年每年 14 日；滿 5 年未滿 10 年每年 15 日；滿 10 年以上每 1 年加給 1 日，加至 30 日為止。",
+    "checkedAt": "2026-11-09",
+    "disclaimer": "曆年制換算、遞延與未休工資的計算，請向地方勞工局或勞資專業人士確認。"
+   }
+  },
+  {
+   "id": "hr-job-posting",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "按職位寫招聘廣告",
+   "subtitle": "寫下職位和條件\n就能拿到廣告正文和 3 個標題",
+   "tags": [
+    "招聘",
+    "職位",
+    "招人",
+    "招聘廣告",
+    "面試"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    }
+   ],
+   "problem": "每次寫招聘廣告都從一片空白開始",
+   "before": "找出以前的廣告來改",
+   "after": "填入條件就是一則完整廣告",
+   "prepare": [
+    "職位名稱、主要工作",
+    "任職要求、加分條件",
+    "工作地點、時間、薪資",
+    "2～3 行公司介紹"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：徵才廣告草稿",
+     "howTo": "不需要檔案，直接用",
+     "body": "請用下面的資訊寫一則要刊登在{{플랫폼}}的徵才廣告。\n- 公司：{{회사소개}}\n- 職缺：{{직무}}\n- 主要工作：{{주요업무}}\n- 應徵條件：{{자격요건}}\n- 工作條件：{{근무조건}}\n\n結構：3 個標題 / 一句話介紹 / 主要工作 / 應徵條件與加分條件 / 工作條件 / 招募流程\n工作條件只寫我給的內容，沒有的寫 [待確認]。不要用限制性別、年齡、籍貫等與工作無關的字眼。",
+     "variables": [
+      {
+       "key": "플랫폼",
+       "label": "刊登平台",
+       "example": "104 人力銀行"
+      },
+      {
+       "key": "회사소개",
+       "label": "公司介紹",
+       "example": "桃園一家有 120 名員工的物流公司，1998 年成立"
+      },
+      {
+       "key": "직무",
+       "label": "職缺",
+       "example": "人資行政專員"
+      },
+      {
+       "key": "주요업무",
+       "label": "主要工作",
+       "example": "薪資與勞健保手續、出勤管理、行政支援"
+      },
+      {
+       "key": "자격요건",
+       "label": "應徵條件",
+       "example": "Excel 中級，有 1 年以上人資經驗優先"
+      },
+      {
+       "key": "근무조건",
+       "label": "工作條件",
+       "example": "週休二日，9 點到 6 點，月薪 36,000 元起（面議），正職"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：有沒有編出來的內容",
+     "howTo": "拿到草稿後直接在同一個對話裡傳送",
+     "body": "請重新檢查你剛寫的內容。\n把我沒提供卻出現了的內容（數字、日期、承諾、公司政策）列成表，再給我刪掉或改成 [待確認] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "check",
+     "title": "檢查歧視用語",
+     "howTo": "刊登前最後檢查",
+     "body": "請檢查下面的徵才廣告有沒有性別、年齡、籍貫、容貌、婚姻狀況等與工作無關的歧視用語，或者讓工作條件看起來與實際不符的寫法，並給出改好的句子。\n{{공고}}",
+     "variables": [
+      {
+       "key": "공고",
+       "label": "要檢查的廣告",
+       "example": "（貼上廣告）"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "確定條件",
+     "body": "薪資、時間、地點",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "檢查",
+     "body": "用檢查提示詞看有沒有編的內容",
+     "check": ""
+    },
+    {
+     "title": "檢查歧視用語",
+     "body": "用檢查提示詞",
+     "check": ""
+    },
+    {
+     "title": "釋出",
+     "body": "貼上到平臺的表格裡",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "可直接釋出的招聘廣告\n3 個標題 · 招聘流程",
+    "example": "示例：人事行政專員廣告\n3 個標題 · 正文 1 頁"
+   },
+   "cautions": [
+    "工作條件要和實際一致",
+    "就業服務法第 5 條禁止就業歧視",
+    "[待確認] 填好再刊登",
+    "月薪未滿 4 萬元須公開薪資"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "hr-interview",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "面試問題清單與評分表",
+   "subtitle": "寫下職位和能力\n問題清單和評分表一次做好",
+   "tags": [
+    "面試",
+    "問題",
+    "評分表",
+    "招聘",
+    "評估"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Word 或 Google 文件",
+     "free": false,
+     "note": "最終排版、列印"
+    }
+   ],
+   "problem": "每個面試官問的不一樣，沒法比較",
+   "before": "想到什麼問什麼",
+   "after": "按能力統一問題和評分標準",
+   "prepare": [
+    "職位和主要工作",
+    "最想考察的 3～4 項能力",
+    "面試時長、面試官人數",
+    "招聘廣告（有就附上）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：問題清單與評分表",
+     "howTo": "可以附上招聘廣告",
+     "body": "請用 Word 檔案做{{직무}}的面試問題清單和評分表。\n- 核心能力：{{역량}}\n- 面試時長：{{시간}} 分鐘，面試官 {{면접관}} 人\n\n1. 問題清單：每項能力 2 個問題加追問，每題附「好回答的例子」\n2. 評分表：每項能力 1～5 分的標準（每個分數附行為示例），總分和評語欄\n3. 面試官注意事項 5 行\n與工作無關的問題（婚姻、家庭、籍貫、健康等）不要放進去。\n\n[輸出規則]\n- Word（.docx），A4，常用商務字型\n- 我沒給的資訊（數字、日期、承諾）不要編，寫成 [待確認]",
+     "variables": [
+      {
+       "key": "직무",
+       "label": "職位",
+       "example": "物流中心主管"
+      },
+      {
+       "key": "역량",
+       "label": "核心能力",
+       "example": "現場解決問題、帶團隊、安全意識、Excel 運用"
+      },
+      {
+       "key": "시간",
+       "label": "面試時長（分鐘）",
+       "example": "40"
+      },
+      {
+       "key": "면접관",
+       "label": "面試官人數",
+       "example": "3"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：有沒有編出來的內容",
+     "howTo": "拿到草稿後直接在同一對話裡發",
+     "body": "請重新檢查你剛寫的內容。\n把我沒提供卻出現了的內容（數字、日期、承諾、公司政策）列成表，再給我刪掉或改成 [待確認] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "check",
+     "title": "檢查不該問的問題",
+     "howTo": "檢查面試官擬的問題",
+     "body": "請找出下面面試問題裡與工作無關或可能被視為歧視的問題，說明原因並給出替代問題。\n{{질문}}",
+     "variables": [
+      {
+       "key": "질문",
+       "label": "要檢查的問題",
+       "example": "你結婚了嗎？/ 能加班嗎？/ 你是哪裡人？"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "定能力",
+     "body": "必看的 3～4 項能力",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "附上廣告後貼上",
+     "check": ""
+    },
+    {
+     "title": "調整問題",
+     "body": "按公司情況修改",
+     "check": ""
+    },
+    {
+     "title": "與面試官共享",
+     "body": "面試前統一評分標準",
+     "check": "評分標準統一是關鍵"
+    },
+    {
+     "title": "面試後",
+     "body": "用評分表比較分數",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "按能力分的問題清單 + 1～5 分評分表\n附面試官注意事項",
+    "example": "示例：主管面試 40 分鐘\n8 個問題 · 1 頁評分表"
+   },
+   "cautions": [
+    "與工作無關的問題不要問",
+    "評分標準面試前統一",
+    "不要上傳應聘者個人資訊",
+    "最終由面試官判斷"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "hr-notice",
+   "status": "published",
+   "category": "hr",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 40,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "人事任命與內部通知",
+   "subtitle": "只寫要點\n正式通知和聊天版兩種都有",
+   "tags": [
+    "通知",
+    "公告",
+    "人事任命",
+    "調動",
+    "內部通知"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    }
+   ],
+   "problem": "寫一則通知也要斟酌半天",
+   "before": "找出以前的通知來改",
+   "after": "正式版、簡短版一次搞定",
+   "prepare": [
+    "通知型別（任命、制度、活動）",
+    "要點、生效日期",
+    "物件",
+    "諮詢視窗"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：兩種版本的通知",
+     "howTo": "不需要檔案，直接用",
+     "body": "請寫一則內部通知。\n- 型別：{{종류}}\n- 要點：{{내용}}\n- 物件：{{대상}}\n- 生效日期：{{시행일}}\n- 諮詢：{{문의처}}\n\n1. 正式通知（標題、正文、附件說明）\n2. 聊天工具用的 5 行以內版本\n我沒給的福利、條件不要寫，需要的話標 [待確認]。",
+     "variables": [
+      {
+       "key": "종류",
+       "label": "通知型別",
+       "example": "人事任命"
+      },
+      {
+       "key": "내용",
+       "label": "要點",
+       "example": "11/16 起任命李志強為物流二組組長"
+      },
+      {
+       "key": "대상",
+       "label": "物件",
+       "example": "全體員工"
+      },
+      {
+       "key": "시행일",
+       "label": "生效日期",
+       "example": "2026-11-16"
+      },
+      {
+       "key": "문의처",
+       "label": "諮詢視窗",
+       "example": "人事部 分機 1234"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：有沒有編出來的內容",
+     "howTo": "拿到草稿後直接在同一對話裡發",
+     "body": "請重新檢查你剛寫的內容。\n把我沒提供卻出現了的內容（數字、日期、承諾、公司政策）列成表，再給我刪掉或改成 [待確認] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "table",
+     "title": "做人事任命表",
+     "howTo": "任命多人時",
+     "body": "請把下面的任命內容整理成通知用的表格（姓名、原部門、新部門、職務、生效日期），並寫 2 行放在表格上方的文字。\n{{발령내용}}",
+     "variables": [
+      {
+       "key": "발령내용",
+       "label": "任命內容",
+       "example": "李志強 物流一組→物流二組 組長 11/16，王美玲 行政部 升任主任 11/16"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "確定內容",
+     "body": "確認生效日期和物件",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後複製 → 貼上",
+     "check": ""
+    },
+    {
+     "title": "檢查",
+     "body": "用檢查提示詞",
+     "check": ""
+    },
+    {
+     "title": "審批",
+     "body": "按公司流程審批",
+     "check": ""
+    },
+    {
+     "title": "釋出",
+     "body": "正式版貼公告欄，簡短版發群裡",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "正式通知 + 聊天用 5 行\n也能整理任命表",
+    "example": "示例：人事任命通知\n正式版 1 則 · 聊天版 5 行"
+   },
+   "cautions": [
+    "任命和制度審批後再發布",
+    "再次核對姓名、部門有無錯字",
+    "沒有的福利不要寫",
+    "個人情況不要寫進通知"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "admin-minutes",
+   "status": "published",
+   "category": "admin",
+   "difficulty": "easy",
+   "frequency": "주",
+   "timeBeforeMin": 40,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "會議筆記 → 會議紀要",
+   "subtitle": "貼上筆記\n決定事項和待辦整理成表",
+   "tags": [
+    "會議紀要",
+    "會議",
+    "開會",
+    "會議記錄",
+    "待辦"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    }
+   ],
+   "problem": "開完會還得整理紀要",
+   "before": "對著筆記重新打字",
+   "after": "決定、待辦、期限整理成表",
+   "prepare": [
+    "會議筆記（隨手寫的也行）",
+    "會議名稱、時間、參會人",
+    "公司紀要模板（如有）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：整理會議紀要",
+     "howTo": "貼上筆記後傳送",
+     "body": "請用下面的筆記整理會議紀要。\n- 會議名稱：{{회의명}}\n- 時間：{{일시}}\n- 參會人：{{참석자}}\n\n結構：概況 / 討論內容（按議題）/ 決定事項 / 待辦表（事項、負責人、期限）/ 暫緩事項\n筆記裡沒有的不要寫，缺負責人或期限就標 [待確認]。\n\n筆記：\n{{메모}}",
+     "variables": [
+      {
+       "key": "회의명",
+       "label": "會議名稱",
+       "example": "11 月周例會"
+      },
+      {
+       "key": "일시",
+       "label": "時間",
+       "example": "2026-11-09 10:00"
+      },
+      {
+       "key": "참석자",
+       "label": "參會人",
+       "example": "運營經理、物流一組和二組組長、人事經理"
+      },
+      {
+       "key": "메모",
+       "label": "會議筆記",
+       "example": "- 夜班缺 2 人 → 人事部本週發招聘\n- 年底貨量預計增加 20%，考慮臨時工\n- 11 月內做安全培訓"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：有沒有編出來的內容",
+     "howTo": "拿到草稿後直接在同一對話裡發",
+     "body": "請重新檢查你剛寫的內容。\n把我沒提供卻出現了的內容（數字、日期、承諾、公司政策）列成表，再給我刪掉或改成 [待確認] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "mail",
+     "title": "共享郵件正文",
+     "howTo": "整理好紀要後",
+     "body": "請寫一封把紀要發給參會人的郵件正文。待辦表原樣放進去，並再次強調每位負責人的期限。收件人：{{수신}}",
+     "variables": [
+      {
+       "key": "수신",
+       "label": "收件人",
+       "example": "全體參會人"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "複製筆記",
+     "body": "會上的筆記原樣複製",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "確認待辦",
+     "body": "把 [待確認] 的負責人和期限補上",
+     "check": ""
+    },
+    {
+     "title": "檢查",
+     "body": "用檢查提示詞看有沒有編的內容",
+     "check": ""
+    },
+    {
+     "title": "共享",
+     "body": "用郵件提示詞寫傳送文",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "帶決定事項和待辦表的會議紀要\n連共享郵件正文都有",
+    "example": "示例：周例會筆記 15 行\n決定 3 項 · 待辦 5 項"
+   },
+   "cautions": [
+    "確認沒混進筆記以外的內容",
+    "負責人和期限請參會人確認",
+    "錄音轉文字須先徵得參會人同意",
+    "機密會議先看公司規定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "會議紀要",
+    "instructions": "你是會議紀要助手。只寫筆記裡有的內容，不要編。結構：會議概況 / 討論內容 / 決定事項 / 待辦表（負責人、期限）/ 暫緩事項。筆記裡沒有負責人或期限的寫 [待確認]。",
+    "knowledge": [
+     "公司會議紀要模板"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "admin-policy-form",
+   "status": "published",
+   "category": "admin",
+   "difficulty": "normal",
+   "frequency": "수시",
+   "timeBeforeMin": 240,
+   "timeAfterMin": 40,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "公司制度與申請表草稿",
+   "subtitle": "寫下目的和內容\n條文式制度和申請表格一次做好",
+   "tags": [
+    "制度",
+    "規章",
+    "申請表",
+    "員工手冊",
+    "表格"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Word 或 Google 文件",
+     "free": false,
+     "note": "最終排版、列印"
+    }
+   ],
+   "problem": "寫一項制度先得去找別家的範本",
+   "before": "拼湊網上的範例",
+   "after": "按自家標準一次出草稿",
+   "prepare": [
+    "制度名稱、目的",
+    "適用物件",
+    "必須寫進去的內容",
+    "相關現行制度（有就附上）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：制度與申請表草稿",
+     "howTo": "可以附上現行制度",
+     "body": "請用 Word 檔案寫一份{{규정명}}草稿。\n- 目的：{{목적}}\n- 適用物件：{{대상}}\n- 必須包含：{{주요내용}}\n\n1. 條文式制度（目的、定義、適用範圍、程式、責任、附則）\n2. 配套的申請表（表格形式，帶審批欄）\n3. 需要核對法規的條文標 [法規確認]\n\n[輸出規則]\n- Word（.docx），A4，常用商務字型\n- 我沒給的資訊（數字、日期、承諾）不要編，寫成 [待確認]",
+     "variables": [
+      {
+       "key": "규정명",
+       "label": "制度名稱",
+       "example": "居家辦公制度"
+      },
+      {
+       "key": "목적",
+       "label": "目的",
+       "example": "為有育兒或通勤困難的員工制定居家辦公標準"
+      },
+      {
+       "key": "대상",
+       "label": "適用物件",
+       "example": "辦公室全職員工"
+      },
+      {
+       "key": "주요내용",
+       "label": "必須包含",
+       "example": "每週不超過 2 天、主管批准、9 點到 6 點線上回覆、資訊保安承諾"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：有沒有編出來的內容",
+     "howTo": "拿到草稿後直接在同一對話裡發",
+     "body": "請重新檢查你剛寫的內容。\n把我沒提供卻出現了的內容（數字、日期、承諾、公司政策）列成表，再給我刪掉或改成 [待確認] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "compare",
+     "title": "和現行制度對比",
+     "howTo": "修訂時",
+     "body": "請對比附上的現行制度和新草稿，做一份新舊對照表（現行 / 修訂案 / 修訂理由）。對員工不利的條文請單獨標出。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "寫下內容",
+     "body": "整理必須包含的內容",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "附上現行制度後傳送",
+     "check": ""
+    },
+    {
+     "title": "處理 [法規確認]",
+     "body": "核對標出的條文",
+     "check": "請人事或法務確認"
+    },
+    {
+     "title": "對照表",
+     "body": "修訂就做新舊對照表",
+     "check": ""
+    },
+    {
+     "title": "收集意見",
+     "body": "聽取相關部門意見",
+     "check": ""
+    },
+    {
+     "title": "審批與公告",
+     "body": "定稿後用通知手冊",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "條文式制度 + 申請表格\n修訂時附新舊對照表",
+    "example": "示例：居家辦公制度\n9 條 · 1 頁申請表"
+   },
+   "cautions": [
+    "僱用 30 人以上應訂立工作規則並報主管機關核備",
+    "對勞工不利的變更須取得同意",
+    "[法規確認] 條文一定要核對",
+    "這是草稿，最後由人審核"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 說明中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "勞動基準法（全國法規資料庫）",
+     "publisher": "法務部",
+     "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001",
+     "verifiedAt": "待驗證"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "admin-quote-compare",
+   "status": "published",
+   "category": "admin",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "3 家供應商報價對比表",
+   "subtitle": "上傳報價單\n就能拿到同一口徑的對比表",
+   "tags": [
+    "報價",
+    "報價單",
+    "比價",
+    "採購",
+    "供應商",
+    "對比"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "每家報價格式都不一樣，很難比",
+   "before": "三張擺一起手工做表",
+   "after": "稅費、數量對齊的對比表和推薦方案",
+   "prepare": [
+    "供應商報價單（PDF、照片都行）",
+    "比較標準（價格、交期、售後）",
+    "需要的數量、規格",
+    "檢查報價單上的個人資訊"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：報價對比表",
+     "howTo": "貼上到已附上報價單的對話裡",
+     "body": "請把附上的 {{업체수}} 家報價做成對比 Excel。品項是{{품목}}，需要數量 {{수량}}。\n1.「對比表」表：每家的單價、數量、未稅金額、消費稅、合計（含稅與未稅口徑統一），{{비교기준}}\n2.「原件核對」表：從報價單讀出的數字和所在位置（照片裡難讀的數字要標出）\n3.「推薦」表：每個標準的第一名和綜合推薦 1 家，理由 3 行\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "업체수",
+       "label": "供應商數量",
+       "example": "3"
+      },
+      {
+       "key": "품목",
+       "label": "品項",
+       "example": "辦公影印機租賃"
+      },
+      {
+       "key": "수량",
+       "label": "需要數量",
+       "example": "4 臺"
+      },
+      {
+       "key": "비교기준",
+       "label": "其他比較標準",
+       "example": "交期、免費保修期、付款條件"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "ask",
+     "title": "向供應商確認的問題",
+     "howTo": "報價有遺漏時",
+     "body": "從對比表裡挑出每家漏寫或含糊的專案（消費稅、安裝費、運費、售後等），給每家寫一封簡短的確認郵件。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "收集報價單",
+     "body": "PDF 或清晰照片",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "開啟檔案建立後附上",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "核對原件",
+     "body": "檢查原件核對表的數字",
+     "check": "照片裡的數字可能讀錯"
+    },
+    {
+     "title": "複核",
+     "body": "用複核提示詞",
+     "check": ""
+    },
+    {
+     "title": "彙報",
+     "body": "用一頁報告手冊",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "稅費統一的對比表 · 原件核對 · 推薦\n3 個工作表的 Excel",
+    "example": "示例：3 家影印機報價\n每年最多相差 2,160 元"
+   },
+   "cautions": [
+    "含稅、未稅一定要統一",
+    "照片報價的數字要和原件核對",
+    "確認單位（個、箱、月）",
+    "最終選擇由經辦人決定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上傳檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "account-settlement",
+   "status": "published",
+   "category": "account",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "客戶帳單與收款對帳",
+   "subtitle": "上傳帳單和收款記錄\n自動分出一致、差額和未收款",
+   "tags": [
+    "對帳",
+    "核對",
+    "收款",
+    "帳單",
+    "月底",
+    "結算"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "按客戶核對收款，月底總是拖很久",
+   "before": "對著銀行流水一列列核對",
+   "after": "一致、差額、未收款馬上列成表",
+   "prepare": [
+    "客戶帳單（應收明細）",
+    "銀行收款記錄",
+    "刪除銀行帳號等",
+    "統一客戶名稱寫法"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：對帳",
+     "howTo": "貼上到已附上兩個檔案的對話裡",
+     "body": "附件 1 是 {{기간}} 的客戶帳單，附件 2 是同期的收款記錄。客戶在「{{거래처열}}」欄，金額在「{{금액열}}」欄。\n1.「一致」表：客戶和金額都對上的\n2.「差額」表：有收款但金額不同的（差額 {{허용오차}} 元以內的另外標為疑似手續費）\n3.「未收款」表：只在帳單裡的\n4.「待確認」表：不知道誰付的款、疑似合併付款的\n5.「摘要」表：每個客戶的帳單、收款、差額合計\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期間",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "거래처열",
+       "label": "客戶欄名",
+       "example": "客戶名稱"
+      },
+      {
+       "key": "금액열",
+       "label": "金額欄名",
+       "example": "帳單金額"
+      },
+      {
+       "key": "허용오차",
+       "label": "手續費容差（元）",
+       "example": "30"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "mail",
+     "title": "差額確認郵件",
+     "howTo": "發給有差額或未付款的客戶",
+     "body": "請給「差額」和「未收款」表裡的每個客戶寫一封禮貌的確認郵件。用表格列出帳單金額、收款金額和差額，回覆期限是 {{회신기한}}。",
+     "variables": [
+      {
+       "key": "회신기한",
+       "label": "回覆期限",
+       "example": "2026-11-14"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "刪除個人資訊",
+     "body": "刪掉銀行帳號等",
+     "check": ""
+    },
+    {
+     "title": "統一名稱",
+     "body": "準備客戶名稱對照表",
+     "check": "付款人名稱常常不一樣"
+    },
+    {
+     "title": "附上檔案",
+     "body": "帳單 → 收款記錄的順序",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "處理待確認",
+     "body": "確認合併付款和不明收款",
+     "check": ""
+    },
+    {
+     "title": "複核",
+     "body": "核對帳單總額和收款總額",
+     "check": ""
+    },
+    {
+     "title": "發確認郵件",
+     "body": "發給有差額的客戶",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "一致 · 差額 · 未收款 · 待確認 · 摘要\n5 個工作表的 Excel",
+    "example": "示例：客戶 64 家 · 10 月\n一致 58 · 差額 3 · 未收款 3"
+   },
+   "cautions": [
+    "上傳前刪除銀行帳號",
+    "合併付款由人來判斷",
+    "合計要和銀行餘額對照",
+    "郵件發出前再核對金額"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上傳檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "月底對帳",
+    "instructions": "你是月底對帳助手。按客戶和金額匹配帳單與收款。扣了手續費的收款、多筆合併收款、客戶名稱寫法不同的，分到「待確認」。計算儲存格用 Excel 公式和註解寫入。",
+    "knowledge": [
+     "客戶名稱對照表（帳單名稱 ↔ 付款人名稱）"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "account-card-classify",
+   "status": "published",
+   "category": "account",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 150,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "公司卡消費的會計科目分類",
+   "subtitle": "上傳刷卡明細\n連會計科目分類和依據都有",
+   "tags": [
+    "公司卡",
+    "信用卡",
+    "費用",
+    "會計科目",
+    "記帳"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "幾百筆公司卡要分科目，累壞了",
+   "before": "看商戶名一列列輸入",
+   "after": "按公司標準分類，只查有疑問的",
+   "prepare": [
+    "刷卡明細（下載成 Excel）",
+    "公司會計科目表",
+    "卡號只留後 4 位",
+    "上個月的分類結果（如有）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：會計科目分類",
+     "howTo": "貼到已附上檔案的對話裡",
+     "body": "附上的檔案是 {{기간}} 的公司卡消費明細。請只在下面的公司會計科目裡分類，做成 Excel 檔案。\n會計科目：{{계정목록}}\n\n1.「分類」表：原始明細 + 會計科目 + 依據 + 把握度（高/中/低）\n2.「摘要」表：每個科目的筆數和金額合計\n3.「待確認」表：把握度低、疑似私人消費、需要核對憑證的\n分不了的不要硬分，放進「待確認」。\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格的註解裡用中文寫明算法（滑鼠移上去就看得到）\n- 新增「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期間",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "계정목록",
+       "label": "公司會計科目",
+       "example": "職工福利, 旅費, 交際費, 文具用品, 運費, 郵電費, 手續費, 訓練費"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一個對話裡傳送",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "rules",
+     "title": "下個月用的分類規則表",
+     "howTo": "分類定稿後",
+     "body": "請用定稿的分類結果做一張「商店關鍵字 → 會計科目」規則表。下個月我會把這張表放進專案裡先套用。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "下載明細",
+     "body": "從發卡銀行下載 Excel",
+     "check": "卡號只留後 4 位"
+    },
+    {
+     "title": "準備科目表",
+     "body": "複製公司會計科目",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "開啟檔案建立後附上",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "處理待確認",
+     "body": "核對憑證和使用人",
+     "check": ""
+    },
+    {
+     "title": "複核",
+     "body": "摘要合計 = 帳單金額",
+     "check": ""
+    },
+    {
+     "title": "儲存規則表",
+     "body": "放進下個月的專案",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "分類 · 摘要 · 待確認的 Excel\n連下個月用的規則表都有",
+    "example": "示例：412 筆 · 10 月\n自動分類 371 筆 · 待確認 41 筆"
+   },
+   "cautions": [
+    "最終分類由財務確認",
+    "稅務處理請會計師確認",
+    "不要上傳完整卡號",
+    "合計要和信用卡帳單對照"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上傳檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "公司卡分類",
+    "instructions": "你是公司卡會計科目分類助手。只在公司會計科目表裡分類。每筆寫上依據（商戶、行業），把握低的放進「待確認」。不做稅務上能否扣除的判斷。",
+    "knowledge": [
+     "公司會計科目表",
+     "上個月的分類結果"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "account-receivable",
+   "status": "published",
+   "category": "account",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "應收帳款現況與催款郵件",
+   "subtitle": "上傳帳單和收款明細\n拿到應收現況和催款郵件",
+   "tags": [
+    "應收帳款",
+    "應收",
+    "催款",
+    "欠款",
+    "回款",
+    "帳齡"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "誰欠了多少一眼看不出來",
+   "before": "按客戶手算帳單和收款",
+   "after": "按帳齡分的應收和催款郵件都有",
+   "prepare": [
+    "帳單（銷售）明細",
+    "收款明細",
+    "基準日",
+    "刪除銀行帳號等"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：應收現況",
+     "howTo": "貼上到已附上兩個檔案的對話裡",
+     "body": "附件 1 是帳單明細，附件 2 是收款明細。請以 {{기준일}} 為基準做應收帳款現況 Excel。\n1.「應收」表：每個客戶的帳單、收款、應收餘額，最早的未收帳單日期和已過天數\n2.「帳齡」表：30 天以內 / 31～60 天 / 61～90 天 / 超過 90 天的金額\n3.「待確認」表：分不清是付哪張帳單的收款\n收款請從最早的帳單開始沖銷。\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "기준일",
+       "label": "基準日",
+       "example": "2026-10-31"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "mail",
+     "title": "催款郵件",
+     "howTo": "按未付款客戶逐個寫",
+     "body": "請以「{{단계}}」的口吻給{{거래처}}寫一封付款提醒郵件。未付金額 {{금액}} 元，帳單日期 {{청구일}}，請在 {{기한}} 前付款。語氣禮貌，但日期和金額要寫清楚，並加一句「如已付款請告知」。",
+     "variables": [
+      {
+       "key": "거래처",
+       "label": "客戶",
+       "example": "光華貿易有限公司"
+      },
+      {
+       "key": "단계",
+       "label": "提醒階段",
+       "example": "第一次友好提醒"
+      },
+      {
+       "key": "금액",
+       "label": "未付金額（元）",
+       "example": "3,850"
+      },
+      {
+       "key": "청구일",
+       "label": "帳單日期",
+       "example": "2026-08-31"
+      },
+      {
+       "key": "기한",
+       "label": "付款期限",
+       "example": "2026-11-20"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "準備資料",
+     "body": "下載帳單和收款明細",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "帳單 → 收款的順序",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "處理待確認",
+     "body": "核對不明收款",
+     "check": ""
+    },
+    {
+     "title": "複核",
+     "body": "應收總額 = 帳單總額 − 收款總額",
+     "check": ""
+    },
+    {
+     "title": "發郵件",
+     "body": "按客戶用催款提示詞",
+     "check": "發之前再核對金額"
+    }
+   ],
+   "result": {
+    "summary": "應收 · 帳齡 · 待確認的 Excel\n每個客戶一封催款郵件",
+    "example": "示例：客戶 40 家\n超過 90 天 2 家 · 12,400 元"
+   },
+   "cautions": [
+    "應收總額要和帳本對照",
+    "郵件金額發出前再核對",
+    "預設從最早的帳單沖銷",
+    "走法律途徑前先諮詢專業人士"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上傳檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "account-receipt",
+   "status": "published",
+   "category": "account",
+   "difficulty": "easy",
+   "frequency": "월",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "收據照片 → 費用報銷表",
+   "subtitle": "上傳收據照片\n馬上拿到費用報銷表",
+   "tags": [
+    "收據",
+    "發票",
+    "報銷",
+    "費用報銷",
+    "小票"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "紙質收據錄入其實很花時間",
+   "before": "對著收據一張張打字",
+   "after": "上傳照片就整理成表",
+   "prepare": [
+    "收據照片（每次 20 張以內）",
+    "在明亮處拍，字要清楚",
+    "公司費用專案清單",
+    "原始收據要儲存"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：費用報銷表",
+     "howTo": "貼上到已附上照片的對話裡",
+     "body": "請用附上的收據照片做 {{기간}} {{사용자}} 的費用報銷表 Excel。費用專案從 {{항목}} 裡選。\n1.「費用」表：照片編號、日期、商戶、稅號（如有）、未稅金額、消費稅、合計、費用專案\n2.「摘要」表：各專案合計\n3.「待確認」表：模糊或被截斷難以辨認的數字、難以判斷專案的\n認不出的數字不要猜，留空。\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期間",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "사용자",
+       "label": "使用人",
+       "example": "銷售一組"
+      },
+      {
+       "key": "항목",
+       "label": "費用專案",
+       "example": "餐費, 交通費, 停車費, 消耗品, 其他"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "拍照",
+     "body": "一張一張拍，明亮、字大",
+     "check": "皺的先撫平"
+    },
+    {
+     "title": "附上檔案",
+     "body": "每批 20 張以內",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "核對原件",
+     "body": "金額全部和收據對照",
+     "check": "照片裡的數字可能讀錯"
+    },
+    {
+     "title": "處理待確認",
+     "body": "空著的自己填",
+     "check": ""
+    },
+    {
+     "title": "提交",
+     "body": "報銷表和原始收據一起交",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "費用 · 摘要 · 待確認的 Excel\n附各專案合計",
+    "example": "示例：收據 18 張\n合計 427.30 元 · 待確認 2 張"
+   },
+   "cautions": [
+    "金額全部和原件對照",
+    "難認的數字自己輸入",
+    "原始收據按規定儲存",
+    "拍照時遮住卡號"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上傳檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "report-weekly",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "주",
+   "timeBeforeMin": 40,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "週報自動生成模板",
+   "subtitle": "隨手寫下做了什麼\n變成公司格式的週報",
+   "tags": [
+    "週報",
+    "工作彙報",
+    "彙報",
+    "月報",
+    "進度"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    }
+   ],
+   "problem": "每週五都因為寫週報晚下班",
+   "before": "翻遍一週的郵件和聊天記錄整理",
+   "after": "貼上筆記就按格式寫好",
+   "prepare": [
+    "本週做了什麼的筆記",
+    "下週計劃",
+    "問題與需要協助的事",
+    "公司週報模板"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：週報",
+     "howTo": "在專案裡用會自動套模板",
+     "body": "請寫 {{기간}} 的週報。用要點式，筆記裡沒有的不要寫。\n\n本週完成：\n{{한일}}\n\n下週計劃：\n{{계획}}\n\n問題與請求：\n{{이슈}}",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期間",
+       "example": "11 月第 2 周（11/9～11/13）"
+      },
+      {
+       "key": "한일",
+       "label": "本週完成",
+       "example": "- 釋出夜班招聘廣告\n- 完成 10 月工資核對\n- 安全培訓定在 11/20"
+      },
+      {
+       "key": "계획",
+       "label": "下週計劃",
+       "example": "- 面試 3 場\n- 研究年底臨時工合同"
+      },
+      {
+       "key": "이슈",
+       "label": "問題與請求",
+       "example": "- 年底臨時工預算需要批准"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：有沒有編出來的內容",
+     "howTo": "拿到草稿後直接在同一對話裡發",
+     "body": "請重新檢查你剛寫的內容。\n把我沒提供卻出現了的內容（數字、日期、承諾、公司政策）列成表，再給我刪掉或改成 [待確認] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "monthly",
+     "title": "合併成月報",
+     "howTo": "月底時",
+     "body": "請把下面 {{개수}} 份週報合併成 {{월}} 的月報。重複的內容合併成一條，按已完成、進行中、延遲整理成表。\n\n{{주간보고}}",
+     "variables": [
+      {
+       "key": "개수",
+       "label": "週報份數",
+       "example": "4"
+      },
+      {
+       "key": "월",
+       "label": "月份",
+       "example": "2026 年 11 月"
+      },
+      {
+       "key": "주간보고",
+       "label": "貼上週報",
+       "example": "（貼上 4 份週報）"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "建立專案",
+     "body": "模板只需登記一次",
+     "check": "免費方案最多 5 個"
+    },
+    {
+     "title": "記筆記",
+     "body": "做完一件就記一行",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "檢查",
+     "body": "確認沒有編出來的成果",
+     "check": ""
+    },
+    {
+     "title": "月底",
+     "body": "合併成月報",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "公司格式的週報\n月底合併成月報",
+    "example": "示例：筆記 8 行\n週報 1 頁"
+   },
+   "cautions": [
+    "確認沒混進筆記以外的成果",
+    "數字要和原始資料對照",
+    "機密內容先看公司規定",
+    "需要決策的問題放前面"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "週報",
+    "instructions": "你是寫週報的助手。完全照公司模板（專案知識）寫。用簡短要點式，筆記裡沒有的成果或數字不要寫。結構：本週完成 / 下週計劃 / 問題與請求。需要決策的問題放最上面。",
+    "knowledge": [
+     "公司週報模板",
+     "上週週報 1 份"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "report-email",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 20,
+   "timeAfterMin": 3,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "各種情況的商務郵件",
+   "subtitle": "寫下情況和目的\n標題和正文各給兩個版本",
+   "tags": [
+    "郵件",
+    "請求",
+    "拒絕",
+    "道歉",
+    "回覆",
+    "拒絕郵件",
+    "道歉郵件"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    }
+   ],
+   "problem": "拒絕信、道歉信第一句就卡住",
+   "before": "寫了刪、刪了寫",
+   "after": "從兩種語氣裡挑一個",
+   "prepare": [
+    "收件人和關係",
+    "郵件目的（請求、拒絕、道歉）",
+    "必須寫的內容",
+    "想要的語氣"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：兩個版本的郵件",
+     "howTo": "不需要檔案，直接用",
+     "body": "請寫一封商務郵件。\n- 收件人：{{받는사람}}\n- 目的：{{목적}}\n- 必須寫的內容：{{내용}}\n- 語氣：{{톤}}\n\n標題和正文各給兩個版本（稍微柔和 / 稍微明確）。我沒給的承諾、日期、金額不要寫。",
+     "variables": [
+      {
+       "key": "받는사람",
+       "label": "收件人與關係",
+       "example": "客戶採購部經理（合作 3 年）"
+      },
+      {
+       "key": "목적",
+       "label": "目的",
+       "example": "婉拒漲價請求"
+      },
+      {
+       "key": "내용",
+       "label": "必須寫的內容",
+       "example": "今年原則上不調價，明年 1 月可再協商，量大可以考慮"
+      },
+      {
+       "key": "톤",
+       "label": "語氣",
+       "example": "禮貌但明確"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：有沒有編出來的內容",
+     "howTo": "拿到草稿後直接在同一對話裡發",
+     "body": "請重新檢查你剛寫的內容。\n把我沒提供卻出現了的內容（數字、日期、承諾、公司政策）列成表，再給我刪掉或改成 [待確認] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "reply",
+     "title": "回覆收到的郵件",
+     "howTo": "貼上收到的郵件",
+     "body": "請回復下面這封郵件。我的立場是「{{입장}}」。對方問的每一點都要回答。\n\n收到的郵件：\n{{받은메일}}",
+     "variables": [
+      {
+       "key": "입장",
+       "label": "我的立場",
+       "example": "所需資料會在 11/14 前寄出"
+      },
+      {
+       "key": "받은메일",
+       "label": "收到的郵件",
+       "example": "（貼上郵件）"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "定目的",
+     "body": "一句話寫出這封郵件要達成什麼",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "選版本",
+     "body": "兩個版本挑一個",
+     "check": ""
+    },
+    {
+     "title": "檢查",
+     "body": "再核對承諾、日期、金額",
+     "check": ""
+    },
+    {
+     "title": "傳送",
+     "body": "改成自己的語氣再發",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "標題 + 正文兩個版本\n也能回覆收到的郵件",
+    "example": "示例：婉拒漲價的郵件\n柔和、明確兩個版本"
+   },
+   "cautions": [
+    "承諾、日期、金額自己再核對",
+    "再確認收件人的姓名和職務",
+    "敏感郵件請上司過目",
+    "不要寫個人資訊"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "report-contract-summary",
+   "status": "published",
+   "category": "report",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 90,
+   "timeAfterMin": 15,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "合同重點摘要",
+   "subtitle": "上傳合同\n拿到核心條件表和要確認的問題",
+   "tags": [
+    "合同",
+    "協議",
+    "條款",
+    "契約",
+    "摘要"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    }
+   ],
+   "problem": "合同 30 頁，不知道哪裡重要",
+   "before": "從頭到尾逐字讀",
+   "after": "先看核心條件和要注意的條款",
+   "prepare": [
+    "合同檔案（PDF、Word）",
+    "我方是哪一方",
+    "最想知道的點",
+    "機密合同先看公司規定"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：合同摘要",
+     "howTo": "貼上到已附上合同的對話裡",
+     "body": "請摘要附上的{{계약명}}。我方是{{입장}}。\n1. 核心條件表：合同期限、金額與付款條件、自動續約、解約條件、違約金與賠償、保密、管轄與爭議解決（標出條款編號）\n2. 可能對我方不利的條款及原因\n3. 要向對方確認的 5 個問題\n4. 最想知道的：{{궁금한점}}\n合同裡沒有的寫「無相關條款」，並在最前面註明這不是法律意見。",
+     "variables": [
+      {
+       "key": "계약명",
+       "label": "合同名稱",
+       "example": "倉庫租賃合同"
+      },
+      {
+       "key": "입장",
+       "label": "我方立場",
+       "example": "承租方"
+      },
+      {
+       "key": "궁금한점",
+       "label": "最想知道的",
+       "example": "提前解約的違約金有多少"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：對照條款原文",
+     "howTo": "拿到摘要後直接在同一對話裡發",
+     "body": "請把摘要裡的每一點和作為依據的條款編號、原文句子並排列成表。和原文不符或沒有依據的內容請標出。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "準備合同",
+     "body": "PDF 或 Word 原件",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "附上合同",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "對照原文",
+     "body": "用檢查提示詞核對條款",
+     "check": "不要只信摘要"
+    },
+    {
+     "title": "整理問題",
+     "body": "把確認問題發給對方",
+     "check": ""
+    },
+    {
+     "title": "專業審閱",
+     "body": "重要合同請律師看",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "帶條款編號的核心條件表\n注意條款 · 5 個確認問題",
+    "example": "示例：租賃合同 28 頁\n核心條件 7 項 · 注意 3 項"
+   },
+   "cautions": [
+    "這不是法律意見",
+    "重要合同請律師審閱",
+    "摘要一定要和原文對照",
+    "機密合同先看上傳規定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "向 Claude 上傳檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/8241126-uploading-files-to-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "gsheet-form",
+   "status": "published",
+   "category": "gsheet",
+   "difficulty": "normal",
+   "frequency": "수시",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 10,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "Google 表單回覆自動彙總表",
+   "subtitle": "Google 表單回覆一多\n彙總表就自動更新",
+   "tags": [
+    "表單",
+    "google 表單",
+    "問卷",
+    "調查",
+    "回覆",
+    "google 表格"
+   ],
+   "tools": [
+    {
+     "name": "Google 表格",
+     "free": true,
+     "note": "有 Google 帳號就免費"
+    },
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    }
+   ],
+   "problem": "每次都要複製問卷回覆再統計",
+   "before": "下載回覆手工數",
+   "after": "每來一條回覆，彙總就更新",
+   "prepare": [
+    "Google 表單",
+    "把回覆連線到表格",
+    "回覆表的欄名",
+    "收集個人資訊就要寫同意說明"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：彙總表公式",
+     "howTo": "填入回覆表的欄名",
+     "body": "Google 表單的回覆會存到「{{응답시트}}」工作表。欄位是 {{열목록}}。\n請告訴我要在「彙總」工作表自動顯示下面內容的 Google 表格公式，連儲存格位置一起寫。\n{{원하는요약}}\n回覆增加後也不用改公式，並用一行說明每個公式做什麼。",
+     "variables": [
+      {
+       "key": "응답시트",
+       "label": "回覆工作表名稱",
+       "example": "表單回覆 1"
+      },
+      {
+       "key": "열목록",
+       "label": "欄名",
+       "example": "A 時間戳、B 部門、C 滿意度（1～5）、D 意見"
+      },
+      {
+       "key": "원하는요약",
+       "label": "想要的彙總",
+       "example": "各部門回覆數、各部門平均滿意度、滿意度 2 分以下的意見列表"
+      }
+     ]
+    },
+    {
+     "id": "notify",
+     "title": "新回覆郵件提醒（Apps Script）",
+     "howTo": "想馬上知道有新回覆時",
+     "body": "請寫一段 Apps Script：Google 表單有新回覆時，把回覆內容發郵件給 {{받는사람}}。\n1. 程式碼（中文註釋）\n2. 設定步驟：從表格 > 擴充套件程式 > Apps Script 到設定觸發器（提交表單時）\n3. 授權畫面該點哪裡\n4. 每天的郵件上限和注意事項",
+     "variables": [
+      {
+       "key": "받는사람",
+       "label": "接收提醒的郵箱",
+       "example": "負責人的郵箱"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：彙總數字",
+     "howTo": "放好公式之後",
+     "body": "請告訴我怎樣在我的回覆表裡挑一個部門，手算回覆數和平均分，好和彙總公式的結果對比。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "連線回復表",
+     "body": "表單 > 回覆 > 關聯到表格",
+     "check": ""
+    },
+    {
+     "title": "確認欄名",
+     "body": "複製回覆表第一列",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "放入公式",
+     "body": "貼上到彙總表",
+     "check": ""
+    },
+    {
+     "title": "複核",
+     "body": "親手核對一個部門",
+     "check": ""
+    },
+    {
+     "title": "提醒（可選）",
+     "body": "用 Apps Script 提示詞設定",
+     "check": "需要授權"
+    }
+   ],
+   "result": {
+    "summary": "跟著回覆變化的彙總表\n需要的話還有新回覆郵件提醒",
+    "example": "示例：員工滿意度調查\n各部門回覆數與平均分自動更新"
+   },
+   "cautions": [
+    "收集個人資訊要寫同意說明",
+    "公式結果手工核對一次",
+    "指令碼許可權看清內容再授權",
+    "個人帳號每天最多 100 人"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "選擇表單回覆的儲存位置",
+     "publisher": "Google 幫助",
+     "url": "https://support.google.com/docs/answer/2917686?hl=zh-Hans",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "可安裝觸發器",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "Apps Script 配額",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/services/quotas",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "gsheet-auto-mail",
+   "status": "published",
+   "category": "gsheet",
+   "difficulty": "hard",
+   "frequency": "주",
+   "timeBeforeMin": 60,
+   "timeAfterMin": 5,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "用 Google 表格自動發郵件",
+   "subtitle": "在表格裡寫好收件人\n到點自動發出郵件",
+   "tags": [
+    "郵件",
+    "自動化",
+    "google 表格",
+    "apps script",
+    "定時傳送"
+   ],
+   "tools": [
+    {
+     "name": "Google 表格",
+     "free": true,
+     "note": "有 Google 帳號就免費"
+    },
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    }
+   ],
+   "problem": "每週都手動發同樣的通知郵件",
+   "before": "一個個複製貼上再發",
+   "after": "改表格就會按時發出",
+   "prepare": [
+    "Google 表格（收件人、內容欄）",
+    "加一欄「已傳送」",
+    "先只用自己的郵箱測試",
+    "確認收件人同意接收"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：自動傳送指令碼",
+     "howTo": "寫清表格結構",
+     "body": "請寫一段用 Google 表格自動發郵件的 Apps Script。\n- 工作表名稱：{{시트이름}}\n- 欄：{{열목록}}\n- 郵件標題：{{제목}}\n- 傳送時間：{{발송시점}}\n\n1. 程式碼（中文註釋）：只發「已傳送」為空的列，發完記錄傳送時間\n2. 最上面放「測試模式」開關：開啟時所有郵件只發到 {{시험메일}}\n3. 設定步驟：從擴充套件程式 > Apps Script 到設定時間驅動觸發器\n4. 授權畫面說明、每天傳送上限和出錯時怎麼查",
+     "variables": [
+      {
+       "key": "시트이름",
+       "label": "工作表名稱",
+       "example": "通知郵件"
+      },
+      {
+       "key": "열목록",
+       "label": "欄位結構",
+       "example": "A 姓名、B 郵箱、C 通知內容、D 已傳送"
+      },
+      {
+       "key": "제목",
+       "label": "郵件標題",
+       "example": "【通知】本週安全培訓安排"
+      },
+      {
+       "key": "발송시점",
+       "label": "傳送時間",
+       "example": "每週一上午 9 點"
+      },
+      {
+       "key": "시험메일",
+       "label": "測試用的我的郵箱",
+       "example": "我的郵箱地址"
+      }
+     ]
+    },
+    {
+     "id": "error",
+     "title": "解決報錯",
+     "howTo": "執行記錄裡有錯誤時",
+     "body": "Apps Script 執行記錄裡有「{{오류}}」錯誤。請告訴我原因並給出改好的程式碼。\n{{코드}}",
+     "variables": [
+      {
+       "key": "오류",
+       "label": "錯誤資訊",
+       "example": "Exception: Service invoked too many times for one day: email."
+      },
+      {
+       "key": "코드",
+       "label": "現在的程式碼",
+       "example": "（貼上程式碼）"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：傳送前點檢",
+     "howTo": "正式傳送前",
+     "body": "請檢查我的程式碼有沒有可能重複發給同一個人、在測試模式關掉的情況下誤發、或者超過上限的地方。\n（貼上程式碼）",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "建表格",
+     "body": "收件人、內容、已傳送三欄",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "放入程式碼",
+     "body": "擴充套件程式 > Apps Script",
+     "check": ""
+    },
+    {
+     "title": "授權",
+     "body": "用自己的帳號授權",
+     "check": "看清警告畫面內容"
+    },
+    {
+     "title": "測試傳送",
+     "body": "測試模式只發給自己",
+     "check": "一定先做"
+    },
+    {
+     "title": "設定觸發器",
+     "body": "新增時間驅動觸發器",
+     "check": ""
+    },
+    {
+     "title": "正式傳送",
+     "body": "關閉測試模式",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "帶測試模式的傳送指令碼\n設定與觸發器步驟",
+    "example": "示例：每週一 9 點\n自動給 32 人發安全培訓通知"
+   },
+   "cautions": [
+    "一定先用測試模式",
+    "個人帳號每天最多 100 人",
+    "營銷郵件須先取得收件人同意",
+    "一定要用防重複傳送的欄位"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "Apps Script 配額",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/services/quotas",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "可安裝觸發器",
+     "publisher": "Google for Developers",
+     "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "sales-faq",
+   "status": "published",
+   "category": "sales",
+   "difficulty": "easy",
+   "frequency": "수시",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "客戶諮詢回覆模板（FAQ）",
+   "subtitle": "收集常見諮詢\n做好 FAQ 和回覆模板",
+   "tags": [
+    "faq",
+    "客戶諮詢",
+    "常見問題",
+    "回覆模板",
+    "客服"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "只用對話就行"
+    }
+   ],
+   "problem": "同樣的問題每次都重新回覆",
+   "before": "找以前的回覆來複制",
+   "after": "FAQ 表和簡短回覆模板",
+   "prepare": [
+    "收集到的常見諮詢",
+    "退貨、配送等公司政策",
+    "想要的回覆語氣",
+    "刪除客戶個人資訊"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：做 FAQ",
+     "howTo": "貼上諮詢後傳送",
+     "body": "請為{{업종}}的客戶做一份 FAQ。公司政策如下：\n{{정책}}\n\n1. 把相似的諮詢歸類，整理成 10～15 個問題\n2. 每個問題寫簡短回答（聊天 2～3 行）和正式回答（郵件）\n3. 政策回答不了的問題另外列出，標「需要人工確認」\n回覆語氣：{{톤}}\n\n諮詢內容：\n{{문의}}",
+     "variables": [
+      {
+       "key": "업종",
+       "label": "行業",
+       "example": "企業快遞服務"
+      },
+      {
+       "key": "정책",
+       "label": "公司政策",
+       "example": "攬件截止下午 5 點，破損在受理後 7 天內稽核賠償，退貨限 3 天內"
+      },
+      {
+       "key": "톤",
+       "label": "回覆語氣",
+       "example": "親切簡潔"
+      },
+      {
+       "key": "문의",
+       "label": "常見諮詢",
+       "example": "- 今天寄什麼時候到？\n- 箱子壓壞了\n- 能改攬件時間嗎？"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "檢查：有沒有編出來的內容",
+     "howTo": "拿到草稿後直接在同一對話裡發",
+     "body": "請重新檢查你剛寫的內容。\n把我沒提供卻出現了的內容（數字、日期、承諾、公司政策）列成表，再給我刪掉或改成 [待確認] 的修改版。",
+     "variables": []
+    },
+    {
+     "id": "answer",
+     "title": "新諮詢的回覆草稿",
+     "howTo": "FAQ 放進專案後",
+     "body": "請在 FAQ 和政策範圍內，給下面這條客戶諮詢寫簡短版和正式版回覆。政策沒寫的就寫「負責人確認後再通知您」。\n{{새문의}}",
+     "variables": [
+      {
+       "key": "새문의",
+       "label": "新諮詢",
+       "example": "昨天寄的件還顯示沒有攬收"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "收集諮詢",
+     "body": "複製最近一兩個月的諮詢",
+     "check": "刪掉姓名和聯絡方式"
+    },
+    {
+     "title": "整理政策",
+     "body": "寫下退貨、配送標準",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "檢查",
+     "body": "有沒有和政策不符的回答",
+     "check": ""
+    },
+    {
+     "title": "放進專案",
+     "body": "把 FAQ 加到知識裡",
+     "check": ""
+    },
+    {
+     "title": "每天用",
+     "body": "用新諮詢提示詞",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "10～15 個問題的 FAQ 表\n簡短、正式兩種回答",
+    "example": "示例：整理 40 條諮詢\nFAQ 12 個 · 需要人工 3 個"
+   },
+   "cautions": [
+    "不做政策以外的承諾",
+    "上傳前刪除客戶個人資訊",
+    "賠償、退款由負責人確認",
+    "政策變了 FAQ 也要更新"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "客戶回覆",
+    "instructions": "你是客戶回覆助手。只在專案知識裡的 FAQ 和公司政策範圍內回答。政策沒寫的承諾（賠償、日期、折扣）不要做，寫成「負責人確認後再通知您」。回覆分簡短版（聊天）和正式版（郵件）兩種。",
+    "knowledge": [
+     "FAQ 表",
+     "退貨與配送政策"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "sales-by-customer",
+   "status": "published",
+   "category": "sales",
+   "difficulty": "normal",
+   "frequency": "월",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "按客戶統計銷售額與排名",
+   "subtitle": "上傳銷售明細\n客戶排名和佔比一目瞭然",
+   "tags": [
+    "銷售額",
+    "客戶",
+    "排名",
+    "營收",
+    "分析",
+    "abc 分析"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "不知道哪些客戶撐起了銷售額",
+   "before": "做透視表再另外排序",
+   "after": "排名、佔比、增減、前 20% 都有",
+   "prepare": [
+    "銷售明細（客戶、金額、日期）",
+    "用來比較的上一期資料",
+    "統一客戶名稱寫法",
+    "刪除個人資訊欄"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：客戶分析",
+     "howTo": "貼上到已附上檔案的對話裡",
+     "body": "請用附上的 {{기간}} 銷售明細做客戶分析 Excel。客戶在「{{거래처열}}」欄，金額在「{{금액열}}」欄。比較期間是 {{비교기간}}。\n1.「排名」表：每個客戶的銷售額、排名、佔比、累計佔比，標出累計到 80% 的客戶\n2.「增減」表：與比較期間相比的增減額、增減率，新增和流失的客戶\n3.「摘要」表：對前幾大客戶的依賴程度和 3 個明顯變化（附數字依據）\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期間",
+       "example": "2026 年 1～10 月"
+      },
+      {
+       "key": "거래처열",
+       "label": "客戶欄名",
+       "example": "客戶"
+      },
+      {
+       "key": "금액열",
+       "label": "金額欄名",
+       "example": "銷售額"
+      },
+      {
+       "key": "비교기간",
+       "label": "比較期間",
+       "example": "2025 年 1～10 月"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "comment",
+     "title": "銷售會議用的說明",
+     "howTo": "分析之後",
+     "body": "請根據「摘要」表，寫銷售會議上要講的 3 個要點，以及需要重點管理的 3 個客戶和原因。數字照表裡的值。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "統一名稱",
+     "body": "對齊客戶名稱的寫法和空格",
+     "check": "不統一會被當成不同客戶"
+    },
+    {
+     "title": "附上檔案",
+     "body": "開啟檔案建立後附上",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "複核",
+     "body": "銷售總額 = 原始合計",
+     "check": ""
+    },
+    {
+     "title": "說明",
+     "body": "銷售會議用的 3 行",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "排名 · 增減 · 摘要 3 個工作表\n標出累計 80% 的客戶",
+    "example": "示例：客戶 214 家\n前 38 家佔銷售額 80%"
+   },
+   "cautions": [
+    "先統一客戶名稱寫法",
+    "銷售總額要和原始資料對照",
+    "確認是否含退貨和折扣",
+    "說明裡的數字要和表對照"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "建立資料透視表",
+     "publisher": "Microsoft 支援",
+     "url": "https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  },
+  {
+   "id": "logistics-stock",
+   "status": "published",
+   "category": "logistics",
+   "difficulty": "normal",
+   "frequency": "주",
+   "timeBeforeMin": 180,
+   "timeAfterMin": 30,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "庫存與出入庫核對",
+   "subtitle": "上傳出入庫和盤點庫存\n差異和缺貨品項馬上看到",
+   "tags": [
+    "庫存",
+    "出入庫",
+    "盤點",
+    "安全庫存",
+    "補貨",
+    "倉庫"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "帳面庫存和實際庫存對不上",
+   "before": "每個品項加加減減出入庫",
+   "after": "自動列出差異和低於安全庫存的品項",
+   "prepare": [
+    "期初庫存",
+    "入庫、出庫明細",
+    "盤點庫存",
+    "統一品號格式"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：庫存核對",
+     "howTo": "貼上到已附上檔案的對話裡",
+     "body": "請用附上的 {{기간}} 期初庫存、入庫、出庫、盤點庫存檔案做庫存核對 Excel。品項按「{{품목열}}」欄對齊。\n1.「核對」表：每個品項的期初、入庫、出庫、帳面庫存（期初+入庫−出庫）、盤點、差異\n2.「差異」表：差異超過 {{허용차이}} 的品項，有單價就算差異金額\n3.「安全庫存」表：盤點庫存低於安全庫存 {{안전재고}} 的品項\n4.「待確認」表：沒有品號、單位不同、出庫比庫存多的\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期間",
+       "example": "2026 年 11 月第 1 周"
+      },
+      {
+       "key": "품목열",
+       "label": "品號欄",
+       "example": "品號"
+      },
+      {
+       "key": "허용차이",
+       "label": "允許差異",
+       "example": "0 個"
+      },
+      {
+       "key": "안전재고",
+       "label": "安全庫存標準",
+       "example": "（品項主檔裡的安全庫存欄）"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "order",
+     "title": "需要補貨的清單",
+     "howTo": "有低於安全庫存的品項時",
+     "body": "請計算「安全庫存」表裡品項的補貨數量：最近 {{주수}} 周平均出庫量 × {{리드타임}} 周 + 安全庫存 − 現有庫存，並把演算法留在表裡。",
+     "variables": [
+      {
+       "key": "주수",
+       "label": "取平均的週數",
+       "example": "4"
+      },
+      {
+       "key": "리드타임",
+       "label": "到貨需要的週數",
+       "example": "2"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "統一品號",
+     "body": "四個檔案的品號格式對齊",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "期初、入庫、出庫、盤點的順序",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "處理待確認",
+     "body": "解決品號和單位問題",
+     "check": ""
+    },
+    {
+     "title": "檢視差異",
+     "body": "差異大的品項重新盤點",
+     "check": "先查有沒有漏單"
+    },
+    {
+     "title": "複核",
+     "body": "用總數量複核提示詞",
+     "check": ""
+    },
+    {
+     "title": "補貨",
+     "body": "用補貨清單提示詞",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "核對 · 差異 · 安全庫存 · 待確認的 Excel\n連補貨數量都有",
+    "example": "示例：品項 1,180 個\n差異 23 個 · 低於安全庫存 9 個"
+   },
+   "cautions": [
+    "先統一品號格式",
+    "單位（個、箱）混用會出錯",
+    "差異先查有沒有漏單",
+    "補貨數量由經辦人最終決定"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "什麼是專案？",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/9517075",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "project": {
+    "recommended": true,
+    "name": "每週庫存核對",
+    "instructions": "你是庫存核對助手。帳面庫存 = 期初庫存 + 入庫 − 出庫，再和盤點庫存比較。按品號對齊，沒有品號或品號不同的放進「待確認」。計算儲存格用 Excel 公式和註解寫入。",
+    "knowledge": [
+     "品項主檔（品號、品名、單位、安全庫存）"
+    ]
+   },
+   "legal": null
+  },
+  {
+   "id": "logistics-delivery",
+   "status": "published",
+   "category": "logistics",
+   "difficulty": "normal",
+   "frequency": "주",
+   "timeBeforeMin": 120,
+   "timeAfterMin": 20,
+   "freePlanOk": true,
+   "verifiedAt": "2026-11-09",
+   "updatedAt": "2026-11-09",
+   "lang": "zh-Hant",
+   "title": "按區域、司機統計配送業績",
+   "subtitle": "上傳配送業績\n按區域、司機統計並算出完成率",
+   "tags": [
+    "配送",
+    "快遞",
+    "司機",
+    "送貨",
+    "運量",
+    "業績"
+   ],
+   "tools": [
+    {
+     "name": "Claude",
+     "free": true,
+     "note": "開啟「檔案建立」"
+    },
+    {
+     "name": "Excel 或 Google 表格",
+     "free": true,
+     "note": "檢視結果、列印"
+    }
+   ],
+   "problem": "配送業績很難按區域、司機來看",
+   "before": "加篩選一個個數",
+   "after": "件數、完成率、星期分佈一次出來",
+   "prepare": [
+    "配送業績檔案",
+    "確認區域、司機、狀態欄",
+    "刪除司機聯絡方式等",
+    "整理狀態值（已送達、未送達）"
+   ],
+   "prompts": [
+    {
+     "id": "main",
+     "title": "基本：配送業績統計",
+     "howTo": "貼上到已附上檔案的對話裡",
+     "body": "請用附上的 {{기간}} 配送業績做統計 Excel。區域在「{{지역열}}」欄，司機在「{{기사열}}」欄，狀態在「{{상태열}}」欄，已完成的狀態值是「{{완료값}}」。\n1.「按區域」表：每個區域的總件數、已完成、未完成、完成率、日均\n2.「按司機」表：每位司機同樣的專案和出勤天數\n3.「按星期」表：每個星期幾的件數（標出最集中的一天）\n4.「待確認」表：狀態為空或奇怪的\n這可能會被用來評價個人，所以不要寫區域差異等解讀，只整理數字。\n\n[計算與輸出規則]\n- 計算出的儲存格請用 Excel 公式填入，不要直接填數字，並在該儲存格註解裡用中文寫明演算法（滑鼠移上去就能看到）\n- 新建「複核」工作表，用另一種方法重新計算主要合計，並標明是否一致\n- 列印設定：A4 橫向，所有欄縮放到一頁寬，重複標題列，頁尾加頁碼",
+     "variables": [
+      {
+       "key": "기간",
+       "label": "期間",
+       "example": "2026 年 10 月"
+      },
+      {
+       "key": "지역열",
+       "label": "區域欄",
+       "example": "配送區域"
+      },
+      {
+       "key": "기사열",
+       "label": "司機欄",
+       "example": "司機編號"
+      },
+      {
+       "key": "상태열",
+       "label": "狀態欄",
+       "example": "配送狀態"
+      },
+      {
+       "key": "완료값",
+       "label": "已完成的狀態值",
+       "example": "已送達"
+      }
+     ]
+    },
+    {
+     "id": "verify",
+     "title": "複核：檢查所有計算",
+     "howTo": "拿到結果後直接在同一對話裡發",
+     "body": "請重新檢查你剛做的 Excel 裡所有計算儲存格。\n用表格整理：工作表與儲存格位置 / 演算法（中文）/ 重新算出的值 / 檔案裡的值 / 是否一致\n如有不一致，請寫出原因和改法。",
+     "variables": []
+    },
+    {
+     "id": "compare",
+     "title": "和上個月比較",
+     "howTo": "有兩個月業績時",
+     "body": "我也附上了上個月的業績檔案。請在「按區域」「按星期」表加上環比增減，並把貨量大增或大減的 3 個區域連同數字整理出來。",
+     "variables": []
+    }
+   ],
+   "steps": [
+    {
+     "title": "刪除個人資訊",
+     "body": "用編號代替司機姓名和聯絡方式",
+     "check": ""
+    },
+    {
+     "title": "整理狀態值",
+     "body": "統一「已完成」的寫法",
+     "check": ""
+    },
+    {
+     "title": "附上檔案",
+     "body": "開啟檔案建立後附上",
+     "check": ""
+    },
+    {
+     "title": "傳送提示詞",
+     "body": "填空後貼上",
+     "check": ""
+    },
+    {
+     "title": "複核",
+     "body": "總件數 = 原始列數",
+     "check": ""
+    },
+    {
+     "title": "運用",
+     "body": "按星期的貨量安排人手",
+     "check": ""
+    }
+   ],
+   "result": {
+    "summary": "按區域 · 按司機 · 按星期的 Excel\n附完成率和日均",
+    "example": "示例：10 月 82,400 件\n完成率 98.6% · 星期一最多"
+   },
+   "cautions": [
+    "司機個人資訊用編號代替",
+    "不要只憑業績評價個人",
+    "總件數要和原始資料對照",
+    "先統一狀態值寫法"
+   ],
+   "videos": [],
+   "docs": [
+    {
+     "title": "建立資料透視表",
+     "publisher": "Microsoft 支援",
+     "url": "https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a",
+     "verifiedAt": "2026-11-09"
+    },
+    {
+     "title": "用 Claude 建立和編輯檔案",
+     "publisher": "Anthropic 幫助中心",
+     "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+     "verifiedAt": "2026-11-09"
+    }
+   ],
+   "legal": null
+  }
+ ],
+ "feedback": {
+  "types": [
+   {
+    "id": "error",
+    "label": "報告錯誤"
+   },
+   {
+    "id": "add",
+    "label": "希望補充這些內容"
+   },
+   {
+    "id": "etc",
+    "label": "其他意見"
+   }
+  ],
+  "minLength": 5,
+  "maxLength": 300,
+  "storage": "firestore:feedback"
+ },
+ "moderation": {
+  "minLength": 5,
+  "maxLength": 300,
+  "banned": [
+   "시발",
+   "씨발",
+   "씨빨",
+   "씨팔",
+   "시팔",
+   "ㅅㅂ",
+   "ㅆㅂ",
+   "병신",
+   "븅신",
+   "ㅂㅅ",
+   "ㅄ",
+   "좆",
+   "존나",
+   "졸라",
+   "ㅈㄴ",
+   "개새",
+   "니새끼",
+   "이새끼",
+   "저새끼",
+   "미친놈",
+   "미친년",
+   "미친새",
+   "지랄",
+   "ㅈㄹ",
+   "엿먹",
+   "염병",
+   "썅",
+   "쌍놈",
+   "니미",
+   "느금",
+   "니애미",
+   "엠창",
+   "등신",
+   "닥쳐",
+   "fuck",
+   "shit",
+   "bitch",
+   "한남충",
+   "김치녀",
+   "틀딱",
+   "급식충",
+   "맘충",
+   "他妈的",
+   "他媽的",
+   "操你",
+   "肏你",
+   "傻逼",
+   "傻屄",
+   "煞笔",
+   "妈逼",
+   "媽的",
+   "贱人",
+   "賤人",
+   "王八蛋",
+   "去死",
+   "滚蛋",
+   "狗娘养",
+   "狗娘養",
+   "婊子",
+   "干你娘",
+   "幹你娘",
+   "机掰",
+   "雞掰",
+   "白痴",
+   "智障",
+   "煞筆",
+   "媽逼",
+   "滾蛋",
+   "幹你孃",
+   "機掰"
+  ],
+  "allow": [
+   "시발점",
+   "시발역",
+   "새끼손가락",
+   "새끼발가락",
+   "새끼줄",
+   "애비뉴"
+  ],
+  "checkedAt": "2026-11-09"
+ },
+ "changelog": [
+  {
+   "date": "2026-11-09",
+   "contentId": null,
+   "text": "30 份手冊已全部上線",
+   "source": "feedback"
+  },
+  {
+   "date": "2026-11-09",
+   "contentId": null,
+   "text": "把句子精簡成一行",
+   "source": "feedback"
+  },
+  {
+   "date": "2026-11-08",
+   "contentId": "payroll-variance-check",
+   "text": "修正了工資示例裡的數字錯誤",
+   "source": "review"
+  },
+  {
+   "date": "2026-11-08",
+   "contentId": null,
+   "text": "新增結果的 A4 列印預覽",
+   "source": "feedback"
+  }
+ ],
+ "resolvedFeedback": [],
+ "featured": [
+  "excel-merge-files",
+  "payroll-variance-check",
+  "one-page-exec-report",
+  "hr-annual-leave",
+  "excel-compare-files",
+  "report-email"
+ ]
+}

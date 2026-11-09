@@ -15,6 +15,14 @@
 - PC 2단 레이아웃, A4 미리보기·실제 인쇄, 예시 결과 파일 내려받기
 - 로컬 확인: `python3 web/build.py && cd site && python3 -m http.server`
 
+## 다국어 (한국어 · English · 日本語 · 简体中文 · 繁體中文)
+- 원본은 한국어 `app/src/main/assets/content.json`. 번역·나라별 법령은 `content/i18n/<언어>.py`
+- `python3 content/build_i18n.py` → `content.<언어>.json`, `ui.json`(앱·웹 공통 화면 문구) 생성 + 검사(빈칸·한국어 남음·대만 용어)
+- 법령 기준 나라: 한국어=대한민국, 영어=미국 연방, 일본어=일본, 간체=싱가포르, 번체=대만
+- 번체는 간체를 대만식 표현으로 자동 변환(OpenCC s2twp + 엑셀 행/열 용어)한 뒤 `zh_Hant.py`의 대만 법령 매뉴얼로 덮어씀
+- 앱: 휴대폰 언어를 따르고 설정에서 바꿀 수 있음. 웹: `/en/` `/ja/` `/zh-hans/` `/zh-hant/`
+- 매뉴얼을 고칠 때: 한국어 원본 수정 → 각 언어 파일 수정 → `build_i18n.py` 실행
+
 ## 다음 단계
 2. AdMob 테스트 배너 · A4 출력 미리보기 · 최신 콘텐츠 자동 받기(GitHub Pages)
 3. Firebase(무료 플랜): 의견 전송 · 이용 분석

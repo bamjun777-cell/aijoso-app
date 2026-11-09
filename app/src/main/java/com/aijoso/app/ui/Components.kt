@@ -1,5 +1,6 @@
 package com.aijoso.app.ui
 
+import com.aijoso.app.data.LocalUi
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -31,13 +32,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.aijoso.app.data.Item
-import com.aijoso.app.data.difficultyLabel
 
 /**
  * 한국어 줄바꿈: 단어(어절) 중간에서 끊기지 않도록 글자 사이에 '줄바꿈 금지' 문자(U+2060)를 넣는다.
  * 띄어쓰기와 '·' 뒤에서만 줄이 바뀐다. 화면 표시용 (복사용 글자에는 쓰지 않음).
  */
 fun keepAll(s: String): String {
+    if (!keepAllOn) return s   // 일본어·중국어는 글자 사이 어디서나 줄바꿈, 영어는 원래 단어 단위
     val sb = StringBuilder(s.length * 2)
     for (i in s.indices) {
         val c = s[i]
@@ -49,6 +50,9 @@ fun keepAll(s: String): String {
     }
     return sb.toString()
 }
+
+/** 한국어 화면일 때만 어절 단위 줄바꿈을 켠다 */
+var keepAllOn = true
 
 /** 기본 글자 컴포넌트: 어절 단위 줄바꿈 + 제목은 줄 길이 균형(Heading) */
 @Composable
@@ -121,6 +125,7 @@ fun SectionHeader(title: String, aside: String = "") {
 @Composable
 fun ItemCard(item: Item, categoryName: String, requested: Boolean, onClick: () -> Unit) {
     val cs = MaterialTheme.colorScheme
+    val ui = LocalUi.current
     val pub = item.isPublished
     val shape = RoundedCornerShape(16.dp)
     Column(
@@ -140,9 +145,9 @@ fun ItemCard(item: Item, categoryName: String, requested: Boolean, onClick: () -
         Spacer(Modifier.height(10.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
             if (categoryName.isNotEmpty()) Tag(categoryName)
-            Tag(difficultyLabel(item.difficulty))
-            if (pub) Tag("${item.timeBeforeMin}분 → ${item.timeAfterMin}분", highlight = true)
-            else Tag(if (requested) "요청함" else "준비 중", dashed = true)
+            Tag(ui.t("diff.label") + " " + ui.difficulty(item.difficulty))
+            if (pub) Tag(ui.t("min.n", "n" to item.timeBeforeMin) + " → " + ui.t("min.n", "n" to item.timeAfterMin), highlight = true)
+            else Tag(if (requested) ui.t("pill.requested") else ui.t("pill.draft"), dashed = true)
         }
     }
 }
@@ -152,10 +157,10 @@ fun copyText(context: Context, label: String, text: String) {
     cm.setPrimaryClip(ClipData.newPlainText(label, text))
 }
 
-fun shareText(context: Context, text: String) {
+fun shareText(context: Context, text: String, chooserTitle: String) {
     val send = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"
         putExtra(Intent.EXTRA_TEXT, text)
     }
-    context.startActivity(Intent.createChooser(send, "공유하기"))
+    context.startActivity(Intent.createChooser(send, chooserTitle))
 }

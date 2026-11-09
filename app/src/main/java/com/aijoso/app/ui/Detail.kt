@@ -1,5 +1,6 @@
 package com.aijoso.app.ui
 
+import com.aijoso.app.data.LocalUi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -44,7 +45,6 @@ import com.aijoso.app.data.ContentFile
 import com.aijoso.app.data.Item
 import com.aijoso.app.data.Prompt
 import com.aijoso.app.data.fillPrompt
-import com.aijoso.app.data.frequencyLabel
 import com.aijoso.app.data.promptSegments
 
 @Composable
@@ -52,6 +52,7 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
     val ctx = LocalContext.current
     val uri = LocalUriHandler.current
     val cs = MaterialTheme.colorScheme
+    val ui = LocalUi.current
     val fav = store.favs.contains(manual.id)
     // 블록 번호는 미리 계산 (지연 목록 안에서 증가시키면 다시 그릴 때 번호가 바뀜)
     val sections = buildList {
@@ -64,7 +65,7 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
         // 요약
         item {
             Column(Modifier.fillMaxWidth().background(cs.primaryContainer).padding(16.dp)) {
-                Text("${c.categoryName(manual.category)} · 검증일 ${manual.verifiedAt}", style = MaterialTheme.typography.labelMedium, color = cs.onSurfaceVariant, fontWeight = FontWeight.Bold)
+                Text("${c.categoryName(manual.category)} · " + ui.t("detail.verified", "d" to manual.verifiedAt), style = MaterialTheme.typography.labelMedium, color = cs.onSurfaceVariant, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(4.dp))
                 KText(manual.title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Black, heading = true)
                 Spacer(Modifier.height(4.dp))
@@ -75,32 +76,32 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
                         .border(2.dp, cs.onBackground, RoundedCornerShape(14.dp)).padding(12.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    TimeBox("지금", "${manual.timeBeforeMin}분", strike = true, Modifier.weight(1f))
+                    TimeBox(ui.t("detail.now"), ui.t("min.n", "n" to manual.timeBeforeMin), strike = true, Modifier.weight(1f))
                     Text("→", fontWeight = FontWeight.Bold)
-                    TimeBox("AI 적용 후", "${manual.timeAfterMin}분", strike = false, Modifier.weight(1f))
+                    TimeBox(ui.t("detail.after"), ui.t("min.n", "n" to manual.timeAfterMin), strike = false, Modifier.weight(1f))
                 }
                 Spacer(Modifier.height(8.dp))
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    Fact("난이도", mapOf("easy" to "쉬움", "normal" to "보통", "hard" to "어려움")[manual.difficulty] ?: manual.difficulty, Modifier.weight(1f))
-                    Fact("반복", frequencyLabel(manual.frequency), Modifier.weight(1f))
-                    Fact("무료 플랜", if (manual.freePlanOk) "가능" else "유료", Modifier.weight(1f))
+                    Fact(ui.t("diff.label"), ui.difficulty(manual.difficulty), Modifier.weight(1f))
+                    Fact(ui.t("detail.repeat"), ui.frequency(manual.frequency), Modifier.weight(1f))
+                    Fact(ui.t("detail.freePlan"), if (manual.freePlanOk) ui.t("detail.freeYes") else ui.t("detail.freeNo"), Modifier.weight(1f))
                 }
-                Text("* 시간은 추정치", style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant, modifier = Modifier.padding(top = 6.dp))
+                Text(ui.t("detail.estimate"), style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant, modifier = Modifier.padding(top = 6.dp))
             }
         }
-        item { Block(no("prob"), "이런 문제, 있으시죠?") { KText(manual.problem) } }
+        item { Block(no("prob"), ui.t("sec.prob")) { KText(manual.problem) } }
         item {
-            Block(no("how"), "이렇게 바뀝니다") {
-                LabeledBox("지금 방식", manual.before, cs.surfaceVariant)
+            Block(no("how"), ui.t("sec.how")) {
+                LabeledBox(ui.t("how.before"), manual.before, cs.surfaceVariant)
                 Spacer(Modifier.height(8.dp))
-                LabeledBox("AI 적용 후", manual.after, cs.primaryContainer)
+                LabeledBox(ui.t("detail.after"), manual.after, cs.primaryContainer)
             }
         }
         item {
-            Block(no("prep"), "필요한 것과 준비") {
+            Block(no("prep"), ui.t("sec.prep")) {
                 manual.tools.forEach { t ->
                     Row(Modifier.padding(vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Tag(if (t.free) "무료" else "보유", highlight = t.free)
+                        Tag(if (t.free) ui.t("tool.free") else ui.t("tool.own"), highlight = t.free)
                         Spacer(Modifier.width(8.dp))
                         Column { KText(t.name, fontWeight = FontWeight.Bold); KText(t.note, style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant) }
                     }
@@ -111,28 +112,28 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
         }
         manual.project?.let { pr ->
             item {
-                Block(no("proj"), "Claude 프로젝트로 만들어 두기") {
-                    KText("매달 반복된다면 '${pr.name}' 프로젝트를 만들고 아래 지침을 붙여넣으세요")
+                Block(no("proj"), ui.t("sec.proj")) {
+                    KText(ui.t("proj.intro", "name" to pr.name))
                     Spacer(Modifier.height(8.dp))
                     Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).background(cs.surfaceVariant).padding(12.dp)) {
                         Text(pr.instructions, style = MaterialTheme.typography.bodySmall)
                     }
-                    if (pr.knowledge.isNotEmpty()) KText("올릴 파일: " + pr.knowledge.joinToString(", "), Modifier.padding(top = 6.dp), style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
+                    if (pr.knowledge.isNotEmpty()) KText(ui.t("proj.knowledge", "name" to pr.knowledge.joinToString(", ")), Modifier.padding(top = 6.dp), style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
                     Spacer(Modifier.height(8.dp))
-                    OutlinedButton(onClick = { copyText(ctx, "프로젝트 지침", pr.instructions); toast("지침을 복사했어요") }, shape = RoundedCornerShape(12.dp), modifier = Modifier.fillMaxWidth()) {
-                        Text("지침 복사", fontWeight = FontWeight.Bold)
+                    OutlinedButton(onClick = { copyText(ctx, pr.name, pr.instructions); toast(ui.t("proj.copied")) }, shape = RoundedCornerShape(12.dp), modifier = Modifier.fillMaxWidth()) {
+                        Text(ui.t("proj.copy"), fontWeight = FontWeight.Bold)
                     }
                 }
             }
         }
-        item { Block(no("prompt"), "복사해서 쓰는 프롬프트") { KText("빈칸을 채우면 바로 반영돼요", style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant) } }
+        item { Block(no("prompt"), ui.t("sec.prompt")) { KText(ui.t("prompt.hint"), style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant) } }
         itemsIndexed(manual.prompts, key = { _, p -> "p-" + p.id }) { _, p ->
             PromptCard(manual, p, store,
-                onCopy = { copyText(ctx, p.title, fillPrompt(manual.id, p, store.values)); toast("복사했어요! Claude에 붙여넣으세요") },
+                onCopy = { copyText(ctx, p.title, fillPrompt(manual.id, p, store.values)); toast(ui.t("prompt.copied")) },
                 onOpenClaude = { uri.openUri("https://claude.ai/new") })
         }
         item {
-            Block(no("steps"), "순서대로 따라 하기") {
+            Block(no("steps"), ui.t("sec.steps")) {
                 manual.steps.forEachIndexed { i, s ->
                     Row(Modifier.padding(vertical = 5.dp)) {
                         Box(Modifier.size(28.dp).clip(CircleShape).background(Yellow), contentAlignment = Alignment.Center) {
@@ -144,7 +145,7 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
                             KText(s.body)
                             if (s.check.isNotBlank()) {
                                 Spacer(Modifier.height(4.dp))
-                                KText("확인 · " + s.check, Modifier.clip(RoundedCornerShape(8.dp)).background(cs.errorContainer).padding(horizontal = 8.dp, vertical = 4.dp),
+                                KText(ui.t("step.check", "name" to s.check), Modifier.clip(RoundedCornerShape(8.dp)).background(cs.errorContainer).padding(horizontal = 8.dp, vertical = 4.dp),
                                     style = MaterialTheme.typography.bodySmall, color = cs.onErrorContainer)
                             }
                         }
@@ -154,62 +155,62 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
         }
         manual.result?.let { r ->
             item {
-                Block(no("result"), "이런 결과가 나와요") {
+                Block(no("result"), ui.t("sec.result")) {
                     KText(r.summary, fontWeight = FontWeight.Bold, heading = true)
                     Spacer(Modifier.height(8.dp))
                     Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).background(cs.surfaceVariant).padding(12.dp)) { KText(r.example, style = MaterialTheme.typography.bodyMedium) }
-                    Text("A4 출력 미리보기는 다음 단계에서 연결돼요", style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant, modifier = Modifier.padding(top = 6.dp))
+                    if (manual.printSample != null) Text(ui.t("result.printLater"), style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant, modifier = Modifier.padding(top = 6.dp))
                 }
             }
         }
         item {
-            Block(no("caution"), "꼭 지켜 주세요") {
+            Block(no("caution"), ui.t("sec.caution")) {
                 Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).background(cs.errorContainer).padding(12.dp)) {
                     manual.cautions.forEach { Bullet(it, cs.onErrorContainer) }
                 }
                 manual.legal?.let { l ->
                     Spacer(Modifier.height(8.dp))
-                    KText("법령 기준 · ${l.note}\n확인일 ${l.checkedAt} · ${l.disclaimer}", style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
+                    KText(ui.t("legal.label") + " · ${l.note}\n" + ui.t("legal.checked", "d" to l.checkedAt) + " · ${l.disclaimer}", style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
                 }
             }
         }
         item {
-            Block(no("ref"), "더 알아보기") {
-                KText("관련 영상은 확인 후 올려요", style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
+            Block(no("ref"), ui.t("sec.ref")) {
+                KText(ui.t("ref.videos"), style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
                 manual.docs.forEach { d ->
                     Column(Modifier.fillMaxWidth().clickable { uri.openUri(d.url) }.padding(vertical = 10.dp)) {
                         Text(d.title, fontWeight = FontWeight.Bold, textDecoration = TextDecoration.Underline)
-                        Text("${d.publisher} · 검증일 ${d.verifiedAt}", style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant)
+                        Text("${d.publisher} · " + ui.t("detail.verified", "d" to d.verifiedAt), style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant)
                     }
                 }
             }
         }
         item {
-            Block(no("fb"), "이 매뉴얼, 어땠나요?") {
+            Block(no("fb"), ui.t("sec.fb")) {
                 val r = store.reactions[manual.id]
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Pill("도움 됐어요", r == "good", Modifier.weight(1f)) {
-                        if (store.react(manual.id, "good") == "good") toast("도움이 됐다니 다행이에요")
+                    Pill(ui.t("react.good"), r == "good", Modifier.weight(1f)) {
+                        if (store.react(manual.id, "good") == "good") toast(ui.t("react.goodToast"))
                     }
-                    Pill("아쉬워요", r == "bad", Modifier.weight(1f)) {
+                    Pill(ui.t("react.bad"), r == "bad", Modifier.weight(1f)) {
                         if (store.react(manual.id, "bad") == "bad") onFeedback()
                     }
                 }
                 Spacer(Modifier.height(10.dp))
                 OutlinedButton(onClick = onFeedback, modifier = Modifier.fillMaxWidth().height(48.dp), shape = RoundedCornerShape(12.dp)) {
-                    Text("틀린 내용 신고 · 추가 요청", fontWeight = FontWeight.Bold)
+                    Text(ui.t("fb.open"), fontWeight = FontWeight.Bold)
                 }
                 val sent = store.myFeedback.count { it.contentId == manual.id }
-                if (sent > 0) Text("보낸 의견 ${sent}건 · 보관함에서 확인", style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant, modifier = Modifier.padding(top = 6.dp))
+                if (sent > 0) Text(ui.t("fb.sentCount", "n" to sent), style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant, modifier = Modifier.padding(top = 6.dp))
             }
         }
         item {
             Row(Modifier.padding(16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                CopyButton(if (fav) "보관함에 있음" else "보관함에 담기", Modifier.weight(1f)) {
-                    store.toggleFav(manual.id); toast(if (fav) "보관함에서 뺐어요" else "보관함에 담았어요")
+                CopyButton(if (fav) ui.t("fav.has") else ui.t("fav.add"), Modifier.weight(1f)) {
+                    store.toggleFav(manual.id); toast(if (fav) ui.t("fav.removed") else ui.t("fav.added"))
                 }
-                OutlinedButton(onClick = { shareText(ctx, "[AI 좋소] ${manual.title}\n${manual.subtitle}") }, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp)) {
-                    Icon(Icons.Filled.Share, contentDescription = null); Spacer(Modifier.width(6.dp)); Text("PC로 보내기", fontWeight = FontWeight.Bold)
+                OutlinedButton(onClick = { shareText(ctx, "[" + ui.t("app.name") + "] ${manual.title}\n${manual.subtitle}", ui.t("share.chooser")) }, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp)) {
+                    Icon(Icons.Filled.Share, contentDescription = null); Spacer(Modifier.width(6.dp)); Text(ui.t("share.pc"), fontWeight = FontWeight.Bold)
                 }
             }
             Spacer(Modifier.height(16.dp))
@@ -220,6 +221,7 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
 @Composable
 private fun PromptCard(item: Item, p: Prompt, store: AppStore, onCopy: () -> Unit, onOpenClaude: () -> Unit) {
     val cs = MaterialTheme.colorScheme
+    val ui = LocalUi.current
     val shape = RoundedCornerShape(16.dp)
     Column(Modifier.padding(horizontal = 16.dp, vertical = 6.dp).fillMaxWidth().clip(shape).border(2.dp, cs.onBackground, shape)) {
         Column(Modifier.fillMaxWidth().background(cs.onBackground).padding(12.dp)) {
@@ -231,7 +233,7 @@ private fun PromptCard(item: Item, p: Prompt, store: AppStore, onCopy: () -> Uni
                 val key = "${item.id}.${v.key}"
                 OutlinedTextField(
                     value = store.values[key] ?: "", onValueChange = { store.setValue(key, it) },
-                    label = { Text(v.label) }, placeholder = { Text("예) ${v.example}") },
+                    label = { Text(v.label) }, placeholder = { Text(ui.t("prompt.example", "name" to v.example)) },
                     singleLine = v.example.length < 40, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(10.dp),
                 )
             }
@@ -244,9 +246,9 @@ private fun PromptCard(item: Item, p: Prompt, store: AppStore, onCopy: () -> Uni
                 Text(preview, style = MaterialTheme.typography.bodySmall.copy(lineBreak = LineBreak.Paragraph))
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                CopyButton("복사하기", Modifier.weight(1f), onCopy)
+                CopyButton(ui.t("prompt.copy"), Modifier.weight(1f), onCopy)
                 OutlinedButton(onClick = onOpenClaude, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp)) {
-                    Text("Claude 열기", fontWeight = FontWeight.Bold)
+                    Text(ui.t("prompt.openClaude"), fontWeight = FontWeight.Bold)
                 }
             }
         }

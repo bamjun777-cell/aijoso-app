@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AI 좋소</string>
+    <!-- 휴대폰 언어가 한국어가 아니면 이 이름으로 보인다 -->
+    <string name="app_name">AI Joso</string>
 </resources>

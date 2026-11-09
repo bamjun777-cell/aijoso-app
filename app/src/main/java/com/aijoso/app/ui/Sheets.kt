@@ -2,6 +2,7 @@
 
 package com.aijoso.app.ui
 
+import com.aijoso.app.data.LocalUi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -44,13 +45,14 @@ fun FeedbackSheet(item: Item, c: ContentFile, moderator: Moderator, onDismiss: (
     val cs = MaterialTheme.colorScheme
     var type by rememberSaveable { mutableStateOf(c.feedback.types.firstOrNull()?.id ?: "error") }
     var text by rememberSaveable { mutableStateOf("") }
+    val ui = LocalUi.current
     val result = remember(text) { moderator.check(text) }
     val typed = text.isNotBlank()
     val showError = typed && !result.ok && result.reason != "short"
 
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = state, containerColor = cs.background) {
         Column(Modifier.padding(horizontal = 16.dp).padding(bottom = 24.dp).imePadding()) {
-            Text("의견 남기기", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Black)
+            Text(ui.t("fbs.title"), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Black)
             KText(item.title, style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
             Spacer(Modifier.height(12.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -64,29 +66,29 @@ fun FeedbackSheet(item: Item, c: ContentFile, moderator: Moderator, onDismiss: (
             OutlinedTextField(
                 value = text,
                 onValueChange = { if (it.length <= c.feedback.maxLength) text = it },
-                label = { Text("내용") },
-                placeholder = { Text("예) 2단계 메뉴 이름이 달라요") },
+                label = { Text(ui.t("fbs.content")) },
+                placeholder = { Text(ui.t("fbs.placeholder")) },
                 minLines = 4,
                 isError = showError,
                 supportingText = {
                     Row(Modifier.fillMaxWidth()) {
-                        Text(if (typed && !result.ok) result.message else "", Modifier.weight(1f), fontWeight = if (showError) FontWeight.Bold else null)
+                        Text(if (typed && !result.ok) ui.t("mod.${result.reason}", "min" to c.moderation.minLength, "max" to c.moderation.maxLength) else "", Modifier.weight(1f), fontWeight = if (showError) FontWeight.Bold else null)
                         Text("${text.length}/${c.feedback.maxLength}")
                     }
                 },
                 modifier = Modifier.fillMaxWidth().heightIn(min = 120.dp),
                 shape = RoundedCornerShape(12.dp),
             )
-            Text("욕설·비속어, 개인정보는 보낼 수 없어요", style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant)
+            Text(ui.t("fbs.notice"), style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant)
             Spacer(Modifier.height(12.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                OutlinedButton(onClick = onDismiss, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp)) { Text("취소", fontWeight = FontWeight.Bold) }
+                OutlinedButton(onClick = onDismiss, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp)) { Text(ui.t("fbs.cancel"), fontWeight = FontWeight.Bold) }
                 Button(
                     onClick = { if (moderator.check(text).ok) onSend(type, text) },
                     enabled = result.ok,
                     modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = Yellow, contentColor = Ink),
-                ) { Text("보내기", fontWeight = FontWeight.ExtraBold) }
+                ) { Text(ui.t("fbs.send"), fontWeight = FontWeight.ExtraBold) }
             }
         }
     }
@@ -96,48 +98,61 @@ fun FeedbackSheet(item: Item, c: ContentFile, moderator: Moderator, onDismiss: (
 @Composable
 fun RequestSheet(item: Item, requested: Boolean, onDismiss: () -> Unit, onToggle: () -> Unit) {
     val state = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    val ui = LocalUi.current
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = state, containerColor = MaterialTheme.colorScheme.background) {
         Column(Modifier.padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
-            Text("지금 쓰고 있는 매뉴얼이에요", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Black)
+            Text(ui.t("req.title"), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Black)
             Spacer(Modifier.height(6.dp))
             KText(item.title, fontWeight = FontWeight.ExtraBold)
-            KText("요청이 많은 매뉴얼부터 올려요", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            KText(ui.t("req.note"), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Spacer(Modifier.height(14.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                OutlinedButton(onClick = onDismiss, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp)) { Text("닫기", fontWeight = FontWeight.Bold) }
-                CopyButton(if (requested) "요청 취소" else "먼저 보고 싶어요", Modifier.weight(1f), onToggle)
+                OutlinedButton(onClick = onDismiss, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp)) { Text(ui.t("req.close"), fontWeight = FontWeight.Bold) }
+                CopyButton(if (requested) ui.t("req.cancel") else ui.t("req.want"), Modifier.weight(1f), onToggle)
             }
         }
     }
 }
 
-/** 설정: 글자 크기, 버전, 비제휴 고지 */
+/** 설정: 언어, 글자 크기, 버전, 비제휴 고지 */
 @Composable
 fun SettingsSheet(c: ContentFile, store: AppStore, onDismiss: () -> Unit) {
     val state = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     val cs = MaterialTheme.colorScheme
+    val ui = LocalUi.current
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = state, containerColor = cs.background) {
         Column(Modifier.padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
-            Text("설정", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Black)
+            Text(ui.t("set.title"), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Black)
             Spacer(Modifier.height(12.dp))
-            Text("글자 크기", fontWeight = FontWeight.Bold)
+            Text(ui.t("set.lang"), fontWeight = FontWeight.Bold)
+            Spacer(Modifier.height(6.dp))
+            // 언어: 휴대폰 설정 따르기 + 5개 언어 (2줄로 나눠 좁은 화면에서도 보이게)
+            val langOptions = listOf("" to ui.t("set.langAuto")) + ui.langs.map { it to ui.langName(it) }
+            langOptions.chunked(3).forEach { row ->
+                Row(horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(bottom = 6.dp)) {
+                    row.forEach { (code, label) -> Pill(label, store.lang == code, Modifier.weight(1f)) { store.updateLang(code) } }
+                    repeat(3 - row.size) { Spacer(Modifier.weight(1f)) }
+                }
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(ui.t("set.font"), fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(6.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                listOf(0.9f to "작게", 1f to "보통", 1.15f to "크게").forEach { (v, label) ->
+                listOf(0.9f to ui.t("set.small"), 1f to ui.t("set.normal"), 1.15f to ui.t("set.large")).forEach { (v, label) ->
                     Pill(label, store.fontScale == v, Modifier.weight(1f)) { store.updateFontScale(v) }
                 }
             }
             Spacer(Modifier.height(12.dp))
             HorizontalDivider(color = cs.outline)
-            SettingRow("콘텐츠 버전", c.contentVersion)
-            SettingRow("앱 버전", "0.1.0 (테스트)")
-            SettingRow("개인정보처리방침", "출시 전 게시 예정")
+            SettingRow(ui.t("set.contentVer"), c.contentVersion)
+            SettingRow(ui.t("set.appVer"), "0.2.0 (" + ui.t("set.test") + ")")
+            SettingRow(ui.t("set.privacy"), ui.t("set.privacyLater"))
             HorizontalDivider(color = cs.outline)
             Spacer(Modifier.height(10.dp))
-            KText("AI 좋소는 Claude 등 AI 도구 활용법을 안내하는 독립 앱입니다. Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다.",
+            KText(ui.t("disclaimer"),
                 style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
             Spacer(Modifier.height(12.dp))
-            CopyButton("닫기", Modifier.fillMaxWidth(), onDismiss)
+            CopyButton(ui.t("set.close"), Modifier.fillMaxWidth(), onDismiss)
         }
     }
 }

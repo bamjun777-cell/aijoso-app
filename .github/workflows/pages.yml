@@ -6,7 +6,8 @@ on:
     branches: [ main ]
     paths:
       - 'web/**'
-      - 'app/src/main/assets/content.json'
+      - 'app/src/main/assets/**'
+      - 'content/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 

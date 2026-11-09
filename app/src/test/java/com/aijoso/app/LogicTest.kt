@@ -5,6 +5,11 @@ import com.aijoso.app.data.Moderator
 import com.aijoso.app.data.Searcher
 import com.aijoso.app.data.fillPrompt
 import com.aijoso.app.data.parseContent
+import com.aijoso.app.data.parseUi
+import com.aijoso.app.data.Ui
+import com.aijoso.app.data.resolveLang
+import com.aijoso.app.data.contentAsset
+import java.util.Locale
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -14,6 +19,66 @@ import java.io.File
 /** 빌드할 때마다 자동으로 도는 검사: 콘텐츠 파일, 검색, 비속어 필터 */
 class LogicTest {
     private val content: ContentFile = parseContent(File("src/main/assets/content.json").readText())
+    private val langs = listOf("ko", "en", "ja", "zh-Hans", "zh-Hant")
+    private fun load(lang: String) = parseContent(File("src/main/assets/" + contentAsset(lang)).readText())
+    private val uiFile = parseUi(File("src/main/assets/ui.json").readText())
+
+    @Test fun everyLanguageHasAllManuals() {
+        val ids = content.items.map { it.id }
+        for (l in langs) {
+            val c = load(l)
+            assertEquals(l, ids, c.items.map { it.id })
+            assertEquals(l, 30, c.published.size)
+            assertEquals(l, 8, c.categories.size)
+            // 빈칸과 입력칸이 맞는지 (언어마다)
+            val re = Regex("""\{\{(.+?)\}\}""")
+            for (item in c.items) for (p in item.prompts)
+                assertEquals("$l/${item.id}/${p.id}", p.variables.map { it.key }.toSet(), re.findAll(p.body).map { it.groupValues[1] }.toSet())
+        }
+    }
+
+    @Test fun everyScreenTextIsTranslated() {
+        assertEquals(langs, uiFile.langs)
+        for ((key, m) in uiFile.strings) for (l in langs) assertTrue("$key/$l", !m[l].isNullOrBlank())
+        for (l in langs) assertEquals(l, 3, uiFile.chips[l]?.size)
+        assertEquals("3개", Ui("ko", uiFile).t("count.n", "n" to 3))
+        assertEquals("12 min", Ui("en", uiFile).t("min.n", "n" to 12))
+    }
+
+    @Test fun deviceLanguagePicksContent() {
+        assertEquals("ko", resolveLang("", Locale.KOREA))
+        assertEquals("ja", resolveLang("", Locale.JAPAN))
+        assertEquals("zh-Hant", resolveLang("", Locale.TAIWAN))
+        assertEquals("zh-Hans", resolveLang("", Locale.SIMPLIFIED_CHINESE))
+        assertEquals("en", resolveLang("", Locale.GERMANY))
+        assertEquals("ja", resolveLang("ja", Locale.KOREA))   // 앱에서 고른 언어가 우선
+    }
+
+    @Test fun searchWorksInEveryLanguage() {
+        val cases = mapOf(
+            "en" to mapOf("Comparing payroll every month takes forever" to "payroll-variance-check", "merge branch excel files" to "excel-merge-files", "overtime hours" to "hr-attendance-overtime", "decline email" to "report-email", "vlookup error" to "excel-formula"),
+            "ja" to mapOf("毎月の給与比較に時間がかかる" to "payroll-variance-check", "支店のExcelをまとめる" to "excel-merge-files", "有給の残日数" to "hr-annual-leave", "お断りのメール" to "report-email"),
+            "zh-Hans" to mapOf("工资环比核对" to "payroll-variance-check", "合并分店 Excel" to "excel-merge-files", "加班费怎么算" to "hr-attendance-overtime", "宏" to "excel-vba"),
+            "zh-Hant" to mapOf("薪資環比核對" to "payroll-variance-check", "特休" to "hr-annual-leave", "盤點庫存" to "logistics-stock"),
+        )
+        for ((l, qs) in cases) { val s = Searcher(load(l)); for ((q, id) in qs) assertEquals("$l: $q", id, s.search(q).firstOrNull()?.id) }
+    }
+
+    @Test fun moderationOtherLanguages() {
+        val en = Moderator(load("en").moderation)
+        listOf("The pivot steps were really helpful, thanks", "Please add an assessment template", "Scunthorpe branch uses this", "Step 2 changed on 2026-11-09").forEach { assertTrue("pass: $it", en.check(it).ok) }
+        listOf("this is fucking useless", "what a piece of s h i t app", "call me at +1 (415) 555-0132", "my SSN is 123-45-6789").forEach { assertFalse("block: $it", en.check(it).ok) }
+        val ja = Moderator(load("ja").moderation)
+        assertTrue(ja.check("手順3のメニュー名が違います").ok)
+        assertFalse(ja.check("こんなアプリ死ねばいい").ok)
+        assertFalse(ja.check("電話は090-1234-5678です").ok)
+        val zh = Moderator(load("zh-Hans").moderation)
+        assertTrue(zh.check("第二步的菜单名称不一样").ok)
+        assertFalse(zh.check("这个傻逼应用").ok)
+        val tw = Moderator(load("zh-Hant").moderation)
+        assertFalse(tw.check("幹你娘 這什麼爛東西").ok)
+        assertFalse(tw.check("我的電話 0912-345-678").ok)
+    }
 
     @Test fun contentLoads() {
         assertEquals(30, content.items.size)

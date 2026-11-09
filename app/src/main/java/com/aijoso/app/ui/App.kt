@@ -1,5 +1,11 @@
 package com.aijoso.app.ui
 
+import com.aijoso.app.data.parseContent
+import com.aijoso.app.data.contentAsset
+import com.aijoso.app.data.resolveLang
+import com.aijoso.app.data.Ui
+import com.aijoso.app.data.UiFile
+import com.aijoso.app.data.LocalUi
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -53,11 +59,22 @@ import com.aijoso.app.data.Moderator
 import com.aijoso.app.data.Searcher
 import kotlinx.coroutines.launch
 
-private data class TabDef(val label: String, val icon: ImageVector)
-private val TABS = listOf(TabDef("홈", Icons.Filled.Home), TabDef("찾기", Icons.Filled.Search), TabDef("프롬프트", Icons.Filled.Edit), TabDef("보관함", Icons.Filled.Star))
+private data class TabDef(val key: String, val icon: ImageVector)
+private val TABS = listOf(TabDef("tab.home", Icons.Filled.Home), TabDef("tab.search", Icons.Filled.Search), TabDef("tab.prompts", Icons.Filled.Edit), TabDef("tab.saved", Icons.Filled.Star))
+
+/** 언어를 정하고 그 언어의 콘텐츠·문구를 불러온다. 설정에서 언어를 바꾸면 바로 다시 그린다 */
+@Composable
+fun AppEntry(store: AppStore, uiFile: UiFile, read: (String) -> String) {
+    val lang = resolveLang(store.lang)
+    val content = remember(lang) { parseContent(read(contentAsset(lang))) }
+    val ui = remember(lang) { Ui(lang, uiFile) }
+    keepAllOn = lang == "ko"
+    CompositionLocalProvider(LocalUi provides ui) { AppRoot(content, store) }
+}
 
 @Composable
 fun AppRoot(content: ContentFile, store: AppStore) {
+    val ui = LocalUi.current
     val searcher = remember(content) { Searcher(content) }
     val moderator = remember(content) { Moderator(content.moderation) }
     var tab by rememberSaveable { mutableIntStateOf(0) }
@@ -96,7 +113,7 @@ fun AppRoot(content: ContentFile, store: AppStore) {
                                 selected = detailId == null && tab == i,
                                 onClick = { tab = i; detailId = null },
                                 icon = { Icon(t.icon, contentDescription = null) },
-                                label = { Text(t.label, fontWeight = FontWeight.Bold) },
+                                label = { Text(ui.t(t.key), fontWeight = FontWeight.Bold, maxLines = 1) },
                                 colors = NavigationBarItemDefaults.colors(indicatorColor = Yellow, selectedIconColor = Ink),
                             )
                         }
@@ -124,12 +141,12 @@ fun AppRoot(content: ContentFile, store: AppStore) {
             is Sheet.Feedback -> FeedbackSheet(s.item, content, moderator, onDismiss = { sheet = null }) { type, text ->
                 store.addFeedback(s.item.id, type, text)
                 sheet = null
-                toast("고마워요! 반영되면 알려 드릴게요")
+                toast(ui.t("fbs.thanks"))
             }
             is Sheet.Request -> RequestSheet(s.item, store.requests.contains(s.item.id), onDismiss = { sheet = null }) {
                 val added = store.toggleRequest(s.item.id)
                 sheet = null
-                toast(if (added) "요청했어요! 올라오면 알려 드릴게요" else "요청을 취소했어요")
+                toast(if (added) ui.t("req.added") else ui.t("req.removed"))
             }
             Sheet.Settings -> SettingsSheet(content, store, onDismiss = { sheet = null })
             null -> Unit
@@ -145,18 +162,19 @@ sealed interface Sheet {
 
 @Composable
 private fun TopBar(title: String?, onBack: (() -> Unit)?, onSettings: () -> Unit) {
+    val ui = LocalUi.current
     Column(Modifier.background(Yellow).windowInsetsPadding(WindowInsets.statusBars)) {
         Row(Modifier.fillMaxWidth().height(56.dp).padding(horizontal = 8.dp), verticalAlignment = Alignment.CenterVertically) {
             if (onBack != null) {
-                IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "뒤로", tint = Ink) }
+                IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = ui.t("a11y.back"), tint = Ink) }
                 Text(title ?: "", color = Ink, fontWeight = FontWeight.ExtraBold, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
             } else {
                 Column(Modifier.weight(1f).padding(start = 8.dp)) {
-                    Text("AI 좋소", color = Ink, fontWeight = FontWeight.Black, style = MaterialTheme.typography.titleLarge)
-                    Text("작은 회사의 큰 업무를 가볍게", color = Ink, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.labelSmall)
+                    Text(ui.t("app.name"), color = Ink, fontWeight = FontWeight.Black, style = MaterialTheme.typography.titleLarge)
+                    Text(ui.t("app.tagline"), color = Ink, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.labelSmall)
                 }
             }
-            IconButton(onClick = onSettings) { Icon(Icons.Filled.Settings, contentDescription = "설정", tint = Ink) }
+            IconButton(onClick = onSettings) { Icon(Icons.Filled.Settings, contentDescription = ui.t("a11y.settings"), tint = Ink) }
         }
         HorizontalDivider(thickness = 2.dp, color = Ink)
     }
@@ -166,8 +184,9 @@ private fun TopBar(title: String?, onBack: (() -> Unit)?, onSettings: () -> Unit
 @Composable
 private fun AdSlot() {
     val cs = MaterialTheme.colorScheme
+    val ui = LocalUi.current
     Box(Modifier.fillMaxWidth().height(50.dp).background(cs.surfaceVariant), contentAlignment = Alignment.Center) {
-        Text("광고 영역 · 다음 단계에서 AdMob 연결", style = MaterialTheme.typography.labelMedium, color = cs.onSurfaceVariant)
+        Text(ui.t("ad.placeholder"), style = MaterialTheme.typography.labelMedium, color = cs.onSurfaceVariant)
     }
     HorizontalDivider(color = cs.outline)
 }

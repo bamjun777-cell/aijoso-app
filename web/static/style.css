@@ -287,3 +287,27 @@ section{padding-block:22px 6px}
 }
 #printroot{display:none}
 .catsec .card .meta .pill:first-child{display:none}
+
+/* ───── 언어 ───── */
+.langmenu{position:relative;margin-left:4px}
+.langmenu summary{list-style:none;display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:800;font-size:.9rem;padding:8px 10px;border-radius:10px;border:1.5px solid var(--yellow-ink);min-height:40px}
+.langmenu summary::-webkit-details-marker{display:none}
+.langmenu[open] summary{background:var(--yellow-ink);color:var(--yellow)}
+.langlist{position:absolute;right:0;top:calc(100% + 6px);z-index:30;background:var(--bg);color:var(--ink);border:2px solid var(--ink);border-radius:12px;padding:6px;display:grid;min-width:150px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.langlist a{padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700}
+.langlist a:hover{background:var(--surface)}
+.langlist a[aria-current="true"]{background:var(--yellow);color:var(--yellow-ink)}
+.footlangs{display:flex;flex-wrap:wrap;gap:4px 14px}
+.footlangs a[aria-current="true"]{font-weight:800}
+.langsug{background:var(--ink);color:var(--bg);padding-block:10px}
+.langsug .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.langsug span{flex:1;min-width:0;font-weight:700}
+.langsug .iconbtn{color:var(--bg);font-size:1.4rem;line-height:1;padding:4px 8px}
+@media (max-width:859px){.langmenu{margin-left:auto}.langmenu summary span{display:none}}
+/* 일본어·중국어: 글자 사이 어디서나 줄바꿈 (keep-all을 쓰면 한 줄이 끝없이 길어짐), 제목은 굵은 고딕 */
+.cjk{--display:"Noto Sans JP","Noto Sans SC","Noto Sans TC","Hiragino Sans","PingFang SC","Microsoft JhengHei",sans-serif;--body:var(--display)}
+html.cjk:lang(zh-Hans){--display:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+html.cjk:lang(zh-Hant){--display:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+.cjk body{word-break:normal;line-break:strict}
+.cjk :is(.sh h2,.logo b,.hero h1,.cath h2,.pagehead h1,.empty b,.dhead h1,.block h2 .n,.sheet h3){font-weight:900}
+.cjk .logo b{letter-spacing:0}

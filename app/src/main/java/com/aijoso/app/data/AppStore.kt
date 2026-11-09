@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
@@ -40,6 +41,11 @@ class AppStore(context: Context) {
     val myFeedback = mutableStateListOf<MyFeedback>().apply { addAll(read("myfb", fbList) ?: emptyList()) }
     var fontScale by mutableFloatStateOf(sp.getFloat("fontScale", 1f))
         private set
+    /** 화면 언어. "" = 휴대폰 설정 따르기 */
+    var lang by mutableStateOf(sp.getString("lang", "") ?: "")
+        private set
+
+    fun updateLang(v: String) { lang = v; sp.edit().putString("lang", v).apply() }
 
     private fun <T> read(key: String, s: KSerializer<T>): T? =
         sp.getString(key, null)?.let { runCatching { ContentJson.decodeFromString(s, it) }.getOrNull() }
