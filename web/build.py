@@ -10,6 +10,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / 'web'
+# 고칠 때마다 바뀌는 버전 꼬리표 → 브라우저가 예전 CSS·JS를 쓰지 않고 새로 받음
+import hashlib
+VER = hashlib.sha1(b''.join((ROOT / f).read_bytes() for f in ('app/src/main/assets/content.json', 'web/static/style.css', 'web/static/app.js', 'web/build.py'))).hexdigest()[:8]
 CONTENT = ROOT / 'app/src/main/assets/content.json'
 
 ap = argparse.ArgumentParser()
@@ -99,7 +102,7 @@ def page(path, title, desc, body, active='', jsonld=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@400;500;700;800&display=swap">
-<link rel="stylesheet" href="{R}static/style.css">
+<link rel="stylesheet" href="{R}static/style.css?v={VER}">
 {ld}
 </head>
 <body data-root="{R}">
@@ -118,8 +121,8 @@ def page(path, title, desc, body, active='', jsonld=None):
 </div></footer>
 <nav class="tabs" aria-label="하단 메뉴">{nav}</nav>
 <div id="layer"></div>
-<script src="{R}static/data.js"></script>
-<script src="{R}static/app.js"></script>
+<script src="{R}static/data.js?v={VER}"></script>
+<script src="{R}static/app.js?v={VER}"></script>
 </body>
 </html>
 '''
