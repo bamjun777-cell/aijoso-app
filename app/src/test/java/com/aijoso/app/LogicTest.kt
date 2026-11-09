@@ -17,7 +17,8 @@ class LogicTest {
 
     @Test fun contentLoads() {
         assertEquals(30, content.items.size)
-        assertEquals(3, content.published.size)
+        assertEquals(30, content.published.size)
+        assertEquals(6, content.featuredItems.size)
         assertEquals(8, content.categories.size)
     }
 

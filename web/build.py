@@ -22,6 +22,7 @@ OUT = Path(args.out)
 C = json.load(open(CONTENT, encoding='utf-8'))
 ITEMS = C['items']
 PUB = [i for i in ITEMS if i.get('status') == 'published']
+BY = {i['id']: i for i in ITEMS}
 CAT = {c['id']: c['name'] for c in C['categories']}
 CATS = sorted(C['categories'], key=lambda c: c.get('order', 0))
 DIFF = {'easy': '쉬움', 'normal': '보통', 'hard': '어려움'}
@@ -152,6 +153,11 @@ def build_home():
     chips = ''.join(f'<a class="chip" href="search.html?q={e(q)}">{e(q)}</a>' for q in ['지점 엑셀 합치기', '급여 전월 비교', '보고서 1장 요약'])
     news = ''.join(f'<li><span class="num">{e(x["date"][5:].replace("-", "."))}</span>{e(x["text"])}</li>' for x in C.get('changelog', []))
     drafts = [i for i in ITEMS if i.get('status') != 'published']
+    feat = [BY[x] for x in C.get('featured', []) if x in BY and BY[x].get('status') == 'published'] or PUB[:6]
+    side = (f'''<div><div class="sh"><h2>곧 올라올 매뉴얼</h2><span>{len(drafts)}개 준비 중</span></div>
+      <p class="note">먼저 보고 싶은 매뉴얼을 눌러 요청해 주세요</p>
+      <div class="grid narrow">{''.join(card(i, R) for i in drafts[:6])}</div></div>''' if drafts else
+      f'''<div><div class="sh"><h2>분야별 매뉴얼 수</h2></div><ul class="news">{''.join(f'<li><span class="num">{sum(1 for i in PUB if i.get("category") == c["id"])}개</span><a href="c/{c["id"]}.html">{e(c["name"])}</a></li>' for c in CATS)}</ul></div>''')
     body = f'''
 <section class="hero"><div class="wrap">
   <h1>사람은 없고<br>일은 많죠?</h1>
@@ -161,18 +167,15 @@ def build_home():
 </div></section>
 <div class="wrap">
   <section><div class="sh"><h2>분야별로 찾기</h2><span>{len(CATS)}개 분야</span></div>{cat_grid(R)}</section>
-  <section><div class="sh"><h2>바로 쓰는 매뉴얼</h2><span>{len(PUB)}개 공개</span></div><div class="grid">{''.join(card(i, R) for i in PUB)}</div></section>
+  <section><div class="sh"><h2>바로 쓰는 매뉴얼</h2><span>전체 {len(PUB)}개 공개</span></div><div class="grid">{''.join(card(i, R) for i in feat)}</div><p><a class="more" href="search.html">매뉴얼 {len(PUB)}개 모두 보기</a></p></section>
   <section class="two">
     <div><div class="sh"><h2>여러분 의견으로 바뀌었어요</h2></div><ul class="news">{news}</ul></div>
-    <div><div class="sh"><h2>곧 올라올 매뉴얼</h2><span>{len(drafts)}개 준비 중</span></div>
-      <p class="note">먼저 보고 싶은 매뉴얼을 눌러 요청해 주세요</p>
-      <div class="grid narrow">{''.join(card(i, R) for i in drafts[:6])}</div>
-      <p><a class="more" href="search.html">준비 중인 매뉴얼 모두 보기</a></p></div>
+    {side}
   </section>
 </div>'''
     ld = {'@context': 'https://schema.org', '@type': 'WebSite', 'name': 'AI 좋소', 'description': TAGLINE,
           **({'url': SITE_URL + '/'} if SITE_URL else {})}
-    return page('index.html', 'AI 좋소', '중소기업 실무자를 위한 AI 업무 자동화 매뉴얼. 엑셀 취합, 급여 검증, 1페이지 보고서까지 복사해서 바로 쓰는 프롬프트와 따라 하기.', body, 'home', ld)
+    return page('index.html', 'AI 좋소', '중소기업 실무자를 위한 AI 업무 자동화 매뉴얼. 엑셀·인사·회계·보고서 등 매뉴얼 30개, 복사해서 바로 쓰는 프롬프트와 따라 하기.', body, 'home', ld)
 
 # ───────── 찾기 ─────────
 def build_search():

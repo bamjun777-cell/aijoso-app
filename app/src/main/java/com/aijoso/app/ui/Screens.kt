@@ -56,7 +56,7 @@ import com.aijoso.app.data.fillPrompt
 @Composable
 fun HomeScreen(c: ContentFile, store: AppStore, onOpen: (Item) -> Unit, onSearch: (String) -> Unit, onCategory: (String) -> Unit) {
     var q by rememberSaveable { mutableStateOf("") }
-    val recommended = remember(c) { c.published }
+    val recommended = remember(c) { c.featuredItems }
     val drafts = remember(c) { c.items.filter { !it.isPublished } }
     LazyColumn(Modifier.fillMaxSize()) {
         item {
@@ -102,7 +102,7 @@ fun HomeScreen(c: ContentFile, store: AppStore, onOpen: (Item) -> Unit, onSearch
         }
         item { SectionHeader("분야별로 찾기", "${c.categories.size}개 분야") }
         item { CategoryGrid(c, onCategory) }
-        item { SectionHeader("추천 매뉴얼", "${recommended.size}개 공개") }
+        item { SectionHeader("추천 매뉴얼", "전체 ${c.published.size}개 공개") }
         items(recommended, key = { "r-" + it.id }) { ItemCard(it, c.categoryName(it.category), false) { onOpen(it) } }
         if (c.changelog.isNotEmpty()) {
             item { SectionHeader("여러분 의견으로 바뀌었어요", "업데이트 소식") }
@@ -118,8 +118,17 @@ fun HomeScreen(c: ContentFile, store: AppStore, onOpen: (Item) -> Unit, onSearch
                 }
             }
         }
-        item { SectionHeader("곧 올라올 매뉴얼", "${drafts.size}개 준비 중") }
-        items(drafts.take(4), key = { "d-" + it.id }) { ItemCard(it, c.categoryName(it.category), store.requests.contains(it.id)) { onOpen(it) } }
+        item {
+            Button(
+                onClick = { onSearch("") }, shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Ink, contentColor = Yellow),
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp).fillMaxWidth().height(48.dp),
+            ) { Text("매뉴얼 ${c.published.size}개 모두 보기", fontWeight = FontWeight.Bold) }
+        }
+        if (drafts.isNotEmpty()) {
+            item { SectionHeader("곧 올라올 매뉴얼", "${drafts.size}개 준비 중") }
+            items(drafts.take(4), key = { "d-" + it.id }) { ItemCard(it, c.categoryName(it.category), store.requests.contains(it.id)) { onOpen(it) } }
+        }
         item { Spacer(Modifier.height(24.dp)) }
     }
 }

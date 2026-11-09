@@ -13,6 +13,7 @@ data class ContentFile(
     val categories: List<Category> = emptyList(),
     val synonyms: Map<String, List<String>> = emptyMap(),
     val items: List<Item> = emptyList(),
+    val featured: List<String> = emptyList(),
     val feedback: FeedbackConfig = FeedbackConfig(),
     val moderation: Moderation = Moderation(),
     val changelog: List<Change> = emptyList(),
@@ -21,6 +22,8 @@ data class ContentFile(
     fun categoryName(id: String): String = categories.firstOrNull { it.id == id }?.name ?: id
     fun item(id: String): Item? = items.firstOrNull { it.id == id }
     val published: List<Item> get() = items.filter { it.isPublished }
+    /** 홈 추천: featured 목록 순서대로, 없으면 공개 매뉴얼 앞 6개 */
+    val featuredItems: List<Item> get() = featured.mapNotNull { item(it) }.filter { it.isPublished }.ifEmpty { published.take(6) }
 }
 
 @Serializable
