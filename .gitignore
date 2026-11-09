@@ -13,3 +13,6 @@ google-services.json
 
 # 웹사이트 빌드 결과 (GitHub Actions가 만듦)
 site/
+
+# 파이썬 임시 파일
+__pycache__/
