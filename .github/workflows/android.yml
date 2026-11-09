@@ -3,6 +3,13 @@ name: 테스트 APK 빌드
 on:
   push:
     branches: [ main ]
+    # 앱 관련 파일이 바뀔 때만 APK를 다시 빌드 (웹만 바뀌면 건너뜀)
+    paths:
+      - 'app/**'
+      - 'gradle/**'
+      - '*.gradle.kts'
+      - 'gradle.properties'
+      - '.github/workflows/android.yml'
   workflow_dispatch:
 
 permissions:

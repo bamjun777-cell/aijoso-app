@@ -478,7 +478,14 @@
             "text": "숫자에 마우스를 올리면(휴대폰은 탭) 엑셀 수식과 산식이 보입니다. 실제 파일에서는 같은 내용이 셀 메모로 들어갑니다."
           }
         ]
-      }
+      },
+      "sampleFiles": [
+        {
+          "name": "예시_엑셀취합_결과.xlsx",
+          "path": "files/sample-excel-merge.xlsx",
+          "note": "통합·검증·확인필요·검산 시트, 셀 메모에 산식"
+        }
+      ]
     },
     {
       "id": "payroll-variance-check",
@@ -941,7 +948,14 @@
             "text": "2026년 최저임금 10,320원 × 209시간 = 월 2,156,880원 (확인일 2026-11-08). 최저임금 판단은 참고용이며 최종 확인은 노무 담당자·노무사."
           }
         ]
-      }
+      },
+      "sampleFiles": [
+        {
+          "name": "예시_급여검증_결과.xlsx",
+          "path": "files/sample-payroll-check.xlsx",
+          "note": "요약·검산·증감표·최저임금점검, 가상 데이터"
+        }
+      ]
     },
     {
       "id": "one-page-exec-report",
@@ -1275,7 +1289,14 @@
             "text": "산식 근거: 연 비용 = 대수 × 월 임대료 × 12 + 흑백 단가 × 월 출력량 × 12. 숫자는 예시 자료입니다."
           }
         ]
-      }
+      },
+      "sampleFiles": [
+        {
+          "name": "예시_1페이지보고서.docx",
+          "path": "files/sample-one-page-report.docx",
+          "note": "A4 세로 1장, 숫자마다 산식 각주"
+        }
+      ]
     },
     {
       "id": "excel-compare-files",

@@ -10,3 +10,6 @@ captures/
 *.jks
 release.keystore
 google-services.json
+
+# 웹사이트 빌드 결과 (GitHub Actions가 만듦)
+site/

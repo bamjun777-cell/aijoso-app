@@ -9,6 +9,12 @@
 - 콘텐츠는 `app/src/main/assets/content.json` 하나로 관리 (화면 코드 수정 없이 추가)
 - 서버 없음, 회원가입 없음, 인터넷 권한 없음
 
+## 웹 버전
+같은 `content.json`으로 `web/build.py`가 정적 웹사이트(`site/`)를 만들고, `.github/workflows/pages.yml`이 GitHub Pages(무료)에 배포한다.
+- 매뉴얼마다 별도 페이지 → 검색엔진 노출, 사이트맵 자동 생성
+- PC 2단 레이아웃, A4 미리보기·실제 인쇄, 예시 결과 파일 내려받기
+- 로컬 확인: `python3 web/build.py && cd site && python3 -m http.server`
+
 ## 다음 단계
 2. AdMob 테스트 배너 · A4 출력 미리보기 · 최신 콘텐츠 자동 받기(GitHub Pages)
 3. Firebase(무료 플랜): 의견 전송 · 이용 분석
