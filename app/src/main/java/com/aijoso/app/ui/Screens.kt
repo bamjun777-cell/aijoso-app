@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -34,6 +35,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -56,9 +59,19 @@ import com.aijoso.app.data.fillPrompt
 @Composable
 fun HomeScreen(c: ContentFile, store: AppStore, onOpen: (Item) -> Unit, onSearch: (String) -> Unit, onCategory: (String) -> Unit) {
     var q by rememberSaveable { mutableStateOf("") }
-    val recommended = remember(c) { c.featuredItems }
     val drafts = remember(c) { c.items.filter { !it.isPublished } }
-    LazyColumn(Modifier.fillMaxSize()) {
+    // 분야별 묶음: 공개 매뉴얼 전부를 분야 순서대로
+    val groups = remember(c) {
+        c.categories.sortedBy { it.order }.map { cat -> cat to c.published.filter { it.category == cat.id } }.filter { it.second.isNotEmpty() }
+    }
+    // 분야 타일을 누르면 홈 안에서 해당 분야 제목으로 이동 (앞: 검색창·분야 제목·타일·전체 제목 = 4칸)
+    val groupIndex = remember(groups) {
+        var i = 4
+        groups.associate { (cat, its) -> (cat.id to i).also { i += 1 + its.size } }
+    }
+    val listState = rememberLazyListState()
+    val scope = rememberCoroutineScope()
+    LazyColumn(Modifier.fillMaxSize(), state = listState) {
         item {
             Column(Modifier.fillMaxWidth().background(Yellow).padding(16.dp)) {
                 KText("사람은 없고\n일은 많죠?", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black, color = Ink, heading = true)
@@ -100,10 +113,29 @@ fun HomeScreen(c: ContentFile, store: AppStore, onOpen: (Item) -> Unit, onSearch
                 }
             }
         }
-        item { SectionHeader("분야별로 찾기", "${c.categories.size}개 분야") }
-        item { CategoryGrid(c, onCategory) }
-        item { SectionHeader("추천 매뉴얼", "전체 ${c.published.size}개 공개") }
-        items(recommended, key = { "r-" + it.id }) { ItemCard(it, c.categoryName(it.category), false) { onOpen(it) } }
+        item { SectionHeader("분야별로 찾기", "누르면 해당 분야로 이동") }
+        item {
+            CategoryGrid(c) { id ->
+                val idx = groupIndex[id]
+                if (idx != null) scope.launch { listState.animateScrollToItem(idx) } else onCategory(id)
+            }
+        }
+        item { SectionHeader("바로 쓰는 매뉴얼", "전체 ${c.published.size}개") }
+        groups.forEach { (cat, its) ->
+            item(key = "h-" + cat.id) {
+                Row(
+                    Modifier.padding(start = 16.dp, end = 16.dp, top = 14.dp, bottom = 4.dp).fillMaxWidth()
+                        .clip(RoundedCornerShape(12.dp)).background(MaterialTheme.colorScheme.primaryContainer)
+                        .padding(horizontal = 14.dp, vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    KText(cat.name, Modifier.weight(1f), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Black, heading = true,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer)
+                    Text("${its.size}개", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+            }
+            items(its, key = { "r-" + it.id }) { ItemCard(it, "", false) { onOpen(it) } }
+        }
         if (c.changelog.isNotEmpty()) {
             item { SectionHeader("여러분 의견으로 바뀌었어요", "업데이트 소식") }
             items(c.changelog) { ch ->
@@ -117,13 +149,6 @@ fun HomeScreen(c: ContentFile, store: AppStore, onOpen: (Item) -> Unit, onSearch
                     KText(ch.text, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.bodyMedium)
                 }
             }
-        }
-        item {
-            Button(
-                onClick = { onSearch("") }, shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Ink, contentColor = Yellow),
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp).fillMaxWidth().height(48.dp),
-            ) { Text("매뉴얼 ${c.published.size}개 모두 보기", fontWeight = FontWeight.Bold) }
         }
         if (drafts.isNotEmpty()) {
             item { SectionHeader("곧 올라올 매뉴얼", "${drafts.size}개 준비 중") }

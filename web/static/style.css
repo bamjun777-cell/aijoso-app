@@ -85,6 +85,15 @@ section{padding-block:22px 6px}
 .news li{display:flex;gap:12px;padding:12px 14px;background:var(--surface);border-radius:12px;font-weight:700;font-size:.92rem}
 .news .num{color:var(--muted);font-size:.8rem;flex:none}
 .more{font-weight:800;font-size:.9rem}
+/* 홈: 분야별 묶음 */
+.allh{margin:28px 0 0;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.allh h2{font-size:1.6rem}
+.catsec{padding-block:20px 4px}
+.cath{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:8px 14px;border-radius:12px;background:var(--yellow-soft)}
+.cath .i{width:24px;height:24px}
+.cath h2{font-family:var(--display);font-weight:400;font-size:1.25rem;margin:0;flex:1;min-width:0}
+.cath span{font-weight:800;font-size:.86rem;color:var(--muted)}
+.two.one{grid-template-columns:1fr}
 
 /* 찾기 */
 .pagehead h1{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,4vw,2.3rem);margin:0 0 12px}
@@ -277,3 +286,4 @@ section{padding-block:22px 6px}
   .a4 tr.tot td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 #printroot{display:none}
+.catsec .card .meta .pill:first-child{display:none}

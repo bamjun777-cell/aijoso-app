@@ -139,7 +139,7 @@ fun ItemCard(item: Item, categoryName: String, requested: Boolean, onClick: () -
         }
         Spacer(Modifier.height(10.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
-            Tag(categoryName)
+            if (categoryName.isNotEmpty()) Tag(categoryName)
             Tag(difficultyLabel(item.difficulty))
             if (pub) Tag("${item.timeBeforeMin}분 → ${item.timeAfterMin}분", highlight = true)
             else Tag(if (requested) "요청함" else "준비 중", dashed = true)

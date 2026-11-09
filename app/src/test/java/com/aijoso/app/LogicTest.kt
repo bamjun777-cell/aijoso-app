@@ -19,6 +19,8 @@ class LogicTest {
         assertEquals(30, content.items.size)
         assertEquals(30, content.published.size)
         assertEquals(6, content.featuredItems.size)
+        // 홈은 분야별로 묶어 모두 보여 주므로, 모든 공개 매뉴얼이 실제 분야에 속해야 함
+        assertTrue(content.published.all { p -> content.categories.any { it.id == p.category } })
         assertEquals(8, content.categories.size)
     }
 

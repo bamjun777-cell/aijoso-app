@@ -134,12 +134,12 @@ def card(it, R):
     meta += '<span class="pill draft" data-reqpill="' + e(it['id']) + '">준비 중</span>'
     return f'<button type="button" class="card draft" data-req="{e(it["id"])}"><h3>{e(it["title"])}</h3><div class="meta">{meta}</div></button>'
 
-def cat_grid(R):
+def cat_grid(R, jump=False):
     out = []
     for c in CATS:
         n = sum(1 for i in ITEMS if i.get('category') == c['id'])
         name = e(c['name']).replace('·', '·<wbr>')
-        out.append(f'<a class="cat" href="{R}c/{c["id"]}.html">{svg(c["id"])}<span>{name}</span><b>{n}개</b></a>')
+        out.append(f'<a class="cat" href="{"#sec-" + c["id"] if jump else R + "c/" + c["id"] + ".html"}">{svg(c["id"])}<span>{name}</span><b>{n}개</b></a>')
     return '<div class="cats">' + ''.join(out) + '</div>'
 
 def search_form(R, value='', big=False):
@@ -153,11 +153,16 @@ def build_home():
     chips = ''.join(f'<a class="chip" href="search.html?q={e(q)}">{e(q)}</a>' for q in ['지점 엑셀 합치기', '급여 전월 비교', '보고서 1장 요약'])
     news = ''.join(f'<li><span class="num">{e(x["date"][5:].replace("-", "."))}</span>{e(x["text"])}</li>' for x in C.get('changelog', []))
     drafts = [i for i in ITEMS if i.get('status') != 'published']
-    feat = [BY[x] for x in C.get('featured', []) if x in BY and BY[x].get('status') == 'published'] or PUB[:6]
+    # 분야별 묶음: 공개 매뉴얼을 모두 카드로 (분야 순서대로)
+    groups = ''
+    for c in CATS:
+        its = [i for i in PUB if i.get('category') == c['id']]
+        if not its: continue
+        groups += (f'<section class="catsec" id="sec-{c["id"]}"><div class="cath">{svg(c["id"])}<h2>{e(c["name"])}</h2>'
+                   f'<span class="num">{len(its)}개</span></div><div class="grid">{"".join(card(i, R) for i in its)}</div></section>')
     side = (f'''<div><div class="sh"><h2>곧 올라올 매뉴얼</h2><span>{len(drafts)}개 준비 중</span></div>
       <p class="note">먼저 보고 싶은 매뉴얼을 눌러 요청해 주세요</p>
-      <div class="grid narrow">{''.join(card(i, R) for i in drafts[:6])}</div></div>''' if drafts else
-      f'''<div><div class="sh"><h2>분야별 매뉴얼 수</h2></div><ul class="news">{''.join(f'<li><span class="num">{sum(1 for i in PUB if i.get("category") == c["id"])}개</span><a href="c/{c["id"]}.html">{e(c["name"])}</a></li>' for c in CATS)}</ul></div>''')
+      <div class="grid narrow">{''.join(card(i, R) for i in drafts[:6])}</div></div>''' if drafts else '')
     body = f'''
 <section class="hero"><div class="wrap">
   <h1>사람은 없고<br>일은 많죠?</h1>
@@ -166,9 +171,10 @@ def build_home():
   <div class="chips">{chips}</div>
 </div></section>
 <div class="wrap">
-  <section><div class="sh"><h2>분야별로 찾기</h2><span>{len(CATS)}개 분야</span></div>{cat_grid(R)}</section>
-  <section><div class="sh"><h2>바로 쓰는 매뉴얼</h2><span>전체 {len(PUB)}개 공개</span></div><div class="grid">{''.join(card(i, R) for i in feat)}</div><p><a class="more" href="search.html">매뉴얼 {len(PUB)}개 모두 보기</a></p></section>
-  <section class="two">
+  <section><div class="sh"><h2>분야별로 찾기</h2><span>누르면 해당 분야로 이동</span></div>{cat_grid(R, jump=True)}</section>
+  <div class="sh allh"><h2>바로 쓰는 매뉴얼</h2><span>전체 {len(PUB)}개</span></div>
+  {groups}
+  <section class="two{' one' if not side else ''}">
     <div><div class="sh"><h2>여러분 의견으로 바뀌었어요</h2></div><ul class="news">{news}</ul></div>
     {side}
   </section>
