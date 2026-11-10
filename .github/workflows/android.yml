@@ -40,16 +40,16 @@ jobs:
       - name: 빌드 결과 보관
         uses: actions/upload-artifact@v4
         with:
-          name: AIJoso-test-apk
+          name: AIWorkRecipe-test-apk
           path: app/build/outputs/apk/debug/app-debug.apk
 
       - name: 휴대폰에서 받을 수 있게 '최신 테스트 APK'로 올리기
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cp app/build/outputs/apk/debug/app-debug.apk AIJoso-test.apk
+          cp app/build/outputs/apk/debug/app-debug.apk AIWorkRecipe-test.apk
           gh release delete test-latest -y --cleanup-tag || true
-          gh release create test-latest AIJoso-test.apk \
-            --title "AI 좋소 테스트 APK" \
+          gh release create test-latest AIWorkRecipe-test.apk \
+            --title "AI 업무 레시피 테스트 APK" \
             --notes "자동 빌드 $(date -u +%Y-%m-%d) · ${GITHUB_SHA::7}" \
             --prerelease

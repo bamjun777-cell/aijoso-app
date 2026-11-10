@@ -49,9 +49,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           V="v${{ inputs.version_name }}-${{ github.run_number }}"
-          cp app/build/outputs/bundle/release/app-release.aab "AIJoso-${V}.aab"
-          cp app/build/outputs/apk/release/app-release.apk "AIJoso-${V}-설치확인용.apk"
-          gh release create "$V" "AIJoso-${V}.aab" "AIJoso-${V}-설치확인용.apk" \
-            --title "AI Joso ${V} (구글 플레이 업로드용)" \
+          cp app/build/outputs/bundle/release/app-release.aab "AIWorkRecipe-${V}.aab"
+          cp app/build/outputs/apk/release/app-release.apk "AIWorkRecipe-${V}-설치확인용.apk"
+          gh release create "$V" "AIWorkRecipe-${V}.aab" "AIWorkRecipe-${V}-설치확인용.apk" \
+            --title "AI Work Recipes ${V} (구글 플레이 업로드용)" \
             --notes "AAB: Play Console에 올리는 파일 · APK: 출시 빌드가 휴대폰에서 잘 열리는지 확인용 (버전 코드 ${{ github.run_number }})" \
             --prerelease

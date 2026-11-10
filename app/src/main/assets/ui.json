@@ -42,11 +42,11 @@
  },
  "strings": {
   "app.name": {
-   "ko": "AI 좋소",
-   "en": "AI Joso",
-   "ja": "AI Joso",
-   "zh-Hans": "AI Joso",
-   "zh-Hant": "AI Joso"
+   "ko": "AI 업무 레시피",
+   "en": "AI Work Recipes",
+   "ja": "AI業務レシピ",
+   "zh-Hans": "AI 办公秘笈",
+   "zh-Hant": "AI 辦公秘笈"
   },
   "app.tagline": {
    "ko": "작은 회사의 큰 업무를 가볍게",
@@ -1176,11 +1176,11 @@
    "zh-Hant": "關閉"
   },
   "disclaimer": {
-   "ko": "AI 좋소는 Claude 등 AI 도구 활용법을 안내하는 독립 앱입니다. Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다.",
-   "en": "AI Joso is an independent guide to using AI tools such as Claude. It is not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company.",
-   "ja": "AI Josoは、Claudeなど AIツールの使い方を案内する独立したアプリです。Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。",
-   "zh-Hans": "AI Joso 是介绍 Claude 等 AI 工具用法的独立应用，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。",
-   "zh-Hant": "AI Joso 是介紹 Claude 等 AI 工具用法的獨立應用，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。"
+   "ko": "AI 업무 레시피는 Claude 등 AI 도구 활용법을 안내하는 독립 앱입니다. Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다.",
+   "en": "AI Work Recipes is an independent guide to using AI tools such as Claude. It is not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company.",
+   "ja": "AI業務レシピは、Claudeなど AIツールの使い方を案内する独立したアプリです。Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。",
+   "zh-Hans": "AI 办公秘笈是介绍 Claude 等 AI 工具用法的独立应用，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。",
+   "zh-Hant": "AI 辦公秘笈是介紹 Claude 等 AI 工具用法的獨立應用，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。"
   },
   "mod.short": {
    "ko": "{min}자 이상 적어 주세요",
@@ -1358,11 +1358,11 @@
    "zh-Hant": "這是韓語頁面，要切換語言嗎？"
   },
   "about.title": {
-   "ko": "AI 좋소 소개",
-   "en": "About AI Joso",
-   "ja": "AI Josoについて",
-   "zh-Hans": "关于 AI Joso",
-   "zh-Hant": "關於 AI Joso"
+   "ko": "AI 업무 레시피 소개",
+   "en": "About AI Work Recipes",
+   "ja": "AI業務レシピについて",
+   "zh-Hans": "关于 AI 办公秘笈",
+   "zh-Hant": "關於 AI 辦公秘笈"
   },
   "about.metaTitle": {
    "ko": "소개·개인정보 안내",
@@ -1372,18 +1372,18 @@
    "zh-Hant": "關於與隱私說明"
   },
   "about.desc": {
-   "ko": "AI 좋소 소개, 개인정보 처리 안내, 제휴 관계 고지.",
-   "en": "About AI Joso, how we handle personal data, and affiliation notice.",
-   "ja": "AI Josoの概要、個人情報の取り扱い、提携関係の告知。",
-   "zh-Hans": "AI Joso 简介、个人信息处理说明及合作关系声明。",
-   "zh-Hant": "AI Joso 簡介、個人資訊處理說明及合作關係宣告。"
+   "ko": "AI 업무 레시피 소개, 개인정보 처리 안내, 제휴 관계 고지.",
+   "en": "About AI Work Recipes, how we handle personal data, and affiliation notice.",
+   "ja": "AI業務レシピの概要、個人情報の取り扱い、提携関係の告知。",
+   "zh-Hans": "AI 办公秘笈简介、个人信息处理说明及合作关系声明。",
+   "zh-Hant": "AI 辦公秘笈簡介、個人資訊處理說明及合作關係宣告。"
   },
   "about.intro": {
-   "ko": "AI 좋소는 직원 5~300명 규모 회사의 인사·총무·회계·영업·물류 실무자가 반복 업무를 AI로 줄일 수 있도록, 업무별 따라 하기 매뉴얼과 복사해서 쓰는 프롬프트를 제공합니다.",
-   "en": "AI Joso helps HR, admin, accounting, sales and logistics staff at companies of 5 to 300 people cut repetitive work with AI, through task-by-task manuals and copy-ready prompts.",
-   "ja": "AI Josoは、従業員5〜300人規模の会社で人事・総務・経理・営業・物流を担当する方が、くり返し業務をAIで減らせるよう、業務別の手順マニュアルとコピーして使えるプロンプトを提供します。",
-   "zh-Hans": "AI Joso 为 5 至 300 人规模公司的人事、行政、财务、销售、物流人员提供按工作分类的操作手册和复制即用的提示词，帮助用 AI 减少重复工作。",
-   "zh-Hant": "AI Joso 為 5 至 300 人規模公司的人事、行政、財務、銷售、物流人員提供按工作分類的操作手冊和複製即用的提示詞，幫助用 AI 減少重複工作。"
+   "ko": "AI 업무 레시피는 직원 5~300명 규모 회사의 인사·총무·회계·영업·물류 실무자가 반복 업무를 AI로 줄일 수 있도록, 업무별 따라 하기 매뉴얼과 복사해서 쓰는 프롬프트를 제공합니다.",
+   "en": "AI Work Recipes helps HR, admin, accounting, sales and logistics staff at companies of 5 to 300 people cut repetitive work with AI, through task-by-task manuals and copy-ready prompts.",
+   "ja": "AI業務レシピは、従業員5〜300人規模の会社で人事・総務・経理・営業・物流を担当する方が、くり返し業務をAIで減らせるよう、業務別の手順マニュアルとコピーして使えるプロンプトを提供します。",
+   "zh-Hans": "AI 办公秘笈为 5 至 300 人规模公司的人事、行政、财务、销售、物流人员提供按工作分类的操作手册和复制即用的提示词，帮助用 AI 减少重复工作。",
+   "zh-Hant": "AI 辦公秘笈為 5 至 300 人規模公司的人事、行政、財務、銷售、物流人員提供按工作分類的操作手冊和複製即用的提示詞，幫助用 AI 減少重複工作。"
   },
   "about.principles": {
    "ko": "이런 원칙으로 만듭니다",
@@ -1463,11 +1463,11 @@
    "zh-Hant": "合作關係宣告"
   },
   "about.affBody": {
-   "ko": "AI 좋소는 Claude 등 AI 도구의 활용법을 안내하는 독립 서비스이며, Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다. 각 상표는 해당 회사의 소유입니다.",
-   "en": "AI Joso is an independent guide to using AI tools such as Claude and is not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company. All trademarks belong to their owners.",
-   "ja": "AI Josoは、ClaudeなどAIツールの使い方を案内する独立サービスであり、Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。各商標はそれぞれの所有者に帰属します。",
-   "zh-Hans": "AI Joso 是介绍 Claude 等 AI 工具用法的独立服务，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。各商标归其所有者所有。",
-   "zh-Hant": "AI Joso 是介紹 Claude 等 AI 工具用法的獨立服務，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。各商標歸其所有者所有。"
+   "ko": "AI 업무 레시피는 Claude 등 AI 도구의 활용법을 안내하는 독립 서비스이며, Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다. 각 상표는 해당 회사의 소유입니다.",
+   "en": "AI Work Recipes is an independent guide to using AI tools such as Claude and is not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company. All trademarks belong to their owners.",
+   "ja": "AI業務レシピは、ClaudeなどAIツールの使い方を案内する独立サービスであり、Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。各商標はそれぞれの所有者に帰属します。",
+   "zh-Hans": "AI 办公秘笈是介绍 Claude 等 AI 工具用法的独立服务，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。各商标归其所有者所有。",
+   "zh-Hant": "AI 辦公秘笈是介紹 Claude 等 AI 工具用法的獨立服務，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。各商標歸其所有者所有。"
   },
   "about.use": {
    "ko": "콘텐츠 이용 시 유의사항",
@@ -1512,18 +1512,18 @@
    "zh-Hant": "隱私政策"
   },
   "pp.desc": {
-   "ko": "AI 좋소 앱과 웹사이트의 개인정보처리방침",
-   "en": "Privacy policy for the AI Joso app and website",
-   "ja": "AI Josoアプリとウェブサイトのプライバシーポリシー",
-   "zh-Hans": "AI Joso 应用与网站的隐私政策",
-   "zh-Hant": "AI Joso 應用與網站的隱私政策"
+   "ko": "AI 업무 레시피 앱과 웹사이트의 개인정보처리방침",
+   "en": "Privacy policy for the AI Work Recipes app and website",
+   "ja": "AI業務レシピアプリとウェブサイトのプライバシーポリシー",
+   "zh-Hans": "AI 办公秘笈应用与网站的隐私政策",
+   "zh-Hant": "AI 辦公秘笈應用與網站的隱私政策"
   },
   "pp.intro": {
-   "ko": "AI 좋소(운영자: AI Joso, 이하 \"서비스\")는 이용자의 개인정보를 수집하지 않는 것을 원칙으로 합니다. 이 방침은 Android 앱 \"AI 좋소\"와 웹사이트에 적용됩니다.",
-   "en": "AI Joso (operator: AI Joso, the \"Service\") is built not to collect your personal information. This policy covers the \"AI Joso\" Android app and website.",
-   "ja": "AI Joso（運営者：AI Joso、以下「本サービス」）は、利用者の個人情報を収集しないことを原則としています。本ポリシーはAndroidアプリ「AI Joso」とウェブサイトに適用されます。",
-   "zh-Hans": "AI Joso（运营者：AI Joso，以下简称\"本服务\"）以不收集用户个人信息为原则。本政策适用于 Android 应用\"AI Joso\"及其网站。",
-   "zh-Hant": "AI Joso（運營者：AI Joso，以下簡稱\"本服務\"）以不收集使用者個人資訊為原則。本政策適用於 Android 應用\"AI Joso\"及其網站。"
+   "ko": "AI 업무 레시피(이하 \"서비스\")는 이용자의 개인정보를 수집하지 않는 것을 원칙으로 합니다. 이 방침은 Android 앱 \"AI 업무 레시피\"와 웹사이트에 적용됩니다.",
+   "en": "AI Work Recipes (the \"Service\") is built not to collect your personal information. This policy covers the \"AI Work Recipes\" Android app and website.",
+   "ja": "AI業務レシピ（以下「本サービス」）は、利用者の個人情報を収集しないことを原則としています。本ポリシーはAndroidアプリ「AI業務レシピ」とウェブサイトに適用されます。",
+   "zh-Hans": "AI 办公秘笈（以下简称\"本服务\"）以不收集用户个人信息为原则。本政策适用于 Android 应用\"AI 办公秘笈\"及其网站。",
+   "zh-Hant": "AI 辦公秘笈（以下簡稱\"本服務\"）以不收集使用者個人資訊為原則。本政策適用於 Android 應用\"AI 辦公秘笈\"及其網站。"
   },
   "pp.h1": {
    "ko": "1. 수집하는 개인정보",
@@ -1603,11 +1603,11 @@
    "zh-Hant": "6. 聯絡我們"
   },
   "pp.b6": {
-   "ko": "개인정보 보호책임자: AI Joso 운영자 · 이메일: {email}",
-   "en": "Privacy contact: AI Joso operator · Email: {email}",
-   "ja": "個人情報の担当：AI Joso 運営者・メール：{email}",
-   "zh-Hans": "隐私负责人：AI Joso 运营者 · 邮箱：{email}",
-   "zh-Hant": "隱私負責人：AI Joso 運營者 · 郵箱：{email}"
+   "ko": "개인정보 보호책임자: AI 업무 레시피 운영자 · 이메일: {email}",
+   "en": "Privacy contact: AI Work Recipes operator · Email: {email}",
+   "ja": "個人情報の担当：AI業務レシピ 運営者・メール：{email}",
+   "zh-Hans": "隐私负责人：AI 办公秘笈运营者 · 邮箱：{email}",
+   "zh-Hant": "隱私負責人：AI 辦公秘笈運營者 · 郵箱：{email}"
   },
   "pp.emailPending": {
    "ko": "(출시 전 게시 예정)",

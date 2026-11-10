@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""AI 좋소 웹사이트 생성기.
+"""AI 업무 레시피 웹사이트 생성기.
 앱과 같은 콘텐츠 파일(app/src/main/assets/content.json)로 정적 웹사이트(site/)를 만든다.
 - 매뉴얼마다 별도 페이지 → 네이버·구글 검색에 노출
 - 서버 없음: GitHub Pages(무료)에 그대로 올림

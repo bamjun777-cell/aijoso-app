@@ -103,6 +103,10 @@ def build_ui():
     for key, vals in ui.UI.items():
         d = dict(zip(['ko', 'en', 'ja', 'zh-Hans'], vals))
         d['zh-Hant'] = ui.ZH_HANT.get(key) or to_tw(d['zh-Hans'])
+        for l in d:   # 앱 이름 넣기 (중국어는 이름 뒤 띄어쓰기 없앰)
+            v = d[l].replace('AI 좋소', ui.APP_NAMES[l]).replace('AI Joso', ui.APP_NAMES[l])
+            if l.startswith('zh'): v = re.sub(r'(秘笈) (?=[\u4e00-\u9fff])', r'\1', v)
+            d[l] = v
         out[key] = d
     chips = dict(ui.CHIPS); chips['zh-Hant'] = to_tw(chips['zh-Hans'])
     (ASSETS / 'ui.json').write_text(json.dumps({'langs': ui.LANGS, 'names': ui.LANG_NAMES, 'chips': chips, 'strings': out}, ensure_ascii=False, indent=1), encoding='utf-8')

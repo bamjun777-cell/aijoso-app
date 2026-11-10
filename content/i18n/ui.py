@@ -3,6 +3,8 @@
 빈칸: {n} 숫자, {q} 검색어, {name} 이름, {a}/{b} 숫자, {min}/{max} 글자 수"""
 
 LANGS = ['ko', 'en', 'ja', 'zh-Hans', 'zh-Hant']
+# 앱 이름 (2026-11-10 'AI 좋소'에서 변경). 아래 문구 속 'AI 좋소'·'AI Joso'는 생성할 때 이 이름으로 바뀐다
+APP_NAMES = {'ko': 'AI 업무 레시피', 'en': 'AI Work Recipes', 'ja': 'AI業務レシピ', 'zh-Hans': 'AI 办公秘笈', 'zh-Hant': 'AI 辦公秘笈'}
 LANG_NAMES = {'ko': '한국어', 'en': 'English', 'ja': '日本語', 'zh-Hans': '简体中文', 'zh-Hant': '繁體中文'}
 
 #      key: (ko, en, ja, zh-Hans)
@@ -244,10 +246,10 @@ UI = {
  # 개인정보처리방침 (구글 플레이 등록용)
  'pp.title': ('개인정보처리방침', 'Privacy Policy', 'プライバシーポリシー', '隐私政策'),
  'pp.desc': ('AI 좋소 앱과 웹사이트의 개인정보처리방침', 'Privacy policy for the AI Joso app and website', 'AI Josoアプリとウェブサイトのプライバシーポリシー', 'AI Joso 应用与网站的隐私政策'),
- 'pp.intro': ('AI 좋소(운영자: AI Joso, 이하 "서비스")는 이용자의 개인정보를 수집하지 않는 것을 원칙으로 합니다. 이 방침은 Android 앱 "AI 좋소"와 웹사이트에 적용됩니다.',
-              'AI Joso (operator: AI Joso, the "Service") is built not to collect your personal information. This policy covers the "AI Joso" Android app and website.',
-              'AI Joso（運営者：AI Joso、以下「本サービス」）は、利用者の個人情報を収集しないことを原則としています。本ポリシーはAndroidアプリ「AI Joso」とウェブサイトに適用されます。',
-              'AI Joso（运营者：AI Joso，以下简称"本服务"）以不收集用户个人信息为原则。本政策适用于 Android 应用"AI Joso"及其网站。'),
+ 'pp.intro': ('AI 좋소(이하 "서비스")는 이용자의 개인정보를 수집하지 않는 것을 원칙으로 합니다. 이 방침은 Android 앱 "AI 좋소"와 웹사이트에 적용됩니다.',
+              'AI Joso (the "Service") is built not to collect your personal information. This policy covers the "AI Joso" Android app and website.',
+              'AI Joso（以下「本サービス」）は、利用者の個人情報を収集しないことを原則としています。本ポリシーはAndroidアプリ「AI Joso」とウェブサイトに適用されます。',
+              'AI Joso（以下简称"本服务"）以不收集用户个人信息为原则。本政策适用于 Android 应用"AI Joso"及其网站。'),
  'pp.h1': ('1. 수집하는 개인정보', '1. Information we collect', '1. 収集する個人情報', '1. 我们收集的信息'),
  'pp.b1': ('회원가입·로그인이 없으며, 서비스는 이용자의 개인정보를 수집하거나 서버로 전송하지 않습니다. 앱에는 인터넷 접속 권한이 없습니다.',
            'There is no sign-up or login. The Service does not collect personal information or send it to any server. The app does not request internet access permission.',

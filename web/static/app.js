@@ -1,4 +1,4 @@
-/* AI 좋소 웹 동작. 서버 없음: 개인 데이터는 이 브라우저(localStorage)에만 저장 */
+/* AI 업무 레시피 웹 동작. 서버 없음: 개인 데이터는 이 브라우저(localStorage)에만 저장 */
 (function () {
   'use strict';
   var D = window.AIJ || {}, R = document.body.getAttribute('data-root') || '', L = document.body.getAttribute('data-lroot') || R;

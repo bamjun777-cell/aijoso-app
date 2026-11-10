@@ -12,7 +12,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.aijoso.app"
+        applicationId = "com.aiworkrecipe.app"   // 스토어 주소에 보이는 고유 ID (올린 뒤엔 못 바꿈)
         minSdk = 26          // Android 8.0 이상
         targetSdk = 36       // Google Play 요건: Android 16 (2026-08-31부터)
         // 출시할 때마다 1씩 올린다 (GitHub 출시 빌드가 실행 번호로 자동 지정)

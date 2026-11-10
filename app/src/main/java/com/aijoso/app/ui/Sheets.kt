@@ -166,7 +166,7 @@ fun SettingsSheet(c: ContentFile, store: AppStore, onDismiss: () -> Unit) {
 /** 웹에 게시한 언어별 개인정보처리방침 주소 */
 fun privacyUrl(lang: String): String {
     val pre = mapOf("ko" to "", "en" to "en/", "ja" to "ja/", "zh-Hans" to "zh-hans/", "zh-Hant" to "zh-hant/")[lang] ?: "en/"
-    return "https://bamjun777-cell.github.io/aijoso-app/${pre}privacy.html"
+    return "https://bamjun777-cell.github.io/ai-work-recipe/${pre}privacy.html"
 }
 
 @Composable
