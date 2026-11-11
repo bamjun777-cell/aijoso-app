@@ -311,3 +311,14 @@ html.cjk:lang(zh-Hant){--display:"Noto Sans TC","PingFang TC","Microsoft JhengHe
 .cjk body{word-break:normal;line-break:strict}
 .cjk :is(.sh h2,.logo b,.hero h1,.cath h2,.pagehead h1,.empty b,.dhead h1,.block h2 .n,.sheet h3){font-weight:900}
 .cjk .logo b{letter-spacing:0}
+
+/* AI별 사용법 · AI 고르기 */
+.aiuse{margin-top:14px;padding:14px 16px;border-radius:14px;background:var(--surface)}
+.aiuse>b{display:block;font-size:1rem}
+.aiuse p{margin:4px 0}
+.aiuse .aiu-h{font-weight:800;margin-top:10px}
+.aiuse dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:4px 0 0}
+.aiuse dt{font-weight:800}
+.aiuse dd{margin:0;min-width:0}
+.linkbtn{background:none;border:0;padding:6px 4px;font:inherit;font-size:.85rem;font-weight:700;color:var(--muted);text-decoration:underline;cursor:pointer;align-self:center}
+.aipick{display:grid;gap:8px;margin-top:12px}

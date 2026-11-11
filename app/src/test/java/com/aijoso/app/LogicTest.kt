@@ -31,6 +31,9 @@ class LogicTest {
             if (l == "ko") assertEquals(ids, c.items.map { it.id }) else assertEquals(l, ids.filter { it in c.items.map { i -> i.id } }, c.items.map { it.id })
             assertTrue(l, c.published.size >= 30)
             assertEquals(l, 8, c.categories.size)
+            // 파일을 만드는 매뉴얼 표시(AI별 파일 기능 안내)는 언어마다 같아야 함
+            val ko = content.items.associate { it.id to it.fileOutput }
+            for (item in c.items) assertEquals("$l/${item.id} fileOutput", ko[item.id], item.fileOutput)
             // 빈칸과 입력칸이 맞는지 (언어마다)
             val re = Regex("""\{\{(.+?)\}\}""")
             for (item in c.items) for (p in item.prompts)

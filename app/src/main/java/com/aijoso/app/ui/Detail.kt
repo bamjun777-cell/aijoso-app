@@ -1,5 +1,15 @@
 package com.aijoso.app.ui
 
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.AlertDialog
+import com.aijoso.app.data.aiSite
+import com.aijoso.app.data.AiSite
+import com.aijoso.app.data.AI_SITES
 import com.aijoso.app.data.LocalUi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -60,6 +70,8 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
         add("steps"); if (manual.result != null) add("result"); add("caution"); add("ref"); add("fb")
     }
     fun no(k: String) = (sections.indexOf(k) + 1).toString()
+    var picking by remember { mutableStateOf(false) }
+    if (picking) AiPickerDialog(store, onPicked = { site -> picking = false; toast(ui.t("ai.copiedOpen", "name" to site.name)); uri.openUri(site.url) }, onDismiss = { picking = false })
 
     LazyColumn(Modifier.fillMaxSize()) {
         // 요약
@@ -108,6 +120,8 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
                 }
                 Spacer(Modifier.height(6.dp))
                 manual.prepare.forEach { p -> Bullet(p) }
+                Spacer(Modifier.height(10.dp))
+                AiUseBox(manual)
             }
         }
         manual.project?.let { pr ->
@@ -130,7 +144,12 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
         itemsIndexed(manual.prompts, key = { _, p -> "p-" + p.id }) { _, p ->
             PromptCard(manual, p, store,
                 onCopy = { copyText(ctx, p.title, fillPrompt(manual.id, p, store.values)); toast(ui.t("prompt.copied")) },
-                onOpenClaude = { uri.openUri("https://claude.ai/new") })
+                onOpenAi = {
+                    // 먼저 복사하고, 기본 AI가 있으면 바로 열고 없으면 고르게 한다
+                    copyText(ctx, p.title, fillPrompt(manual.id, p, store.values))
+                    val site = aiSite(store.ai)
+                    if (site != null) { toast(ui.t("ai.copiedOpen", "name" to site.name)); uri.openUri(site.url) } else picking = true
+                })
         }
         item {
             Block(no("steps"), ui.t("sec.steps")) {
@@ -218,8 +237,46 @@ fun DetailScreen(manual: Item, c: ContentFile, store: AppStore, toast: (String) 
     }
 }
 
+/** AI별 사용법: 파일로 받기·매달 반복(프로젝트/Gem) 방법을 Claude·ChatGPT·Gemini로 나눠 보여 준다 */
 @Composable
-private fun PromptCard(item: Item, p: Prompt, store: AppStore, onCopy: () -> Unit, onOpenClaude: () -> Unit) {
+private fun AiUseBox(manual: Item) {
+    val ui = LocalUi.current
+    val cs = MaterialTheme.colorScheme
+    Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).background(cs.surfaceVariant).padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        KText(ui.t("aiuse.title"), fontWeight = FontWeight.ExtraBold)
+        KText(ui.t("aiuse.any"), style = MaterialTheme.typography.bodySmall)
+        @Composable fun rows(label: String, keyBase: String) {
+            KText(label, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(top = 4.dp))
+            AI_SITES.forEach { s ->
+                Row { Text(s.name, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.bodySmall, modifier = Modifier.width(64.dp)); KText(ui.t("$keyBase.${s.id}"), style = MaterialTheme.typography.bodySmall) }
+            }
+        }
+        if (manual.fileOutput) rows(ui.t("aiuse.file"), "aiuse.file")
+        if (manual.project != null) rows(ui.t("aiuse.proj"), "aiuse.proj")
+        KText(ui.t("aiuse.note"), style = MaterialTheme.typography.labelSmall, color = cs.onSurfaceVariant)
+    }
+}
+
+/** AI 고르기: 한 번 고르면 기본 AI로 기억 (설정에서 변경) */
+@Composable
+fun AiPickerDialog(store: AppStore, onPicked: (AiSite) -> Unit, onDismiss: () -> Unit) {
+    val ui = LocalUi.current
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(ui.t("ai.pick"), fontWeight = FontWeight.ExtraBold) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                KText(ui.t("ai.pickNote"), style = MaterialTheme.typography.bodySmall)
+                AI_SITES.forEach { s -> CopyButton(s.name, Modifier.fillMaxWidth()) { store.updateAi(s.id); onPicked(s) } }
+            }
+        },
+        confirmButton = {},
+        dismissButton = { TextButton(onClick = onDismiss) { Text(ui.t("fbs.cancel")) } },
+    )
+}
+
+@Composable
+private fun PromptCard(item: Item, p: Prompt, store: AppStore, onCopy: () -> Unit, onOpenAi: () -> Unit) {
     val cs = MaterialTheme.colorScheme
     val ui = LocalUi.current
     val shape = RoundedCornerShape(16.dp)
@@ -247,8 +304,9 @@ private fun PromptCard(item: Item, p: Prompt, store: AppStore, onCopy: () -> Uni
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 CopyButton(ui.t("prompt.copy"), Modifier.weight(1f), onCopy)
-                OutlinedButton(onClick = onOpenClaude, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp)) {
-                    Text(ui.t("prompt.openClaude"), fontWeight = FontWeight.Bold)
+                OutlinedButton(onClick = onOpenAi, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(12.dp), contentPadding = PaddingValues(horizontal = 8.dp)) {
+                    val site = aiSite(store.ai)
+                    Text(if (site != null) ui.t("ai.openIn", "name" to site.name) else ui.t("prompt.openClaude"), fontWeight = FontWeight.Bold, maxLines = 1)
                 }
             }
         }

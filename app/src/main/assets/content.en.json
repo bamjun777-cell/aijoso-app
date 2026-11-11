@@ -209,6 +209,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-08",
    "updatedAt": "2026-11-08",
+   "fileOutput": true,
    "lang": "en",
    "title": "Merge branch Excel files in one go",
    "subtitle": "Upload several files and get\na merged file plus a check sheet",
@@ -223,9 +224,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -323,9 +324,9 @@
      "check": "Keep the original separately"
     },
     {
-     "title": "Turn on file creation",
-     "body": "Settings > Capabilities",
-     "check": "Menu name: Code execution and file creation"
+     "title": "Turn on file features",
+     "body": "As shown in 'In each AI'",
+     "check": "Claude: 'Code execution and file creation'"
     },
     {
      "title": "Attach files",
@@ -411,6 +412,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-08",
    "updatedAt": "2026-11-08",
+   "fileOutput": true,
    "lang": "en",
    "title": "Payroll check vs last month",
    "subtitle": "Upload two payroll registers\nfor hires, exits, changes and outliers",
@@ -425,9 +427,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel",
@@ -537,7 +539,7 @@
     {
      "title": "Attach files",
      "body": "Last period first, then this period",
-     "check": "Keep file creation on"
+     "check": "Keep file features on"
     },
     {
      "title": "Send the prompt",
@@ -622,6 +624,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-08",
    "updatedAt": "2026-11-08",
+   "fileOutput": true,
    "lang": "en",
    "title": "Turn long material into a one-page report",
    "subtitle": "Upload material and state the goal\nfor a one-pager that leads with the conclusion",
@@ -636,9 +639,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Word or Google Docs",
@@ -737,7 +740,7 @@
     {
      "title": "Create a Project",
      "body": "Add the instructions and template once",
-     "check": "Free plan: up to 5 projects"
+     "check": "Free plans limit the number"
     },
     {
      "title": "Material + prompt",
@@ -772,7 +775,7 @@
    "cautions": [
     "Check every single number",
     "You decide the conclusion and ask",
-    "Turned off file creation? You'll get text only",
+    "File features off? You'll get text only",
     "Check rules before using confidential material"
    ],
    "videos": [],
@@ -818,6 +821,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Compare two files and find the differences",
    "subtitle": "Upload two files and get just\nthe added, removed and changed rows",
@@ -831,9 +835,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -919,7 +923,7 @@
     {
      "title": "Attach files",
      "body": "Old file first, then new",
-     "check": "Keep file creation on"
+     "check": "Keep file features on"
     },
     {
      "title": "Send the prompt",
@@ -981,6 +985,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Write Excel formulas and fix errors",
    "subtitle": "Describe the calculation in words\nand get the formula plus a plain explanation",
@@ -994,7 +999,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     },
@@ -1143,6 +1148,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Clean up messy data",
    "subtitle": "Upload a messy file and get\na clean version plus a change log",
@@ -1156,9 +1162,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -1238,7 +1244,7 @@
     },
     {
      "title": "Attach the file",
-     "body": "Turn on file creation and attach",
+     "body": "Turn on file features and attach",
      "check": ""
     },
     {
@@ -1295,6 +1301,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Summary tables (pivot) and charts",
    "subtitle": "Say what you want to see and get\nthe summary table and chart at once",
@@ -1308,9 +1315,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -1410,7 +1417,7 @@
     },
     {
      "title": "Attach the file",
-     "body": "Turn on file creation and attach",
+     "body": "Turn on file features and attach",
      "check": ""
     },
     {
@@ -1467,6 +1474,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Month-over-month results analysis",
    "subtitle": "Upload two periods of results and get\na variance table plus comments on causes",
@@ -1480,9 +1488,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -1648,6 +1656,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Macros for repetitive tasks",
    "subtitle": "Write down your repeated clicks\nand get a one-button macro",
@@ -1661,7 +1670,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     },
@@ -1810,6 +1819,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Timesheet totals and overtime",
    "subtitle": "Upload clock-in records and get\nweekly hours and FLSA overtime totals",
@@ -1823,9 +1833,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -1920,7 +1930,7 @@
     },
     {
      "title": "Attach the file",
-     "body": "Turn on file creation and attach",
+     "body": "Turn on file features and attach",
      "check": ""
     },
     {
@@ -1995,6 +2005,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "PTO accrual, usage and balance tracker",
    "subtitle": "Upload hire dates and time off taken\nfor accrued, used and remaining on one sheet",
@@ -2008,9 +2019,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -2165,6 +2176,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Write job postings by role",
    "subtitle": "Enter the role and terms and get\nthe posting plus 3 title options",
@@ -2177,7 +2189,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     }
@@ -2310,6 +2322,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Interview questions and scorecard",
    "subtitle": "Enter the role and skills and get\na question set and scorecard",
@@ -2322,9 +2335,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Word or Google Docs",
@@ -2450,6 +2463,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Staff announcements and notices",
    "subtitle": "Enter the key points and get\na formal notice and a chat version",
@@ -2462,7 +2476,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     }
@@ -2590,6 +2604,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Meeting notes → minutes",
    "subtitle": "Paste your notes and get\ndecisions and action items in a table",
@@ -2602,7 +2617,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     }
@@ -2732,6 +2747,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Draft company policies and request forms",
    "subtitle": "Enter the purpose and content and get\na sectioned policy and request form",
@@ -2744,9 +2760,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Word or Google Docs",
@@ -2871,6 +2887,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Compare quotes from 3 vendors",
    "subtitle": "Upload the quotes and get\na side-by-side table on the same basis",
@@ -2884,9 +2901,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -2955,7 +2972,7 @@
     },
     {
      "title": "Attach files",
-     "body": "Turn on file creation and attach",
+     "body": "Turn on file features and attach",
      "check": ""
     },
     {
@@ -3017,6 +3034,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Match customer statements to deposits",
    "subtitle": "Upload statements and bank deposits\nto sort matched, different and unpaid",
@@ -3030,9 +3048,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -3188,6 +3206,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Code company card spending to accounts",
    "subtitle": "Upload card transactions and get\naccount codes with reasons",
@@ -3201,9 +3220,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -3267,7 +3286,7 @@
     },
     {
      "title": "Attach the file",
-     "body": "Turn on file creation and attach",
+     "body": "Turn on file features and attach",
      "check": ""
     },
     {
@@ -3344,6 +3363,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Receivables aging and payment reminders",
    "subtitle": "Upload invoices and payments and get\nAR aging plus reminder emails",
@@ -3357,9 +3377,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -3501,6 +3521,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Receipt photos → expense sheet",
    "subtitle": "Upload receipt photos and get\nan expense sheet right away",
@@ -3512,9 +3533,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -3633,6 +3654,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Weekly status report template",
    "subtitle": "Jot down what you did and get\na weekly report in your company's format",
@@ -3645,7 +3667,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     }
@@ -3723,7 +3745,7 @@
     {
      "title": "Create a Project",
      "body": "Add the template once",
-     "check": "Free plan: up to 5 projects"
+     "check": "Free plans limit the number"
     },
     {
      "title": "Take notes",
@@ -3787,6 +3809,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Business emails for any situation",
    "subtitle": "Enter the situation and goal and get\nsubject and body in two versions",
@@ -3802,7 +3825,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     }
@@ -3930,6 +3953,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Contract key points summary",
    "subtitle": "Upload a contract and get\nkey terms and questions to ask",
@@ -3943,9 +3967,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     }
    ],
    "problem": "A 30-page contract and I can't tell what matters",
@@ -4053,6 +4077,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Auto-summary sheet for Google Forms",
    "subtitle": "As Google Form responses come in\nthe summary sheet updates itself",
@@ -4070,7 +4095,7 @@
      "note": "Free with a Google account"
     },
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     }
@@ -4205,6 +4230,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Automatic emails from Google Sheets",
    "subtitle": "List recipients in a sheet and\nemails go out at a set time",
@@ -4222,7 +4248,7 @@
      "note": "Free with a Google account"
     },
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     }
@@ -4371,6 +4397,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "en",
    "title": "Customer FAQ and reply templates",
    "subtitle": "Collect frequent questions and get\nan FAQ with reply templates",
@@ -4383,7 +4410,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "Chat is enough"
     }
@@ -4520,6 +4547,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Sales by customer and ranking",
    "subtitle": "Upload sales records and see\ncustomer ranking and share at a glance",
@@ -4533,9 +4561,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -4604,7 +4632,7 @@
     },
     {
      "title": "Attach the file",
-     "body": "Turn on file creation and attach",
+     "body": "Turn on file features and attach",
      "check": ""
     },
     {
@@ -4661,6 +4689,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Inventory and in/out reconciliation",
    "subtitle": "Upload movements and counts and see\ndifferences and low stock right away",
@@ -4674,9 +4703,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -4831,6 +4860,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "en",
    "title": "Delivery results by region and driver",
    "subtitle": "Upload delivery records and get\ntotals and completion by region and driver",
@@ -4844,9 +4874,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "Turn on 'file creation'"
+     "note": "Turn on file features · see 'In each AI'"
     },
     {
      "name": "Excel or Google Sheets",
@@ -4925,7 +4955,7 @@
     },
     {
      "title": "Attach the file",
-     "body": "Turn on file creation and attach",
+     "body": "Turn on file features and attach",
      "check": ""
     },
     {

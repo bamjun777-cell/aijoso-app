@@ -47,6 +47,12 @@ class AppStore(context: Context) {
 
     fun updateLang(v: String) { lang = v; sp.edit().putString("lang", v).apply() }
 
+    /** 프롬프트를 붙여넣을 기본 AI. "" = 매번 고르기 */
+    var ai by mutableStateOf(sp.getString("ai", "") ?: "")
+        private set
+
+    fun updateAi(v: String) { ai = v; sp.edit().putString("ai", v).apply() }
+
     private fun <T> read(key: String, s: KSerializer<T>): T? =
         sp.getString(key, null)?.let { runCatching { ContentJson.decodeFromString(s, it) }.getOrNull() }
 

@@ -366,9 +366,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -475,9 +475,9 @@
           "check": "원본은 따로 보관"
         },
         {
-          "title": "파일 생성 기능 켜기",
-          "body": "설정 > 기능에서 켜기",
-          "check": "메뉴 이름: 코드 실행 및 파일 생성"
+          "title": "파일 기능 켜기",
+          "body": "AI별 사용법대로 켜기",
+          "check": "Claude는 '코드 실행 및 파일 생성'"
         },
         {
           "title": "파일 첨부",
@@ -746,7 +746,8 @@
           "path": "files/sample-excel-merge.xlsx",
           "note": "통합·검증·확인필요·검산 시트, 셀 메모에 산식"
         }
-      ]
+      ],
+      "fileOutput": true
     },
     {
       "id": "payroll-variance-check",
@@ -771,9 +772,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀",
@@ -892,7 +893,7 @@
         {
           "title": "파일 첨부",
           "body": "전월 → 당월 순서로 첨부",
-          "check": "파일 생성 기능 켜 두기"
+          "check": "파일 기능 켜 두기"
         },
         {
           "title": "프롬프트 전송",
@@ -1216,7 +1217,8 @@
           "path": "files/sample-payroll-check.xlsx",
           "note": "요약·검산·증감표·최저임금점검, 가상 데이터"
         }
-      ]
+      ],
+      "fileOutput": true
     },
     {
       "id": "one-page-exec-report",
@@ -1241,9 +1243,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "워드 또는 한글",
@@ -1351,7 +1353,7 @@
         {
           "title": "프로젝트 만들기",
           "body": "지침·양식 한 번만 등록",
-          "check": "무료 플랜은 5개까지"
+          "check": "무료는 개수 제한 있음"
         },
         {
           "title": "자료 + 프롬프트",
@@ -1386,7 +1388,7 @@
       "cautions": [
         "숫자는 하나도 빠짐없이 대조",
         "결론·건의는 작성자가 판단",
-        "파일 생성이 꺼지면 본문만 나와요",
+        "파일 기능이 꺼지면 본문만 나와요",
         "기밀 자료는 규정 먼저"
       ],
       "videos": [],
@@ -1557,7 +1559,8 @@
           "path": "files/sample-one-page-report.docx",
           "note": "A4 세로 1장, 숫자마다 산식 각주"
         }
-      ]
+      ],
+      "fileOutput": true
     },
     {
       "id": "excel-compare-files",
@@ -1579,9 +1582,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -1667,7 +1670,7 @@
         {
           "title": "파일 첨부",
           "body": "이전 → 최신 순서로 첨부",
-          "check": "파일 생성 기능 켜 두기"
+          "check": "파일 기능 켜 두기"
         },
         {
           "title": "프롬프트 전송",
@@ -1718,7 +1721,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "excel-formula",
@@ -1741,7 +1745,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         },
@@ -1879,7 +1883,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "excel-clean-data",
@@ -1901,9 +1906,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -1983,7 +1988,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -2029,7 +2034,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "excel-pivot-chart",
@@ -2050,9 +2056,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -2152,7 +2158,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -2198,7 +2204,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "excel-monthly-analysis",
@@ -2220,9 +2227,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -2377,7 +2384,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "excel-vba",
@@ -2398,7 +2406,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         },
@@ -2536,7 +2544,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "hr-attendance-overtime",
@@ -2558,9 +2567,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -2664,7 +2673,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -2719,7 +2728,8 @@
         "disclaimer": "포괄임금·유연근무제 등은 별도 판단이 필요합니다. 최종 판단은 노무사·관할 노동청 확인."
       },
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "hr-annual-leave",
@@ -2740,9 +2750,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -2886,7 +2896,8 @@
         "disclaimer": "회계연도 기준 운영, 출근율 산정, 사용촉진은 노무사·관할 노동청 확인이 필요합니다."
       },
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "hr-job-posting",
@@ -2907,7 +2918,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -3029,7 +3040,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "hr-interview",
@@ -3050,9 +3062,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "워드 또는 한글",
@@ -3167,7 +3179,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "hr-notice",
@@ -3188,7 +3201,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -3305,7 +3318,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "admin-minutes",
@@ -3326,7 +3340,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -3445,7 +3459,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "admin-policy-form",
@@ -3466,9 +3481,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "워드 또는 한글",
@@ -3588,7 +3603,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "admin-quote-compare",
@@ -3609,9 +3625,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -3680,7 +3696,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -3731,7 +3747,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "account-settlement",
@@ -3753,9 +3770,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -3900,7 +3917,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "account-card-classify",
@@ -3921,9 +3939,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -3996,7 +4014,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -4053,7 +4071,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "account-receivable",
@@ -4074,9 +4093,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -4207,7 +4226,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "account-receipt",
@@ -4228,9 +4248,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -4338,7 +4358,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "report-weekly",
@@ -4358,7 +4379,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -4445,7 +4466,7 @@
         {
           "title": "프로젝트 만들기",
           "body": "양식 한 번만 등록",
-          "check": "무료 플랜은 5개까지"
+          "check": "무료는 개수 제한 있음"
         },
         {
           "title": "메모하기",
@@ -4489,7 +4510,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "report-email",
@@ -4516,7 +4538,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -4633,7 +4655,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "report-contract-summary",
@@ -4654,9 +4677,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         }
       ],
       "problem": "계약서 30쪽, 어디가 중요한지 모르겠어요",
@@ -4753,7 +4776,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "gsheet-form",
@@ -4779,7 +4803,7 @@
           "note": "구글 계정만 있으면 무료"
         },
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -4903,7 +4927,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "gsheet-auto-mail",
@@ -4929,7 +4954,7 @@
           "note": "구글 계정만 있으면 무료"
         },
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -5067,7 +5092,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "sales-faq",
@@ -5089,7 +5115,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -5215,7 +5241,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "sales-by-customer",
@@ -5236,9 +5263,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -5307,7 +5334,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -5353,7 +5380,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "logistics-stock",
@@ -5374,9 +5402,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -5520,7 +5548,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "logistics-delivery",
@@ -5542,9 +5571,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -5623,7 +5652,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -5669,7 +5698,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "excel-dashboard",
@@ -5693,9 +5723,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -5757,7 +5787,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -5808,7 +5838,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "excel-pdf-to-excel",
@@ -5833,9 +5864,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -5892,7 +5923,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -5938,7 +5969,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "hr-onboarding",
@@ -5962,9 +5994,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "워드 또는 한글",
@@ -6077,7 +6109,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "hr-severance",
@@ -6101,9 +6134,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -6215,7 +6248,8 @@
         "disclaimer": "평균임금 산입 범위와 퇴직소득세는 노무사·세무사 확인이 필요합니다."
       },
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "hr-evaluation",
@@ -6239,9 +6273,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -6316,7 +6350,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -6362,7 +6396,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "admin-asset",
@@ -6386,9 +6421,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -6490,7 +6525,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "admin-contract-renewal",
@@ -6515,9 +6551,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -6643,7 +6679,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "admin-event",
@@ -6667,7 +6704,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -6776,7 +6813,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "admin-vehicle",
@@ -6800,9 +6838,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -6898,7 +6936,8 @@
         "disclaimer": "비용 인정 한도와 대상 차종은 세무사 확인이 필요합니다."
       },
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "admin-handover",
@@ -6922,9 +6961,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "워드 또는 한글",
@@ -7037,7 +7076,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "admin-calendar",
@@ -7061,7 +7101,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         },
@@ -7165,7 +7205,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "account-daily-cash",
@@ -7189,9 +7230,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -7243,7 +7284,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -7289,7 +7330,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "account-tax-invoice",
@@ -7313,9 +7355,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -7413,7 +7455,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "account-vat-prep",
@@ -7437,9 +7480,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -7546,7 +7589,8 @@
         "disclaimer": "신고 대상·방법은 국세청 안내와 세무사 확인이 필요합니다."
       },
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "account-budget",
@@ -7570,9 +7614,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -7675,7 +7719,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "account-payment",
@@ -7699,9 +7744,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -7804,7 +7849,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "report-research",
@@ -7828,7 +7874,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -7928,7 +7974,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "report-translate",
@@ -7952,7 +7999,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -8057,7 +8104,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "report-ppt",
@@ -8081,9 +8129,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         }
       ],
       "problem": "PPT 첫 장부터 무엇을 쓸지 막막해요",
@@ -8100,7 +8148,7 @@
           "id": "main",
           "title": "기본: 슬라이드 초안",
           "howTo": "자료 첨부해도 좋아요",
-          "body": "{{청중}} 대상 {{시간}}분 발표자료를 만들어 주세요. 목적: {{목적}}, 핵심 메시지: {{메시지}}\n1. 슬라이드 {{장수}}장 구성표: 번호·제목(결론형 한 문장)·내용 3줄 이내·넣을 차트/표\n2. 슬라이드별 발표 대본(1분 분량)\n3. 예상 질문 3개와 답변\n파일 생성이 켜져 있으면 파워포인트(.pptx) 파일로도 만들어 주세요. 숫자는 첨부 자료에 있는 것만 쓰세요.",
+          "body": "{{청중}} 대상 {{시간}}분 발표자료를 만들어 주세요. 목적: {{목적}}, 핵심 메시지: {{메시지}}\n1. 슬라이드 {{장수}}장 구성표: 번호·제목(결론형 한 문장)·내용 3줄 이내·넣을 차트/표\n2. 슬라이드별 발표 대본(1분 분량)\n3. 예상 질문 3개와 답변\n파일 기능이 켜져 있으면 파워포인트(.pptx) 파일로도 만들어 주세요. 숫자는 첨부 자료에 있는 것만 쓰세요.",
           "variables": [
             {
               "key": "청중",
@@ -8190,7 +8238,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "report-proposal",
@@ -8214,7 +8263,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         },
@@ -8328,7 +8377,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "report-proofread",
@@ -8352,7 +8402,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -8449,7 +8499,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "gsheet-tracker",
@@ -8478,7 +8529,7 @@
           "note": "구글 계정만 있으면 무료"
         },
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -8572,7 +8623,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "gsheet-consolidate",
@@ -8601,7 +8653,7 @@
           "note": "구글 계정만 있으면 무료"
         },
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -8690,7 +8742,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "gsheet-deadline-alert",
@@ -8723,7 +8776,7 @@
           "note": "구글 계정만 있으면 무료"
         },
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -8833,7 +8886,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "gsheet-approval-form",
@@ -8862,7 +8916,7 @@
           "note": "구글 계정만 있으면 무료"
         },
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -8968,7 +9022,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "gsheet-input-guard",
@@ -8997,7 +9052,7 @@
           "note": "구글 계정만 있으면 무료"
         },
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -9086,7 +9141,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "gsheet-pdf-doc",
@@ -9115,7 +9171,7 @@
           "note": "구글 계정만 있으면 무료"
         },
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -9225,7 +9281,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "gsheet-calendar",
@@ -9254,7 +9311,7 @@
           "note": "구글 계정만 있으면 무료"
         },
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -9354,7 +9411,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "sales-proposal",
@@ -9378,9 +9436,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "워드 또는 한글",
@@ -9499,7 +9557,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "sales-quote",
@@ -9523,9 +9582,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -9632,7 +9691,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "sales-meeting-followup",
@@ -9656,7 +9716,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -9750,7 +9810,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "sales-customer-segment",
@@ -9774,9 +9835,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -9835,7 +9896,7 @@
         },
         {
           "title": "파일 첨부",
-          "body": "파일 생성 기능 켜고 첨부",
+          "body": "파일 기능 켜고 첨부",
           "check": ""
         },
         {
@@ -9886,7 +9947,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "sales-claim",
@@ -9910,7 +9972,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -10009,7 +10071,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "sales-market-brief",
@@ -10033,7 +10096,7 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
           "note": "대화만으로 가능"
         }
@@ -10132,7 +10195,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": false
     },
     {
       "id": "sales-target-tracking",
@@ -10156,9 +10220,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -10266,7 +10330,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "logistics-reorder",
@@ -10290,9 +10355,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -10400,7 +10465,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "logistics-supplier-score",
@@ -10424,9 +10490,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -10541,7 +10607,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "logistics-backorder",
@@ -10565,9 +10632,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -10682,7 +10749,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "logistics-freight-audit",
@@ -10706,9 +10774,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -10818,7 +10886,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "logistics-picking",
@@ -10842,9 +10911,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -10936,7 +11005,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "logistics-returns",
@@ -10960,9 +11030,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -11060,7 +11130,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     },
     {
       "id": "logistics-import-docs",
@@ -11084,9 +11155,9 @@
       "freePlanOk": true,
       "tools": [
         {
-          "name": "Claude",
+          "name": "Claude · ChatGPT · Gemini",
           "free": true,
-          "note": "'파일 생성' 기능 켜기"
+          "note": "파일 기능 켜기 · AI별 사용법 참고"
         },
         {
           "name": "엑셀 또는 구글 시트",
@@ -11184,7 +11255,8 @@
       ],
       "legal": null,
       "verifiedAt": "2026-11-09",
-      "updatedAt": "2026-11-09"
+      "updatedAt": "2026-11-09",
+      "fileOutput": true
     }
   ],
   "feedback": {

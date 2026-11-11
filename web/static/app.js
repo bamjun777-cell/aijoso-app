@@ -23,6 +23,12 @@
     document.body.appendChild(el); setTimeout(function () { el.remove(); }, 2000);
   }
   function layer(html) { $('#layer').innerHTML = html; }
+  // 프롬프트를 붙여넣을 AI (고르면 이 브라우저에 기억)
+  var AIS = { claude: ['Claude', 'https://claude.ai/new'], chatgpt: ['ChatGPT', 'https://chatgpt.com/'], gemini: ['Gemini', 'https://gemini.google.com/app'] };
+  function aiLabels() {
+    var site = AIS[store.get('ai', '')];
+    $$('[data-openai] span').forEach(function (x) { x.textContent = site ? T('ai.openIn', { name: site[0] }) : T('prompt.openClaude'); });
+  }
   function closeLayer() { layer(''); hideTip(); document.body.style.overflow = ''; }
 
   function copyText(t, msg) {
@@ -286,6 +292,20 @@
     var g = function (k) { return b.getAttribute(k); };
     if (b.hasAttribute('data-close')) { closeLayer(); return; }
     if (g('data-copy')) { copyText(fill(ITEM_ID, promptOf(ITEM_ID, g('data-copy')))); return; }
+    if (g('data-openai') || g('data-changeai')) {
+      var pid = g('data-openai') || g('data-changeai'), txt = fill(ITEM_ID, promptOf(ITEM_ID, pid)), site = AIS[store.get('ai', '')];
+      if (!(navigator.clipboard && navigator.clipboard.writeText)) { copyText(txt); return; }   // 복사가 안 되는 브라우저는 직접 복사 창
+      navigator.clipboard.writeText(txt).catch(function () { copyText(txt); });
+      if (site && g('data-openai')) { window.open(site[1], '_blank', 'noopener'); toast(T('ai.copiedOpen', { name: site[0] })); return; }
+      layer('<div class="scrim" data-close="1"></div><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="aih"><h3 id="aih">' + esc(T('ai.pick')) + '</h3><p class="note">' + esc(T('ai.pickNoteWeb')) + '</p><div class="aipick">' +
+        Object.keys(AIS).map(function (k) { return '<button type="button" class="btn copy" data-pickai="' + k + '">' + esc(AIS[k][0]) + '</button>'; }).join('') +
+        '</div><div class="pact"><button type="button" class="btn ghost" data-close="1">' + esc(T('fbs.cancel')) + '</button></div></div>');
+      return;
+    }
+    if (g('data-pickai')) {
+      var s2 = AIS[g('data-pickai')]; store.set('ai', g('data-pickai')); closeLayer(); aiLabels();
+      window.open(s2[1], '_blank', 'noopener'); toast(T('ai.copiedOpen', { name: s2[0] })); return;
+    }
     if (g('data-qcopy')) { var q = g('data-qcopy').split('|'); copyText(fill(q[0], promptOf(q[0], q[1]))); return; }
     if (b.hasAttribute('data-copyproj')) { copyText(ITEM.project.instructions, T('proj.copied')); return; }
     if (b.hasAttribute('data-fav')) { var i = S.favs.indexOf(ITEM_ID); if (i >= 0) S.favs.splice(i, 1); else S.favs.unshift(ITEM_ID); save('favs'); favBtn(); toast(i >= 0 ? T('fav.removed') : T('fav.added')); return; }
@@ -331,5 +351,5 @@
     box.querySelector('[data-setlang]').addEventListener('click', function () { store.set('lang', want); });
   }
 
-  initSearch(); initManual(); renderSaved(); markReqPills(); initLang();
+  initSearch(); initManual(); renderSaved(); markReqPills(); initLang(); aiLabels();
 })();

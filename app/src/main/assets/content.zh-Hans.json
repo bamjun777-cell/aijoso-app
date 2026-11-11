@@ -213,6 +213,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-08",
    "updatedAt": "2026-11-08",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "一次合并各分店的 Excel 文件",
    "subtitle": "上传多个文件\n就能拿到合并版和核对表",
@@ -227,9 +228,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -327,9 +328,9 @@
      "check": "原件另外保存"
     },
     {
-     "title": "打开文件创建",
-     "body": "设置 > 功能里打开",
-     "check": "菜单名：代码执行与文件创建"
+     "title": "打开文件功能",
+     "body": "按各 AI 用法打开",
+     "check": "Claude：「代码执行与文件创建」"
     },
     {
      "title": "附上文件",
@@ -415,6 +416,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-08",
    "updatedAt": "2026-11-08",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "工资表环比核对",
    "subtitle": "上传两个月的工资表\n整理入职、离职、增减和异常变动",
@@ -429,9 +431,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel",
@@ -536,7 +538,7 @@
     {
      "title": "附上文件",
      "body": "按上月 → 本月的顺序附上",
-     "check": "保持文件创建打开"
+     "check": "保持文件功能打开"
     },
     {
      "title": "发送提示词",
@@ -615,6 +617,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-08",
    "updatedAt": "2026-11-08",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "把长资料变成一页报告",
    "subtitle": "上传资料、写明目的\n就能拿到结论先行的一页报告",
@@ -629,9 +632,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Word 或 Google 文档",
@@ -730,7 +733,7 @@
     {
      "title": "建立项目",
      "body": "指令和模板只需登记一次",
-     "check": "免费方案最多 5 个"
+     "check": "免费方案有数量限制"
     },
     {
      "title": "资料 + 提示词",
@@ -765,7 +768,7 @@
    "cautions": [
     "数字要一个不漏地核对",
     "结论和建议由撰写人判断",
-    "关掉文件创建就只会给正文",
+    "关掉文件功能就只会给正文",
     "机密资料先看规定"
    ],
    "videos": [],
@@ -811,6 +814,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "比较两个文件找出差异",
    "subtitle": "上传两个文件\n只挑出新增、删除和变更的部分",
@@ -825,9 +829,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -913,7 +917,7 @@
     {
      "title": "附上文件",
      "body": "按旧 → 新的顺序附上",
-     "check": "保持文件创建打开"
+     "check": "保持文件功能打开"
     },
     {
      "title": "发送提示词",
@@ -975,6 +979,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "写 Excel 函数、解决报错",
    "subtitle": "用文字写出想算什么\n就能拿到公式和通俗说明",
@@ -988,7 +993,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     },
@@ -1137,6 +1142,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "整理杂乱数据",
    "subtitle": "上传杂乱的文件\n就能拿到整理版和修改记录",
@@ -1150,9 +1156,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -1232,7 +1238,7 @@
     },
     {
      "title": "附上文件",
-     "body": "打开文件创建后附上",
+     "body": "打开文件功能后附上",
      "check": ""
     },
     {
@@ -1289,6 +1295,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "做汇总表（透视表）和图表",
    "subtitle": "写出想看什么\n汇总表和图表一次做好",
@@ -1301,9 +1308,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -1403,7 +1410,7 @@
     },
     {
      "title": "附上文件",
-     "body": "打开文件创建后附上",
+     "body": "打开文件功能后附上",
      "check": ""
     },
     {
@@ -1460,6 +1467,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "月度业绩增减分析",
    "subtitle": "上传两个期间的业绩\n连增减表和原因说明都有",
@@ -1473,9 +1481,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -1641,6 +1649,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "为重复操作做宏",
    "subtitle": "按顺序写下重复的点击\n就能拿到一键完成的宏",
@@ -1655,7 +1664,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     },
@@ -1804,6 +1813,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "考勤统计与加班计算",
    "subtitle": "上传打卡记录\n加班时数和上限检查自动统计",
@@ -1817,9 +1827,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -1914,7 +1924,7 @@
     },
     {
      "title": "附上文件",
-     "body": "打开文件创建后附上",
+     "body": "打开文件功能后附上",
      "check": ""
     },
     {
@@ -1989,6 +1999,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "年假发放、使用、剩余管理表",
    "subtitle": "上传入职日期和请假记录\n发放、使用、剩余一页看清",
@@ -2001,9 +2012,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -2158,6 +2169,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "按职位写招聘广告",
    "subtitle": "写下职位和条件\n就能拿到广告正文和 3 个标题",
@@ -2170,7 +2182,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     }
@@ -2303,6 +2315,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "面试问题清单与评分表",
    "subtitle": "写下职位和能力\n问题清单和评分表一次做好",
@@ -2315,9 +2328,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Word 或 Google 文档",
@@ -2443,6 +2456,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "人事任命与内部通知",
    "subtitle": "只写要点\n正式通知和聊天版两种都有",
@@ -2455,7 +2469,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     }
@@ -2583,6 +2597,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "会议笔记 → 会议纪要",
    "subtitle": "粘贴笔记\n决定事项和待办整理成表",
@@ -2595,7 +2610,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     }
@@ -2725,6 +2740,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "公司制度与申请表草稿",
    "subtitle": "写下目的和内容\n条文式制度和申请表格一次做好",
@@ -2737,9 +2753,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Word 或 Google 文档",
@@ -2870,6 +2886,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "3 家供应商报价对比表",
    "subtitle": "上传报价单\n就能拿到同一口径的对比表",
@@ -2883,9 +2900,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -2954,7 +2971,7 @@
     },
     {
      "title": "附上文件",
-     "body": "打开文件创建后附上",
+     "body": "打开文件功能后附上",
      "check": ""
     },
     {
@@ -3016,6 +3033,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "客户账单与收款对账",
    "subtitle": "上传账单和收款记录\n自动分出一致、差额和未收款",
@@ -3029,9 +3047,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -3187,6 +3205,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "公司卡消费的会计科目分类",
    "subtitle": "上传刷卡明细\n连会计科目分类和依据都有",
@@ -3199,9 +3218,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -3265,7 +3284,7 @@
     },
     {
      "title": "附上文件",
-     "body": "打开文件创建后附上",
+     "body": "打开文件功能后附上",
      "check": ""
     },
     {
@@ -3342,6 +3361,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "应收账款现况与催款邮件",
    "subtitle": "上传账单和收款明细\n拿到应收现况和催款邮件",
@@ -3355,9 +3375,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -3499,6 +3519,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "收据照片 → 费用报销表",
    "subtitle": "上传收据照片\n马上拿到费用报销表",
@@ -3511,9 +3532,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -3632,6 +3653,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "周报自动生成模板",
    "subtitle": "随手写下做了什么\n变成公司格式的周报",
@@ -3644,7 +3666,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     }
@@ -3722,7 +3744,7 @@
     {
      "title": "建立项目",
      "body": "模板只需登记一次",
-     "check": "免费方案最多 5 个"
+     "check": "免费方案有数量限制"
     },
     {
      "title": "记笔记",
@@ -3786,6 +3808,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "各种情况的商务邮件",
    "subtitle": "写下情况和目的\n标题和正文各给两个版本",
@@ -3800,7 +3823,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     }
@@ -3928,6 +3951,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "合同重点摘要",
    "subtitle": "上传合同\n拿到核心条件表和要确认的问题",
@@ -3940,9 +3964,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     }
    ],
    "problem": "合同 30 页，不知道哪里重要",
@@ -4050,6 +4074,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "Google 表单回复自动汇总表",
    "subtitle": "Google 表单回复一多\n汇总表就自动更新",
@@ -4068,7 +4093,7 @@
      "note": "有 Google 账号就免费"
     },
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     }
@@ -4203,6 +4228,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "用 Google 表格自动发邮件",
    "subtitle": "在表格里写好收件人\n到点自动发出邮件",
@@ -4220,7 +4246,7 @@
      "note": "有 Google 账号就免费"
     },
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     }
@@ -4369,6 +4395,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "zh-Hans",
    "title": "客户咨询回复模板（FAQ）",
    "subtitle": "收集常见咨询\n做好 FAQ 和回复模板",
@@ -4381,7 +4408,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "只用对话就行"
     }
@@ -4518,6 +4545,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "按客户统计销售额与排名",
    "subtitle": "上传销售明细\n客户排名和占比一目了然",
@@ -4531,9 +4559,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -4602,7 +4630,7 @@
     },
     {
      "title": "附上文件",
-     "body": "打开文件创建后附上",
+     "body": "打开文件功能后附上",
      "check": ""
     },
     {
@@ -4659,6 +4687,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "库存与出入库核对",
    "subtitle": "上传出入库和盘点库存\n差异和缺货品项马上看到",
@@ -4672,9 +4701,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -4829,6 +4858,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "zh-Hans",
    "title": "按区域、司机统计配送业绩",
    "subtitle": "上传配送业绩\n按区域、司机统计并算出完成率",
@@ -4842,9 +4872,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "打开「文件创建」"
+     "note": "打开文件功能 · 见各 AI 用法"
     },
     {
      "name": "Excel 或 Google 表格",
@@ -4923,7 +4953,7 @@
     },
     {
      "title": "附上文件",
-     "body": "打开文件创建后附上",
+     "body": "打开文件功能后附上",
      "check": ""
     },
     {

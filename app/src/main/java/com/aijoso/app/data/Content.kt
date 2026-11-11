@@ -36,6 +36,8 @@ data class Item(
     val status: String = "draft",
     val lang: String = "ko",
     val title: String,
+    /** 결과를 엑셀·워드 파일로 받는 매뉴얼 (AI별 파일 기능 안내를 보여 줌) */
+    val fileOutput: Boolean = false,
     val subtitle: String = "",
     val category: String = "",
     val tags: List<String> = emptyList(),

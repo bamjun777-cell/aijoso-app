@@ -434,11 +434,11 @@
    "zh-Hant": "需要準備什麼"
   },
   "sec.proj": {
-   "ko": "Claude 프로젝트로 만들어 두기",
-   "en": "Save it as a Claude Project",
-   "ja": "Claudeのプロジェクトにしておく",
-   "zh-Hans": "保存为 Claude 项目",
-   "zh-Hant": "儲存為 Claude 專案"
+   "ko": "AI 프로젝트로 만들어 두기",
+   "en": "Save it as an AI project",
+   "ja": "AIのプロジェクトにしておく",
+   "zh-Hans": "保存为 AI 项目",
+   "zh-Hant": "儲存為 AI 專案"
   },
   "sec.prompt": {
    "ko": "복사해서 쓰는 프롬프트",
@@ -567,18 +567,151 @@
    "zh-Hant": "複製"
   },
   "prompt.openClaude": {
-   "ko": "Claude 열기",
-   "en": "Open Claude",
-   "ja": "Claudeを開く",
-   "zh-Hans": "打开 Claude",
-   "zh-Hant": "開啟 Claude"
+   "ko": "AI에서 열기",
+   "en": "Open in AI",
+   "ja": "AIで開く",
+   "zh-Hans": "在 AI 中打开",
+   "zh-Hant": "在 AI 中開啟"
+  },
+  "ai.openIn": {
+   "ko": "{name}에서 열기",
+   "en": "Open in {name}",
+   "ja": "{name}で開く",
+   "zh-Hans": "在 {name} 中打开",
+   "zh-Hant": "在 {name} 中開啟"
+  },
+  "ai.pick": {
+   "ko": "어느 AI에 붙여넣을까요?",
+   "en": "Which AI will you paste it into?",
+   "ja": "どのAIに貼り付けますか？",
+   "zh-Hans": "要粘贴到哪个 AI？",
+   "zh-Hant": "要貼上到哪個 AI？"
+  },
+  "ai.pickNote": {
+   "ko": "프롬프트는 이미 복사됐어요. 고른 AI는 다음부터 바로 열려요 (설정에서 변경)",
+   "en": "The prompt is already copied. Your choice opens straight away next time (change it in Settings)",
+   "ja": "プロンプトはコピー済みです。選んだAIは次から直接開きます（設定で変更可）",
+   "zh-Hans": "提示词已复制。下次会直接打开你选的 AI（可在设置中更改）",
+   "zh-Hant": "提示詞已複製。下次會直接開啟你選的 AI（可在設定中更改）"
+  },
+  "ai.pickNoteWeb": {
+   "ko": "프롬프트는 이미 복사됐어요. 고른 AI는 다음부터 바로 열려요",
+   "en": "The prompt is already copied. Your choice opens straight away next time",
+   "ja": "プロンプトはコピー済みです。選んだAIは次から直接開きます",
+   "zh-Hans": "提示词已复制。下次会直接打开你选的 AI",
+   "zh-Hant": "提示詞已複製。下次會直接開啟你選的 AI"
+  },
+  "ai.default": {
+   "ko": "기본 AI",
+   "en": "Default AI",
+   "ja": "既定のAI",
+   "zh-Hans": "默认 AI",
+   "zh-Hant": "預設 AI"
+  },
+  "ai.ask": {
+   "ko": "매번 고르기",
+   "en": "Ask each time",
+   "ja": "毎回選ぶ",
+   "zh-Hans": "每次选择",
+   "zh-Hant": "每次選擇"
+  },
+  "ai.change": {
+   "ko": "AI 바꾸기",
+   "en": "Change AI",
+   "ja": "AIを変更",
+   "zh-Hans": "更换 AI",
+   "zh-Hant": "更換 AI"
+  },
+  "ai.copiedOpen": {
+   "ko": "복사했어요! {name}에 붙여넣으세요",
+   "en": "Copied! Paste it into {name}",
+   "ja": "コピーしました！{name}に貼り付けてください",
+   "zh-Hans": "已复制！粘贴到 {name} 即可",
+   "zh-Hant": "已複製！貼上到 {name} 即可"
+  },
+  "aiuse.title": {
+   "ko": "AI별 사용법",
+   "en": "How to do it in each AI",
+   "ja": "AI別の使い方",
+   "zh-Hans": "各 AI 的用法",
+   "zh-Hant": "各 AI 的用法"
+  },
+  "aiuse.any": {
+   "ko": "Claude · ChatGPT · Gemini 어느 것이든 프롬프트는 똑같이 쓸 수 있어요",
+   "en": "The prompts work the same in Claude, ChatGPT or Gemini",
+   "ja": "プロンプトはClaude・ChatGPT・Geminiのどれでも同じように使えます",
+   "zh-Hans": "提示词在 Claude、ChatGPT、Gemini 中都能同样使用",
+   "zh-Hant": "提示詞在 Claude、ChatGPT、Gemini 中都能同樣使用"
+  },
+  "aiuse.file": {
+   "ko": "결과를 파일로 받기",
+   "en": "Getting a file back",
+   "ja": "結果をファイルで受け取る",
+   "zh-Hans": "以文件形式获取结果",
+   "zh-Hant": "以檔案形式獲取結果"
+  },
+  "aiuse.file.claude": {
+   "ko": "설정 > 기능에서 '코드 실행 및 파일 생성' 켜기",
+   "en": "Turn on 'Code execution and file creation' in Settings > Capabilities",
+   "ja": "設定 > 機能で「コード実行とファイル作成」をオン",
+   "zh-Hans": "在 设置 > 功能 中打开「代码执行与文件创建」",
+   "zh-Hant": "在 設定 > 功能 中開啟「程式碼執行與檔案建立」"
+  },
+  "aiuse.file.chatgpt": {
+   "ko": "파일을 첨부하고 엑셀로 달라고 하면 내려받기 링크를 줌 (무료는 사용 한도)",
+   "en": "Attach the files and ask for an Excel file; you get a download link (free plan has limits)",
+   "ja": "ファイルを添付してExcelで欲しいと頼むとダウンロードリンクが出る（無料は利用上限あり）",
+   "zh-Hans": "附上文件并要求输出 Excel，会给出下载链接（免费版有用量限制）",
+   "zh-Hant": "附上檔案並要求輸出 Excel，會給出下載連結（免費版有用量限制）"
+  },
+  "aiuse.file.gemini": {
+   "ko": "엑셀·워드 파일로 달라고 하면 내려받거나 구글 드라이브로 내보내기",
+   "en": "Ask for an Excel or Word file, then download it or export to Google Drive",
+   "ja": "Excel・Wordファイルで欲しいと頼むと、ダウンロードかGoogleドライブに書き出し",
+   "zh-Hans": "要求输出 Excel 或 Word 文件，可下载或导出到 Google 云端硬盘",
+   "zh-Hant": "要求輸出 Excel 或 Word 檔案，可下載或匯出到 Google 雲端硬碟"
+  },
+  "aiuse.proj": {
+   "ko": "매달 반복할 때",
+   "en": "When it repeats every month",
+   "ja": "毎月くり返すとき",
+   "zh-Hans": "每月重复时",
+   "zh-Hant": "每月重複時"
+  },
+  "aiuse.proj.claude": {
+   "ko": "프로젝트를 만들고 지침 붙여넣기",
+   "en": "Create a Project and paste in the instructions",
+   "ja": "プロジェクトを作って指示を貼り付け",
+   "zh-Hans": "新建项目并粘贴指令",
+   "zh-Hant": "新建專案並貼上指令"
+  },
+  "aiuse.proj.chatgpt": {
+   "ko": "프로젝트를 만들고 지침 붙여넣기 (무료는 프로젝트당 파일 5개)",
+   "en": "Create a Project and paste in the instructions (free: 5 files per project)",
+   "ja": "プロジェクトを作って指示を貼り付け（無料はプロジェクトごとにファイル5個）",
+   "zh-Hans": "新建项目并粘贴指令（免费版每个项目 5 个文件）",
+   "zh-Hant": "新建專案並貼上指令（免費版每個專案 5 個檔案）"
+  },
+  "aiuse.proj.gemini": {
+   "ko": "Gem을 만들고 지침 붙여넣기 (gemini.google.com에서 만들기)",
+   "en": "Create a Gem and paste in the instructions (make it at gemini.google.com)",
+   "ja": "Gemを作って指示を貼り付け（gemini.google.comで作成）",
+   "zh-Hans": "新建 Gem 并粘贴指令（在 gemini.google.com 创建）",
+   "zh-Hant": "新建 Gem 並貼上指令（在 gemini.google.com 建立）"
+  },
+  "aiuse.note": {
+   "ko": "회사 자료를 올리기 전에 회사가 허용한 AI인지 먼저 확인하세요",
+   "en": "Before uploading company data, check which AI your company allows",
+   "ja": "会社の資料を上げる前に、会社が認めたAIか確認してください",
+   "zh-Hans": "上传公司资料前，请先确认公司允许使用哪个 AI",
+   "zh-Hant": "上傳公司資料前，請先確認公司允許使用哪個 AI"
   },
   "prompt.copied": {
-   "ko": "복사했어요! Claude에 붙여넣으세요",
-   "en": "Copied! Paste it into Claude",
-   "ja": "コピーしました！Claudeに貼り付けてください",
-   "zh-Hans": "已复制！粘贴到 Claude 即可",
-   "zh-Hant": "已複製！貼上到 Claude 即可"
+   "ko": "복사했어요! AI에 붙여넣으세요",
+   "en": "Copied! Paste it into your AI",
+   "ja": "コピーしました！AIに貼り付けてください",
+   "zh-Hans": "已复制！粘贴到 AI 即可",
+   "zh-Hant": "已複製！貼上到 AI 即可"
   },
   "prompt.fill": {
    "ko": "빈칸 채우기",
@@ -840,11 +973,11 @@
    "zh-Hant": "{n} 條 · 空格會用你填的內容，沒填就用示例"
   },
   "prompts.desc": {
-   "ko": "복사해서 Claude에 바로 붙여넣는 업무 자동화 프롬프트 모음.",
-   "en": "Work-automation prompts you can copy straight into Claude.",
-   "ja": "Claudeにそのまま貼り付けられる業務自動化プロンプト集。",
-   "zh-Hans": "可直接复制到 Claude 的办公自动化提示词合集。",
-   "zh-Hant": "可直接複製到 Claude 的辦公自動化提示詞合集。"
+   "ko": "Claude·ChatGPT·Gemini에 바로 붙여넣는 업무 자동화 프롬프트 모음.",
+   "en": "Work-automation prompts you can paste straight into Claude, ChatGPT or Gemini.",
+   "ja": "Claude・ChatGPT・Geminiにそのまま貼り付けられる業務自動化プロンプト集。",
+   "zh-Hans": "可直接粘贴到 Claude、ChatGPT、Gemini 的办公自动化提示词合集。",
+   "zh-Hant": "可直接貼上到 Claude、ChatGPT、Gemini 的辦公自動化提示詞合集。"
   },
   "saved.title": {
    "ko": "보관함",
@@ -1176,11 +1309,11 @@
    "zh-Hant": "關閉"
   },
   "disclaimer": {
-   "ko": "AI 업무 레시피는 Claude 등 AI 도구 활용법을 안내하는 독립 앱입니다. Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다.",
-   "en": "AI Work Recipes is an independent guide to using AI tools such as Claude. It is not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company.",
-   "ja": "AI業務レシピは、Claudeなど AIツールの使い方を案内する独立したアプリです。Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。",
-   "zh-Hans": "AI 办公秘笈是介绍 Claude 等 AI 工具用法的独立应用，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。",
-   "zh-Hant": "AI 辦公秘笈是介紹 Claude 等 AI 工具用法的獨立應用，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。"
+   "ko": "AI 업무 레시피는 Claude·ChatGPT·Gemini 등 AI 도구 활용법을 안내하는 독립 앱입니다. Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다.",
+   "en": "AI Work Recipes is an independent guide to using AI tools such as Claude, ChatGPT and Gemini. It is not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company.",
+   "ja": "AI業務レシピは、Claude・ChatGPT・GeminiなどのAIツールの使い方を案内する独立したアプリです。Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。",
+   "zh-Hans": "AI 办公秘笈是介绍 Claude、ChatGPT、Gemini 等 AI 工具用法的独立应用，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。",
+   "zh-Hant": "AI 辦公秘笈是介紹 Claude、ChatGPT、Gemini 等 AI 工具用法的獨立應用，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。"
   },
   "mod.short": {
    "ko": "{min}자 이상 적어 주세요",
@@ -1211,11 +1344,11 @@
    "zh-Hant": "含有不當用語，無法傳送"
   },
   "web.footer": {
-   "ko": "Claude 등 AI 도구 활용법을 안내하는 독립 서비스로, Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다.",
-   "en": "An independent guide to AI tools such as Claude. Not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company.",
-   "ja": "Claudeなど AIツールの使い方を案内する独立サービスで、Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。",
-   "zh-Hans": "介绍 Claude 等 AI 工具用法的独立服务，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。",
-   "zh-Hant": "介紹 Claude 等 AI 工具用法的獨立服務，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。"
+   "ko": "Claude·ChatGPT·Gemini 등 AI 도구 활용법을 안내하는 독립 서비스로, Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다.",
+   "en": "An independent guide to AI tools such as Claude, ChatGPT and Gemini. Not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company.",
+   "ja": "Claude・ChatGPT・GeminiなどのAIツールの使い方を案内する独立サービスで、Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。",
+   "zh-Hans": "介绍 Claude、ChatGPT、Gemini 等 AI 工具用法的独立服务，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。",
+   "zh-Hant": "介紹 Claude、ChatGPT、Gemini 等 AI 工具用法的獨立服務，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。"
   },
   "web.aboutLink": {
    "ko": "소개·개인정보 안내",
@@ -1239,11 +1372,11 @@
    "zh-Hant": "面向中小企業員工的 AI 辦公自動化手冊：Excel、人事、財務、報告等 30 份，附複製即用的提示詞和分步指南。"
   },
   "web.manualDesc": {
-   "ko": "{t} — {p} {a}분 걸리던 일을 {b}분으로. 복사해서 쓰는 Claude 프롬프트와 단계별 따라 하기.",
-   "en": "{t} — {p} Cut {a} minutes of work to {b}. Copy-ready Claude prompts and step-by-step guide.",
-   "ja": "{t} — {p} {a}分かかっていた作業を{b}分に。コピーして使えるClaudeプロンプトと手順。",
-   "zh-Hans": "{t} — {p} 把 {a} 分钟的工作缩短到 {b} 分钟。附复制即用的 Claude 提示词和分步指南。",
-   "zh-Hant": "{t} — {p} 把 {a} 分鐘的工作縮短到 {b} 分鐘。附複製即用的 Claude 提示詞和分步指南。"
+   "ko": "{t} — {p} {a}분 걸리던 일을 {b}분으로. 복사해서 쓰는 AI 프롬프트와 단계별 따라 하기.",
+   "en": "{t} — {p} Cut {a} minutes of work to {b}. Copy-ready AI prompts and step-by-step guide.",
+   "ja": "{t} — {p} {a}分かかっていた作業を{b}分に。コピーして使えるAIプロンプトと手順。",
+   "zh-Hans": "{t} — {p} 把 {a} 分钟的工作缩短到 {b} 分钟。附复制即用的 AI 提示词和分步指南。",
+   "zh-Hant": "{t} — {p} 把 {a} 分鐘的工作縮短到 {b} 分鐘。附複製即用的 AI 提示詞和分步指南。"
   },
   "web.toc": {
    "ko": "목차",
@@ -1463,11 +1596,11 @@
    "zh-Hant": "合作關係宣告"
   },
   "about.affBody": {
-   "ko": "AI 업무 레시피는 Claude 등 AI 도구의 활용법을 안내하는 독립 서비스이며, Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다. 각 상표는 해당 회사의 소유입니다.",
-   "en": "AI Work Recipes is an independent guide to using AI tools such as Claude and is not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company. All trademarks belong to their owners.",
-   "ja": "AI業務レシピは、ClaudeなどAIツールの使い方を案内する独立サービスであり、Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。各商標はそれぞれの所有者に帰属します。",
-   "zh-Hans": "AI 办公秘笈是介绍 Claude 等 AI 工具用法的独立服务，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。各商标归其所有者所有。",
-   "zh-Hant": "AI 辦公秘笈是介紹 Claude 等 AI 工具用法的獨立服務，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。各商標歸其所有者所有。"
+   "ko": "AI 업무 레시피는 Claude·ChatGPT·Gemini 등 AI 도구의 활용법을 안내하는 독립 서비스이며, Anthropic·OpenAI·Google 등 AI 회사와 제휴하거나 승인받은 관계가 없습니다. 각 상표는 해당 회사의 소유입니다.",
+   "en": "AI Work Recipes is an independent guide to using AI tools such as Claude, ChatGPT and Gemini and is not affiliated with or endorsed by Anthropic, OpenAI, Google or any other AI company. All trademarks belong to their owners.",
+   "ja": "AI業務レシピは、Claude・ChatGPT・GeminiなどのAIツールの使い方を案内する独立サービスであり、Anthropic・OpenAI・GoogleなどのAI企業と提携・承認の関係はありません。各商標はそれぞれの所有者に帰属します。",
+   "zh-Hans": "AI 办公秘笈是介绍 Claude、ChatGPT、Gemini 等 AI 工具用法的独立服务，与 Anthropic、OpenAI、Google 等 AI 公司没有合作或授权关系。各商标归其所有者所有。",
+   "zh-Hant": "AI 辦公秘笈是介紹 Claude、ChatGPT、Gemini 等 AI 工具用法的獨立服務，與 Anthropic、OpenAI、Google 等 AI 公司沒有合作或授權關係。各商標歸其所有者所有。"
   },
   "about.use": {
    "ko": "콘텐츠 이용 시 유의사항",

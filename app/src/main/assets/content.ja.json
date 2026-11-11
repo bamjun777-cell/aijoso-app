@@ -209,6 +209,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-08",
    "updatedAt": "2026-11-08",
+   "fileOutput": true,
    "lang": "ja",
    "title": "支店のExcelファイルを一度にまとめる",
    "subtitle": "複数のファイルをアップするだけで\n統合版と検証表まで一度に",
@@ -223,9 +224,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -323,9 +324,9 @@
      "check": "元ファイルは別に保管"
     },
     {
-     "title": "ファイル作成をオン",
-     "body": "設定 > 機能でオン",
-     "check": "メニュー名：コード実行とファイル作成"
+     "title": "ファイル機能をオン",
+     "body": "AI別の使い方どおりにオン",
+     "check": "Claudeは「コード実行とファイル作成」"
     },
     {
      "title": "ファイルを添付",
@@ -411,6 +412,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-08",
    "updatedAt": "2026-11-08",
+   "fileOutput": true,
    "lang": "ja",
    "title": "給与台帳の前月比チェック",
    "subtitle": "2か月分の給与台帳を上げるだけで\n入退社・増減・異常変動者を整理",
@@ -428,9 +430,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "Excel",
@@ -540,7 +542,7 @@
     {
      "title": "ファイルを添付",
      "body": "前月 → 当月の順に添付",
-     "check": "ファイル作成をオンに"
+     "check": "ファイル機能をオンに"
     },
     {
      "title": "プロンプトを送信",
@@ -625,6 +627,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-08",
    "updatedAt": "2026-11-08",
+   "fileOutput": true,
    "lang": "ja",
    "title": "長い資料を1枚の報告書に",
    "subtitle": "資料を上げて目的を書くだけで\n結論から書いた報告書1枚",
@@ -639,9 +642,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "WordまたはGoogleドキュメント",
@@ -740,7 +743,7 @@
     {
      "title": "プロジェクトを作る",
      "body": "指示・様式を一度だけ登録",
-     "check": "無料プランは5個まで"
+     "check": "無料プランは数に制限あり"
     },
     {
      "title": "資料＋プロンプト",
@@ -775,7 +778,7 @@
    "cautions": [
     "数字は一つ残らず照合",
     "結論・提案は作成者が判断",
-    "ファイル作成がオフだと本文だけ",
+    "ファイル機能がオフだと本文だけ",
     "機密資料は規程が先"
    ],
    "videos": [],
@@ -821,6 +824,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "2つのファイルを比べて違いを探す",
    "subtitle": "2つのファイルを上げるだけで\n追加・削除・変更だけを抽出",
@@ -838,9 +842,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -926,7 +930,7 @@
     {
      "title": "ファイルを添付",
      "body": "旧 → 新の順に添付",
-     "check": "ファイル作成をオンに"
+     "check": "ファイル機能をオンに"
     },
     {
      "title": "プロンプトを送信",
@@ -988,6 +992,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "Excel関数の作成・エラー解決",
    "subtitle": "したい計算を言葉で書くだけで\n数式とやさしい説明まで",
@@ -1001,7 +1006,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     },
@@ -1150,6 +1155,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "汚れたデータを整理する",
    "subtitle": "汚れたファイルを上げるだけで\n整理版と変更履歴を一緒に",
@@ -1163,9 +1169,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -1245,7 +1251,7 @@
     },
     {
      "title": "ファイルを添付",
-     "body": "ファイル作成をオンにして添付",
+     "body": "ファイル機能をオンにして添付",
      "check": ""
     },
     {
@@ -1302,6 +1308,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "集計表（ピボット）・グラフを作る",
    "subtitle": "見たいものを書くだけで\n集計表とグラフを一度に",
@@ -1314,9 +1321,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -1416,7 +1423,7 @@
     },
     {
      "title": "ファイルを添付",
-     "body": "ファイル作成をオンにして添付",
+     "body": "ファイル機能をオンにして添付",
      "check": ""
     },
     {
@@ -1473,6 +1480,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "月次実績の増減分析",
    "subtitle": "2期間の実績を上げるだけで\n増減表と原因のコメントまで",
@@ -1486,9 +1494,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -1654,6 +1662,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "くり返し作業のマクロを作る",
    "subtitle": "くり返しのクリックを順に書くだけで\nボタン1つで終わるマクロ",
@@ -1667,7 +1676,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     },
@@ -1816,6 +1825,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "勤怠集計・時間外労働の計算",
    "subtitle": "出退勤の記録を上げるだけで\n時間外・深夜・休日の時間を自動集計",
@@ -1829,9 +1839,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -1926,7 +1936,7 @@
     },
     {
      "title": "ファイルを添付",
-     "body": "ファイル作成をオンにして添付",
+     "body": "ファイル機能をオンにして添付",
      "check": ""
     },
     {
@@ -2002,6 +2012,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "年次有給休暇の付与・取得・残日数管理表",
    "subtitle": "入社日と取得記録を上げるだけで\n付与・取得・残日数が1枚に",
@@ -2015,9 +2026,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -2178,6 +2189,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "職種別の求人票を作る",
    "subtitle": "職種と条件を書くだけで\n求人の本文とタイトル3案",
@@ -2190,7 +2202,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     }
@@ -2323,6 +2335,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "面接の質問票・評価表を作る",
    "subtitle": "職種と見たい能力を書くだけで\n質問票と評価表のセット",
@@ -2335,9 +2348,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "WordまたはGoogleドキュメント",
@@ -2463,6 +2476,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "人事異動・社内のお知らせを作る",
    "subtitle": "要点だけ書けば\n正式なお知らせとチャット用の2種類",
@@ -2475,7 +2489,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     }
@@ -2603,6 +2617,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "会議メモ → 議事録にまとめる",
    "subtitle": "メモを貼り付けるだけで\n決定事項とToDoを表に",
@@ -2615,7 +2630,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     }
@@ -2745,6 +2760,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "社内規程・申請書の下書き",
    "subtitle": "目的と内容を書くだけで\n条文形式の規程と申請書の様式",
@@ -2757,9 +2773,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "WordまたはGoogleドキュメント",
@@ -2884,6 +2900,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "業者の見積書3社の比較表",
    "subtitle": "見積書を上げるだけで\n同じ基準にそろえた比較表",
@@ -2897,9 +2914,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -2968,7 +2985,7 @@
     },
     {
      "title": "ファイルを添付",
-     "body": "ファイル作成をオンにして添付",
+     "body": "ファイル機能をオンにして添付",
      "check": ""
     },
     {
@@ -3030,6 +3047,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "取引先の請求と入金の照合",
    "subtitle": "請求明細と入金明細を上げるだけで\n一致・差異・未入金を自動で分類",
@@ -3043,9 +3061,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -3201,6 +3219,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "法人カードの勘定科目の分類",
    "subtitle": "カードの利用明細を上げるだけで\n勘定科目の分類と根拠まで",
@@ -3213,9 +3232,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -3279,7 +3298,7 @@
     },
     {
      "title": "ファイルを添付",
-     "body": "ファイル作成をオンにして添付",
+     "body": "ファイル機能をオンにして添付",
      "check": ""
     },
     {
@@ -3356,6 +3375,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "売掛金の状況・入金のお願いメール",
    "subtitle": "請求・入金の明細を上げるだけで\n売掛金の状況とお願いメール",
@@ -3369,9 +3389,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -3513,6 +3533,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "領収書の写真 → 経費精算表",
    "subtitle": "領収書の写真を上げるだけで\n経費精算表がすぐできる",
@@ -3525,9 +3546,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -3646,6 +3667,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "週報を自動で作るテンプレート",
    "subtitle": "やったことをざっくり書くだけで\n会社の様式の週報に",
@@ -3658,7 +3680,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     }
@@ -3736,7 +3758,7 @@
     {
      "title": "プロジェクトを作る",
      "body": "様式を一度だけ登録",
-     "check": "無料プランは5個まで"
+     "check": "無料プランは数に制限あり"
     },
     {
      "title": "メモする",
@@ -3800,6 +3822,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "状況別のビジネスメール",
    "subtitle": "状況と目的を書くだけで\n件名と本文の2パターン",
@@ -3817,7 +3840,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     }
@@ -3945,6 +3968,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "契約書の要点まとめ",
    "subtitle": "契約書を上げるだけで\n主要条件の表と確認すべき質問",
@@ -3957,9 +3981,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     }
    ],
    "problem": "契約書30ページ、どこが大事かわからない",
@@ -4067,6 +4091,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "Googleフォームの回答を自動でまとめるシート",
    "subtitle": "Googleフォームの回答がたまると\n集計シートが自動で更新",
@@ -4084,7 +4109,7 @@
      "note": "Googleアカウントがあれば無料"
     },
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     }
@@ -4219,6 +4244,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "Googleスプレッドシートから自動メール送信",
    "subtitle": "シートに宛先を書いておくだけで\n決まった時間にメールを自動送信",
@@ -4236,7 +4262,7 @@
      "note": "Googleアカウントがあれば無料"
     },
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     }
@@ -4385,6 +4411,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": false,
    "lang": "ja",
    "title": "お客さまへの回答テンプレート（FAQ）",
    "subtitle": "よくある問い合わせを集めるだけで\nFAQと回答テンプレートが完成",
@@ -4397,7 +4424,7 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
      "note": "チャットだけでOK"
     }
@@ -4534,6 +4561,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "取引先別の売上集計・ランキング分析",
    "subtitle": "売上明細を上げるだけで\n取引先の順位と構成比が一目で",
@@ -4547,9 +4575,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -4618,7 +4646,7 @@
     },
     {
      "title": "ファイルを添付",
-     "body": "ファイル作成をオンにして添付",
+     "body": "ファイル機能をオンにして添付",
      "check": ""
     },
     {
@@ -4675,6 +4703,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "在庫・入出庫の照合",
    "subtitle": "入出庫と棚卸の在庫を上げるだけで\n差異と不足品目がすぐわかる",
@@ -4688,9 +4717,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -4845,6 +4874,7 @@
    "freePlanOk": true,
    "verifiedAt": "2026-11-09",
    "updatedAt": "2026-11-09",
+   "fileOutput": true,
    "lang": "ja",
    "title": "配送実績の地域別・ドライバー別集計",
    "subtitle": "配送実績を上げるだけで\n地域別・ドライバー別の集計と完了率",
@@ -4858,9 +4888,9 @@
    ],
    "tools": [
     {
-     "name": "Claude",
+     "name": "Claude · ChatGPT · Gemini",
      "free": true,
-     "note": "「ファイル作成」をオン"
+     "note": "ファイル機能をオン・AI別の使い方を参照"
     },
     {
      "name": "ExcelまたはGoogleスプレッドシート",
@@ -4939,7 +4969,7 @@
     },
     {
      "title": "ファイルを添付",
-     "body": "ファイル作成をオンにして添付",
+     "body": "ファイル機能をオンにして添付",
      "check": ""
     },
     {

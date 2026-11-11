@@ -270,8 +270,19 @@ def prompt_block(it, p):
   {f'<div class="vars">{vars_html}</div>' if vars_html else ''}
   <div class="preview" data-prev="{e(p["id"])}">{prev}</div>
   <div class="pact"><button type="button" class="btn copy" data-copy="{e(p["id"])}">{svg('copy')} {e(T('prompt.copy'))}</button>
-  <a class="btn ghost" href="https://claude.ai/new" target="_blank" rel="noopener">{svg('ext')} {e(T('prompt.openClaude'))}</a></div>
+  <button type="button" class="btn ghost" data-openai="{e(p["id"])}">{svg('ext')} <span>{e(T('prompt.openClaude'))}</span></button>
+  <button type="button" class="linkbtn" data-changeai="{e(p["id"])}">{e(T('ai.change'))}</button></div>
 </div>"""
+
+AIS = [('claude', 'Claude'), ('chatgpt', 'ChatGPT'), ('gemini', 'Gemini')]
+def ai_use(it):
+    """AI별 사용법 상자: 파일로 받기(파일을 만드는 매뉴얼만)·매달 반복(프로젝트가 있는 매뉴얼만)"""
+    def rows(label, base):
+        return f'<p class="aiu-h">{e(label)}</p><dl>' + ''.join(f'<dt>{n}</dt><dd>{e(T(f"{base}.{k}"))}</dd>' for k, n in AIS) + '</dl>'
+    inner = f'<b>{e(T("aiuse.title"))}</b><p>{e(T("aiuse.any"))}</p>'
+    if it.get('fileOutput'): inner += rows(T('aiuse.file'), 'aiuse.file')
+    if it.get('project'): inner += rows(T('aiuse.proj'), 'aiuse.proj')
+    return f'<div class="aiuse">{inner}<p class="note">{e(T("aiuse.note"))}</p></div>'
 
 def build_manual(it):
     L = '../'
@@ -285,7 +296,7 @@ def build_manual(it):
     parts = [
         block('prob', T('sec.prob'), f'<p class="lead">{e(it.get("problem"))}</p>'),
         block('how', T('sec.how'), f'<div class="ba"><div><b>{e(T("how.before"))}</b>{e(it.get("before"))}</div><div class="after"><b>{e(T("detail.after"))}</b>{e(it.get("after"))}</div></div>'),
-        block('prep', T('sec.prep'), f'<ul class="tools">{tools}</ul><ul class="check">{prep}</ul>'),
+        block('prep', T('sec.prep'), f'<ul class="tools">{tools}</ul><ul class="check">{prep}</ul>' + ai_use(it)),
     ]
     pr = it.get('project')
     if pr:

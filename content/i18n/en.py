@@ -57,8 +57,8 @@ D_MW = doc('Minimum Wage', 'U.S. Department of Labor', 'https://www.dol.gov/agen
 D_OT = doc('FLSA overtime FAQ', 'U.S. Department of Labor', 'https://webapps.dol.gov/elaws/faq/esa/flsa/011.htm')
 D_VAC = doc('Vacation Leave', 'U.S. Department of Labor', 'https://www.dol.gov/general/topic/benefits-leave/vacation_leave')
 
-T_CF = ('Claude', "Turn on 'file creation'")
-T_C = ('Claude', 'Chat is enough')
+T_CF = ('Claude · ChatGPT · Gemini', "Turn on file features · see 'In each AI'")
+T_C = ('Claude · ChatGPT · Gemini', 'Chat is enough')
 T_X = ('Excel or Google Sheets', 'Check and print results')
 T_XP = ('Excel', 'Desktop Excel needed')
 T_W = ('Word or Google Docs', 'Final formatting & print')
@@ -87,7 +87,7 @@ ITEMS['excel-merge-files'] = dict(
     pr('powerquery', 'Monthly autopilot: Power Query', "When you can't upload to AI",
     "Walk me through, click by click, how to use Excel Power Query to automatically combine all the Excel files in one folder. My Excel version is {{엑셀버전}} and each file's sheet is named '{{시트이름}}'. Also show me how to swap in next month's files and update with Refresh.",
     v('엑셀버전', 'Excel version', 'Microsoft 365'), v('시트이름', 'Sheet name', 'Sheet1'))],
-  st=[st('Remove personal data', 'Delete sensitive columns in a copy', 'Keep the original separately'), st('Turn on file creation', 'Settings > Capabilities', 'Menu name: Code execution and file creation'),
+  st=[st('Remove personal data', 'Delete sensitive columns in a copy', 'Keep the original separately'), st('Turn on file features', "As shown in 'In each AI'", "Claude: 'Code execution and file creation'"),
       st('Attach files', 'Upload them all with the clip (+)', 'Split into batches over 20'), st('Send the prompt', 'Fill blanks, copy, paste'),
       st('Get the result', 'Download and open the Excel file', 'Check there are 4 sheets'), st('Recheck', 'Send the check prompt', 'Compare 2–3 sources by hand'),
       st('Print', 'Confirm one landscape page, then print'), st('Next month', 'Save it as a Project')],
@@ -120,7 +120,7 @@ ITEMS['payroll-variance-check'] = dict(
     "Using the 'Summary' sheet, write 3 bullet points explaining the change from last period for the {{당월}} payroll approval memo. Use only the numbers on the sheet.",
     v('당월', 'This period', 'October 2026'))],
   st=[st('Remove personal data', 'Delete sensitive columns in a copy', 'Removing names too is safer'), st('Match ID formats', 'Make both ID columns identical', 'Otherwise hires/exits are wrong'),
-      st('Attach files', 'Last period first, then this period', 'Keep file creation on'), st('Send the prompt', 'Fill blanks, copy, paste', 'Use the higher of federal or state minimum'),
+      st('Attach files', 'Last period first, then this period', 'Keep file features on'), st('Send the prompt', 'Fill blanks, copy, paste', 'Use the higher of federal or state minimum'),
       st('Check headcount', 'Compare with actual hires and exits'), st('Match change notes', 'Send the note-matching prompt', 'Start with the unexplained'),
       st('Recheck & reconcile totals', 'Check prompt + compare with payroll system', "Don't finalize if they differ"), st('Print & approve', 'Print on one landscape page', 'Memo wording via prompt too')],
   r=['Excel with 6 sheets + memo wording\nVariance, causes, outliers and check', 'Total $412,800 → $428,550\n+$15,750 (+3.8%) · causes add up'],
@@ -151,12 +151,12 @@ ITEMS['one-page-exec-report'] = dict(
     pr('shorten', 'Trim when it runs over', "When it's longer than a page",
     "Cut the bottom line to one sentence and the whole report by {{감축비율}}%. Keep the numbers and conclusion as they are, and list what you cut separately as appendix material.",
     v('감축비율', 'Cut by (%)', '20'))],
-  st=[st('Gather material', 'Files and emails in one place', 'Check rules for confidential items'), st('Create a Project', 'Add the instructions and template once', 'Free plan: up to 5 projects'),
+  st=[st('Gather material', 'Files and emails in one place', 'Check rules for confidential items'), st('Create a Project', 'Add the instructions and template once', 'Free plans limit the number'),
       st('Material + prompt', 'Attach in a new chat and send'), st('Check length', 'Use the trim prompt if over a page'),
       st('Check the numbers', 'Use the check prompt against sources', 'AI can make numbers up'), st('Likely questions', 'Prepare 5 questions and answers'),
       st('Print', 'Print on one portrait page', 'You make the final call')],
   r=['One-page Word report\nFormula footnotes · 5 likely questions', 'Example: saves $2,160 a year (16.7%)\nFootnotes on 12 numbers'],
-  c=['Check every single number', 'You decide the conclusion and ask', "Turned off file creation? You'll get text only", 'Check rules before using confidential material'],
+  c=['Check every single number', 'You decide the conclusion and ask', "File features off? You'll get text only", 'Check rules before using confidential material'],
   docs=[D_PROJ, D_FILE, D_ACAD])
 
 ITEMS['excel-compare-files'] = dict(
@@ -176,7 +176,7 @@ ITEMS['excel-compare-files'] = dict(
     "Give me Excel formulas to compare Sheet1 (old) and Sheet2 (new) on '{{기준열}}'. I want a column next to the new sheet showing 'New/Changed/Same'. My Excel is {{엑셀버전}}. If XLOOKUP isn't available in that version, use another function.",
     v('기준열', 'Key column', 'Item code'), v('엑셀버전', 'Excel version', 'Microsoft 365'))],
   st=[st('Remove personal data', 'Delete sensitive columns in a copy', 'Keep the original separately'), st('Check the key column', 'Same format in both files', 'Watch leading zeros and spaces'),
-      st('Attach files', 'Old file first, then new', 'Keep file creation on'), st('Send the prompt', 'Fill blanks, copy, paste'),
+      st('Attach files', 'Old file first, then new', 'Keep file features on'), st('Send the prompt', 'Fill blanks, copy, paste'),
       st('Review results', 'Start with the summary counts', 'Too many changes? Suspect the key'), st('Recheck', 'Compare 3–4 changes with the source', 'Use the check prompt too')],
   r=['Excel with 5 sheets\nSummary, Added, Removed, Changed, Needs review', 'Example: 1,240-row price list\n37 changed · 5 added · 2 removed'],
   c=['Different key formats flag everything as changed', 'Check a few changes against the source', 'Delete personal data before uploading', 'Over 20 columns? Name only the ones to compare'],
@@ -222,7 +222,7 @@ ITEMS['excel-clean-data'] = dict(
     "I get {{자료명}} every month and want to clean it the same way. Show me, click by click, how to apply these rules with Excel Power Query so next month I just swap the file and hit Refresh.\n{{정리규칙}}",
     v('자료명', 'What data is it?', 'Vendor list'), v('정리규칙', 'Cleanup rules', 'Dates as 2026-10-01, trim spaces'))],
   st=[st('Keep the original', 'Work on a copy', "Add '_original' to the file name"), st('Set rules', 'Write each format change on a line'),
-      st('Attach the file', 'Turn on file creation and attach'), st('Send the prompt', 'Fill blanks, copy, paste'),
+      st('Attach the file', 'Turn on file features and attach'), st('Send the prompt', 'Fill blanks, copy, paste'),
       st('Skim the change log', 'Look for odd conversions', 'Watch numbers turning into dates'), st('Recheck', 'Same row count as the original?')],
   r=['Excel with 4 sheets\nClean, Change log, Duplicates, Needs review', 'Example: 820 vendors cleaned\n312 cells changed · 9 duplicates flagged'],
   c=['Flag duplicates, never delete them', 'Check the change log for odd conversions', 'Row count should match the original', 'Delete personal data before uploading'],
@@ -243,7 +243,7 @@ ITEMS['excel-pivot-chart'] = dict(
     "Show me, click by click, how to make a PivotTable in Excel {{엑셀버전}} totaling {{값}} by {{행기준}} and {{열기준}}. Also show me how to make new source rows show up with Refresh.",
     v('엑셀버전', 'Excel version', 'Microsoft 365'), v('행기준', 'Rows', 'Branch'), v('열기준', 'Columns', 'Month'), v('값', 'Value to total', 'Sales'))],
   st=[st('Tidy the data', 'One header row, no blank rows', 'Unmerge cells'), st('Decide the breakdown', 'Note rows, columns and values'),
-      st('Attach the file', 'Turn on file creation and attach'), st('Send the prompt', 'Fill blanks, copy, paste'),
+      st('Attach the file', 'Turn on file features and attach'), st('Send the prompt', 'Fill blanks, copy, paste'),
       st('Match totals', 'Grand total = source total?', 'Use the check prompt'), st('Print', 'Confirm one landscape page')],
   r=['Excel with 3 sheets\nSummary, Chart, Notes (3 lines)', 'Example: 8 branches × 12 months\n2 charts · 3 lines of notes'],
   c=['Compare the grand total with the source', 'Check the numbers in the notes too', 'Fix blank rows and merged cells first', 'Check the chart units ($ or $K)'],
@@ -316,7 +316,7 @@ ITEMS['hr-attendance-overtime'] = dict(
     "Show straight-time pay (all hours × rate) and the overtime premium (overtime hours × rate × 0.5) separately. Only these people are non-exempt: {{인원}}. Mark anyone else 'Check needed'. If there are bonuses or commissions, flag that the regular rate may need adjusting.",
     v('시급열', 'Hourly rate column', 'Hourly rate'), v('인원', 'Non-exempt employees (IDs or "all")', 'all'))],
   st=[st('Remove personal data', 'Delete names, keep IDs'), st('Confirm workweek', 'Note the fixed workweek start', 'It must not change week to week'),
-      st('Attach the file', 'Turn on file creation and attach'), st('Send the prompt', 'Fill blanks, copy, paste'),
+      st('Attach the file', 'Turn on file features and attach'), st('Send the prompt', 'Fill blanks, copy, paste'),
       st('Fix review items', 'Fill missing punches first'), st('Sample check', 'Hand-check 2–3 people', 'Use the check prompt too'), st('Overtime pay', 'Pay prompt once hours are final')],
   r=['Excel: Daily, Weekly, Monthly\nOvertime premium can be added', 'Example: 48 people · October\n612 overtime hours · 2 to review'],
   c=['Exempt employees follow different rules', 'Some states have daily overtime', 'Always hand-check 2–3 people', 'Time data is sensitive; use IDs only'],
@@ -463,7 +463,7 @@ ITEMS['admin-quote-compare'] = dict(
     V_EXCEL,
     pr('ask', 'Questions for vendors', 'When a quote is missing details',
     "From the comparison, pick out items each vendor left out or left vague (tax, installation, delivery, service, etc.) and write a short request email per vendor.")],
-  st=[st('Collect quotes', 'PDFs or clear photos'), st('Attach files', 'Turn on file creation and attach'),
+  st=[st('Collect quotes', 'PDFs or clear photos'), st('Attach files', 'Turn on file features and attach'),
       st('Send the prompt', 'Fill blanks and paste'), st('Source check', 'Verify numbers on the source sheet', 'Photos can be misread'),
       st('Recheck', 'Use the check prompt'), st('Report', 'Use the one-page report manual')],
   r=['Excel: Comparison, Source check, Recommendation\nSame tax/fee basis', 'Example: 3 copier vendors\nUp to $2,160 a year apart'],
@@ -507,7 +507,7 @@ ITEMS['account-card-classify'] = dict(
     pr('rules', "Rules for next month", 'After coding is final',
     "Using the final coding, make a 'merchant keyword → account' rule table. Next month I'll add it to the Project to apply first.")],
   st=[st('Export transactions', 'Download as Excel', 'Last 4 digits only'), st('Prepare accounts', 'Copy your chart of accounts'),
-      st('Attach the file', 'Turn on file creation and attach'), st('Send the prompt', 'Fill blanks and paste'),
+      st('Attach the file', 'Turn on file features and attach'), st('Send the prompt', 'Fill blanks and paste'),
       st('Fix review items', 'Check receipts and cardholders'), st('Recheck', 'Summary total = card statement'), st('Save rules', 'Add to next month\'s Project')],
   r=['Excel: Coded, Summary, Needs review\nPlus a rule table for next month', 'Example: 412 charges · October\n371 coded · 41 to review'],
   c=['Accounting confirms the final coding', 'Tax treatment is for your accountant', "Don't upload full card numbers", 'Total must match the card statement'],
@@ -566,7 +566,7 @@ ITEMS['report-weekly'] = dict(
     pr('monthly', 'Combine into a monthly report', 'At month-end',
     "Combine these {{개수}} weekly reports into a monthly report for {{월}}. Merge repeated items and sort into done / in progress / delayed in a table.\n\n{{주간보고}}",
     v('개수', 'Number of weekly reports', '4'), v('월', 'Month', 'November 2026'), v('주간보고', 'Paste weekly reports', '(paste the 4 weekly reports)'))],
-  st=[st('Create a Project', 'Add the template once', 'Free plan: up to 5 projects'), st('Take notes', 'A line each as you go'),
+  st=[st('Create a Project', 'Add the template once', 'Free plans limit the number'), st('Take notes', 'A line each as you go'),
       st('Send the prompt', 'Fill blanks and paste'), st('Review', 'Check nothing was made up'), st('Month-end', 'Combine into a monthly report')],
   r=["Weekly report in your company's format\nCombine into a monthly report later", 'Example: 8 lines of notes\nOne-page weekly report'],
   c=['Check no made-up results slipped in', 'Compare numbers with sources', 'Check rules for confidential content', 'Put decisions needed at the top'],
@@ -691,7 +691,7 @@ ITEMS['sales-by-customer'] = dict(
     V_EXCEL,
     pr('comment', 'Notes for the sales meeting', 'After the analysis',
     "Using the 'Summary' sheet, write 3 key points for the sales meeting and 3 customers that need attention, with reasons. Use the sheet's numbers exactly.")],
-  st=[st('Standardize names', 'Match Inc./spacing in customer names', 'Otherwise counted as separate'), st('Attach the file', 'Turn on file creation and attach'),
+  st=[st('Standardize names', 'Match Inc./spacing in customer names', 'Otherwise counted as separate'), st('Attach the file', 'Turn on file features and attach'),
       st('Send the prompt', 'Fill blanks and paste'), st('Recheck', 'Total sales = source total'), st('Notes', '3 lines for the sales meeting')],
   r=['Excel: Ranking, Change, Summary\nTop customers to 80% marked', 'Example: 214 customers\nTop 38 make 80% of sales'],
   c=['Standardize customer names first', 'Compare total sales with the source', 'Check whether returns and discounts are included', 'Match notes to sheet numbers'],
@@ -733,7 +733,7 @@ ITEMS['logistics-delivery'] = dict(
     pr('compare', 'Change vs last month', 'When you have two months',
     "I've also attached last month's file. Add month-over-month change to the 'By region' and 'By weekday' sheets, and list the 3 regions with the biggest rise or fall, with numbers.")],
   st=[st('Remove personal data', 'Driver IDs instead of names'), st('Standardize status', 'One word for delivered'),
-      st('Attach the file', 'Turn on file creation and attach'), st('Send the prompt', 'Fill blanks and paste'),
+      st('Attach the file', 'Turn on file features and attach'), st('Send the prompt', 'Fill blanks and paste'),
       st('Recheck', 'Total = rows in the source'), st('Use it', 'Plan staffing by weekday volume')],
   r=['Excel: by region, driver and weekday\nCompletion rate and daily average', 'Example: 82,400 deliveries in October\n98.6% delivered · Monday busiest'],
   c=['Use driver IDs, not personal data', "Don't judge people on volume alone", 'Compare totals with the source', 'Standardize status values first'],

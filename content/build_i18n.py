@@ -68,6 +68,7 @@ def build(code):
         o = L.ITEMS.get(m['id'])
         if o is None: missing.append(m['id']); continue   # 아직 번역 안 된 매뉴얼은 그 언어에서 빼고 공개
         it = {k: m[k] for k in ('id', 'status', 'category', 'difficulty', 'frequency', 'timeBeforeMin', 'timeAfterMin', 'freePlanOk', 'verifiedAt', 'updatedAt')}
+        it['fileOutput'] = m.get('fileOutput', False)
         it.update({'lang': code, 'title': o['t'], 'subtitle': o['s'], 'tags': o['tags'],
                    'tools': [{'name': n, 'free': mt['free'], 'note': note} for (n, note), mt in zip(o['tools'], m['tools'])],
                    'problem': o['p'], 'before': o['b'], 'after': o['a'], 'prepare': o['prep'],

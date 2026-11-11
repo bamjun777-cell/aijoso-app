@@ -2,6 +2,7 @@
 
 package com.aijoso.app.ui
 
+import com.aijoso.app.data.AI_SITES
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.LocalContext
@@ -135,6 +136,16 @@ fun SettingsSheet(c: ContentFile, store: AppStore, onDismiss: () -> Unit) {
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(bottom = 6.dp)) {
                     row.forEach { (code, label) -> Pill(label, store.lang == code, Modifier.weight(1f)) { store.updateLang(code) } }
                     repeat(3 - row.size) { Spacer(Modifier.weight(1f)) }
+                }
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(ui.t("ai.default"), fontWeight = FontWeight.Bold)
+            Spacer(Modifier.height(6.dp))
+            // 프롬프트를 붙여넣을 AI: 매번 고르기 / Claude / ChatGPT / Gemini
+            val aiOptions = listOf("" to ui.t("ai.ask")) + AI_SITES.map { it.id to it.name }
+            aiOptions.chunked(2).forEach { row ->
+                Row(horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(bottom = 6.dp)) {
+                    row.forEach { (id, label) -> Pill(label, store.ai == id, Modifier.weight(1f)) { store.updateAi(id) } }
                 }
             }
             Spacer(Modifier.height(8.dp))
